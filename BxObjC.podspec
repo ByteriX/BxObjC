@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BxObjC"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "Objective-C library for all"
   s.description  = "This framework will help iOS developers simplify development"
   s.homepage     = "https://github.com/ByteriX/BxObjC"
@@ -79,34 +79,17 @@ s.source       = { :git => "https://github.com/ByteriX/BxObjC.git", :tag => s.ve
   #  Not including the public_header_files will make all headers public.
   #
 
-#s.source_files  = "**/Frameworks/**/*.{h,m}", "**/Sources/**/*.{h,m}"
-#s.exclude_files = "**/**Tests/**/*.*"
-#s.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
-#s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+s.source_files  = "**/Frameworks/**/*.{h,m}", "**/Sources/**/*.{h,m}"
+s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*", "**/iBXDB/**/*.*"
 
-s.subspec "no-arc" do |sp|
-    sp.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
-    sp.exclude_files = "**/**Test/**/*.*","**/**Tests/**/*.*",
-"**/BxIconWorkspace**.m",
+s.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+
+s.requires_arc = ["**/BxIconWorkspace**.m",
 "**/BxNavigation**.m",
 "**/BxPushNotificationMessageQueue.m",
-"**/XMLDictionary.m"
-    sp.requires_arc = false
-    sp.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
-    sp.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
-end
+"**/XMLDictionary.m"]
 
-s.subspec "arc" do |sp|
-    sp.source_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h",
-"**/BxIconWorkspace**.m",
-"**/BxNavigation**.m",
-"**/BxPushNotificationMessageQueue.m",
-"**/XMLDictionary.m"
-    sp.exclude_files = "**/**Test/**/*.*","**/**Tests/**/*.*"
-    sp.requires_arc = true
-    sp.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
-    sp.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
-end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -135,14 +118,6 @@ end
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
 
-
-  # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  If your library depends on compiler flags you can set them in the xcconfig hash
-  #  where they will only apply to your library. If you depend on other Podspecs
-  #  you can include multiple dependencies to ensure it works.
-
-  s.requires_arc = false
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
