@@ -444,7 +444,7 @@ static int deletePoolCount = 10;
 + (BOOL) isErrorConnectionFrom: (NSInteger)errorCode
 {
 	return (errorCode == NSURLErrorNotConnectedToInternet);
-    [[self defaultCasher] isEmpty];
+    //[[self defaultCasher] isEmpty]; wath is it?
 }
 
 //! украл

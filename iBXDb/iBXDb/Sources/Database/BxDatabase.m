@@ -11,10 +11,10 @@
  *	 Copyright (c) 2016 ByteriX. See http://byterix.com
  */
 
-#import <iBXCommon/NSURL+BxUtils.h>
 #import "BxDatabase.h"
 #import "FMDatabaseUnicode.h"
 #import "BxCommon.h"
+#import "NSURL+BxUtils.h"
 
 @implementation BxDatabase
 

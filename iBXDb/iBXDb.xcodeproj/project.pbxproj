@@ -10,7 +10,6 @@
 		3424B8441845FC6A00776178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424B8431845FC6A00776178 /* Foundation.framework */; };
 		3424B8521845FC6A00776178 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424B8511845FC6A00776178 /* XCTest.framework */; };
 		3424B8531845FC6A00776178 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424B8431845FC6A00776178 /* Foundation.framework */; };
-		3424B8551845FC6A00776178 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424B8541845FC6A00776178 /* UIKit.framework */; };
 		3424B8581845FC6A00776178 /* libiBXDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3424B8401845FC6A00776178 /* libiBXDB.a */; };
 		3424B85E1845FC6A00776178 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3424B85C1845FC6A00776178 /* InfoPlist.strings */; };
 		3424B8601845FC6A00776178 /* iBXDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3424B85F1845FC6A00776178 /* iBXDBTests.m */; };
@@ -112,7 +111,6 @@
 		3424B8471845FC6A00776178 /* iBXDB-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBXDB-Prefix.pch"; sourceTree = "<group>"; };
 		3424B8501845FC6A00776178 /* iBXDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBXDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3424B8511845FC6A00776178 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3424B8541845FC6A00776178 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3424B85B1845FC6A00776178 /* iBXDBTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBXDBTests-Info.plist"; sourceTree = "<group>"; };
 		3424B85D1845FC6A00776178 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3424B85F1845FC6A00776178 /* iBXDBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBXDBTests.m; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 			files = (
 				3424B8521845FC6A00776178 /* XCTest.framework in Frameworks */,
 				3424B8581845FC6A00776178 /* libiBXDB.a in Frameworks */,
-				3424B8551845FC6A00776178 /* UIKit.framework in Frameworks */,
 				3424B8531845FC6A00776178 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +195,6 @@
 				347337A4184617E6001A0476 /* UIKit.framework */,
 				3424B8431845FC6A00776178 /* Foundation.framework */,
 				3424B8511845FC6A00776178 /* XCTest.framework */,
-				3424B8541845FC6A00776178 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -309,7 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				CFCF481C19165D29003E84B0 /* libiBXCommon.a */,
-				CFCF481E19165D29003E84B0 /* iBXCommonTests.octest */,
+				CFCF481E19165D29003E84B0 /* iBXCommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,10 +390,10 @@
 			remoteRef = CFCF481B19165D29003E84B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CFCF481E19165D29003E84B0 /* iBXCommonTests.octest */ = {
+		CFCF481E19165D29003E84B0 /* iBXCommonTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = iBXCommonTests.octest;
+			path = iBXCommonTests.xctest;
 			remoteRef = CFCF481D19165D29003E84B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -571,7 +567,10 @@
 					"SQLITE_ENABLE_FTS4=1",
 					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
 				);
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/include/**",
+					"\"${SRCROOT}\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -597,7 +596,10 @@
 					"SQLITE_ENABLE_FTS4=1",
 					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
 				);
-				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
+				HEADER_SEARCH_PATHS = (
+					"$(BUILT_PRODUCTS_DIR)/include/**",
+					"\"${SRCROOT}\"/**",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
