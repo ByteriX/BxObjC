@@ -178,6 +178,9 @@ int fts3_term_cnt(int iTerm, int iCol);
 
 #endif /* _FTS3_TOKENIZER_H_ */
 
+#ifndef _FTS3_TOKENIZER_C_
+#define _FTS3_TOKENIZER_C_
+
 /************** End of fts3_tokenizer.h **************************************/
 
 /************** Begin file fts3_porter.c *************************************/
@@ -828,3 +831,5 @@ static void bx_unicode_sqlite3Fts3PorterTokenizerModule(
 }
 
 //#endif /* !defined(SQLITE_CORE) || defined(SQLITE_ENABLE_FTS3) */
+
+#endif /* _FTS3_TOKENIZER_C_ */

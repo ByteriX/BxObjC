@@ -681,7 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				CFCF482919165D3B003E84B0 /* libiBXCommon.a */,
-				CFCF482B19165D3B003E84B0 /* iBXCommonTests.octest */,
+				CFCF482B19165D3B003E84B0 /* iBXCommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -787,7 +787,7 @@
 			remoteRef = CFCF482819165D3B003E84B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CFCF482B19165D3B003E84B0 /* iBXCommonTests.octest */ = {
+		CFCF482B19165D3B003E84B0 /* iBXCommonTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = iBXCommonTests.xctest;

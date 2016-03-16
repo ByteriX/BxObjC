@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BxObjC"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Objective-C library for all"
   s.description  = "This framework will help iOS developers simplify development"
   s.homepage     = "https://github.com/ByteriX/BxObjC"
@@ -68,7 +68,7 @@ s.platform     = :ios, "5.0"
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/ByteriX/BxObjC.git", :commit => "ac450375d2424ae1fd0698df3fd31d282c8a912a" }
+s.source       = { :git => "https://github.com/ByteriX/BxObjC.git", :tag => s.version }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -79,12 +79,34 @@ s.platform     = :ios, "5.0"
   #  Not including the public_header_files will make all headers public.
   #
 
-s.source_files  = "**/Frameworks/**/*.{h,m}", "**/Sources/**/*.{h,m}"
-s.exclude_files = "**/**Tests/**/*.*"
+#s.source_files  = "**/Frameworks/**/*.{h,m}", "**/Sources/**/*.{h,m}"
+#s.exclude_files = "**/**Tests/**/*.*"
+#s.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
+#s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
 
-s.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
+s.subspec "no-arc" do |sp|
+    sp.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
+    sp.exclude_files = "**/**Test/**/*.*","**/**Tests/**/*.*",
+"**/BxIconWorkspace**.m",
+"**/BxNavigation**.m",
+"**/BxPushNotificationMessageQueue.m",
+"**/XMLDictionary.m"
+    sp.requires_arc = false
+    sp.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+    sp.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
+end
 
-s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+s.subspec "arc" do |sp|
+    sp.source_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h",
+"**/BxIconWorkspace**.m",
+"**/BxNavigation**.m",
+"**/BxPushNotificationMessageQueue.m",
+"**/XMLDictionary.m"
+    sp.exclude_files = "**/**Test/**/*.*","**/**Tests/**/*.*"
+    sp.requires_arc = true
+    sp.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+    sp.frameworks = "Foundation", "UIKit", "MapKit", "CoreLocation"
+end
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

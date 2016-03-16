@@ -16,7 +16,7 @@
 
 @interface BxPushNotificationAlert : UIAlertView
 
-@property (nonatomic, retain) NSDictionary * data;
+@property (nonatomic, strong) NSDictionary * data;
 
 @end
 
@@ -28,8 +28,8 @@
 	UIAlertView * _errorAlert;
 }
 
-@property (nonatomic, retain) UIApplication * application;
-@property (nonatomic, retain) NSDictionary * actions;
+@property (nonatomic, strong) UIApplication * application;
+@property (nonatomic, strong) NSDictionary * actions;
 
 @end
 
