@@ -1,0 +1,75 @@
+/**
+ *	@file StandartLocalizable.strings
+ *	@namespace iBXCommon
+ *
+ *	@details Локализация на русском языка
+ *	@date 05.12.2013
+ *	@author Sergey Balalaev
+ *
+ *	@version last in https://github.com/ByteriX/BxObjC
+ *	@copyright The MIT License (MIT) https://opensource.org/licenses/MIT
+ *	 Copyright (c) 2016 ByteriX. See http://byterix.com
+ */
+
+//! Controller
+"PrechangedSuggestClear" = "[Очистить]";
+"DoneSuggestButton" = "Завершить";
+"SuggestSearchBarPlaceholder" = "Введите критерий поиска";
+"DataSetErrorTitle" = "Ошибка данных";
+"DataSetSearchBarLabel" = "Поиск";
+
+//! EGORefreshTableHeaderView
+"Last Updated Date" = "Обновлялись: %@";
+"Last Updated Date Undefined" = "неизвестно";
+"Release to refresh status" = "Отпустите для обновления...";
+"Pull down to refresh status" = "Тяните вниз для обновления...";
+"LoadingStatus" = "Загрузка...";
+
+//! Download
+"Server did request a empty data set" = "Сервер вернул пустой набор данных";
+"Web service error: %@ (%d)" = "Ошибка Web сервиса: %@ (%d)";
+"Unable to get the last modified date of a resource from the Internet" = "Невозможно получить дату последнего изменения ресурса из интернет";
+"Date format of the Last-Modified: '%@' is not corrected from: '%@' " = "Формат даты Last-Modified: '%@' не удовлетворяет шаблону: '%@' ";
+"Attribute Last-Modified from a http header is not found, when is required for caching" = "Ненайден атрибут Last-Modified интернет заголовка, который является обязательным для кеширования";
+
+//! Error
+"\nThe application will be stopped!" = "\nПриложение будет остановлено!";
+"Critical error" = "Критическая ошибка";
+"Error" = "Ошибка";
+"ErrorWarningTitle" = "Предупреждение";
+"ErrorInformationTitle" = "Информация";
+"ErrorCancelButtonText" = "Отмена";
+"ErrorOkButtonText" = "OK";
+"ErrorInternetConnection" = "Вероятно, отсутствует соединение с Интернетом";
+"Could not clean directory" = "Не удалось очистить каталог";
+"UpdateErrorMessage" = "Обновление было прервано";
+"RestoreErrorMessage" = "Операция восстановления документов не может быть завершена";
+"ErrorRetryButtonText" = "Еще раз";
+"The failed to initialize dictionary" = "Неудается инициализировать каталог";
+
+//! ProgressAnimation
+"ProgressAnimationStandartText" = "Идет загрузка данных";
+
+//! ProgressDialogController
+"ProgressOperationTitle" = "Загрузка...";
+
+//! LocalDataStorage
+"LocalImagedDataStorageExceedingMaxCountMessage" = "Превышено количетсво возможных сообщений";
+"LocalImagedDataStorageMaxCountMessage" = "Максимально возможное количество";
+
+//! RatingManager
+"RatingManagerConfirmTitle" = "Оцените приложение";
+"RatingManagerConfirmText" = "Если вам понравилось приложение, пожалуйста, дайте ему оценку в AppStore";
+"RatingManagerCancelButtonText" = "Позже";
+"RatingManagerOkButtonText" = "OK";
+
+//! InputTableController
+"InputTableSecurityText" = "[скрытый текст]";
+
+//! SpeechRecognition
+"SpeechRecognitionErrorMessage" = "Не удалось распознать голосовое сообщение";
+
+//! PNMessageQueue
+"PNMessageQueueCloseButtonTitle" = "Закрыть";
+"PNMessageQueueViewButtonTitle" = "Просмотр";
+"PNMessageQueueLastTitle" = "последнее";

@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		343599A0184DED1F0053D145 /* iBXData.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 3435999F184DED1F0053D145 /* iBXData.xcodeproj */; };
+		343599A2184DED6C0053D145 /* iBXCommon.xcodeproj in Resources */ = {isa = PBXBuildFile; fileRef = 343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */; };
+		348D6A6D179FB3E4001D5BE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A6C179FB3E4001D5BE6 /* Foundation.framework */; };
+		348D6A7C179FB3E4001D5BE6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A7B179FB3E4001D5BE6 /* SenTestingKit.framework */; };
+		348D6A7F179FB3E4001D5BE6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A6C179FB3E4001D5BE6 /* Foundation.framework */; };
+		348D6A82179FB3E4001D5BE6 /* libiBXMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A69179FB3E4001D5BE6 /* libiBXMap.a */; };
+		348D6A88179FB3E4001D5BE6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 348D6A86179FB3E4001D5BE6 /* InfoPlist.strings */; };
+		348D6A8B179FB3E4001D5BE6 /* iBXMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6A8A179FB3E4001D5BE6 /* iBXMapTests.m */; };
+		348D6A9A179FB547001D5BE6 /* BxLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6A99179FB547001D5BE6 /* BxLocationManager.m */; };
+		348D6A9B179FB547001D5BE6 /* BxLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6A99179FB547001D5BE6 /* BxLocationManager.m */; };
+		348D6A9D179FB5D5001D5BE6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A9C179FB5D5001D5BE6 /* MapKit.framework */; };
+		348D6A9F179FB5DC001D5BE6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 348D6A9E179FB5DC001D5BE6 /* CoreLocation.framework */; };
+		348D6AA2179FB608001D5BE6 /* BxGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA1179FB608001D5BE6 /* BxGeocoder.m */; };
+		348D6AA3179FB608001D5BE6 /* BxGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA1179FB608001D5BE6 /* BxGeocoder.m */; };
+		348D6AA6179FB790001D5BE6 /* BxOSMGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA5179FB790001D5BE6 /* BxOSMGeocoder.m */; };
+		348D6AA7179FB790001D5BE6 /* BxOSMGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA5179FB790001D5BE6 /* BxOSMGeocoder.m */; };
+		348D6AAA179FB96D001D5BE6 /* BxArcgisGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA9179FB96C001D5BE6 /* BxArcgisGeocoder.m */; };
+		348D6AAB179FB96D001D5BE6 /* BxArcgisGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AA9179FB96C001D5BE6 /* BxArcgisGeocoder.m */; };
+		348D6AAE179FBC0D001D5BE6 /* BxYandexGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AAD179FBC0C001D5BE6 /* BxYandexGeocoder.m */; };
+		348D6AAF179FBC0D001D5BE6 /* BxYandexGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 348D6AAD179FBC0C001D5BE6 /* BxYandexGeocoder.m */; };
+		348D6ABF179FC02B001D5BE6 /* BxMap.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6AB0179FBCCB001D5BE6 /* BxMap.h */; };
+		348D6AC0179FC02E001D5BE6 /* BxGeocoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6AA0179FB608001D5BE6 /* BxGeocoder.h */; };
+		348D6AC1179FC030001D5BE6 /* BxOSMGeocoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6AA4179FB790001D5BE6 /* BxOSMGeocoder.h */; };
+		348D6AC2179FC034001D5BE6 /* BxArcgisGeocoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6AA8179FB96C001D5BE6 /* BxArcgisGeocoder.h */; };
+		348D6AC3179FC036001D5BE6 /* BxYandexGeocoder.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6AAC179FBC0B001D5BE6 /* BxYandexGeocoder.h */; };
+		348D6AC4179FC038001D5BE6 /* BxLocationManager.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 348D6A98179FB547001D5BE6 /* BxLocationManager.h */; };
+		34905B251803E6E900CAEB2D /* BxGoogleGeocoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 34905B241803E6E900CAEB2D /* BxGoogleGeocoder.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		348D6A80179FB3E4001D5BE6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 348D6A61179FB3E4001D5BE6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 348D6A68179FB3E4001D5BE6;
+			remoteInfo = iBXMap;
+		};
+		CFB1090118618DEF004C9DF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3453F9D9178315A40051C096;
+			remoteInfo = iBXCommon;
+		};
+		CFB1090318618DEF004C9DF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3453F9EA178315A40051C096;
+			remoteInfo = iBXCommonTests;
+		};
+		CFB1091018618DF0004C9DF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3435999F184DED1F0053D145 /* iBXData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3453FA3F1786A9CD0051C096;
+			remoteInfo = iBXData;
+		};
+		CFB1091218618DF0004C9DF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3435999F184DED1F0053D145 /* iBXData.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3453FA501786A9CD0051C096;
+			remoteInfo = iBXDataTests;
+		};
+		CFCF483019165D5C003E84B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3453F9D8178315A40051C096;
+			remoteInfo = iBXCommon;
+		};
+		CFCF483219165D5C003E84B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3435999F184DED1F0053D145 /* iBXData.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3453FA3E1786A9CC0051C096;
+			remoteInfo = iBXData;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		348D6A67179FB3E4001D5BE6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				348D6ABF179FC02B001D5BE6 /* BxMap.h in CopyFiles */,
+				348D6AC0179FC02E001D5BE6 /* BxGeocoder.h in CopyFiles */,
+				348D6AC4179FC038001D5BE6 /* BxLocationManager.h in CopyFiles */,
+				348D6AC3179FC036001D5BE6 /* BxYandexGeocoder.h in CopyFiles */,
+				348D6AC2179FC034001D5BE6 /* BxArcgisGeocoder.h in CopyFiles */,
+				348D6AC1179FC030001D5BE6 /* BxOSMGeocoder.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3435999F184DED1F0053D145 /* iBXData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBXData.xcodeproj; path = ../iBXData/iBXData.xcodeproj; sourceTree = "<group>"; };
+		343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBXCommon.xcodeproj; path = ../iBXCommon/iBXCommon.xcodeproj; sourceTree = "<group>"; };
+		34778987184645F000DF55B5 /* libiBXVcl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libiBXVcl.a; path = "../iBXVcl/build/Debug-iphoneos/libiBXVcl.a"; sourceTree = "<group>"; };
+		348D6A69179FB3E4001D5BE6 /* libiBXMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBXMap.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		348D6A6C179FB3E4001D5BE6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		348D6A70179FB3E4001D5BE6 /* iBXMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBXMap-Prefix.pch"; sourceTree = "<group>"; };
+		348D6A7A179FB3E4001D5BE6 /* iBXMapTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBXMapTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		348D6A7B179FB3E4001D5BE6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		348D6A85179FB3E4001D5BE6 /* iBXMapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBXMapTests-Info.plist"; sourceTree = "<group>"; };
+		348D6A87179FB3E4001D5BE6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		348D6A89179FB3E4001D5BE6 /* iBXMapTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBXMapTests.h; sourceTree = "<group>"; };
+		348D6A8A179FB3E4001D5BE6 /* iBXMapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iBXMapTests.m; sourceTree = "<group>"; };
+		348D6A98179FB547001D5BE6 /* BxLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLocationManager.h; sourceTree = "<group>"; };
+		348D6A99179FB547001D5BE6 /* BxLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLocationManager.m; sourceTree = "<group>"; };
+		348D6A9C179FB5D5001D5BE6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		348D6A9E179FB5DC001D5BE6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		348D6AA0179FB608001D5BE6 /* BxGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxGeocoder.h; sourceTree = "<group>"; };
+		348D6AA1179FB608001D5BE6 /* BxGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxGeocoder.m; sourceTree = "<group>"; };
+		348D6AA4179FB790001D5BE6 /* BxOSMGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxOSMGeocoder.h; sourceTree = "<group>"; };
+		348D6AA5179FB790001D5BE6 /* BxOSMGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxOSMGeocoder.m; sourceTree = "<group>"; };
+		348D6AA8179FB96C001D5BE6 /* BxArcgisGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxArcgisGeocoder.h; sourceTree = "<group>"; };
+		348D6AA9179FB96C001D5BE6 /* BxArcgisGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxArcgisGeocoder.m; sourceTree = "<group>"; };
+		348D6AAC179FBC0B001D5BE6 /* BxYandexGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxYandexGeocoder.h; sourceTree = "<group>"; };
+		348D6AAD179FBC0C001D5BE6 /* BxYandexGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxYandexGeocoder.m; sourceTree = "<group>"; };
+		348D6AB0179FBCCB001D5BE6 /* BxMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BxMap.h; sourceTree = "<group>"; };
+		34905B231803E6E900CAEB2D /* BxGoogleGeocoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxGoogleGeocoder.h; sourceTree = "<group>"; };
+		34905B241803E6E900CAEB2D /* BxGoogleGeocoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxGoogleGeocoder.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		348D6A66179FB3E4001D5BE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348D6A9F179FB5DC001D5BE6 /* CoreLocation.framework in Frameworks */,
+				348D6A9D179FB5D5001D5BE6 /* MapKit.framework in Frameworks */,
+				348D6A6D179FB3E4001D5BE6 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		348D6A76179FB3E4001D5BE6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348D6A7C179FB3E4001D5BE6 /* SenTestingKit.framework in Frameworks */,
+				348D6A7F179FB3E4001D5BE6 /* Foundation.framework in Frameworks */,
+				348D6A82179FB3E4001D5BE6 /* libiBXMap.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		348D6A60179FB3E4001D5BE6 = {
+			isa = PBXGroup;
+			children = (
+				343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */,
+				3435999F184DED1F0053D145 /* iBXData.xcodeproj */,
+				348D6A6E179FB3E4001D5BE6 /* iBXMap */,
+				348D6A83179FB3E4001D5BE6 /* iBXMapTests */,
+				348D6A6B179FB3E4001D5BE6 /* Frameworks */,
+				348D6A6A179FB3E4001D5BE6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		348D6A6A179FB3E4001D5BE6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A69179FB3E4001D5BE6 /* libiBXMap.a */,
+				348D6A7A179FB3E4001D5BE6 /* iBXMapTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		348D6A6B179FB3E4001D5BE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34778987184645F000DF55B5 /* libiBXVcl.a */,
+				348D6A9C179FB5D5001D5BE6 /* MapKit.framework */,
+				348D6A9E179FB5DC001D5BE6 /* CoreLocation.framework */,
+				348D6A6C179FB3E4001D5BE6 /* Foundation.framework */,
+				348D6A7B179FB3E4001D5BE6 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		348D6A6E179FB3E4001D5BE6 /* iBXMap */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A94179FB471001D5BE6 /* Sources */,
+				348D6A6F179FB3E4001D5BE6 /* Supporting Files */,
+			);
+			path = iBXMap;
+			sourceTree = "<group>";
+		};
+		348D6A6F179FB3E4001D5BE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A70179FB3E4001D5BE6 /* iBXMap-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		348D6A83179FB3E4001D5BE6 /* iBXMapTests */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A89179FB3E4001D5BE6 /* iBXMapTests.h */,
+				348D6A8A179FB3E4001D5BE6 /* iBXMapTests.m */,
+				348D6A84179FB3E4001D5BE6 /* Supporting Files */,
+			);
+			path = iBXMapTests;
+			sourceTree = "<group>";
+		};
+		348D6A84179FB3E4001D5BE6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A85179FB3E4001D5BE6 /* iBXMapTests-Info.plist */,
+				348D6A86179FB3E4001D5BE6 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		348D6A94179FB471001D5BE6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				348D6AB0179FBCCB001D5BE6 /* BxMap.h */,
+				348D6A96179FB51F001D5BE6 /* Geocoding */,
+				348D6A97179FB51F001D5BE6 /* Location */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		348D6A96179FB51F001D5BE6 /* Geocoding */ = {
+			isa = PBXGroup;
+			children = (
+				348D6AA0179FB608001D5BE6 /* BxGeocoder.h */,
+				348D6AA1179FB608001D5BE6 /* BxGeocoder.m */,
+				348D6AA4179FB790001D5BE6 /* BxOSMGeocoder.h */,
+				348D6AA5179FB790001D5BE6 /* BxOSMGeocoder.m */,
+				348D6AA8179FB96C001D5BE6 /* BxArcgisGeocoder.h */,
+				348D6AA9179FB96C001D5BE6 /* BxArcgisGeocoder.m */,
+				348D6AAC179FBC0B001D5BE6 /* BxYandexGeocoder.h */,
+				348D6AAD179FBC0C001D5BE6 /* BxYandexGeocoder.m */,
+				34905B231803E6E900CAEB2D /* BxGoogleGeocoder.h */,
+				34905B241803E6E900CAEB2D /* BxGoogleGeocoder.m */,
+			);
+			path = Geocoding;
+			sourceTree = "<group>";
+		};
+		348D6A97179FB51F001D5BE6 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				348D6A98179FB547001D5BE6 /* BxLocationManager.h */,
+				348D6A99179FB547001D5BE6 /* BxLocationManager.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		CFB108FB18618DEF004C9DF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFB1090218618DEF004C9DF6 /* libiBXCommon.a */,
+				CFB1090418618DEF004C9DF6 /* iBXCommonTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CFB1090C18618DF0004C9DF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFB1091118618DF0004C9DF6 /* libiBXData.a */,
+				CFB1091318618DF0004C9DF6 /* iBXDataTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		348D6A68179FB3E4001D5BE6 /* iBXMap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 348D6A8E179FB3E4001D5BE6 /* Build configuration list for PBXNativeTarget "iBXMap" */;
+			buildPhases = (
+				348D6A65179FB3E4001D5BE6 /* Sources */,
+				348D6A66179FB3E4001D5BE6 /* Frameworks */,
+				348D6A67179FB3E4001D5BE6 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CFCF483119165D5C003E84B0 /* PBXTargetDependency */,
+				CFCF483319165D5C003E84B0 /* PBXTargetDependency */,
+			);
+			name = iBXMap;
+			productName = iBXMap;
+			productReference = 348D6A69179FB3E4001D5BE6 /* libiBXMap.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		348D6A79179FB3E4001D5BE6 /* iBXMapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 348D6A91179FB3E4001D5BE6 /* Build configuration list for PBXNativeTarget "iBXMapTests" */;
+			buildPhases = (
+				348D6A75179FB3E4001D5BE6 /* Sources */,
+				348D6A76179FB3E4001D5BE6 /* Frameworks */,
+				348D6A77179FB3E4001D5BE6 /* Resources */,
+				348D6A78179FB3E4001D5BE6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				348D6A81179FB3E4001D5BE6 /* PBXTargetDependency */,
+			);
+			name = iBXMapTests;
+			productName = iBXMapTests;
+			productReference = 348D6A7A179FB3E4001D5BE6 /* iBXMapTests.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		348D6A61179FB3E4001D5BE6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastTestingUpgradeCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Byterix;
+			};
+			buildConfigurationList = 348D6A64179FB3E4001D5BE6 /* Build configuration list for PBXProject "iBXMap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 348D6A60179FB3E4001D5BE6;
+			productRefGroup = 348D6A6A179FB3E4001D5BE6 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CFB108FB18618DEF004C9DF6 /* Products */;
+					ProjectRef = 343599A1184DED6C0053D145 /* iBXCommon.xcodeproj */;
+				},
+				{
+					ProductGroup = CFB1090C18618DF0004C9DF6 /* Products */;
+					ProjectRef = 3435999F184DED1F0053D145 /* iBXData.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				348D6A68179FB3E4001D5BE6 /* iBXMap */,
+				348D6A79179FB3E4001D5BE6 /* iBXMapTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CFB1090218618DEF004C9DF6 /* libiBXCommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiBXCommon.a;
+			remoteRef = CFB1090118618DEF004C9DF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFB1090418618DEF004C9DF6 /* iBXCommonTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = iBXCommonTests.octest;
+			remoteRef = CFB1090318618DEF004C9DF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFB1091118618DF0004C9DF6 /* libiBXData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libiBXData.a;
+			remoteRef = CFB1091018618DF0004C9DF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFB1091318618DF0004C9DF6 /* iBXDataTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = iBXDataTests.octest;
+			remoteRef = CFB1091218618DF0004C9DF6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		348D6A77179FB3E4001D5BE6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				343599A0184DED1F0053D145 /* iBXData.xcodeproj in Resources */,
+				348D6A88179FB3E4001D5BE6 /* InfoPlist.strings in Resources */,
+				343599A2184DED6C0053D145 /* iBXCommon.xcodeproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		348D6A78179FB3E4001D5BE6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		348D6A65179FB3E4001D5BE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				34905B251803E6E900CAEB2D /* BxGoogleGeocoder.m in Sources */,
+				348D6A9A179FB547001D5BE6 /* BxLocationManager.m in Sources */,
+				348D6AA2179FB608001D5BE6 /* BxGeocoder.m in Sources */,
+				348D6AA6179FB790001D5BE6 /* BxOSMGeocoder.m in Sources */,
+				348D6AAA179FB96D001D5BE6 /* BxArcgisGeocoder.m in Sources */,
+				348D6AAE179FBC0D001D5BE6 /* BxYandexGeocoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		348D6A75179FB3E4001D5BE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				348D6A8B179FB3E4001D5BE6 /* iBXMapTests.m in Sources */,
+				348D6A9B179FB547001D5BE6 /* BxLocationManager.m in Sources */,
+				348D6AA3179FB608001D5BE6 /* BxGeocoder.m in Sources */,
+				348D6AA7179FB790001D5BE6 /* BxOSMGeocoder.m in Sources */,
+				348D6AAB179FB96D001D5BE6 /* BxArcgisGeocoder.m in Sources */,
+				348D6AAF179FBC0D001D5BE6 /* BxYandexGeocoder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		348D6A81179FB3E4001D5BE6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 348D6A68179FB3E4001D5BE6 /* iBXMap */;
+			targetProxy = 348D6A80179FB3E4001D5BE6 /* PBXContainerItemProxy */;
+		};
+		CFCF483119165D5C003E84B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iBXCommon;
+			targetProxy = CFCF483019165D5C003E84B0 /* PBXContainerItemProxy */;
+		};
+		CFCF483319165D5C003E84B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iBXData;
+			targetProxy = CFCF483219165D5C003E84B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		348D6A86179FB3E4001D5BE6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				348D6A87179FB3E4001D5BE6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		348D6A8C179FB3E4001D5BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Debug;
+		};
+		348D6A8D179FB3E4001D5BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Release;
+		};
+		348D6A8F179FB3E4001D5BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/iBXMap.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBXMap/iBXMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/include\"/**";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Debug;
+		};
+		348D6A90179FB3E4001D5BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/iBXMap.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBXMap/iBXMap-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/include\"/**";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Release;
+		};
+		348D6A92179FB3E4001D5BE6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBXMap/iBXMap-Prefix.pch";
+				INFOPLIST_FILE = "iBXMapTests/iBXMapTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Byterix.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		348D6A93179FB3E4001D5BE6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iBXMap/iBXMap-Prefix.pch";
+				INFOPLIST_FILE = "iBXMapTests/iBXMapTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Byterix.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		348D6A64179FB3E4001D5BE6 /* Build configuration list for PBXProject "iBXMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				348D6A8C179FB3E4001D5BE6 /* Debug */,
+				348D6A8D179FB3E4001D5BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		348D6A8E179FB3E4001D5BE6 /* Build configuration list for PBXNativeTarget "iBXMap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				348D6A8F179FB3E4001D5BE6 /* Debug */,
+				348D6A90179FB3E4001D5BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		348D6A91179FB3E4001D5BE6 /* Build configuration list for PBXNativeTarget "iBXMapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				348D6A92179FB3E4001D5BE6 /* Debug */,
+				348D6A93179FB3E4001D5BE6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 348D6A61179FB3E4001D5BE6 /* Project object */;
+}

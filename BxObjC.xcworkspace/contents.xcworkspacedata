@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:BxReadme.txt">
+   </FileRef>
+   <FileRef
+      location = "group:iBXCommon/iBXCommon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iBXData/iBXData.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iBXDB/iBXDB.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iBXVcl/iBXVcl.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iBXMap/iBXMap.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:iBXTest/iBXTest.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,75 @@
+/**
+ *	@file StandartLocalizable.strings
+ *	@namespace iBXCommon
+ *
+ *	@details Локализация на английском языка
+ *	@date 05.12.2013
+ *	@author Sergey Balalaev
+ *
+ *	@version last in https://github.com/ByteriX/BxObjC
+ *	@copyright The MIT License (MIT) https://opensource.org/licenses/MIT
+ *	 Copyright (c) 2016 ByteriX. See http://byterix.com
+ */
+
+//! Controller
+"PrechangedSuggestClear" = "[Clear]";
+"DoneSuggestButton" = "Done";
+"SuggestSearchBarPlaceholder" = "Enter a search term";
+"DataSetErrorTitle" = "Error";
+"DataSetSearchBarLabel" = "Search";
+
+//! EGORefreshTableHeaderView
+"Last Updated Date" = "Last Updated: %@";
+"Last Updated Date Undefined" = "undefined";
+"Release to refresh status" = "Release to refresh...";
+"Pull down to refresh status" = "Pull down to refresh...";
+"LoadingStatus" = "Loading...";
+
+//! Download
+"Server did request a empty data set" = "Server did request a empty data set";
+"Web service error: %@ (%d)" = "Web service error: %@ (%d)";
+"Unable to get the last modified date of a resource from the Internet" = "Unable to get the last modified date of a resource from the Internet";
+"Date format of the Last-Modified: '%@' is not corrected from: '%@' " = "Date format of the Last-Modified: '%@' is not corrected from: '%@' ";
+"Attribute Last-Modified from a http header is not found, when is required for caching" = "Attribute Last-Modified from a http header is not found, when is required for caching";
+
+//! Error
+"\nThe application will be stopped!" = "\nThe application will be stopped!";
+"Critical error" = "Critical error";
+"Error" = "Error";
+"ErrorWarningTitle" = "Warning";
+"ErrorInformationTitle" = "Information";
+"ErrorCancelButtonText" = "Cancel";
+"ErrorOkButtonText" = "OK";
+"ErrorInternetConnection" = "The Internet connection appears to be offline.";
+"Could not clean directory" = "Could not clean directory";
+"UpdateErrorMessage" = "The update was aborted";
+"RestoreErrorMessage" = "The restore operation can not be completed";
+"ErrorRetryButtonText" = "Retry";
+"The failed to initialize dictionary" = "The failed to initialize dictionary";
+
+//! ProgressAnimation
+"ProgressAnimationStandartText" = "Loading data";
+
+//! ProgressDialogController
+"ProgressOperationTitle" = "Loading...";
+
+//! LocalDataStorage
+"LocalImagedDataStorageExceedingMaxCountMessage" = "Maximum possible messages number exceeded";
+"LocalImagedDataStorageMaxCountMessage" = "Maximum possible messages number";
+
+//! RatingManager
+"RatingManagerConfirmTitle" = "We need your help";
+"RatingManagerConfirmText" = "If you like our app please rate it on the app store";
+"RatingManagerCancelButtonText" = "Rate Later";
+"RatingManagerOkButtonText" = "OK";
+
+//! InputTableController
+"InputTableSecurityText" = "[hidden text]";
+
+//! SpeechRecognition
+"SpeechRecognitionErrorMessage" = "Voice actions wasn't recognized";
+
+//! PNMessageQueue
+"PNMessageQueueCloseButtonTitle" = "Close";
+"PNMessageQueueViewButtonTitle" = "View";
+"PNMessageQueueLastTitle" = "last";
