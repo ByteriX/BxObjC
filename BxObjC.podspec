@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BxObjC"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Objective-C library for all"
   s.description  = "This framework will help iOS developers simplify development"
   s.homepage     = "https://github.com/ByteriX/BxObjC"
@@ -101,7 +101,11 @@ s.requires_arc = ["**/BxIconWorkspace**.m",
   #
 
 #s.resource  = "icon.png"
-  s.resources = "**/Resources/**/*.{png,strings,xib}"
+  s.resources =
+"**/iBXCommon/**/*.{png,strings,xib}",
+"**/iBXData/**/*.{png,strings,xib}",
+"**/iBXVcl/**/*.{png,strings,xib}",
+"**/iBXMap/**/*.{png,strings,xib}"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
