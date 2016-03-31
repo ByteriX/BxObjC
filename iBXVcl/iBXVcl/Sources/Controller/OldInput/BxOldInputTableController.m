@@ -274,11 +274,11 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
     UIToolbar * result = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 44.0f)];
     result.barStyle = UIBarStyleBlackTranslucent;
     
-    UIBarButtonItem * btDone = [[UIBarButtonItem alloc] initWithTitle: @"Готово" 
+    UIBarButtonItem * btDone = [[UIBarButtonItem alloc] initWithTitle: StandartLocalString(@"InputTableDone")
                                                                 style: UIBarButtonItemStyleDone 
                                                                target: self 
                                                                action: @selector(btDoneClick)];
-    NSArray * segmentedItems = [NSArray arrayWithObjects: @"Назад", @"Вперед", nil];
+    NSArray * segmentedItems = [NSArray arrayWithObjects: StandartLocalString(@"InputTableBack"), StandartLocalString(@"InputTableNext"), nil];
     UISegmentedControl * segmentedControl = [[UISegmentedControl alloc] initWithItems: segmentedItems];
     segmentedControl.frame = CGRectMake(0.0f, 0.0f, 140.0f, 30.0f);
     segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;

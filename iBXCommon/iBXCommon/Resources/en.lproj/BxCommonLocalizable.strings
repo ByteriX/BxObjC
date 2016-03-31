@@ -65,6 +65,9 @@
 
 //! InputTableController
 "InputTableSecurityText" = "[hidden text]";
+"InputTableDone" = "Done";
+"InputTableBack" = "Back";
+"InputTableNext" = "Next";
 
 //! SpeechRecognition
 "SpeechRecognitionErrorMessage" = "Voice actions wasn't recognized";

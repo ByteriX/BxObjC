@@ -65,6 +65,9 @@
 
 //! InputTableController
 "InputTableSecurityText" = "[скрытый текст]";
+"InputTableDone" = "Готово";
+"InputTableBack" = "Назад";
+"InputTableNext" = "Вперед";
 
 //! SpeechRecognition
 "SpeechRecognitionErrorMessage" = "Не удалось распознать голосовое сообщение";
