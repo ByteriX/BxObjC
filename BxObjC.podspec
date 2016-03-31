@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BxObjC"
-  s.version      = "1.0.7"
+  s.version      = "1.0.8"
   s.summary      = "Objective-C library for all"
   s.description  = "This framework will help iOS developers simplify development"
   s.homepage     = "https://github.com/ByteriX/BxObjC"
@@ -102,16 +102,14 @@ s.requires_arc = ["**/BxIconWorkspace**.m",
 
 #s.resource  = "icon.png"
   s.resources =
-"**/iBXCommon/**/*.{png,xib}",
+"**/iBXCommon/**/*.{png,strings,xib}",
 "**/iBXData/**/*.{png,xib}",
 "**/iBXVcl/**/*.{png,xib}",
 "**/iBXMap/**/*.{png,xib}"
 
-s.resource_bundle =
-[
-"en.lproj" => ["**/iBXCommon/**/en.lproj/**/*.strings"],
-"ru.lproj" => ["**/iBXCommon/**/ru.lproj/**/*.strings"],
-]
+spec.prepare_command = <<-CMD
+find Resources -name "*.strings" -exec plutil -convert binary1 {} \;
+CMD
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
