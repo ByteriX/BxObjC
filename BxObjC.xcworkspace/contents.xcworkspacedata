@@ -5,7 +5,7 @@
       location = "group:BxReadme.txt">
    </FileRef>
    <FileRef
-      location = "group:BxObjC.podspec">
+      location = "group:BxObjC.Template.podspec">
    </FileRef>
    <FileRef
       location = "group:iBXCommon/iBXCommon.xcodeproj">
