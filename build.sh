@@ -2,8 +2,8 @@
 
 
 APP_CONFIG_PATH="./build.config"
-TEMPLATE_SPEC_PATH="BxObjC.podspec"
-WORK_SPEC_PATH="BxObjCtemp.podspec"
+TEMPLATE_SPEC_PATH="BxObjC.Template.podspec"
+WORK_SPEC_PATH="BxObjC.podspec"
 VAR_NAME="VERSION_NUMBER"
 
 
@@ -12,6 +12,7 @@ VAR_NAME="VERSION_NUMBER"
 checkExit(){
     if [ $? != 0 ]; then
     echo "Building failed\n"
+    clear
     exit 1
     fi
 }
@@ -19,6 +20,11 @@ checkExit(){
 tag(){
 	git tag -f -a "${VERSION_NUMBER}" -m build
 	git push -f --tags
+}
+
+clear(){
+	rm -f -d "${WORK_SPEC_PATH}"
+    rm -f -d "${WORK_SPEC_PATH}-e"
 }
 
 # Load Config
@@ -39,6 +45,4 @@ tag
 checkExit
 pod trunk push "${WORK_SPEC_PATH}" --allow-warnings --verbose
 checkExit
-rm -f -d "${WORK_SPEC_PATH}"
-rm -f -d "${WORK_SPEC_PATH}-e"
-
+clear
