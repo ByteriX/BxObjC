@@ -42,7 +42,7 @@
 
 //! Определение позволяет получить переведенную строку из фреймворка BxCommonLocalizable.strings
 #define BxCommonLocalString(key, standartValue) \
-    [[NSBundle mainBundle] localizedStringForKey: key value: standartValue table: @"BxCommonLocalizable"]
+    [[NSBundle bundleForClass:[BxConfig class]] localizedStringForKey: key value: standartValue table: @"BxCommonLocalizable"]
 #define StandartLocalString(key) BxCommonLocalString(key, @"")
 
 /**
