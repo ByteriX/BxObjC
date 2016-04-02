@@ -41,8 +41,9 @@
     [[NSBundle mainBundle] localizedStringForKey: key value: @"" table: nil]
 
 //! Определение позволяет получить переведенную строку из фреймворка BxCommonLocalizable.strings
-#define StandartLocalString(key) \
-    [[NSBundle bundleForClass:[BxConfig class]] localizedStringForKey: key value: @"" table: @"BxCommonLocalizable"]
+#define BxCommonLocalString(key, standartValue) \
+    [[NSBundle mainBundle] localizedStringForKey: key value: standartValue table: @"BxCommonLocalizable"]
+#define StandartLocalString(key) BxCommonLocalString(key, @"")
 
 /**
  *	Переброс исключений, которые можно показывать пользователям в сообщениях

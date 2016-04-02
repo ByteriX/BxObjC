@@ -94,6 +94,7 @@
 		CF185158197C4F33001C0CD0 /* NavigationPanelTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF185157197C4F33001C0CD0 /* NavigationPanelTestController.m */; };
 		CFB3193F182C133500D8A65E /* BxLoadedImageViewItemTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */; };
 		CFB31942182C158A00D8A65E /* BxLoadedImageViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */; };
+		F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9B12FA51CAFAFD20007457C /* BxCommonLocalizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -340,6 +341,8 @@
 		CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemTableController.m; sourceTree = "<group>"; };
 		CFB31940182C158A00D8A65E /* BxLoadedImageViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemCell.h; sourceTree = "<group>"; };
 		CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemCell.m; sourceTree = "<group>"; };
+		F9B12FA61CAFAFD20007457C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
+		F9B12FA71CAFAFD20007457C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -409,7 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				3422B9A2179FD22600D66B86 /* libiBXCommon.a */,
-				3422B9A4179FD22600D66B86 /* iBXCommonTests.octest */,
+				3422B9A4179FD22600D66B86 /* iBXCommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 		34A24981182A20790049A1B1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F9B12FA51CAFAFD20007457C /* BxCommonLocalizable.strings */,
 				34B58BDC1A3833DA00581DAE /* BxBaseViewController.xib */,
 				34B58BDD1A3833DA00581DAE /* BxBaseViewController~ipad.xib */,
 				34B9743F184DDE0900622F7D /* images */,
@@ -871,6 +875,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 			);
 			mainGroup = 3453FAF6178BFC9B0051C096;
 			productRefGroup = 3453FB00178BFC9B0051C096 /* Products */;
@@ -914,10 +919,10 @@
 			remoteRef = 3422B9A1179FD22600D66B86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3422B9A4179FD22600D66B86 /* iBXCommonTests.octest */ = {
+		3422B9A4179FD22600D66B86 /* iBXCommonTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = iBXCommonTests.octest;
+			path = iBXCommonTests.xctest;
 			remoteRef = 3422B9A3179FD22600D66B86 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -994,6 +999,7 @@
 				CF139D8D18F144EB009DE1BF /* common_background1@2x.jpg in Resources */,
 				34B97445184DDE0900622F7D /* testicon2.png in Resources */,
 				3453FB19178BFC9B0051C096 /* Default-568h@2x.png in Resources */,
+				F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */,
 				8D447CA95D99B20943C79176 /* Default-667h@2x.png in Resources */,
 				8D447D874346ADBA44461D2D /* common_rotatordot_rotator_off.png in Resources */,
 				8D4479C70556F93903B2805D /* common_rotatordot_rotator_on.png in Resources */,
@@ -1160,6 +1166,16 @@
 				3453FB2A178BFC9C0051C096 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9B12FA51CAFAFD20007457C /* BxCommonLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9B12FA61CAFAFD20007457C /* en */,
+				F9B12FA71CAFAFD20007457C /* ru */,
+			);
+			name = BxCommonLocalizable.strings;
+			path = ../../../iBXCommon/iBXCommon/Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
