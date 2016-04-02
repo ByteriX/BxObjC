@@ -102,12 +102,12 @@ s.requires_arc = ["**/BxIconWorkspace**.m",
 
 #s.resource  = "icon.png"
   s.resources =
-"**/iBXCommon/**/*.{png}",
+"**/iBXCommon/**/Resources/**/*.strings",
 "**/iBXData/**/*.{png,xib}",
 "**/iBXVcl/**/*.{png,xib}",
 "**/iBXMap/**/*.{png,xib}"
 
-s.resource_bundle = { "Localization" => ["**/iBXCommon/**/Resources/**/*.strings"] }
+#s.resource_bundle = { "Localization" => ["**/iBXCommon/**/Resources/**/*.strings"] }
 
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
