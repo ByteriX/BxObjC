@@ -12,6 +12,7 @@
  */
 
 #import "NSData+BxUtils.h"
+#import "NSString+BxUtils.h"
 
 static char encodingTable[64] = {
     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
@@ -151,6 +152,17 @@ static char encodingTable[64] = {
 	}
     
 	return result;
+}
+
++ (NSData *) dataWithResourceFileName: (NSString*) fileName
+{
+    if (fileName) {
+        NSString * filePath = [fileName pathFromResourceFileName];
+        if (filePath && [[NSFileManager defaultManager] fileExistsAtPath: filePath]) {
+            return [NSData dataWithContentsOfFile: filePath];
+        }
+    }
+    return nil;
 }
 
 @end

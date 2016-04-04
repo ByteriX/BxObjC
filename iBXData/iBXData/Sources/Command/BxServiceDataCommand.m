@@ -150,14 +150,20 @@ static NSString const* FNServiceDataCommandCaption = @"caption";
 	[self updateRequest: request];
 	NSData * data = nil;
     
-    
-    
+    if (_mockResourceFileName) {
+        data = [NSData dataWithResourceFileName: _mockResourceFileName];
+        if (data) {
+            [NSThread sleepForTimeInterval: self.mockDelay];
+        }
+    }
 	
     @try {
-        data = [BxDownloadStream loadFromRequest: request
-                                      maxProgress: 1.0f
-                                         delegate: nil
-                                           stream: &_stream];
+        if (!data){
+            data = [BxDownloadStream loadFromRequest: request
+                                         maxProgress: 1.0f
+                                            delegate: nil
+                                              stream: &_stream];
+        }
     }
     @catch (BxDownloadStreamException *exception) {
         @try {
@@ -225,6 +231,7 @@ static NSString const* FNServiceDataCommandCaption = @"caption";
     self.data = nil;
 	self.result = nil;
 	self.rawResult = nil;
+    self.mockResourceFileName = nil;
 	[super dealloc];
 }
 

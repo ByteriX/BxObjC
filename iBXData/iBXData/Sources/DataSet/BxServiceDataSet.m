@@ -17,8 +17,6 @@
 
 @implementation BxServiceDataSet
 
-@synthesize url, post;
-
 //! @override
 - (id) initWithTarget: (id<BxAbstractDataSetDelegate>) target
 			   parser: (BxAbstractDataParser*) parser
@@ -26,6 +24,7 @@
     self = [super initWithTarget: target];
 	if ( self ){
 		_parser = [parser retain];
+        _mockDelay = 0.0;
 	}
 	return self;
 }
@@ -72,12 +71,12 @@
 
 - (NSString*) getRequestUrl
 {
-    return url;
+    return _url;
 }
 
 - (NSString*) getRequestPost
 {
-    return post;
+    return _post;
 }
 
 //! @override
@@ -102,10 +101,22 @@
 	}
     
 	[self updateRequest: request];
-    NSData * data = [BxDownloadStream loadFromRequest: request
-                                          maxProgress: [self getMaxProgress]
-                                             delegate: self
-                                               stream: &_downloadStream];
+    
+    NSData * data = nil;
+    
+    if (_mockResourceFileName) {
+        data = [NSData dataWithResourceFileName: _mockResourceFileName];
+        if (data) {
+            [NSThread sleepForTimeInterval: self.mockDelay];
+        }
+    }
+    
+    if (!data) {
+        data = [BxDownloadStream loadFromRequest: request
+                                     maxProgress: [self getMaxProgress]
+                                        delegate: self
+                                          stream: &_downloadStream];
+    }
 	/*NSString * outString = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
      NSLog(outString, nil);
      [outString release];*/
@@ -154,6 +165,7 @@
     _parser = nil;
 	self.url = nil;
 	self.post = nil;
+    self.mockResourceFileName = nil;
 	[super dealloc];
 }
 

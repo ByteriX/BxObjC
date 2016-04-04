@@ -13,6 +13,7 @@
 
 #import "BxFileSystem.h"
 #import "BxCommon.h"
+#import "NSData+BxUtils.h"
 
 @implementation BxFileSystem
 
@@ -148,6 +149,11 @@
 		[result insertObject: @".." atIndex: 0];
 	}
 	return [NSString pathWithComponents: result];
+}
+
++ (NSData *) dataWithResourceFileName: (NSString*) fileName
+{
+    return [NSData dataWithResourceFileName: fileName];
 }
 
 @end

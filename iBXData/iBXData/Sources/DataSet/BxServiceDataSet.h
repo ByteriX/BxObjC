@@ -29,6 +29,11 @@
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSString * post;
 
+//! The file name of a resource with test data (the service data with url  will ignored)
+@property (nonatomic, retain) NSString * mockResourceFileName;
+//! Time for imetated mockup loading (in sec) Default is 0. if mockResourceFileName = nil is ignored
+@property (nonatomic) NSTimeInterval mockDelay;
+
 - (id) initWithTarget: (id<BxAbstractDataSetDelegate>) target
 			   parser: (BxAbstractDataParser*) parser;
 

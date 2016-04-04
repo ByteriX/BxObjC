@@ -47,5 +47,8 @@
  */
 + (NSString*) relativePathFrom: (NSString*) dirPath targetPath:(NSString*) targetPath;
 
+//! data from resource fileName, if not found return nil
++ (NSData *) dataWithResourceFileName: (NSString*) fileName;
+
 
 @end

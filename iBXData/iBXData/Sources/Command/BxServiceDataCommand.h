@@ -37,6 +37,11 @@ typedef enum
 @property (nonatomic, readonly, nullable) id data;
 @property (nonatomic, retain, nonnull) BxAbstractDataParser * parser;
 
+//! The file name of a resource with test data (the service data with url  will ignored)
+@property (nonatomic, retain, nullable) NSString * mockResourceFileName;
+//! Time for imetated mockup loading (in sec) Default is 0. if mockResourceFileName = nil is ignored
+@property (nonatomic) NSTimeInterval mockDelay;
+
 - (nonnull instancetype) initWithUrl: (nonnull NSString*) url
                                 data: (nullable id) data
                               method: (BxServiceMethod) method

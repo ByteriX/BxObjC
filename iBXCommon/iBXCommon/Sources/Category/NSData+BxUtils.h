@@ -21,4 +21,7 @@
 - (NSString *) base64Encoding;
 - (NSString *) base64EncodingWithLineLength:(unsigned int) lineLength;
 
+//! data from resource fileName, if not found return nil
++ (NSData *) dataWithResourceFileName: (NSString*) fileName;
+
 @end
