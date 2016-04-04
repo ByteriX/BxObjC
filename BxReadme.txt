@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.21 (04.04.2016)
+- add the mock and sevice logger information
+
 Version 1.0.20 (04.04.2016)
 - add the mock for loading data with web services
 

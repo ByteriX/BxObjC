@@ -153,12 +153,14 @@ static NSString const* FNServiceDataCommandCaption = @"caption";
     if (_mockResourceFileName) {
         data = [NSData dataWithResourceFileName: _mockResourceFileName];
         if (data) {
+            NSLog(@"Loading from mockup file (%@) and sleep (%2.2f sec)", _mockResourceFileName, _mockDelay);
             [NSThread sleepForTimeInterval: self.mockDelay];
         }
     }
 	
     @try {
         if (!data){
+            NSLog(@"Loading from real service with request (%@)", request);
             data = [BxDownloadStream loadFromRequest: request
                                          maxProgress: 1.0f
                                             delegate: nil

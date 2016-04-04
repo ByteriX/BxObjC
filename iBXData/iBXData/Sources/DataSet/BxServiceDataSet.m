@@ -107,11 +107,13 @@
     if (_mockResourceFileName) {
         data = [NSData dataWithResourceFileName: _mockResourceFileName];
         if (data) {
+            NSLog(@"Loading from mockup file (%@) and sleep (%2.2f sec)", _mockResourceFileName, _mockDelay);
             [NSThread sleepForTimeInterval: self.mockDelay];
         }
     }
     
     if (!data) {
+        NSLog(@"Loading from real service with request (%@)", request);
         data = [BxDownloadStream loadFromRequest: request
                                      maxProgress: [self getMaxProgress]
                                         delegate: self
