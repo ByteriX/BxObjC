@@ -71,6 +71,9 @@ extern const NSString * const FNInputTableRowKeyboardType;
 @property (nonatomic) BOOL isFloatCellSize UI_APPEARANCE_SELECTOR;
 @property (nonatomic) CGFloat lineShift UI_APPEARANCE_SELECTOR;
 
+@property (nonatomic, readonly, getter=_contentRect) CGRect contentRect;
+@property (nonatomic, readonly, getter=_isContentChanged) BOOL isContentChanged;
+
 
 - (void) startWithData: (NSDictionary*) data editing: (BOOL) editing;
 - (id) getDataFromFieldName: (NSString*) fieldName;
