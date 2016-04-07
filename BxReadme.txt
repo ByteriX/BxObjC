@@ -3,8 +3,8 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
-Version 1.0.22 (07.04.2016)
-- opened protected properties
+Version 1.0.23 (07.04.2016)
+- opened protected properties from BxOldInputTableController
 
 Version 1.0.21 (04.04.2016)
 - add the mock and sevice logger information
