@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.24 (10.04.2016)
+- add refresh to BxOldInputTableController
+
 Version 1.0.23 (07.04.2016)
 - opened protected properties from BxOldInputTableController
 

@@ -868,6 +868,14 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
     [self scrollDidLoad];
 }
 
+- (void) refresh
+{
+    if (self.info != nil) {
+        self.info = [self emptyTableInfo];
+        [self updateOnThread];
+    }
+}
+
 - (void) update
 {
 	[self performSelectorOnMainThread: @selector(updateOnThread) withObject: nil waitUntilDone: YES];
