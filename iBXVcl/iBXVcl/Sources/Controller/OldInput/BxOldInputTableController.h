@@ -19,14 +19,14 @@ extern const NSString * const FNInputTableHeader; // может быть стр�
 extern const NSString * const FNInputTableFooter; // может быть строкой и UIView
 extern const NSString * const FNInputTableRows;
 extern const NSString * const FNInputTableRowHint;
-extern const NSString * const FNInputTableRowValue;
+extern const NSString * const FNInputTableRowValue; // для случая FNInputTableRowVariants значение должно быть в виде [id,name]
 extern const NSString * const FNInputTableRowFieldName;
 extern const NSString * const FNInputTableRowIsSecurity;
 extern const NSString * const FNInputTableRowIsAction;
 extern const NSString * const FNInputTableRowIsEnabled;
 extern const NSString * const FNInputTableRowIsSwitch;
 
-extern const NSString * const FNInputTableRowVariants;
+extern const NSString * const FNInputTableRowVariants; // [id,name] массив
 extern const NSString * const FNInputTableRowVariantNullTitle; // название не выбранного элемента, по умолчанию ''
 extern const NSString * const FNInputTableRowVariantIsNullSelected; // позволять выбрать пустое значение, по умолчанию отключено
 extern const NSString * const FNInputTableRowIsDatePicker;
