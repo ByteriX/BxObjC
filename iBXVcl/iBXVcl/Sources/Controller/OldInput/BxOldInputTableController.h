@@ -29,7 +29,7 @@ extern const NSString * const FNInputTableRowIsSwitch;
 extern const NSString * const FNInputTableRowVariants; // [id,name] массив
 extern const NSString * const FNInputTableRowVariantNullTitle; // название не выбранного элемента, по умолчанию ''
 extern const NSString * const FNInputTableRowVariantIsNullSelected; // позволять выбрать пустое значение, по умолчанию отключено
-extern const NSString * const FNInputTableRowIsDatePicker;
+extern const NSString * const FNInputTableRowIsDatePicker; // выбор даты
 extern const NSString * const FNInputTableRowSubtitle;
 extern const NSString * const FNInputTableRowPlaceholder;
 extern const NSString * const FNInputTableRowMaxSymbolsCount;

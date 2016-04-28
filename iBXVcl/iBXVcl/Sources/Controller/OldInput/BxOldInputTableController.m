@@ -1125,11 +1125,22 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
         textField.text = [textField.text stringByAppendingString:@"\u00a0"];
         return NO; //! todo это тимит тот самый пробел, можно этого не делать, но Label все равно затримит при отображении
     }
+    
+    // перечисление всех возможных запретов редактирования
+    
+    NSNumber *isDatePicker = _currentElement[FNInputTableRowIsDatePicker];
+    NSDictionary *variants = _currentElement[FNInputTableRowVariants];
+    if ((isDatePicker && [isDatePicker boolValue]) ||
+        (variants)
+        ){
+        return NO;
+    }
 
 	NSString * text = [NSString stringWithString: textField.text];
     text = [text stringByReplacingCharactersInRange: range withString: string];
-    NSNumber *maxSymbolsCount = [_currentElement objectForKey:FNInputTableRowMaxSymbolsCount];
+    NSNumber *maxSymbolsCount = _currentElement[FNInputTableRowMaxSymbolsCount];
     
+    // удаление лишних символов
 	if (text && text.length > 0) {
         if (maxSymbolsCount && (text.length > [maxSymbolsCount intValue])) {
             text = [text substringToIndex:[maxSymbolsCount intValue]];

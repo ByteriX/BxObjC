@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.25 (29.04.2016)
+- BxOldInputTableController disable set on the keyboard from variant field
+
 Version 1.0.24 (10.04.2016)
 - add refresh to BxOldInputTableController
 
