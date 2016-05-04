@@ -1370,8 +1370,7 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
     NSMutableDictionary * row = [rows objectAtIndex: indexPath.row];
     [_currentFieldName autorelease];
     _currentFieldName = [[row objectForKey:FNInputTableRowFieldName] retain];
-    NSNumber * isEnabled = [row objectForKey:FNInputTableRowIsEnabled];
-    if (isEnabled && ![isEnabled boolValue]) {
+    if (![self getEnabledFromRow: row]) {
         return;
     }
     if ([self isYESRow: row fieldName: FNInputTableRowIsAction]) {

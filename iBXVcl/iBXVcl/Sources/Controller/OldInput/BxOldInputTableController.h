@@ -70,6 +70,8 @@ extern const NSString * const FNInputTableRowKeyboardType;
 @property (nonatomic, retain) UIImage * backgroundImage UI_APPEARANCE_SELECTOR;
 @property (nonatomic) BOOL isFloatCellSize UI_APPEARANCE_SELECTOR;
 @property (nonatomic) CGFloat lineShift UI_APPEARANCE_SELECTOR;
+//! по умолчанию NO. Если зададите YES то заблокированные ячейки будут показываться как нормальные
+@property (nonatomic) BOOL isNormalShowingDisadledCell UI_APPEARANCE_SELECTOR;
 
 @property (nonatomic, readonly, getter=_contentRect) CGRect contentRect;
 @property (nonatomic, readonly, getter=_isContentChanged) BOOL isContentChanged;

@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.26 (05.05.2016)
+- BxOldInputTableController disable cell not hiddent if you want
+
 Version 1.0.25 (29.04.2016)
 - BxOldInputTableController disable set on the keyboard from variant field
 

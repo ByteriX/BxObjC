@@ -374,7 +374,7 @@
         }
     }
     
-    if ([self isEnabled]) {
+    if (_parent.isNormalShowingDisadledCell || [self isEnabled]) {
         _titleLable.alpha = 1.0f;
         _subtitleLabel.alpha = 1.0f;
         _valueLabel.alpha = 1.0f;
