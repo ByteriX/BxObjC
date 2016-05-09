@@ -815,18 +815,6 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 	[super viewWillAppear: animated];
 }
 
-- (void)viewDidUnload {
-    [_variantPicker release];
-    _variantPicker = nil;
-    [_datePicker release];
-    _datePicker = nil;
-    if (_currentFieldName) {
-        [_currentFieldName release];
-        _currentFieldName = nil;
-    }
-    [super viewDidUnload];
-}
-
 - (void) becomeNext
 {
     NSIndexPath * nextIndex = [self.class getEmptyIndexFromTableInfo: _info];
@@ -1091,6 +1079,10 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
+    if (_currentFieldName == nil) {
+        // Этот косяк воспроизводится, когда крутнул барабан, нажал Done, и выбор произошел уже после того как поле стало неактивным
+        return;
+    }
     if (row == 0) {
         NSNumber * isNullSelected = [self getRowDataFieldName: _currentFieldName][FNInputTableRowVariantIsNullSelected];
         if (isNullSelected && [isNullSelected boolValue]) {
@@ -1174,7 +1166,7 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 {
 	[self updateValues];
 	_textInputView.alpha = 0.0f;
-    [_currentFieldName release];
+    [_currentFieldName autorelease];
     _currentFieldName = nil;
 }
 
@@ -1545,10 +1537,8 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 }
 
 - (void)dealloc {
-    if (_currentFieldName) {
-        [_currentFieldName autorelease];
-        _currentFieldName = nil;
-    }
+    [_currentFieldName autorelease];
+    _currentFieldName = nil;
     [_variantPicker autorelease];
     _variantPicker = nil;
     [_datePicker autorelease];

@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.27 (09.05.2016)
+- BxOldInputTableController crush fixed from nullable currentFieldName in didChangedValue
+
 Version 1.0.26 (05.05.2016)
 - BxOldInputTableController disable cell not hiddent if you want
 

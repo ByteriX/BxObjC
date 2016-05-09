@@ -313,7 +313,6 @@
 
 - (void) editSwith:(UISwitch *) editSwitch
 {
-    NSLog(@"switch works! %d", editSwitch.isOn);
     NSMutableDictionary * element = (NSMutableDictionary*)_rawData;
     [element setValue: @(editSwitch.isOn) forKey: (NSString*)FNInputTableRowValue];
     [self.parent didChangedValue: @(editSwitch.isOn) fromFieldName: element[FNInputTableRowFieldName]];
