@@ -31,6 +31,8 @@ typedef enum {
 	//! Интерфейс индикации уровня загрузки
 	id<BxDownloadProgress> _progress;
 @protected
+    //! This flag is needing for check double stoping, for example respond error status and finished session
+    BOOL _isStopped;
     //!
 	NSCondition * _condition; // property
     //!

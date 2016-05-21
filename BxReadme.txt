@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.28 (21.05.2016)
+- BxDownloadStream & BxDownloadStreamWithResume : fix major security bug from stopping load data
+
 Version 1.0.27 (09.05.2016)
 - BxOldInputTableController crush fixed from nullable currentFieldName in didChangedValue
 

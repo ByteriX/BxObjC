@@ -41,6 +41,8 @@ typedef void (^BxDownloadStreamHttpResponseHandler)(NSDictionary * allHeaderData
 	id<BxDownloadProgress> _progress;
     //! Флаг необходим для корректной обработки отмены загрузки
     BOOL _isCanceled;
+    //! This flag is needing for check double stoping, for example respond error status and finished session
+    BOOL _isStopped;
 @protected
 	//! соединение для закачки данных
 	NSURLConnection * _urlDownload;

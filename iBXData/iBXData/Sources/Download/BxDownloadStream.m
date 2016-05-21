@@ -62,6 +62,7 @@ NSString *const BxDownloadStreamHTTPErrorStatusCodeKey = @"HTTPErrorStatusCode";
     self = [super init];
 	if ( self ){
         _isCanceled = NO;
+        _isStopped = NO;
 		//condition = [[NSCondition alloc] init];
 	}
 	return self;
@@ -90,6 +91,10 @@ NSString *const BxDownloadStreamHTTPErrorStatusCodeKey = @"HTTPErrorStatusCode";
 
 - (void) stopingWithError: (NSError*) error data: (NSData*) data
 {
+    if (_isStopped){
+        return;
+    }
+    _isStopped = YES;
 	[BxDownloadUtils setNetworkActivity: NO];
     if (self.handler) {
         self.handler(error, data);

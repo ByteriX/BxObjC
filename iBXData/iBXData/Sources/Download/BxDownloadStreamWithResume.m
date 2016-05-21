@@ -56,6 +56,7 @@ NSString *const BxDownloadStreamWithResumeHTTPErrorStatusCodeKey = @"HTTPErrorSt
     self = [super init];
 	if ( self ){
 		_condition = [[NSCondition alloc] init];
+        _isStopped = NO;
 	}
 	return self;
 }
@@ -99,6 +100,10 @@ NSString *const BxDownloadStreamWithResumeHTTPErrorStatusCodeKey = @"HTTPErrorSt
 
 - (void) stoping
 {
+    if (_isStopped){
+        return;
+    }
+    _isStopped = YES;
 	[BxDownloadUtils setNetworkActivity: NO];
 	[_condition lock];
 	[_condition signal];
