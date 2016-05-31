@@ -2,7 +2,7 @@
 
 This framework will help iOS developers for simplify development
 
-Framworks contented:
+Framwork content:
 
 - BxCommon firstly components for all others commponents: Images, Colors, File system, other...
 
