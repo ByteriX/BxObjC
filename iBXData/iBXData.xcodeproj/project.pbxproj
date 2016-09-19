@@ -577,7 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				CFCF481119165D10003E84B0 /* libiBXCommon.a */,
-				CFCF481319165D10003E84B0 /* iBXCommonTests.octest */,
+				CFCF481319165D10003E84B0 /* iBXCommonTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 			remoteRef = CFCF481019165D10003E84B0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		CFCF481319165D10003E84B0 /* iBXCommonTests.octest */ = {
+		CFCF481319165D10003E84B0 /* iBXCommonTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = iBXCommonTests.xctest;
@@ -816,7 +816,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
@@ -840,7 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
@@ -861,7 +861,6 @@
 					"$(BUILT_PRODUCTS_DIR)/include/**",
 					"\"${SRCROOT}\"/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -885,7 +884,6 @@
 					"$(BUILT_PRODUCTS_DIR)/include/**",
 					"\"${SRCROOT}\"/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-all_load",

@@ -18,6 +18,7 @@
 @interface BxNavigationBar ()
 
 @property (nonatomic, strong) UIToolbar * toolPanel;
+@property (nonatomic, copy) NSString * backgroundClassName;
 
 @end
 
@@ -26,6 +27,11 @@
 - (id) init
 {
     self = [super init];
+    if (IS_OS_10_OR_LATER) {
+        self.backgroundClassName = @"_UIBarBackground";
+    } else {
+        self.backgroundClassName = @"_UINavigationBarBackground";
+    }
     return self;
 }
 
@@ -33,7 +39,7 @@
 {
     for (UIView *view in self.subviews)
     {
-        if ([NSStringFromClass(view.class) isEqualToString: @"_UINavigationBarBackground"]){
+        if ([NSStringFromClass(view.class) isEqualToString: self.backgroundClassName]){
             return  view;
         }
     }
