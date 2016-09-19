@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.29 (19.09.2016)
+- support of iOS 10 and fix background of the navigation panel
+
 Version 1.0.28 (21.05.2016)
 - BxDownloadStream & BxDownloadStreamWithResume : fix major security bug from stopping load data
 
