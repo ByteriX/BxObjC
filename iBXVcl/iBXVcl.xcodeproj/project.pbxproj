@@ -987,10 +987,7 @@
 				DSTROOT = /tmp/iBXVcl.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXVcl/iBXVcl-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"$(BUILT_PRODUCTS_DIR)/include\"/**",
-					"\"${SRCROOT}\"/**",
-				);
+				HEADER_SEARCH_PATHS = "${SRCROOT}/../**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
@@ -1010,10 +1007,7 @@
 				DSTROOT = /tmp/iBXVcl.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXVcl/iBXVcl-Prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"$(BUILT_PRODUCTS_DIR)/include\"/**",
-					"\"${SRCROOT}\"/**",
-				);
+				HEADER_SEARCH_PATHS = "${SRCROOT}/../**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = (
