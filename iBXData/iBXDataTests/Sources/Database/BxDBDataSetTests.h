@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 ByteriX. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface BxDBDataSetTests : SenTestCase
+@interface BxDBDataSetTests : XCTestCase
 
 @end

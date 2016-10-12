@@ -56,7 +56,7 @@ static bool isTraced(void)
 
 @implementation BxConfig
 
-+ (BxConfig*) defaultConfig
++ (BxConfig*) default
 {
     static BxConfig * _default = nil;
     static dispatch_once_t once;

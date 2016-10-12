@@ -30,7 +30,7 @@ typedef enum  {
         NSDateFormatter * _commonDateFormatter;
 }
 
-+ (BxConfig*) defaultConfig;
++ (BxConfig*) default;
 
 //! Поле хранящее путь к документам данного приложения
 @property (nonatomic, readonly) NSString * documentPath;

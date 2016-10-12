@@ -39,8 +39,8 @@
     BxXmlDataParser * parser = [[BxXmlDataParser alloc] init];
     NSString * fileName = [self pathFromResourceFileName];
     NSDictionary * data = [parser loadFromFile: fileName];
-    STAssertNotNil(data, @"Parser return nil object");
-    STAssertTrue([[data childNodes][@"Test"][0][@"Output"] isEqualToString: @"One"], @"Check falues");
+    XCTAssertNotNil(data, @"Parser return nil object");
+    XCTAssertTrue([[data childNodes][@"Test"][0][@"Output"] isEqualToString: @"One"], @"Check falues");
     NSLog(@"childNodes: %@", [data childNodes]);
     NSLog(@"attributes: %@", [data attributes]);
 }

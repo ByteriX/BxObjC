@@ -51,7 +51,7 @@ static int deletePoolCount = 10;
 
 - (NSString *) getDefaultCashPath
 {
-    return [BxConfig defaultConfig].cashPath;
+    return [BxConfig default].cashPath;
 }
 
 - (void) setCurrentDirName:(NSString *) value

@@ -78,7 +78,7 @@ static float pageControlHeight = 20.0f;
 
 - (NSString *) workDirPath
 {
-    return [[BxConfig defaultConfig].documentPath stringByAppendingPathComponent: @"BxIconWorkspaceView"];
+    return [[BxConfig default].documentPath stringByAppendingPathComponent: @"BxIconWorkspaceView"];
 }
 
 - (void) updateWithPages: (NSArray *) pages idName: (NSString*) idName

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3453FA431786A9CD0051C096 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3453FA421786A9CD0051C096 /* Foundation.framework */; };
-		3453FA521786A9CD0051C096 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3453FA511786A9CD0051C096 /* SenTestingKit.framework */; };
 		3453FA551786A9CD0051C096 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3453FA421786A9CD0051C096 /* Foundation.framework */; };
 		3453FA581786A9CD0051C096 /* libiBXData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3453FA3F1786A9CD0051C096 /* libiBXData.a */; };
 		3453FA5E1786A9CD0051C096 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3453FA5C1786A9CD0051C096 /* InfoPlist.strings */; };
@@ -191,8 +190,7 @@
 		3453FA3F1786A9CD0051C096 /* libiBXData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBXData.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3453FA421786A9CD0051C096 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3453FA461786A9CD0051C096 /* iBXData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBXData-Prefix.pch"; sourceTree = "<group>"; };
-		3453FA501786A9CD0051C096 /* iBXDataTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBXDataTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3453FA511786A9CD0051C096 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3453FA501786A9CD0051C096 /* iBXDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBXDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3453FA5B1786A9CD0051C096 /* iBXDataTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iBXDataTests-Info.plist"; sourceTree = "<group>"; };
 		3453FA5D1786A9CD0051C096 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3453FA5F1786A9CD0051C096 /* iBXDataTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iBXDataTests.h; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 			files = (
 				3470374D19AE0D8900B17E57 /* libiBXCommon.a in Frameworks */,
 				3453FAF2178BF92D0051C096 /* UIKit.framework in Frameworks */,
-				3453FA521786A9CD0051C096 /* SenTestingKit.framework in Frameworks */,
 				3453FA551786A9CD0051C096 /* Foundation.framework in Frameworks */,
 				3453FA581786A9CD0051C096 /* libiBXData.a in Frameworks */,
 			);
@@ -322,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				3453FA3F1786A9CD0051C096 /* libiBXData.a */,
-				3453FA501786A9CD0051C096 /* iBXDataTests.octest */,
+				3453FA501786A9CD0051C096 /* iBXDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,7 +329,6 @@
 			children = (
 				3453FA731786AA310051C096 /* UIKit.framework */,
 				3453FA421786A9CD0051C096 /* Foundation.framework */,
-				3453FA511786A9CD0051C096 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -620,8 +616,8 @@
 			);
 			name = iBXDataTests;
 			productName = iBXDataTests;
-			productReference = 3453FA501786A9CD0051C096 /* iBXDataTests.octest */;
-			productType = "com.apple.product-type.bundle.ocunit-test";
+			productReference = 3453FA501786A9CD0051C096 /* iBXDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -895,6 +891,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXData/iBXData-Prefix.pch";
@@ -915,7 +912,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -925,6 +921,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXData/iBXData-Prefix.pch";
@@ -943,7 +940,6 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
