@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 ByteriX. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface BxXmlDataParserTests : SenTestCase
+@interface BxXmlDataParserTests : XCTestCase
 
 @end

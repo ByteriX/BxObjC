@@ -330,7 +330,7 @@
 		348D6A61179FB3E4001D5BE6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0720;
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Byterix;
 			};
@@ -387,7 +387,7 @@
 		CFB1091318618DF0004C9DF6 /* iBXDataTests.octest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = iBXDataTests.octest;
+			path = iBXDataTests.xctest;
 			remoteRef = CFB1091218618DF0004C9DF6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};

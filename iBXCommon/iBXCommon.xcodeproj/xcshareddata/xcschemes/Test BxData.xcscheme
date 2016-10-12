@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3453FA4F1786A9CD0051C096"
-               BuildableName = "iBXDataTests.octest"
+               BuildableName = "iBXDataTests.xctest"
                BlueprintName = "iBXDataTests"
                ReferencedContainer = "container:../iBXData/iBXData.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3453FA4F1786A9CD0051C096"
-               BuildableName = "iBXDataTests.octest"
+               BuildableName = "iBXDataTests.xctest"
                BlueprintName = "iBXDataTests"
                ReferencedContainer = "container:../iBXData/iBXData.xcodeproj">
             </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3453FA4F1786A9CD0051C096"
-            BuildableName = "iBXDataTests.octest"
+            BuildableName = "iBXDataTests.xctest"
             BlueprintName = "iBXDataTests"
             ReferencedContainer = "container:../iBXData/iBXData.xcodeproj">
          </BuildableReference>
