@@ -15,4 +15,8 @@
 
 @interface BxGoogleGeocoder : BxGeocoder
 
+
+// protected for override in Swift
+- (NSString*) geocodingUrlFrom: (NSString*) address;
+
 @end

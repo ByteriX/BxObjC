@@ -36,18 +36,23 @@
     return self;
 }
 
+- (NSString*) geocodingUrlFrom: (NSString*) address
+{
+    return [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=false", [address getAddingPercentEscapes]];
+}
+
 - (void) geocodingThreadWithData: (BxGeocoderData*) data
 {
-    NSString * url = [NSString stringWithFormat: @"https://maps.googleapis.com/maps/api/geocode/json?address=%@&sensor=false", [data.address getAddingPercentEscapes]];
+    NSString * url = [self geocodingUrlFrom: data.address];
     NSDictionary * serverData = [_parser loadFromUrl: url];
     NSMutableArray * result = [NSMutableArray array];
     for (NSDictionary * item in serverData[@"results"]) {
-        [result addObject: [self yandexDataFrom: item]];
+        [result addObject: [self googleDataFrom: item]];
     }
     [data completionWithResult: result];
 }
 
-- (BxResultGeocoder *) yandexDataFrom: (NSDictionary*) data
+- (BxResultGeocoder *) googleDataFrom: (NSDictionary*) data
 {
     NSDictionary * coordsData = data[@"geometry"][@"location"];
     CLLocationCoordinate2D coordinate;

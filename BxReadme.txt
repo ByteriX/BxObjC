@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.30 (21.10.2016)
+- add geocodingUrlFrom to Google geocoding for customize
+
 Version 1.0.29 (19.09.2016)
 - support of iOS 10 and fix background of the navigation panel
 
