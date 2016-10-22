@@ -76,3 +76,8 @@
 "PNMessageQueueCloseButtonTitle" = "Закрыть";
 "PNMessageQueueViewButtonTitle" = "Просмотр";
 "PNMessageQueueLastTitle" = "последнее";
+
+//! Location
+"MapLocationError" = "Невозможно определить местоположение";
+"MapLocationDeniedError" = "Отказано в доступе к обнаружению местоположения";
+"MapLocationDisabledError" = "Обнаружению местоположения отключено";

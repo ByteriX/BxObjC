@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.31 (22.10.2016)
+- localized Location message
+
 Version 1.0.30 (21.10.2016)
 - add geocodingUrlFrom to Google geocoding for customize
 

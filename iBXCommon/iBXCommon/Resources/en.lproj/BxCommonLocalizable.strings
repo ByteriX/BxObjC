@@ -76,3 +76,8 @@
 "PNMessageQueueCloseButtonTitle" = "Close";
 "PNMessageQueueViewButtonTitle" = "View";
 "PNMessageQueueLastTitle" = "last";
+
+//! Location
+"MapLocationError" = "Unable to determine location";
+"MapLocationDeniedError" = "Access denied to location detection";
+"MapLocationDisabledError" = "Location detection disabled";

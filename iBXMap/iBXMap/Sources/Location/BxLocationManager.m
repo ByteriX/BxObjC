@@ -12,6 +12,7 @@
  */
 
 #import "BxLocationManager.h"
+#import "BxCommon.h"
 
 @interface BxLocationManager ()
 
@@ -22,7 +23,7 @@
 
 @implementation BxLocationManager
 
-#define StandartErrorMessage @"Невозможно определить местоположение"
+#define StandartErrorMessage StandartLocalString(@"MapLocationError")
 
 + (BxLocationManager *) defaultLocationManager
 {
@@ -119,9 +120,15 @@
 
 - (void) startLocationBlock: (BxOneLocationHandler) locationFound
 {
+    if (![CLLocationManager locationServicesEnabled]) {
+        if (locationFound){
+            locationFound(nil, StandartLocalString(@"MapLocationDisabledError"));
+        }
+        return;
+    }
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
         if (locationFound){
-            locationFound(nil, @"Не подключен GPS приемник");
+            locationFound(nil, StandartLocalString(@"MapLocationDeniedError"));
         }
         return;
     }
