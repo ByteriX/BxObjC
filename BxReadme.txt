@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.1.1 (15.10.2016)
+- seporate all frameworks to sub-pods
+
 Version 1.0.33 (14.10.2016)
 - include BxDb
 

@@ -79,40 +79,94 @@ s.source       = { :git => "https://github.com/ByteriX/BxObjC.git", :tag => s.ve
   #  Not including the public_header_files will make all headers public.
   #
 
-# it need for internal SQLite
-s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => '$(inherited) SQLITE_CORE=1 SQLITE_UNICODE_ENABLE=1 SQLITE_ENABLE_FTS4=1 SQLITE_ENABLE_FTS4_PARENTHESIS=1' }
-s.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
-s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+s.subspec 'Common' do |cs|
 
-s.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
-s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+    cs.frameworks = ["Foundation", "UIKit"]
+    cs.resources = "**/iBXCommon/Resources/**/*.strings"
+    cs.public_header_files = "**/iBXCommon/Frameworks/**/*.h", "**/iBXCommon/Sources/**/*.h"
 
-s.requires_arc = ["**/BxIconWorkspace**.m",
-"**/BxNavigation**.m",
-"**/BxPushNotificationMessageQueue.m",
-"**/XMLDictionary.m"]
+    cs.source_files  = "**/iBXCommon/Frameworks/**/*.{h,m,c}", "**/iBXCommon/Sources/**/*.{h,m,c}"
+    cs.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+    cs.requires_arc = ["**/BxPushNotificationMessageQueue.m"]
+end
+
+s.subspec 'Data' do |ds|
+    ds.dependency 'BxObjC/Common'
+
+    ds.frameworks = ["Foundation", "UIKit"]
+    ds.public_header_files = "**/iBXData/Frameworks/**/*.h", "**/iBXData/Sources/**/*.h"
+
+    ds.source_files  = "**/iBXData/Frameworks/**/*.{h,m,c}", "**/iBXData/Sources/**/*.{h,m,c}"
+    ds.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+    ds.requires_arc = ["**/XMLDictionary.m"]
+end
+
+s.subspec 'DB' do |dbs|
+    dbs.dependency 'BxObjC/Common'
+
+### it need for SQLite BxDB
+    dbs.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => '$(inherited) SQLITE_CORE=1 SQLITE_UNICODE_ENABLE=1 SQLITE_ENABLE_FTS4=1 SQLITE_ENABLE_FTS4_PARENTHESIS=1' }
+    dbs.frameworks = ["Foundation", "UIKit"]
+    dbs.public_header_files = "**/iBXDB/Frameworks/**/*.h", "**/iBXDB/Sources/**/*.h"
+
+    dbs.source_files  = "**/iBXDB/Frameworks/**/*.{h,m,c}", "**/iBXDB/Sources/**/*.{h,m,c}"
+    dbs.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+    dbs.requires_arc = []
+end
+
+s.subspec 'Map' do |ms|
+    ms.dependency 'BxObjC/Common'
+    ms.dependency 'BxObjC/Data'
+
+    ms.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+    ms.public_header_files = "**/iBXMap/Frameworks/**/*.h", "**/iBXMap/Sources/**/*.h"
+
+    ms.source_files  = "**/iBXMap/Frameworks/**/*.{h,m,c}", "**/iBXMap/Sources/**/*.{h,m,c}"
+    ms.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+    ms.requires_arc = []
+end
+
+s.subspec 'Vcl' do |vs|
+    vs.dependency 'BxObjC/Common'
+    vs.dependency 'BxObjC/Data'
+
+    vs.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+    vs.resources = "**/iBXVcl/**/*.{png,xib}"
+    vs.public_header_files = "**/iBXVcl/Frameworks/**/*.h", "**/iBXVcl/Sources/**/*.h"
+
+    vs.source_files  = "**/iBXVcl/Frameworks/**/*.{h,m,c}", "**/iBXVcl/Sources/**/*.{h,m,c}"
+    vs.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+
+    vs.requires_arc = [
+        "**/BxIconWorkspace**.m",
+        "**/BxNavigation**.m"
+    ]
+end
+
+
+#s.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
+#s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+
+#s.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+#s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
+
+#s.requires_arc = [
+#    "**/BxIconWorkspace**.m",
+#    "**/BxNavigation**.m",
+#    "**/BxPushNotificationMessageQueue.m",
+#    "**/XMLDictionary.m"
+#]
+
+#s.resources =
+#    "**/iBXCommon/**/Resources/**/*.strings",
+#    "**/iBXData/**/*.{png,xib}",
+#    "**/iBXVcl/**/*.{png,xib}",
+#    "**/iBXMap/**/*.{png,xib}"
 
 
 
-  # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  A list of resources included with the Pod. These are copied into the
-  #  target bundle with a build phase script. Anything else will be cleaned.
-  #  You can preserve files from being cleaned, please don't preserve
-  #  non-essential files like tests, examples and documentation.
-  #
-
-#s.resource  = "icon.png"
-  s.resources =
-"**/iBXCommon/**/Resources/**/*.strings",
-"**/iBXData/**/*.{png,xib}",
-"**/iBXVcl/**/*.{png,xib}",
-"**/iBXMap/**/*.{png,xib}"
-
-#s.resource_bundle = { "Localization" => ["**/iBXCommon/**/Resources/**/*.strings"] }
 
 
-  # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
   # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
