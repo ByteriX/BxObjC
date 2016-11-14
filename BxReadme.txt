@@ -3,6 +3,9 @@
 ======================================
 ByteriX, 2013-2016. All right reserved.
 
+Version 1.0.33 (14.10.2016)
+- include BxDb
+
 Version 1.0.31 (22.10.2016)
 - localized Location message
 

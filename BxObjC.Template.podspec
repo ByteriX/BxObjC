@@ -79,8 +79,10 @@ s.source       = { :git => "https://github.com/ByteriX/BxObjC.git", :tag => s.ve
   #  Not including the public_header_files will make all headers public.
   #
 
-s.source_files  = "**/Frameworks/**/*.{h,m}", "**/Sources/**/*.{h,m}"
-s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*", "**/iBXDB/**/*.*"
+# it need for internal SQLite
+s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => '$(inherited) SQLITE_CORE=1 SQLITE_UNICODE_ENABLE=1 SQLITE_ENABLE_FTS4=1 SQLITE_ENABLE_FTS4_PARENTHESIS=1' }
+s.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
+s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
 
 s.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
 s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
