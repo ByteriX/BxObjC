@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:BxReadme.txt">
+      location = "group:/Users/balalaev-work/Projects/BxObjC/CHANGELOG.md">
    </FileRef>
    <FileRef
       location = "group:BxObjC.Template.podspec">
