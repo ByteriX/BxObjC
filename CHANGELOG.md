@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.3 (15.10.2016)
+##### Enhancements
+* new ReadMe
+
 ## 1.1.2 (15.10.2016)
 ##### Enhancements
 * new Change log

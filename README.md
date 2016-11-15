@@ -2,23 +2,33 @@
 
 This framework will help iOS developers for simplify development
 
-Framwork content:
+# Subframeworks:
 
-- BxCommon firstly components for all others commponents: Images, Colors, File system, other...
+* Common - firstly components for all others commponents: Images, Colors, File system, other...
 
-- BxData components for data processing: serializations, dataSets, cashers, network, other...
+* Data - components for data processing: serializations, dataSets, cashers, network, other...
 
-- BxDB components for sqlite simplify development
+* DB - components for sqlite simplify development
 
-- BXMap - cartography components: geomaping
+* Map - cartography components: geomaping
 
-- BXVCL - visual components library: navigation, keyboard, progress, view lists, other...
+* VCL - visual components library: navigation, keyboard, progress, view lists, other...
 
 
 # CocoaPods
 
 <code>
   pod 'BxObjC'
+</code>
+
+or 
+
+<code>
+  pod 'BxObjC/Common'
+  pod 'BxObjC/Data'
+  pod 'BxObjC/DB'
+  pod 'BxObjC/Map'
+  pod 'BxObjC/Vcl'
 </code>
 
 # License
