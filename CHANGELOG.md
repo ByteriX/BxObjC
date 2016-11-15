@@ -1,9 +1,14 @@
 # Copyright
 
 Library iByteriX
+
 ByteriX, 2013-2016. All right reserved.
 
 # Versions
+
+## 1.1.2 (15.10.2016)
+##### Enhancements
+* new Change log
 
 ## 1.1.1 (15.10.2016)
 ##### Enhancements
@@ -68,7 +73,11 @@ pod 'BxObjC'
 or
 
 pod 'BxObjC/Common'
+
 pod 'BxObjC/Data'
+
 pod 'BxObjC/DB'
+
 pod 'BxObjC/Map'
+
 pod 'BxObjC/Vcl'
