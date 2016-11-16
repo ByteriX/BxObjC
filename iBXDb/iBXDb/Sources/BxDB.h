@@ -18,7 +18,7 @@
 
 #import "BxDatabase.h"
 #import "BxDBDataSet.h"
-#import "FMDatabase.h"
-#import "FMDatabaseAdditions.h"
-#import "FMDatabaseQueue.h"
-#import "FMDatabaseUnicode.h"
+#import "BxFMDatabase.h"
+#import "BxFMDatabaseAdditions.h"
+#import "BxFMDatabaseQueue.h"
+#import "BxFMDatabaseUnicode.h"
