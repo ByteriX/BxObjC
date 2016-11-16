@@ -1,52 +1,52 @@
 #import <Foundation/Foundation.h>
 #import "bx_unicode_sqlite3.h"
-#import "FMResultSet.h"
-#import "FMDatabasePool.h"
+#import "BxFMResultSet.h"
+#import "BxFMDatabasePool.h"
 
 
 #if ! __has_feature(objc_arc)
-    #define FMDBAutorelease(__v) ([__v autorelease]);
-    #define FMDBReturnAutoreleased FMDBAutorelease
+    #define BxFMDBAutorelease(__v) ([__v autorelease]);
+    #define BxFMDBReturnAutoreleased BxFMDBAutorelease
 
-    #define FMDBRetain(__v) ([__v retain]);
-    #define FMDBReturnRetained FMDBRetain
+    #define BxFMDBRetain(__v) ([__v retain]);
+    #define BxFMDBReturnRetained BxFMDBRetain
 
-    #define FMDBRelease(__v) ([__v release]);
+    #define BxFMDBRelease(__v) ([__v release]);
 
-	#define FMDBDispatchQueueRelease(__v) (dispatch_release(__v));
+	#define BxFMDBDispatchQueueRelease(__v) (dispatch_release(__v));
 #else
     // -fobjc-arc
-    #define FMDBAutorelease(__v)
-    #define FMDBReturnAutoreleased(__v) (__v)
+    #define BxFMDBAutorelease(__v)
+    #define BxFMDBReturnAutoreleased(__v) (__v)
 
-    #define FMDBRetain(__v)
-    #define FMDBReturnRetained(__v) (__v)
+    #define BxFMDBRetain(__v)
+    #define BxFMDBReturnRetained(__v) (__v)
 
-    #define FMDBRelease(__v)
+    #define BxFMDBRelease(__v)
 
 	#if TARGET_OS_IPHONE
 		// Compiling for iOS
 		#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 60000
 			// iOS 6.0 or later
-			#define FMDBDispatchQueueRelease(__v)
+			#define BxFMDBDispatchQueueRelease(__v)
 		#else
 			// iOS 5.X or earlier
-			#define FMDBDispatchQueueRelease(__v) (dispatch_release(__v));
+			#define BxFMDBDispatchQueueRelease(__v) (dispatch_release(__v));
 		#endif
 	#else
 		// Compiling for Mac OS X
 		#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1080     
 			// Mac OS X 10.8 or later
-			#define FMDBDispatchQueueRelease(__v)
+			#define BxFMDBDispatchQueueRelease(__v)
 		#else
 			// Mac OS X 10.7 or earlier
-			#define FMDBDispatchQueueRelease(__v) (dispatch_release(__v));
+			#define BxFMDBDispatchQueueRelease(__v) (dispatch_release(__v));
 		#endif
 	#endif
 #endif
 
 
-@interface FMDatabase : NSObject  {
+@interface BxFMDatabase : NSObject  {
     
     bx_unicode_sqlite3*            _db;
     NSString*           _databasePath;
@@ -109,10 +109,10 @@
 - (BOOL)executeUpdate:(NSString*)sql withArgumentsInArray:(NSArray *)arguments;
 - (BOOL)executeUpdate:(NSString*)sql withParameterDictionary:(NSDictionary *)arguments;
 
-- (FMResultSet *)executeQuery:(NSString*)sql, ...;
-- (FMResultSet *)executeQueryWithFormat:(NSString*)format, ...;
-- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments;
-- (FMResultSet *)executeQuery:(NSString *)sql withParameterDictionary:(NSDictionary *)arguments;
+- (BxFMResultSet *)executeQuery:(NSString*)sql, ...;
+- (BxFMResultSet *)executeQueryWithFormat:(NSString*)format, ...;
+- (BxFMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments;
+- (BxFMResultSet *)executeQuery:(NSString *)sql withParameterDictionary:(NSDictionary *)arguments;
 
 - (BOOL)rollback;
 - (BOOL)commit;
@@ -138,7 +138,7 @@
 
 @end
 
-@interface FMStatement : NSObject {
+@interface BxFMStatement : NSObject {
     bx_unicode_sqlite3_stmt *_statement;
     NSString *_query;
     long _useCount;

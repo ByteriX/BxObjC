@@ -1,5 +1,5 @@
 //
-//  FMDatabaseAdditions.h
+//  BxFMDatabaseAdditions.h
 //  fmkit
 //
 //  Created by August Mueller on 10/30/05.
@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@interface FMDatabase (FMDatabaseAdditions)
+@interface BxFMDatabase (BxFMDatabaseAdditions)
 
 
 - (int)intForQuery:(NSString*)objs, ...;
@@ -24,8 +24,8 @@
 
 
 - (BOOL)tableExists:(NSString*)tableName;
-- (FMResultSet*)getSchema;
-- (FMResultSet*)getTableSchema:(NSString*)tableName;
+- (BxFMResultSet*)getSchema;
+- (BxFMResultSet*)getTableSchema:(NSString*)tableName;
 
 - (BOOL)columnExists:(NSString*)columnName inTableWithName:(NSString*)tableName;
 

@@ -12,7 +12,7 @@
  */
 
 #import "BxDBDataSet.h"
-#import "FMDatabase.h"
+#import "BxFMDatabase.h"
 
 @interface BxDBDataSet ()
 
@@ -63,7 +63,7 @@
     _count = 0;
     _bufferOffset = -1;
     [_bufferArray removeAllObjects];
-    FMResultSet * result = [_dataBase.database executeQuery: self.countSQL];
+    BxFMResultSet * result = [_dataBase.database executeQuery: self.countSQL];
     if (result && [result next]){
         _count = [result longForColumnIndex: 0];
     } else {
@@ -127,7 +127,7 @@
     }
     
     if (addRange.length > 0) {
-        FMResultSet * result = [_dataBase.database executeQuery: self.itemSQL withArgumentsInArray: @[@(addRange.length), @(addRange.location)]];
+        BxFMResultSet * result = [_dataBase.database executeQuery: self.itemSQL withArgumentsInArray: @[@(addRange.length), @(addRange.location)]];
         if (result) {
             int insertedIndex = 0;
             while ([result next]) {
@@ -154,7 +154,7 @@
     [_dataBase open];
     
     if (_bufferCount < 2) {
-        FMResultSet * result = [_dataBase.database executeQuery: self.itemSQL withArgumentsInArray: @[@1, @(index)]];
+        BxFMResultSet * result = [_dataBase.database executeQuery: self.itemSQL withArgumentsInArray: @[@1, @(index)]];
         if (result && [result next]) {
             return [result resultDictionary];
         }
@@ -177,7 +177,7 @@
         [self update];
     }
     [_dataBase open];
-    FMResultSet * result = [_dataBase.database executeQuery: self.itemsSQL];
+    BxFMResultSet * result = [_dataBase.database executeQuery: self.itemsSQL];
     NSMutableArray * returnResult = [NSMutableArray arrayWithCapacity: _count];
     while ([result next]) {
         [returnResult addObject: [result resultDictionary]];
@@ -199,7 +199,7 @@
 + (NSNumber*) executeNumberFunctionWith: (NSString*) sql
 {
     [[BxDatabase defaultDatabase] open];
-    FMResultSet * result = [[BxDatabase defaultDatabase].database executeQuery: sql];
+    BxFMResultSet * result = [[BxDatabase defaultDatabase].database executeQuery: sql];
     if (result && [result next]){
         return [NSNumber numberWithLong: [result longForColumnIndex: 0]];
     } else {
@@ -210,7 +210,7 @@
 + (NSArray*) allDataWith: (NSString*) sql
 {
     [[BxDatabase defaultDatabase] open];
-    FMResultSet * result = [[BxDatabase defaultDatabase].database executeQuery: sql];
+    BxFMResultSet * result = [[BxDatabase defaultDatabase].database executeQuery: sql];
     NSMutableArray * returnResult = [NSMutableArray array];
     while ([result next]) {
         [returnResult addObject: [result resultDictionary]];

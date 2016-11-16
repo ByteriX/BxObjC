@@ -1,31 +1,31 @@
 //
-//  FMDatabaseQueue.m
+//  BxFMDatabaseQueue.m
 //  fmdb
 //
 //  Created by August Mueller on 6/22/11.
 //  Copyright 2011 Flying Meat Inc. All rights reserved.
 //
 
-#import "FMDatabaseQueue.h"
-#import "FMDatabase.h"
+#import "BxFMDatabaseQueue.h"
+#import "BxFMDatabase.h"
 
 /*
  
  Note: we call [self retain]; before using dispatch_sync, just incase 
- FMDatabaseQueue is released on another thread and we're in the middle of doing
+ BxFMDatabaseQueue is released on another thread and we're in the middle of doing
  something in dispatch_sync
  
  */
  
-@implementation FMDatabaseQueue
+@implementation BxFMDatabaseQueue
 
 @synthesize path = _path;
 
 + (id)databaseQueueWithPath:(NSString*)aPath {
     
-    FMDatabaseQueue *q = [[self alloc] initWithPath:aPath];
+    BxFMDatabaseQueue *q = [[self alloc] initWithPath:aPath];
     
-    FMDBAutorelease(q);
+    BxFMDBAutorelease(q);
     
     return q;
 }
@@ -36,16 +36,16 @@
     
     if (self != nil) {
         
-        _db = [FMDatabase databaseWithPath:aPath];
-        FMDBRetain(_db);
+        _db = [BxFMDatabase databaseWithPath:aPath];
+        BxFMDBRetain(_db);
         
         if (![_db open]) {
             NSLog(@"Could not create database queue for path %@", aPath);
-            FMDBRelease(self);
+            BxFMDBRelease(self);
             return 0x00;
         }
         
-        _path = FMDBReturnRetained(aPath);
+        _path = BxFMDBReturnRetained(aPath);
         
         _queue = dispatch_queue_create([[NSString stringWithFormat:@"fmdb.%@", self] UTF8String], NULL);
     }
@@ -55,11 +55,11 @@
 
 - (void)dealloc {
     
-    FMDBRelease(_db);
-    FMDBRelease(_path);
+    BxFMDBRelease(_db);
+    BxFMDBRelease(_path);
     
     if (_queue) {
-        FMDBDispatchQueueRelease(_queue);
+        BxFMDBDispatchQueueRelease(_queue);
         _queue = 0x00;
     }
 #if ! __has_feature(objc_arc)
@@ -68,22 +68,22 @@
 }
 
 - (void)close {
-    FMDBRetain(self);
+    BxFMDBRetain(self);
     dispatch_sync(_queue, ^() { 
         [_db close];
-        FMDBRelease(_db);
+        BxFMDBRelease(_db);
         _db = 0x00;
     });
-    FMDBRelease(self);
+    BxFMDBRelease(self);
 }
 
-- (FMDatabase*)database {
+- (BxFMDatabase*)database {
     if (!_db) {
-        _db = FMDBReturnRetained([FMDatabase databaseWithPath:_path]);
+        _db = BxFMDBReturnRetained([BxFMDatabase databaseWithPath:_path]);
         
         if (![_db open]) {
-            NSLog(@"FMDatabaseQueue could not reopen database for path %@", _path);
-            FMDBRelease(_db);
+            NSLog(@"BxFMDatabaseQueue could not reopen database for path %@", _path);
+            BxFMDBRelease(_db);
             _db  = 0x00;
             return 0x00;
         }
@@ -92,25 +92,25 @@
     return _db;
 }
 
-- (void)inDatabase:(void (^)(FMDatabase *db))block {
-    FMDBRetain(self);
+- (void)inDatabase:(void (^)(BxFMDatabase *db))block {
+    BxFMDBRetain(self);
     
     dispatch_sync(_queue, ^() {
         
-        FMDatabase *db = [self database];
+        BxFMDatabase *db = [self database];
         block(db);
         
         if ([db hasOpenResultSets]) {
-            NSLog(@"Warning: there is at least one open result set around after performing [FMDatabaseQueue inDatabase:]");
+            NSLog(@"Warning: there is at least one open result set around after performing [BxFMDatabaseQueue inDatabase:]");
         }
     });
     
-    FMDBRelease(self);
+    BxFMDBRelease(self);
 }
 
 
-- (void)beginTransaction:(BOOL)useDeferred withBlock:(void (^)(FMDatabase *db, BOOL *rollback))block {
-    FMDBRetain(self);
+- (void)beginTransaction:(BOOL)useDeferred withBlock:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
+    BxFMDBRetain(self);
     dispatch_sync(_queue, ^() { 
         
         BOOL shouldRollback = NO;
@@ -132,23 +132,23 @@
         }
     });
     
-    FMDBRelease(self);
+    BxFMDBRelease(self);
 }
 
-- (void)inDeferredTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (void)inDeferredTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     [self beginTransaction:YES withBlock:block];
 }
 
-- (void)inTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (void)inTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     [self beginTransaction:NO withBlock:block];
 }
 
 #if SQLITE_VERSION_NUMBER >= 3007000
-- (NSError*)inSavePoint:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (NSError*)inSavePoint:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     
     static unsigned long savePointIdx = 0;
     __block NSError *err = 0x00;
-    FMDBRetain(self);
+    BxFMDBRetain(self);
     dispatch_sync(_queue, ^() { 
         
         NSString *name = [NSString stringWithFormat:@"savePoint%ld", savePointIdx++];
@@ -168,7 +168,7 @@
             
         }
     });
-    FMDBRelease(self);
+    BxFMDBRelease(self);
     return err;
 }
 #endif

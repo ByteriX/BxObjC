@@ -1,16 +1,16 @@
-#import "FMDatabase.h"
+#import "BxFMDatabase.h"
 #import "unistd.h"
 #import <objc/runtime.h>
 
 #import "bx_unicode_sqlite3.h"
 
-@interface FMDatabase ()
+@interface BxFMDatabase ()
 
-- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
+- (BxFMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
 - (BOOL)executeUpdate:(NSString*)sql error:(NSError**)outErr withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
 @end
 
-@implementation FMDatabase
+@implementation BxFMDatabase
 @synthesize cachedStatements=_cachedStatements;
 @synthesize logsErrors=_logsErrors;
 @synthesize crashOnErrors=_crashOnErrors;
@@ -19,7 +19,7 @@
 @synthesize traceExecution=_traceExecution;
 
 + (id)databaseWithPath:(NSString*)aPath {
-    return FMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
+    return BxFMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
 }
 
 + (NSString*)sqliteLibVersion {
@@ -56,10 +56,10 @@
 
 - (void)dealloc {
     [self close];
-    FMDBRelease(_openResultSets);
-    FMDBRelease(_cachedStatements);
-    FMDBRelease(_databasePath);
-    FMDBRelease(_openFunctions);
+    BxFMDBRelease(_openResultSets);
+    BxFMDBRelease(_cachedStatements);
+    BxFMDBRelease(_databasePath);
+    BxFMDBRelease(_openFunctions);
     
 #if ! __has_feature(objc_arc)
     [super dealloc];
@@ -163,7 +163,7 @@
 
 - (void)clearCachedStatements {
     
-    for (FMStatement *cachedStmt in [_cachedStatements objectEnumerator]) {
+    for (BxFMStatement *cachedStmt in [_cachedStatements objectEnumerator]) {
         [cachedStmt close];
     }
     
@@ -177,9 +177,9 @@
 - (void)closeOpenResultSets {
     
     //Copy the set so we don't get mutation errors
-    NSMutableSet *openSetCopy = FMDBReturnAutoreleased([_openResultSets copy]);
+    NSMutableSet *openSetCopy = BxFMDBReturnAutoreleased([_openResultSets copy]);
     for (NSValue *rsInWrappedInATastyValueMeal in openSetCopy) {
-        FMResultSet *rs = (FMResultSet *)[rsInWrappedInATastyValueMeal pointerValue];
+        BxFMResultSet *rs = (BxFMResultSet *)[rsInWrappedInATastyValueMeal pointerValue];
         
         [rs setParentDB:nil];
         [rs close];
@@ -188,17 +188,17 @@
     }
 }
 
-- (void)resultSetDidClose:(FMResultSet *)resultSet {
+- (void)resultSetDidClose:(BxFMResultSet *)resultSet {
     NSValue *setValue = [NSValue valueWithNonretainedObject:resultSet];
     
     [_openResultSets removeObject:setValue];
 }
 
-- (FMStatement*)cachedStatementForQuery:(NSString*)query {
+- (BxFMStatement*)cachedStatementForQuery:(NSString*)query {
     return [_cachedStatements objectForKey:query];
 }
 
-- (void)setCachedStatement:(FMStatement*)statement forQuery:(NSString*)query {
+- (void)setCachedStatement:(BxFMStatement*)statement forQuery:(NSString*)query {
     
     query = [query copy]; // in case we got handed in a mutable string...
     
@@ -206,7 +206,7 @@
     
     [_cachedStatements setObject:statement forKey:query];
     
-    FMDBRelease(query);
+    BxFMDBRelease(query);
 }
 
 
@@ -249,7 +249,7 @@
         return NO;
     }
     
-    FMResultSet *rs = [self executeQuery:@"select name from sqlite_master where type='table'"];
+    BxFMResultSet *rs = [self executeQuery:@"select name from sqlite_master where type='table'"];
     
     if (rs) {
         [rs close];
@@ -260,11 +260,11 @@
 }
 
 - (void)warnInUse {
-    NSLog(@"The FMDatabase %@ is currently in use.", self);
+    NSLog(@"The BxFMDatabase %@ is currently in use.", self);
     
 #ifndef NS_BLOCK_ASSERTIONS
     if (_crashOnErrors) {
-        NSAssert1(false, @"The FMDatabase %@ is currently in use.", self);
+        NSAssert1(false, @"The BxFMDatabase %@ is currently in use.", self);
         abort();
     }
 #endif
@@ -274,11 +274,11 @@
     
     if (!_db) {
             
-        NSLog(@"The FMDatabase %@ is not open.", self);
+        NSLog(@"The BxFMDatabase %@ is not open.", self);
         
     #ifndef NS_BLOCK_ASSERTIONS
         if (_crashOnErrors) {
-            NSAssert1(false, @"The FMDatabase %@ is not open.", self);
+            NSAssert1(false, @"The BxFMDatabase %@ is not open.", self);
             abort();
         }
     #endif
@@ -307,7 +307,7 @@
 - (NSError*)errorWithMessage:(NSString*)message {
     NSDictionary* errorMessage = [NSDictionary dictionaryWithObject:message forKey:NSLocalizedDescriptionKey];
     
-    return [NSError errorWithDomain:@"FMDatabase" code:bx_unicode_sqlite3_errcode(_db) userInfo:errorMessage];
+    return [NSError errorWithDomain:@"BxFMDatabase" code:bx_unicode_sqlite3_errcode(_db) userInfo:errorMessage];
 }
 
 - (NSError*)lastError {
@@ -513,11 +513,11 @@
     }
 }
 
-- (FMResultSet *)executeQuery:(NSString *)sql withParameterDictionary:(NSDictionary *)arguments {
+- (BxFMResultSet *)executeQuery:(NSString *)sql withParameterDictionary:(NSDictionary *)arguments {
     return [self executeQuery:sql withArgumentsInArray:nil orDictionary:arguments orVAList:nil];
 }
 
-- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args {
+- (BxFMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args {
     
     if (![self databaseExists]) {
         return 0x00;
@@ -532,8 +532,8 @@
     
     int rc                  = 0x00;
     bx_unicode_sqlite3_stmt *pStmt     = 0x00;
-    FMStatement *statement  = 0x00;
-    FMResultSet *rs         = 0x00;
+    BxFMStatement *statement  = 0x00;
+    BxFMResultSet *rs         = 0x00;
     
     if (_traceExecution && sql) {
         NSLog(@"%@ executeQuery: %@", self, sql);
@@ -602,7 +602,7 @@
             // Get the index for the parameter name.
             int namedIdx = bx_unicode_sqlite3_bind_parameter_index(pStmt, [parameterName UTF8String]);
             
-            FMDBRelease(parameterName);
+            BxFMDBRelease(parameterName);
             
             if (namedIdx > 0) {
                 // Standard binding from here.
@@ -643,10 +643,10 @@
         return nil;
     }
     
-    FMDBRetain(statement); // to balance the release below
+    BxFMDBRetain(statement); // to balance the release below
     
     if (!statement) {
-        statement = [[FMStatement alloc] init];
+        statement = [[BxFMStatement alloc] init];
         [statement setStatement:pStmt];
         
         if (_shouldCacheStatements) {
@@ -655,7 +655,7 @@
     }
     
     // the statement gets closed in rs's dealloc or [rs close];
-    rs = [FMResultSet resultSetWithStatement:statement usingParentDatabase:self];
+    rs = [BxFMResultSet resultSetWithStatement:statement usingParentDatabase:self];
     [rs setQuery:sql];
     
     NSValue *openResultSet = [NSValue valueWithNonretainedObject:rs];
@@ -663,14 +663,14 @@
     
     [statement setUseCount:[statement useCount] + 1];
     
-    FMDBRelease(statement); 
+    BxFMDBRelease(statement); 
     
     _isExecutingStatement = NO;
     
     return rs;
 }
 
-- (FMResultSet *)executeQuery:(NSString*)sql, ... {
+- (BxFMResultSet *)executeQuery:(NSString*)sql, ... {
     va_list args;
     va_start(args, sql);
     
@@ -680,7 +680,7 @@
     return result;
 }
 
-- (FMResultSet *)executeQueryWithFormat:(NSString*)format, ... {
+- (BxFMResultSet *)executeQueryWithFormat:(NSString*)format, ... {
     va_list args;
     va_start(args, format);
     
@@ -693,7 +693,7 @@
     return [self executeQuery:sql withArgumentsInArray:arguments];
 }
 
-- (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments {
+- (BxFMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray *)arguments {
     return [self executeQuery:sql withArgumentsInArray:arguments orDictionary:nil orVAList:nil];
 }
 
@@ -712,7 +712,7 @@
     
     int rc                   = 0x00;
     bx_unicode_sqlite3_stmt *pStmt      = 0x00;
-    FMStatement *cachedStmt  = 0x00;
+    BxFMStatement *cachedStmt  = 0x00;
     
     if (_traceExecution && sql) {
         NSLog(@"%@ executeUpdate: %@", self, sql);
@@ -786,7 +786,7 @@
             // Get the index for the parameter name.
             int namedIdx = bx_unicode_sqlite3_bind_parameter_index(pStmt, [parameterName UTF8String]);
             
-            FMDBRelease(parameterName);
+            BxFMDBRelease(parameterName);
             
             if (namedIdx > 0) {
                 // Standard binding from here.
@@ -881,13 +881,13 @@
     }
     
     if (_shouldCacheStatements && !cachedStmt) {
-        cachedStmt = [[FMStatement alloc] init];
+        cachedStmt = [[BxFMStatement alloc] init];
         
         [cachedStmt setStatement:pStmt];
         
         [self setCachedStatement:cachedStmt forQuery:sql];
         
-        FMDBRelease(cachedStmt);
+        BxFMDBRelease(cachedStmt);
     }
     
     int closeErrorCode;
@@ -1090,8 +1090,8 @@
     }
 }
 
-void FMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int argc, bx_unicode_sqlite3_value **argv);
-void FMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int argc, bx_unicode_sqlite3_value **argv) {
+void BxFMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int argc, bx_unicode_sqlite3_value **argv);
+void BxFMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int argc, bx_unicode_sqlite3_value **argv) {
 #if ! __has_feature(objc_arc)
     void (^block)(bx_unicode_sqlite3_context *context, int argc, bx_unicode_sqlite3_value **argv) = (id)bx_unicode_sqlite3_user_data(context);
 #else
@@ -1107,15 +1107,15 @@ void FMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int ar
         _openFunctions = [NSMutableSet new];
     }
     
-    id b = FMDBReturnAutoreleased([block copy]);
+    id b = BxFMDBReturnAutoreleased([block copy]);
     
     [_openFunctions addObject:b];
     
     /* I tried adding custom functions to release the block when the connection is destroyed- but they seemed to never be called, so we use _openFunctions to store the values instead. */
 #if ! __has_feature(objc_arc)
-    bx_unicode_sqlite3_create_function([self sqliteHandle], [name UTF8String], count, SQLITE_UTF8, (void*)b, &FMDBBlockSQLiteCallBackFunction, 0x00, 0x00);
+    bx_unicode_sqlite3_create_function([self sqliteHandle], [name UTF8String], count, SQLITE_UTF8, (void*)b, &BxFMDBBlockSQLiteCallBackFunction, 0x00, 0x00);
 #else
-    bx_unicode_sqlite3_create_function([self sqliteHandle], [name UTF8String], count, SQLITE_UTF8, (__bridge void*)b, &FMDBBlockSQLiteCallBackFunction, 0x00, 0x00);
+    bx_unicode_sqlite3_create_function([self sqliteHandle], [name UTF8String], count, SQLITE_UTF8, (__bridge void*)b, &BxFMDBBlockSQLiteCallBackFunction, 0x00, 0x00);
 #endif
 }
 
@@ -1123,7 +1123,7 @@ void FMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int ar
 
 
 
-@implementation FMStatement
+@implementation BxFMStatement
 @synthesize statement=_statement;
 @synthesize query=_query;
 @synthesize useCount=_useCount;
@@ -1135,7 +1135,7 @@ void FMDBBlockSQLiteCallBackFunction(bx_unicode_sqlite3_context *context, int ar
 
 - (void)dealloc {
     [self close];
-    FMDBRelease(_query);
+    BxFMDBRelease(_query);
 #if ! __has_feature(objc_arc)
     [super dealloc];
 #endif

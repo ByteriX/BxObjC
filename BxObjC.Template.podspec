@@ -92,6 +92,7 @@ end
 
 s.subspec 'Data' do |ds|
     ds.dependency 'BxObjC/Common'
+    ds.dependency 'XMLDictionary', '1.4'
 
     ds.frameworks = ["Foundation", "UIKit"]
     ds.public_header_files = "**/iBXData/Frameworks/**/*.h", "**/iBXData/Sources/**/*.h"

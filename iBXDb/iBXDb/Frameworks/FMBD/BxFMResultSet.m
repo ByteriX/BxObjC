@@ -1,24 +1,24 @@
-#import "FMResultSet.h"
-#import "FMDatabase.h"
+#import "BxFMResultSet.h"
+#import "BxFMDatabase.h"
 #import "unistd.h"
 
-@interface FMDatabase ()
-- (void)resultSetDidClose:(FMResultSet *)resultSet;
+@interface BxFMDatabase ()
+- (void)resultSetDidClose:(BxFMResultSet *)resultSet;
 @end
 
 
-@implementation FMResultSet
+@implementation BxFMResultSet
 @synthesize query=_query;
 @synthesize statement=_statement;
 
-+ (id)resultSetWithStatement:(FMStatement *)statement usingParentDatabase:(FMDatabase*)aDB {
++ (id)resultSetWithStatement:(BxFMStatement *)statement usingParentDatabase:(BxFMDatabase*)aDB {
     
-    FMResultSet *rs = [[FMResultSet alloc] init];
+    BxFMResultSet *rs = [[BxFMResultSet alloc] init];
     
     [rs setStatement:statement];
     [rs setParentDB:aDB];
     
-    return FMDBReturnAutoreleased(rs);
+    return BxFMDBReturnAutoreleased(rs);
 }
 
 - (void)finalize {
@@ -29,10 +29,10 @@
 - (void)dealloc {
     [self close];
     
-    FMDBRelease(_query);
+    BxFMDBRelease(_query);
     _query = nil;
     
-    FMDBRelease(_columnNameToIndexMap);
+    BxFMDBRelease(_columnNameToIndexMap);
     _columnNameToIndexMap = nil;
     
 #if ! __has_feature(objc_arc)
@@ -42,7 +42,7 @@
 
 - (void)close {
     [_statement reset];
-    FMDBRelease(_statement);
+    BxFMDBRelease(_statement);
     _statement = nil;
     
     // we don't need this anymore... (i think)
@@ -103,7 +103,7 @@
             [dict setObject:objectValue forKey:columnName];
         }
         
-        return FMDBReturnAutoreleased([dict copy]);
+        return BxFMDBReturnAutoreleased([dict copy]);
     }
     else {
         NSLog(@"Warning: There seem to be no columns in this set.");
@@ -397,7 +397,7 @@
     return [NSString stringWithUTF8String: bx_unicode_sqlite3_column_name([_statement statement], columnIdx)];
 }
 
-- (void)setParentDB:(FMDatabase *)newDb {
+- (void)setParentDB:(BxFMDatabase *)newDb {
     _parentDB = newDb;
 }
 

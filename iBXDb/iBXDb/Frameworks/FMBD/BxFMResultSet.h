@@ -13,12 +13,12 @@
 #endif
 #endif
 
-@class FMDatabase;
-@class FMStatement;
+@class BxFMDatabase;
+@class BxFMStatement;
 
-@interface FMResultSet : NSObject {
-    FMDatabase          *_parentDB;
-    FMStatement         *_statement;
+@interface BxFMResultSet : NSObject {
+    BxFMDatabase          *_parentDB;
+    BxFMStatement         *_statement;
     
     NSString            *_query;
     NSMutableDictionary *_columnNameToIndexMap;
@@ -26,13 +26,13 @@
 
 @property (atomic, retain) NSString *query;
 @property (readonly) NSMutableDictionary *columnNameToIndexMap;
-@property (atomic, retain) FMStatement *statement;
+@property (atomic, retain) BxFMStatement *statement;
 
-+ (id)resultSetWithStatement:(FMStatement *)statement usingParentDatabase:(FMDatabase*)aDB;
++ (id)resultSetWithStatement:(BxFMStatement *)statement usingParentDatabase:(BxFMDatabase*)aDB;
 
 - (void)close;
 
-- (void)setParentDB:(FMDatabase *)newDb;
+- (void)setParentDB:(BxFMDatabase *)newDb;
 
 - (BOOL)next;
 - (BOOL)hasAnotherRow;

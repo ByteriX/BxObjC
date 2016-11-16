@@ -1,30 +1,30 @@
 //
-//  FMDatabasePool.m
+//  BxFMDatabasePool.m
 //  fmdb
 //
 //  Created by August Mueller on 6/22/11.
 //  Copyright 2011 Flying Meat Inc. All rights reserved.
 //
 
-#import "FMDatabasePool.h"
-#import "FMDatabase.h"
+#import "BxFMDatabasePool.h"
+#import "BxFMDatabase.h"
 
-@interface FMDatabasePool()
+@interface BxFMDatabasePool()
 
-- (void)pushDatabaseBackInPool:(FMDatabase*)db;
-- (FMDatabase*)db;
+- (void)pushDatabaseBackInPool:(BxFMDatabase*)db;
+- (BxFMDatabase*)db;
 
 @end
 
 
-@implementation FMDatabasePool
+@implementation BxFMDatabasePool
 @synthesize path=_path;
 @synthesize delegate=_delegate;
 @synthesize maximumNumberOfDatabasesToCreate=_maximumNumberOfDatabasesToCreate;
 
 
 + (id)databasePoolWithPath:(NSString*)aPath {
-    return FMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
+    return BxFMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
 }
 
 - (id)initWithPath:(NSString*)aPath {
@@ -34,8 +34,8 @@
     if (self != nil) {
         _path               = [aPath copy];
         _lockQueue          = dispatch_queue_create([[NSString stringWithFormat:@"fmdb.%@", self] UTF8String], NULL);
-        _databaseInPool     = FMDBReturnRetained([NSMutableArray array]);
-        _databaseOutPool    = FMDBReturnRetained([NSMutableArray array]);
+        _databaseInPool     = BxFMDBReturnRetained([NSMutableArray array]);
+        _databaseOutPool    = BxFMDBReturnRetained([NSMutableArray array]);
     }
     
     return self;
@@ -44,12 +44,12 @@
 - (void)dealloc {
     
     _delegate = 0x00;
-    FMDBRelease(_path);
-    FMDBRelease(_databaseInPool);
-    FMDBRelease(_databaseOutPool);
+    BxFMDBRelease(_path);
+    BxFMDBRelease(_databaseInPool);
+    BxFMDBRelease(_databaseOutPool);
     
     if (_lockQueue) {
-        FMDBDispatchQueueRelease(_lockQueue);
+        BxFMDBDispatchQueueRelease(_lockQueue);
         _lockQueue = 0x00;
     }
 #if ! __has_feature(objc_arc)
@@ -62,7 +62,7 @@
     dispatch_sync(_lockQueue, aBlock);
 }
 
-- (void)pushDatabaseBackInPool:(FMDatabase*)db {
+- (void)pushDatabaseBackInPool:(BxFMDatabase*)db {
     
     if (!db) { // db can be null if we set an upper bound on the # of databases to create.
         return;
@@ -71,7 +71,7 @@
     [self executeLocked:^() {
         
         if ([_databaseInPool containsObject:db]) {
-            [[NSException exceptionWithName:@"Database already in pool" reason:@"The FMDatabase being put back into the pool is already present in the pool" userInfo:nil] raise];
+            [[NSException exceptionWithName:@"Database already in pool" reason:@"The BxFMDatabase being put back into the pool is already present in the pool" userInfo:nil] raise];
         }
         
         [_databaseInPool addObject:db];
@@ -80,9 +80,9 @@
     }];
 }
 
-- (FMDatabase*)db {
+- (BxFMDatabase*)db {
     
-    __block FMDatabase *db;
+    __block BxFMDatabase *db;
     
     [self executeLocked:^() {
         db = [_databaseInPool lastObject];
@@ -102,7 +102,7 @@
                 }
             }
             
-            db = [FMDatabase databaseWithPath:_path];
+            db = [BxFMDatabase databaseWithPath:_path];
         }
         
         //This ensures that the db is opened before returning
@@ -166,20 +166,20 @@
     }];
 }
 
-- (void)inDatabase:(void (^)(FMDatabase *db))block {
+- (void)inDatabase:(void (^)(BxFMDatabase *db))block {
     
-    FMDatabase *db = [self db];
+    BxFMDatabase *db = [self db];
     
     block(db);
     
     [self pushDatabaseBackInPool:db];
 }
 
-- (void)beginTransaction:(BOOL)useDeferred withBlock:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (void)beginTransaction:(BOOL)useDeferred withBlock:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     
     BOOL shouldRollback = NO;
     
-    FMDatabase *db = [self db];
+    BxFMDatabase *db = [self db];
     
     if (useDeferred) {
         [db beginDeferredTransaction];
@@ -201,15 +201,15 @@
     [self pushDatabaseBackInPool:db];
 }
 
-- (void)inDeferredTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (void)inDeferredTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     [self beginTransaction:YES withBlock:block];
 }
 
-- (void)inTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (void)inTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     [self beginTransaction:NO withBlock:block];
 }
 #if SQLITE_VERSION_NUMBER >= 3007000
-- (NSError*)inSavePoint:(void (^)(FMDatabase *db, BOOL *rollback))block {
+- (NSError*)inSavePoint:(void (^)(BxFMDatabase *db, BOOL *rollback))block {
     
     static unsigned long savePointIdx = 0;
     
@@ -217,7 +217,7 @@
     
     BOOL shouldRollback = NO;
     
-    FMDatabase *db = [self db];
+    BxFMDatabase *db = [self db];
     
     NSError *err = 0x00;
     

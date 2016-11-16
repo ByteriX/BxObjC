@@ -92,8 +92,7 @@
 		34CCB3D6178DB4710096EBA9 /* BxJsonServiceDataCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 34CCB3D5178DB4700096EBA9 /* BxJsonServiceDataCommand.m */; };
 		34CCB3D7178DB5950096EBA9 /* BxJsonServiceDataCommand.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 34CCB3D4178DB4700096EBA9 /* BxJsonServiceDataCommand.h */; };
 		34CCB416178EA18D0096EBA9 /* Collection+Copy.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 3453FA881786B0570051C096 /* Collection+Copy.h */; };
-		8D44711B8F6B7E9AE877711B /* XMLDictionary.h in Copy Files */ = {isa = PBXBuildFile; fileRef = 8D4475452E7BF109F25C6027 /* XMLDictionary.h */; };
-		8D447F20FDD16BF0B592EA7F /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4474AA40B1F981AAC77AD6 /* XMLDictionary.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		6D47BA088CA8C955B1EBCA9E /* Pods_iBXData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D05DA06AB26B45A9147933B8 /* Pods_iBXData.framework */; };
 		CFCF480019165A31003E84B0 /* BxFileDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = CFCF47FF19165A31003E84B0 /* BxFileDataSet.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CFCF480A19165B5D003E84B0 /* BxFileDataSet.h in Copy Files */ = {isa = PBXBuildFile; fileRef = CFCF47FE19165A31003E84B0 /* BxFileDataSet.h */; };
 /* End PBXBuildFile section */
@@ -180,7 +179,6 @@
 				3453FB98178C67EE0051C096 /* NSString+BxTransform.h in Copy Files */,
 				3453FB91178C64AC0051C096 /* NSString+BxTransformDate.h in Copy Files */,
 				3470373F19ADF97E00B17E57 /* BxXmlDataParser.h in Copy Files */,
-				8D44711B8F6B7E9AE877711B /* XMLDictionary.h in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +273,12 @@
 		34CCB39D178D8E810096EBA9 /* BxQueueDataCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxQueueDataCommand.m; sourceTree = "<group>"; };
 		34CCB3D4178DB4700096EBA9 /* BxJsonServiceDataCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxJsonServiceDataCommand.h; sourceTree = "<group>"; };
 		34CCB3D5178DB4700096EBA9 /* BxJsonServiceDataCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxJsonServiceDataCommand.m; sourceTree = "<group>"; };
-		8D4474AA40B1F981AAC77AD6 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
-		8D4475452E7BF109F25C6027 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		883385A6311B8D92E2E8DE45 /* Pods-iBXData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBXData.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iBXData/Pods-iBXData.release.xcconfig"; sourceTree = "<group>"; };
+		8AD7FF70C23F0A29B9797DE6 /* Pods-iBXData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBXData.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iBXData/Pods-iBXData.debug.xcconfig"; sourceTree = "<group>"; };
 		CFCF47FE19165A31003E84B0 /* BxFileDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxFileDataSet.h; sourceTree = "<group>"; };
 		CFCF47FF19165A31003E84B0 /* BxFileDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxFileDataSet.m; sourceTree = "<group>"; };
 		CFCF480B19165D10003E84B0 /* iBXCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBXCommon.xcodeproj; path = ../iBXCommon/iBXCommon.xcodeproj; sourceTree = "<group>"; };
+		D05DA06AB26B45A9147933B8 /* Pods_iBXData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBXData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +288,7 @@
 			files = (
 				3453FA431786A9CD0051C096 /* Foundation.framework in Frameworks */,
 				3453FA741786AA310051C096 /* UIKit.framework in Frameworks */,
+				6D47BA088CA8C955B1EBCA9E /* Pods_iBXData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +315,7 @@
 				3453FA591786A9CD0051C096 /* iBXDataTests */,
 				3453FA411786A9CD0051C096 /* Frameworks */,
 				3453FA401786A9CD0051C096 /* Products */,
+				D958383D6D8E2A27B61698C6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -333,6 +334,7 @@
 				3453FA731786AA310051C096 /* UIKit.framework */,
 				3453FA421786A9CD0051C096 /* Foundation.framework */,
 				3453FA511786A9CD0051C096 /* SenTestingKit.framework */,
+				D05DA06AB26B45A9147933B8 /* Pods_iBXData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -381,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				3453FA871786B0570051C096 /* Collection */,
-				8D447CEEF9F52E8C7C083DC6 /* XMLDictionary */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -564,15 +565,6 @@
 			path = Parser;
 			sourceTree = "<group>";
 		};
-		8D447CEEF9F52E8C7C083DC6 /* XMLDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				8D4475452E7BF109F25C6027 /* XMLDictionary.h */,
-				8D4474AA40B1F981AAC77AD6 /* XMLDictionary.m */,
-			);
-			path = XMLDictionary;
-			sourceTree = "<group>";
-		};
 		CFCF480C19165D10003E84B0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +574,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D958383D6D8E2A27B61698C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8AD7FF70C23F0A29B9797DE6 /* Pods-iBXData.debug.xcconfig */,
+				883385A6311B8D92E2E8DE45 /* Pods-iBXData.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -589,9 +590,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3453FA641786A9CD0051C096 /* Build configuration list for PBXNativeTarget "iBXData" */;
 			buildPhases = (
+				6CBF75BF0DBAC0635E092466 /* [CP] Check Pods Manifest.lock */,
 				3453FA3B1786A9CC0051C096 /* Sources */,
 				3453FA3C1786A9CC0051C096 /* Frameworks */,
 				3453FA3D1786A9CC0051C096 /* Copy Files */,
+				D9D9D7FAAB24052463EE5093 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -701,6 +704,36 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		6CBF75BF0DBAC0635E092466 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D9D9D7FAAB24052463EE5093 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iBXData/Pods-iBXData-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -744,7 +777,6 @@
 				348D69EE179E77C5001D5BE6 /* BxDownloadOldFileImageCasher.m in Sources */,
 				348D69F1179E78AF001D5BE6 /* BxImageDownloadFormat.m in Sources */,
 				348D69F4179E79E8001D5BE6 /* BxDownloadStreamWithResume.m in Sources */,
-				8D447F20FDD16BF0B592EA7F /* XMLDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,6 +881,7 @@
 		};
 		3453FA651786A9CD0051C096 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AD7FF70C23F0A29B9797DE6 /* Pods-iBXData.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/iBXData.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -872,6 +905,7 @@
 		};
 		3453FA661786A9CD0051C096 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 883385A6311B8D92E2E8DE45 /* Pods-iBXData.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/iBXData.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

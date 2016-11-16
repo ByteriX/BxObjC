@@ -12,7 +12,7 @@
  */
 
 #import "BxDatabase.h"
-#import "FMDatabaseUnicode.h"
+#import "BxFMDatabaseUnicode.h"
 #import "BxCommon.h"
 #import "NSURL+BxUtils.h"
 
@@ -38,7 +38,7 @@
     self = [super init];
 	if ( self ) {
 		_fileName = [fileName retain];
-		_database = [[FMDatabaseUnicode alloc] initWithPath: [self restore]];
+		_database = [[BxFMDatabaseUnicode alloc] initWithPath: [self restore]];
         _includeFromBackup = [[NSURL fileURLWithPath: self.filePath] hasSkipBackupAttribute];
 	}
 	return self;
@@ -98,7 +98,7 @@
 - (NSNumber*) executeNumberFunctionWith: (NSString*) sql
 {
     [self open];
-    FMResultSet * result = [self.database executeQuery: sql];
+    BxFMResultSet * result = [self.database executeQuery: sql];
     if (result && [result next]){
         return [NSNumber numberWithLong: [result longForColumnIndex: 0]];
     } else {
@@ -109,7 +109,7 @@
 - (NSArray*) allDataWith: (NSString*) sql
 {
     [self open];
-    FMResultSet * result = [self.database executeQuery: sql];
+    BxFMResultSet * result = [self.database executeQuery: sql];
     NSMutableArray * returnResult = [NSMutableArray array];
     while ([result next]) {
         [returnResult addObject: [result resultDictionary]];

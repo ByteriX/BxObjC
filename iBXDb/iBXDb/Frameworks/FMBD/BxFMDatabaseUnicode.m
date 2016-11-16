@@ -1,23 +1,23 @@
 //
-//  FMDatabaseUnicode.m
+//  BxFMDatabaseUnicode.m
 //  FullTextSearch
 //
 //  Created by Balalaev Sergey on 3/25/13.
 //  Copyright (c) 2013 Balalaev Sergey. All rights reserved.
 //
 
-#import "FMDatabaseUnicode.h"
+#import "BxFMDatabaseUnicode.h"
 #import "sqlite3_unicode.h"
 #import "sqlite3_fts_extension.h"
 #import "sqlite3_utils_extension.h"
 
-@interface FMDatabaseUnicode (private)
+@interface BxFMDatabaseUnicode (private)
 
 - (const char*)sqlitePath;
 
 @end
 
-@implementation FMDatabaseUnicode
+@implementation BxFMDatabaseUnicode
 
 #if SQLITE_VERSION_NUMBER >= 3005000
 - (BOOL)openWithFlags:(int)flags {

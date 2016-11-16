@@ -12,7 +12,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "FMDatabase.h"
+#import "BxFMDatabase.h"
 
 //! База данных SQLite
 @interface BxDatabase : NSObject
@@ -21,7 +21,7 @@
     NSString * _fileName;
     BOOL _includeFromBackup;
 }
-@property (nonatomic, retain, readonly) FMDatabase * database;
+@property (nonatomic, retain, readonly) BxFMDatabase * database;
 @property (nonatomic, retain, readonly, getter = getPathForRestore) NSString * filePath;
 //! Позволяет восстановить базу из iCloud. Внимание Apple не всех пропустит с этой функцией. По умолчанию отключена
 @property (nonatomic, getter = _includeFromBackup, setter = setIncludeFromBackup:) BOOL includeFromBackup;

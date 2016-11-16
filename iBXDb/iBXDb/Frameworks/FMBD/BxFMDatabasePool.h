@@ -1,5 +1,5 @@
 //
-//  FMDatabasePool.h
+//  BxFMDatabasePool.h
 //  fmdb
 //
 //  Created by August Mueller on 6/22/11.
@@ -12,9 +12,9 @@
 /*
 
                          ***README OR SUFFER***
-Before using FMDatabasePool, please consider using FMDatabaseQueue instead.
+Before using BxFMDatabasePool, please consider using BxFMDatabaseQueue instead.
 
-If you really really really know what you're doing and FMDatabasePool is what
+If you really really really know what you're doing and BxFMDatabasePool is what
 you really really need (ie, you're using a read only database), OK you can use
 it.  But just be careful not to deadlock!
 
@@ -26,9 +26,9 @@ in the main.m file.
 
 
 
-@class FMDatabase;
+@class BxFMDatabase;
 
-@interface FMDatabasePool : NSObject {
+@interface BxFMDatabasePool : NSObject {
     NSString            *_path;
     
     dispatch_queue_t    _lockQueue;
@@ -53,23 +53,23 @@ in the main.m file.
 - (NSUInteger)countOfOpenDatabases;
 - (void)releaseAllDatabases;
 
-- (void)inDatabase:(void (^)(FMDatabase *db))block;
+- (void)inDatabase:(void (^)(BxFMDatabase *db))block;
 
-- (void)inTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block;
-- (void)inDeferredTransaction:(void (^)(FMDatabase *db, BOOL *rollback))block;
+- (void)inTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block;
+- (void)inDeferredTransaction:(void (^)(BxFMDatabase *db, BOOL *rollback))block;
 
 #if SQLITE_VERSION_NUMBER >= 3007000
 // NOTE: you can not nest these, since calling it will pull another database out of the pool and you'll get a deadlock.
-// If you need to nest, use FMDatabase's startSavePointWithName:error: instead.
-- (NSError*)inSavePoint:(void (^)(FMDatabase *db, BOOL *rollback))block;
+// If you need to nest, use BxFMDatabase's startSavePointWithName:error: instead.
+- (NSError*)inSavePoint:(void (^)(BxFMDatabase *db, BOOL *rollback))block;
 #endif
 
 @end
 
 
-@interface NSObject (FMDatabasePoolDelegate)
+@interface NSObject (BxFMDatabasePoolDelegate)
 
-- (BOOL)databasePool:(FMDatabasePool*)pool shouldAddDatabaseToPool:(FMDatabase*)database;
+- (BOOL)databasePool:(BxFMDatabasePool*)pool shouldAddDatabaseToPool:(BxFMDatabase*)database;
 
 @end
 

@@ -6,6 +6,11 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.4 (16.10.2016)
+##### Enhancements
+* fork of FMDB to BxFMDB
+* XMLDictionary move to external pod
+
 ## 1.1.3 (15.10.2016)
 ##### Enhancements
 * new ReadMe
