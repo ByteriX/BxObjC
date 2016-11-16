@@ -99,7 +99,7 @@ s.subspec 'Data' do |ds|
 
     ds.source_files  = "**/iBXData/Frameworks/**/*.{h,m,c}", "**/iBXData/Sources/**/*.{h,m,c}"
     ds.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
-    ds.requires_arc = ["**/XMLDictionary.m"]
+    ds.requires_arc = []
 end
 
 s.subspec 'DB' do |dbs|
@@ -184,6 +184,7 @@ end
 
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency "JSONKit", "~> 1.4"
+
+#s.dependency "XMLDictionary"
 
 end

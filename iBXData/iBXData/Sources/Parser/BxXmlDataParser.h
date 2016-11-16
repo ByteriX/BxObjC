@@ -12,7 +12,6 @@
  */
 
 #import "BxAbstractDataParser.h"
-#import "XMLDictionary.h"
 
 //! XML сериализатор/дисериализатор
 @interface BxXmlDataParser : BxAbstractDataParser

@@ -12,6 +12,7 @@
  */
 
 #import "BxXmlDataParser.h"
+#import <XMLDictionary/XMLDictionary.h>
 
 @implementation BxXmlDataParser
 
