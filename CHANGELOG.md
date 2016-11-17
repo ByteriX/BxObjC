@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.7 (17.10.2016)
+##### Bug fixes
+* Map: request authorization when we use Application
+
 ## 1.1.6 (16.10.2016)
 ##### Enhancements
 * fork of FMDB to BxFMDB

@@ -54,8 +54,8 @@
 - (void) requestAuthorization
 {
     if ([_manager.class authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        if ([_manager respondsToSelector:@selector(requestAlwaysAuthorization)]) { // iOS8+
-            [_manager requestAlwaysAuthorization];
+        if ([_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) { // iOS8+
+            [_manager requestWhenInUseAuthorization];
         }
     }
 }
