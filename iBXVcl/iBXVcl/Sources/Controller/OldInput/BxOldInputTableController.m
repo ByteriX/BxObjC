@@ -773,7 +773,7 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 	[_textInputView addSubview: _textInput];
 	[_textInput release];
     
-    _variantPicker = [[UIPickerView alloc] initWithFrame: CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.view.frame), 300.0f)];
+    _variantPicker = [[UIPickerView alloc] init];
     _variantPicker.dataSource = self;
     _variantPicker.delegate = self;
     _variantPicker.showsSelectionIndicator = YES;

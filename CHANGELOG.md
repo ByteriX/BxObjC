@@ -6,28 +6,32 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
-## 1.1.7 (17.10.2016)
+## 1.1.8 (30.11.2016)
+##### Bug fixes
+* VCL: fix bug with the height of variants picker from the BxOldInputController component
+
+## 1.1.7 (17.11.2016)
 ##### Bug fixes
 * Map: request authorization when we use Application
 
-## 1.1.6 (16.10.2016)
+## 1.1.6 (16.11.2016)
 ##### Enhancements
 * fork of FMDB to BxFMDB
 * XMLDictionary move to external pod
 
-## 1.1.3 (15.10.2016)
+## 1.1.3 (15.11.2016)
 ##### Enhancements
 * new ReadMe
 
-## 1.1.2 (15.10.2016)
+## 1.1.2 (15.11.2016)
 ##### Enhancements
 * new Change log
 
-## 1.1.1 (15.10.2016)
+## 1.1.1 (15.11.2016)
 ##### Enhancements
 * seporate all frameworks to sub-pods
 
-## 1.0.33 (14.10.2016)
+## 1.0.33 (14.11.2016)
 ##### Features
 * include BxDb
 
