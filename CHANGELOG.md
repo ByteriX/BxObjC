@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.9 (07.12.2016)
+##### Improvment
+* VCL: BxOldInputController open fields: datePicker, variantPicker
+
 ## 1.1.8 (30.11.2016)
 ##### Bug fixes
 * VCL: fix bug with the height of variants picker from the BxOldInputController component
