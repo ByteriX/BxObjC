@@ -78,6 +78,7 @@ extern const NSString * const FNInputTableRowKeyboardType;
 @property (nonatomic, readonly, getter=_textInput) UITextField * textInput;
 @property (nonatomic, readonly, getter=_datePicker) UIDatePicker * datePicker;
 @property (nonatomic, readonly, getter=_variantPicker) UIPickerView * variantPicker;
+@property (nonatomic, readonly, getter=_mainScroll) UIScrollView * mainScroll;
 
 
 - (void) startWithData: (NSDictionary*) data editing: (BOOL) editing;

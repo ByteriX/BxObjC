@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.10 (09.12.2016)
+##### Improvment
+* VCL: BxOldInputController open field: mainScroll
+
 ## 1.1.9 (07.12.2016)
 ##### Improvment
 * VCL: BxOldInputController open fields: datePicker, variantPicker
