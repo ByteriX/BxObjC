@@ -76,7 +76,7 @@
     
     NSDictionary * data = locationData[0];
     
-    return [self yandexDataFrom: data];
+    return [self googleDataFrom: data];
 }
 
 - (void) reverseGeocodingThreadWithData: (BxGeocoderData*) data
