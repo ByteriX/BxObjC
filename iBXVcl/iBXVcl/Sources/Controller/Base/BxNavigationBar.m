@@ -248,14 +248,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     if (navigationController.toolPanel) {
         navigationController.toolPanel.alpha = alpha;
         CGRect toolPanelFrame = navigationController.toolPanel.frame;
-        toolPanelFrame.origin.y = CGRectGetMaxY(self.frame);
+        toolPanelFrame.origin.y = CGRectGetMaxY(frame);
         navigationController.toolPanel.frame = toolPanelFrame;
     }
     if (self.scrollView) {
-        CGRect parentViewFrame = self.scrollView.superview.frame;
-        parentViewFrame.origin.y += offsetY;
-        parentViewFrame.size.height -= offsetY;
-        self.scrollView.superview.frame = parentViewFrame;
+        self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y - offsetY);
     }
     if (animated) {
         [UIView commitAnimations];

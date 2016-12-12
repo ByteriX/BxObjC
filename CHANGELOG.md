@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.12 (12.12.2016)
+##### Bug fixes
+* VCL: fix a scrollable feature in BxNavigationBar
+
 ## 1.1.11 (12.12.2016)
 ##### Features
 * Remove something compilator warnings
