@@ -20,7 +20,7 @@
 {
     CGFloat _startTouchY;
     CGFloat _startY;
-    CGFloat _lastTouchY;
+    CGPoint _lastTouch;
 }
 
 @property (nonatomic, strong) UIToolbar * toolPanel;
@@ -169,29 +169,33 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         return;
     }
     
-    CGFloat touchY = [gesture translationInView: _scrollView.superview].y;
+    CGPoint touch = [gesture translationInView: _scrollView.superview];
     
     if (gesture.state == UIGestureRecognizerStateBegan)
     {
-        _startTouchY = touchY;
+        _startTouchY = touch.y;
         _startY = self.frame.origin.y;
         _scrollState = BxNavigationBarScrollStateNone;
-        _lastTouchY = [gesture translationInView: _scrollView.superview].y;
+        _lastTouch = touch;
         return;
     }
     
-    if (touchY > _lastTouchY) {
+    BOOL isSmallScrolling = self.scrollView.contentSize.height < self.scrollView.frame.size.height + 2 * self.bounds.size.height;
+    BOOL isScrollingX = fabs(touch.x - _lastTouch.x) > fabs(touch.y - _lastTouch.y);
+    
+    if (self.scrollState == BxNavigationBarScrollStateNone && (isSmallScrolling || isScrollingX))
+    {
+        _startTouchY = touch.y;
+        _lastTouch = touch;
+        return;
+    }
+    
+    if (touch.y > _lastTouch.y) {
         _scrollState = BxNavigationBarScrollStateDown;
-    } else if (touchY < _lastTouchY) {
+    } else if (touch.y < _lastTouch.y) {
         _scrollState = BxNavigationBarScrollStateUp;
     }
-    _lastTouchY = touchY;
-    
-    if (self.scrollState == BxNavigationBarScrollStateNone && self.scrollView.contentSize.height < self.scrollView.frame.size.height + 2 * self.bounds.size.height)
-    {
-        _startTouchY = touchY;
-        return;
-    }
+    _lastTouch = touch;
     
     CGFloat maxY = [self scrollTopOffset];
     CGFloat minY = maxY - self.frame.size.height;
@@ -223,7 +227,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         _scrollState = BxNavigationBarScrollStateNone;
     }
     else {
-        CGFloat y = _startY + touchY - _startTouchY;
+        CGFloat y = _startY + touch.y - _startTouchY;
         frame.origin.y = MIN(maxY, MAX(y, minY));
         alpha = MAX(minimalAlpha, (frame.origin.y - minY) / (maxY - minY));
         [self setFrame: frame alpha: alpha animated: NO];
