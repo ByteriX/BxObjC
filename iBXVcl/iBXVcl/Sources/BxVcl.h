@@ -51,6 +51,7 @@
 
 #import "UIViewController+BxVcl.h"
 #import "BxNavigationController.h"
+#import "BxNavigationBar.h"
 
 #ifndef iBXData_BxData_h
 #define iBXData_BxData_h

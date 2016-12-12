@@ -107,6 +107,7 @@
 		CFA197AF180059D400C13C9E /* BxHighlightedTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA197AE180059D400C13C9E /* BxHighlightedTagLabel.m */; };
 		CFA19810180065BB00C13C9E /* BxHighlightedTagLabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFA197AD180059D400C13C9E /* BxHighlightedTagLabel.h */; };
 		CFBB827D18F1245F00B8A5A5 /* BxAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBB827C18F1245F00B8A5A5 /* BxAppearance.m */; };
+		F91416451DFADF7C004A3491 /* BxNavigationBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF185151197C0C05001C0CD0 /* BxNavigationBar.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -182,6 +183,7 @@
 				34269AEC184340C4002E6BB1 /* UIViewController+BxVcl.h in CopyFiles */,
 				34432FFD18054AFC0081EEC4 /* BxLoadedImageListViewController.h in CopyFiles */,
 				CFA197AA1800532D00C13C9E /* BxHighlightedTextInfo.h in CopyFiles */,
+				F91416451DFADF7C004A3491 /* BxNavigationBar.h in CopyFiles */,
 				CF9E3A28180496DB00748842 /* BxPageControl.h in CopyFiles */,
 				3472D06917DF2DDE0089FF7A /* BxLoadedImageViewItem.h in CopyFiles */,
 				34497816180D75290070D7D2 /* BxLoadedImagePageView.h in CopyFiles */,

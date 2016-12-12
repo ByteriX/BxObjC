@@ -6,6 +6,13 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.11 (12.12.2016)
+##### Features
+* Remove something compilator warnings
+* Fix google geocoding
+* VCL: sharing interface of BxNavigationBar, BxNavigationController
+* VCL: add to BxNavigationBar a scrollable feature
+
 ## 1.1.10 (09.12.2016)
 ##### Improvment
 * VCL: BxOldInputController open field: mainScroll

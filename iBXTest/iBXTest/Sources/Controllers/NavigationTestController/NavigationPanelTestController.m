@@ -18,7 +18,7 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 25;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,6 +61,12 @@
     [super viewDidLoad];
     CGFloat topY = self.topExtendedEdges;
     [self.tableView setContentOffset: CGPointMake(0, -topY) animated: NO];
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear: animated];
+    self.navigationController.bxNavigationBar.scrollView = self.tableView;
 }
 
 @end

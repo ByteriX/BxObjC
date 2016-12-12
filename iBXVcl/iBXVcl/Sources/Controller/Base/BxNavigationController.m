@@ -17,6 +17,8 @@
 
 @implementation UIViewController (BxNavigationController)
 
+@dynamic navController;
+
 - (BOOL) navigationShouldPopController: (BxNavigationController*) navigationController
 {
     return YES;
@@ -34,6 +36,14 @@
 
 - (UIView*) navigationToolPanelWithController: (BxNavigationController*) navigationController
 {
+    return nil;
+}
+
+- (BxNavigationController*) navController
+{
+    if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
+        return (BxNavigationController*)self.navigationController;
+    }
     return nil;
 }
 
@@ -215,6 +225,7 @@
         [UIView animateWithDuration: 0.25
                          animations: ^{
             popedToolPanel.alpha = 0;
+            self.bxNavigationBar.scrollView = nil;
         }
                          completion:^(BOOL finished)
         {
@@ -224,6 +235,7 @@
         }];
     } else {
         [popedToolPanel removeFromSuperview];
+        self.bxNavigationBar.scrollView = nil;
     }
 }
 

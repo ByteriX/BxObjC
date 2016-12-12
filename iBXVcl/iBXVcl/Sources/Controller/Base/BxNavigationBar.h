@@ -13,6 +13,31 @@
 
 #import <UIKit/UIKit.h>
 
+@class BxNavigationController;
+
+typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
+    BxNavigationBarScrollStateNone,
+    BxNavigationBarScrollStateDown,
+    BxNavigationBarScrollStateUp
+};
+
 @interface BxNavigationBar : UINavigationBar
+
+//! This need define in viewWillApear, for scrolling naviationBar
+//! from pop or push navigation this property will get nil
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (assign, nonatomic, readonly) BxNavigationBarScrollState scrollState;
+
+@property(strong, nonatomic, readonly) BxNavigationController *navController;
+
+- (UIView*) backgroundView;
+
+@end
+
+
+
+@interface UINavigationController (BxNavigationBar)
+
+@property(strong, nonatomic, readonly) BxNavigationBar *bxNavigationBar;
 
 @end

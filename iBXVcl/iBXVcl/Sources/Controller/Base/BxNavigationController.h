@@ -14,8 +14,12 @@
 #import <UIKit/UIKit.h>
 
 @class BxNavigationController;
+@class BxNavigationBar;
 
 @interface UIViewController (BxNavigationController)
+
+// get BxNavigationController instead UINavigationController
+@property(strong, nonatomic, readonly) BxNavigationController *navController;
 
 //! Если возвращает NO, то не позволяет покинуть контроллер, например для завершения операции. По умолчанию YES
 - (BOOL) navigationShouldPopController: (BxNavigationController*) navigationController;
