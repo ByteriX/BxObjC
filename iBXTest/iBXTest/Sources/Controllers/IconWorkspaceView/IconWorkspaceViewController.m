@@ -14,6 +14,7 @@
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     self.title = @"Рабочий стол";
 }
 

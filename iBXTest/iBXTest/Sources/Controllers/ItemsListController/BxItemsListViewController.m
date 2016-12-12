@@ -26,6 +26,7 @@ static const CGFloat MediaImageViewMargin = 0.0f;
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     self.contentMediaIndex = 0;
     self.title = @"Список";
 }

@@ -16,6 +16,7 @@
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     [self setUrl: @"http://gyazo.com/6ee6d8c9afe1072a20bcbfbe9e9a8612"];
 }
 

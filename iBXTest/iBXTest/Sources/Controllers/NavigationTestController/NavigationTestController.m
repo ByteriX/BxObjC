@@ -19,6 +19,7 @@
 
 - (void) awakeFromNib
 {
+    [super awakeFromNib];
     _isExit = YES;
 }
 

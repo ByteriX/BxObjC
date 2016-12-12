@@ -22,13 +22,13 @@
         [BxParserException raise: @"NotParsePListException" format: @"Empty Data", nil];
         return nil;
     }
-    NSString *error = nil;
+    NSError *error = nil;
     NSPropertyListFormat format;
-    id pList = [NSPropertyListSerialization propertyListFromData: data
-                                             mutabilityOption: NSPropertyListMutableContainersAndLeaves
-                                                       format: &format errorDescription: &error];
+    id pList = [NSPropertyListSerialization propertyListWithData: data
+                                                         options: NSPropertyListMutableContainersAndLeaves
+                                                          format: &format error: &error];
     if (error) {
-        [BxParserException raise: @"NotParsePListException" format: error, nil];
+        @throw [BxParserException exceptionWith: [error autorelease]];
     }
     return pList;
 }
@@ -36,13 +36,14 @@
 //! @overload
 - (NSData*) serializationData: (NSDictionary*) data
 {
-    NSString *error;
-    NSData *pData = [NSPropertyListSerialization dataFromPropertyList: data
+    NSError *error;
+    NSData *pData = [NSPropertyListSerialization dataWithPropertyList: data
                                                                format: NSPropertyListBinaryFormat_v1_0
-                                                     errorDescription: &error];
+                                                              options: 0
+                                                                error: &error];
     if (!pData) {
         NSLog(@"%@", error);
-        [BxParserException raise: @"NotSerializePListException" format: error, nil];
+        @throw [BxParserException exceptionWith: [error autorelease]];
         return NO;
     }
 	return pData;
