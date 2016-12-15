@@ -6,6 +6,11 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.14 (16.12.2016)
+##### Features
+* VCL: add scrollMotionEffects to BxNavigationBar
+* VCL: add navigationBackgroundWithController to BxNavigationController
+
 ## 1.1.13 (12.12.2016)
 ##### Bug fixes
 * VCL: fix horizontal scroll in BxNavigationBar

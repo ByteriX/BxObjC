@@ -15,12 +15,43 @@
 #import "BxNavigationController.h"
 #import "BxCommon.h"
 
+@implementation  BxNavigationBarMotionEffect
+
+- (instancetype) initWithView: (UIView *) view
+{
+    self = [self init];
+    if (self) {
+        self.view = view;
+    }
+    return self;
+}
+
+@end
+
+@interface UIView (ShakeAnimation)
+
+- (void)shakeXWithOffset: (CGFloat) offset
+             breakFactor: (CGFloat) breakFactor
+                duration: (CGFloat) duration
+               maxShakes: (NSInteger) maxShakes;
+
+@end
+
+@interface BxNavigationController (private)
+
+@property (nonatomic) CGFloat scrollOffset;
+
+@end
+
 
 @interface BxNavigationBar () <UIGestureRecognizerDelegate>
 {
     CGFloat _startTouchY;
     CGFloat _startY;
     CGPoint _lastTouch;
+    CGFloat _lastPower;
+    
+    CGFloat _lastScrollOffset;
 }
 
 @property (nonatomic, strong) UIToolbar * toolPanel;
@@ -46,6 +77,7 @@ static CGFloat minimalAlpha = 0.00001f;
     }
     
     _scrollState = BxNavigationBarScrollStateNone;
+    _lastScrollOffset = 0;
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
                                                               action:@selector(gesturePan:)];
     self.panGesture.delegate = self;
@@ -82,26 +114,22 @@ static CGFloat minimalAlpha = 0.00001f;
     return nil;
 }
 
-- (void) layoutSubviews
+- (void) setBackgroundWithShift: (CGFloat) shift
 {
-    [super layoutSubviews];
-    
     UIView * view = [self backgroundView];
     
     __weak BxNavigationController * navigationController = self.navController;
     
     if (IS_OS_7_OR_LATER) {
-        CGFloat shift = 0;
         if (navigationController) {
-            shift = navigationController.toolPanel.frame.size.height;
+            shift += navigationController.toolPanel.frame.size.height;
         }
         [UIView animateWithDuration: 0.3 animations:^{
             view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height + 20 + shift);
         }];
     } else {
-        CGFloat shift = 0;
         if (navigationController) {
-            shift = navigationController.toolPanel.frame.size.height;
+            shift += navigationController.toolPanel.frame.size.height;
             if (!_toolPanel) {
                 self.toolPanel = [[UIToolbar alloc] initWithFrame: CGRectZero];
                 [self addSubview: _toolPanel];
@@ -110,6 +138,26 @@ static CGFloat minimalAlpha = 0.00001f;
             self.toolPanel.tintColor = self.tintColor;
         }
     }
+}
+
+- (void) layoutSubviews
+{
+    [super layoutSubviews];
+    
+    [self setBackgroundWithShift: 0];
+    
+//    if (self.scrollView) {
+//        CGFloat scrollOffset = _scrollView.contentOffset.y + _scrollView.contentInset.top;
+//        if  (scrollOffset < 0) {
+//            NSLog(@"scrollOffset = %@", scrollOffset);
+//            [self shiftBackgroundWithShift: -scrollOffset];
+//        } else {
+//            [self shiftBackgroundWithShift: 0];
+//        }
+//        
+//    } else {
+//        [self shiftBackgroundWithShift: 0];
+//    }
 }
 
 // For scroll methods
@@ -133,7 +181,7 @@ static CGFloat minimalAlpha = 0.00001f;
     _scrollState = BxNavigationBarScrollStateNone;
     CGRect frame = self.frame;
     frame.origin.y = [self scrollTopOffset];
-    [self setFrame: frame alpha: 1.0f animated: animated];
+    [self setFrame: frame alpha: 1.0f scrollOffset: 0.0f animated: animated];
 }
 
 - (void) statusBarDidChange
@@ -190,6 +238,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         return;
     }
     
+    CGFloat power =  touch.y - _lastTouch.y;
     if (touch.y > _lastTouch.y) {
         _scrollState = BxNavigationBarScrollStateDown;
     } else if (touch.y < _lastTouch.y) {
@@ -209,13 +258,23 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 
     CGFloat alpha = 1.0f;
     CGRect frame = self.frame;
+    CGFloat y = _startY + touch.y - _startTouchY;
+    CGFloat scrollOffset = _scrollView.contentOffset.y + _scrollView.contentInset.top;
     
     bool isScrolling = (self.scrollState == BxNavigationBarScrollStateUp ||
                         self.scrollState == BxNavigationBarScrollStateDown);
     bool isStopingPan = (gesture.state == UIGestureRecognizerStateEnded ||
                             gesture.state == UIGestureRecognizerStateCancelled);
     
+    // это тоже надо поправить, тут лучше бывает уходить в напрвлении "к кому сейчас ближе"
     if (isScrolling && isStopingPan) {
+        if (self.scrollState == BxNavigationBarScrollStateDown && y < minY) {
+            _scrollState = BxNavigationBarScrollStateUp;
+        }
+        if (self.scrollState == BxNavigationBarScrollStateUp && y > maxY) {
+            _scrollState = BxNavigationBarScrollStateDown;
+        }
+        
         if (self.scrollState == BxNavigationBarScrollStateDown) {
             frame.origin.y = maxY;
             alpha = 1.0f;
@@ -223,18 +282,23 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
             frame.origin.y = minY;
             alpha = minimalAlpha;
         }
-        [self setFrame: frame alpha: alpha animated: YES];
+        [self setFrame: frame alpha: alpha scrollOffset: 0.0f animated: YES];
         _scrollState = BxNavigationBarScrollStateNone;
     }
     else {
-        CGFloat y = _startY + touch.y - _startTouchY;
         frame.origin.y = MIN(maxY, MAX(y, minY));
         alpha = MAX(minimalAlpha, (frame.origin.y - minY) / (maxY - minY));
-        [self setFrame: frame alpha: alpha animated: NO];
+        [self setFrame: frame alpha: alpha scrollOffset: scrollOffset animated: NO];
+        _lastPower = power;
     }
 }
 
-- (void) setFrame: (CGRect) frame alpha: (CGFloat) alpha animated: (BOOL) animated
+- (BOOL) isParalaxPosible
+{
+    return self.navController.backgroundView != nil;
+}
+
+- (void) setFrame: (CGRect) frame alpha: (CGFloat) alpha scrollOffset: (CGFloat) scrollOffset animated: (BOOL) animated
 {
     if (animated) {
         [UIView beginAnimations: nil context: nil];
@@ -252,14 +316,59 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     if (navigationController.toolPanel) {
         navigationController.toolPanel.alpha = alpha;
         CGRect toolPanelFrame = navigationController.toolPanel.frame;
-        toolPanelFrame.origin.y = CGRectGetMaxY(frame);
+        CGFloat y = CGRectGetMaxY(frame);
+        if ([self isParalaxPosible] && scrollOffset < 0) {
+            y =  y - scrollOffset;
+            navigationController.scrollOffset = -scrollOffset;
+        } else {
+            navigationController.scrollOffset = 0;
+        }
+        if (animated && fabs(toolPanelFrame.origin.y - y) > 10) {
+            _lastPower = toolPanelFrame.origin.y - y;
+        }
+        toolPanelFrame.origin.y = y;
         navigationController.toolPanel.frame = toolPanelFrame;
+    }
+    if (navigationController.backgroundView) {
+        CGRect backgroundFrame = navigationController.backgroundView.frame;
+        CGFloat scrollTopOffset = [self scrollTopOffset];
+        CGFloat height = frame.size.height + scrollTopOffset;
+        if (navigationController.toolPanel) {
+            height =  height + navigationController.toolPanel.frame.size.height;
+        }
+        if ([self isParalaxPosible] && scrollOffset < 0) {
+            height =  height - scrollOffset;
+            navigationController.scrollOffset = -scrollOffset;
+        } else {
+            navigationController.scrollOffset = 0;
+        }
+        backgroundFrame.size.height = height;
+        backgroundFrame.origin.y = frame.origin.y - scrollTopOffset;
+        navigationController.backgroundView.frame = backgroundFrame;
     }
     if (self.scrollView) {
         self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y - offsetY);
     }
     if (animated) {
         [UIView commitAnimations];
+        [self finishingMotion];
+    }
+}
+
+- (void) finishingMotion
+{
+    [self finishingMotionWithPower: _lastPower];
+}
+
+- (void) finishingMotionWithPower: (CGFloat) power
+{
+    if (_scrollState == BxNavigationBarScrollStateUp) {
+        return;
+    }
+    if (_scrollMotionEffects != nil && _scrollMotionEffects.count > 0) {
+        for (BxNavigationBarMotionEffect * effect in _scrollMotionEffects) {
+            [effect.view shakeXWithOffset: fabs(power) breakFactor:0.65 duration:0.75 maxShakes: fabs(power)];
+        }
     }
 }
 
@@ -272,6 +381,36 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 - (BxNavigationBar*) bxNavigationBar
 {
     return (BxNavigationBar*)self.navigationBar;
+}
+
+@end
+
+@implementation UIView (ShakeAnimation)
+
+- (void)shakeXWithOffset: (CGFloat) offset
+             breakFactor: (CGFloat) breakFactor
+                duration: (CGFloat) duration
+               maxShakes: (NSInteger) maxShakes
+{
+    static NSString * animationName = @"position";
+    
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath: animationName];
+    [animation setDuration: duration];
+    
+    NSMutableArray *keys = [NSMutableArray arrayWithCapacity: 128];
+    NSInteger shakeStep = maxShakes;
+    while(offset > 0.01) {
+        [keys addObject: [NSValue valueWithCGPoint: CGPointMake(self.center.x - offset, self.center.y)]];
+        offset *= breakFactor;
+        [keys addObject: [NSValue valueWithCGPoint: CGPointMake(self.center.x + offset, self.center.y)]];
+        offset *= breakFactor;
+        shakeStep--;
+        if(shakeStep <= 0) {
+            break;
+        }
+    }
+    animation.values = keys;
+    [self.layer addAnimation: animation forKey: animationName];
 }
 
 @end

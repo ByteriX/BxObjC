@@ -21,14 +21,29 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
     BxNavigationBarScrollStateUp
 };
 
+@interface BxNavigationBarMotionEffect: NSObject
+{
+}
+
+//! View for motion effect
+@property (weak, nonatomic) UIView * view;
+
+- (instancetype) initWithView: (UIView *) view;
+
+@end
+
 @interface BxNavigationBar : UINavigationBar
 
 //! This need define in viewWillApear, for scrolling naviationBar
 //! from pop or push navigation this property will get nil
 @property (strong, nonatomic) UIScrollView *scrollView;
+@property(copy, nonatomic) NSArray<BxNavigationBarMotionEffect*> * scrollMotionEffects;
+
 @property (assign, nonatomic, readonly) BxNavigationBarScrollState scrollState;
 
 @property(strong, nonatomic, readonly) BxNavigationController *navController;
+
+
 
 - (UIView*) backgroundView;
 

@@ -39,6 +39,11 @@
     return nil;
 }
 
+- (UIView*) navigationBackgroundWithController: (BxNavigationController*) navigationController
+{
+    return nil;
+}
+
 - (BxNavigationController*) navController
 {
     if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
@@ -59,6 +64,7 @@
 @interface BxNavigationController ()
 
 @property (nonatomic, weak) UIViewController * removedViewController;
+@property (nonatomic) CGFloat scrollOffset;
 
 @end
 
@@ -67,6 +73,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    self.scrollOffset = 0;
     if (IS_OS_7_OR_LATER) {
         [self.interactivePopGestureRecognizer addTarget: self action: @selector(handleNavigationPop:)];
     }
@@ -101,7 +108,8 @@
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    _toolPanel.frame = CGRectMake(0, CGRectGetMaxY(self.navigationBar.frame), self.navigationBar.frame.size.width, _toolPanel.frame.size.height);
+    [self setFrameForToolPanel];
+    [self setFrameForBackgroundView];
 }
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item
@@ -186,46 +194,92 @@
     [self checkPanelController:viewController animated:animated];
 }
 
+- (void) setFrameForToolPanel
+{
+    CGFloat y = CGRectGetMaxY(self.navigationBar.frame);
+    if (_toolPanel) {
+        y += self.scrollOffset;
+    }
+    _toolPanel.frame = CGRectMake(0, y, self.navigationBar.frame.size.width, _toolPanel.frame.size.height);
+}
+
+- (void) setFrameForBackgroundView
+{
+    CGFloat height = CGRectGetMaxY(self.navigationBar.frame);
+    if (_toolPanel) {
+        height += _toolPanel.frame.size.height;
+    }
+    if (_backgroundView) {
+        height += self.scrollOffset;
+    }
+    _backgroundView.frame = CGRectMake(0, 0, self.navigationBar.frame.size.width, height);
+}
+
 - (void)checkPanelController:(UIViewController *)viewController animated: (BOOL) animated
 {
     if (!viewController) {
         return;
     }
-    BOOL hide = YES;
+    self.scrollOffset = 0;
+    BOOL hidePanel = YES;
     if ([viewController respondsToSelector: @selector(navigationToolPanelWithController:)]){
         UIView * toolBar = [viewController navigationToolPanelWithController: self];
         if (toolBar){
             if (_toolPanel && toolBar != _toolPanel){ // так как панелька может обновиться, старую можно случайно потерять случайно и не удалить при выходе с экрана.
-                [self hidePanelAnimated: animated];
+                [self hideToolPanelAnimated: animated];
             }
             _toolPanel = toolBar;
-            _toolPanel.frame = CGRectMake(0, CGRectGetMaxY(self.navigationBar.frame), self.navigationBar.frame.size.width, _toolPanel.frame.size.height);
+            [self setFrameForToolPanel];
             _toolPanel.alpha = 0;
             [self.view addSubview: _toolPanel];
-            if (animated){
-                [UIView animateWithDuration: 0.5 animations:^{
-                    _toolPanel.alpha = 1;
-                }];
-            } else {
-                _toolPanel.alpha = 1;
+            if (animated) {
+                [UIView beginAnimations: nil context: nil];
             }
-            hide = NO;
+            _toolPanel.alpha = 1;
+            if (animated) {
+                [UIView commitAnimations];
+            }
+            hidePanel = NO;
         }
     }
-    if (hide) {
-        [self hidePanelAnimated: animated];
+    if (hidePanel) {
+        [self hideToolPanelAnimated: animated];
+    }
+    hidePanel = YES;
+    if ([viewController respondsToSelector: @selector(navigationBackgroundWithController:)]){
+        UIView * backgroundBar = [viewController navigationBackgroundWithController: self];
+        if (backgroundBar){
+            if (_backgroundView && backgroundBar != _backgroundView){ // так как панелька может обновиться, старую можно случайно потерять случайно и не удалить при выходе с экрана.
+                [self hideBackgroundPanelAnimated: animated];
+            }
+            _backgroundView = backgroundBar;
+            [self setFrameForBackgroundView];
+            _backgroundView.alpha = 0;
+            [self.view insertSubview:_backgroundView belowSubview: self.navigationBar];
+            if (animated) {
+                [UIView beginAnimations: nil context: nil];
+            }
+            self.backgroundView.alpha = 1;
+            self.bxNavigationBar.backgroundView.alpha = 0;
+            if (animated) {
+                [UIView commitAnimations];
+            }
+            hidePanel = NO;
+        }
+    }
+    if (hidePanel) {
+        [self hideBackgroundPanelAnimated: animated];
     }
 }
 
-- (void) hidePanelAnimated: (BOOL) animated
+- (void) hidePanel: (UIView*) panel animated: (BOOL) animated
 {
-    __weak UIView * popedToolPanel = _toolPanel;
-    _toolPanel = nil;
+    self.scrollOffset = 0;
+    __weak UIView * popedToolPanel = panel;
     if (animated){
         [UIView animateWithDuration: 0.25
                          animations: ^{
             popedToolPanel.alpha = 0;
-            self.bxNavigationBar.scrollView = nil;
         }
                          completion:^(BOOL finished)
         {
@@ -235,8 +289,34 @@
         }];
     } else {
         [popedToolPanel removeFromSuperview];
-        self.bxNavigationBar.scrollView = nil;
     }
+}
+
+- (void) hideToolPanelAnimated: (BOOL) animated
+{
+    [self hidePanel: _toolPanel animated: animated];
+    _toolPanel = nil;
+}
+
+- (void) hideBackgroundPanelAnimated: (BOOL) animated
+{
+    [self hidePanel: _backgroundView animated: animated];
+    if (animated) {
+        [UIView beginAnimations: nil context: nil];
+    }
+    self.bxNavigationBar.backgroundView.alpha = 1;
+    if (animated) {
+        [UIView commitAnimations];
+    }
+    _backgroundView = nil;
+}
+
+- (void) hidePanelAnimated: (BOOL) animated
+{
+    self.bxNavigationBar.scrollView = nil;
+    self.bxNavigationBar.scrollMotionEffects = nil;
+    [self hideBackgroundPanelAnimated: animated];
+    [self hideToolPanelAnimated: animated];
 }
 
 - (NSArray *) immediatePopViewController: (UIViewController *) toController animated:(BOOL)animated

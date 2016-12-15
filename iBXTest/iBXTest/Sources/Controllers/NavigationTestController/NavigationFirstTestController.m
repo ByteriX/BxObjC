@@ -37,6 +37,14 @@
     return self.toolView;
 }
 
+- (UIView*) navigationBackgroundWithController: (BxNavigationController*) navigationController
+{
+    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"common_background1.jpg"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    return imageView;
+}
+
 - (void) dealloc
 {
     NSLog(@"dealloc NavigationFirstTestController");
