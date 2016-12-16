@@ -140,33 +140,9 @@ s.subspec 'Vcl' do |vs|
 
     vs.requires_arc = [
         "**/BxIconWorkspace**.m",
-        "**/BxNavigation**.m"
+        "**/Navigation/**/*.*"
     ]
 end
-
-
-#s.source_files  = "**/Frameworks/**/*.{h,m,c}", "**/Sources/**/*.{h,m,c}"
-#s.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
-
-#s.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
-#s.public_header_files = "**/Frameworks/**/*.h", "**/Sources/**/*.h"
-
-#s.requires_arc = [
-#    "**/BxIconWorkspace**.m",
-#    "**/BxNavigation**.m",
-#    "**/BxPushNotificationMessageQueue.m",
-#    "**/XMLDictionary.m"
-#]
-
-#s.resources =
-#    "**/iBXCommon/**/Resources/**/*.strings",
-#    "**/iBXData/**/*.{png,xib}",
-#    "**/iBXVcl/**/*.{png,xib}",
-#    "**/iBXMap/**/*.{png,xib}"
-
-
-
-
 
 
 

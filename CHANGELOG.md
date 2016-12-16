@@ -6,6 +6,11 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.15 (17.12.2016)
+##### Improvment
+* VCL: Refactoring scrollEffects in BxNavigationBar
+* VCL: Create the BxNavigationBarShakeXEffect class with different logic
+
 ## 1.1.14 (16.12.2016)
 ##### Features
 * VCL: add scrollMotionEffects to BxNavigationBar

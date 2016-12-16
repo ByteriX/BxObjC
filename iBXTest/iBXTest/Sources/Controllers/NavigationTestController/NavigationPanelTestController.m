@@ -41,6 +41,8 @@
     _control.selectedSegmentIndex = 1;
     UIView * result = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 40)];
     [result addSubview: _control];
+    BxNavigationBarShakeXEffect * effect = [[BxNavigationBarShakeXEffect alloc] initWithView: _control];
+    self.navigationController.bxNavigationBar.scrollEffects = [NSArray<BxNavigationBarEffectProtocol> arrayWithObject: effect];
     return result;
 }
 

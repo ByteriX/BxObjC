@@ -314,7 +314,7 @@
 - (void) hidePanelAnimated: (BOOL) animated
 {
     self.bxNavigationBar.scrollView = nil;
-    self.bxNavigationBar.scrollMotionEffects = nil;
+    self.bxNavigationBar.scrollEffects = nil;
     [self hideBackgroundPanelAnimated: animated];
     [self hideToolPanelAnimated: animated];
 }

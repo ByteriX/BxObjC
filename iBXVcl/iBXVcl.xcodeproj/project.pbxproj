@@ -29,8 +29,6 @@
 		345AF17719D1A37100931F44 /* BxTreeListItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D44751F864E8F6DA9168F0F /* BxTreeListItem.h */; };
 		345AF17819D1A37400931F44 /* BxTreeListScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D447669E49AA64A477681E3 /* BxTreeListScrollView.h */; };
 		345AF17919D1A37B00931F44 /* NSIndexPath+BxTreeListScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D447B8D3023915D7409867C /* NSIndexPath+BxTreeListScrollView.h */; };
-		346DF3AA189A24F200308CBB /* BxNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 346DF3A9189A24F200308CBB /* BxNavigationController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		346DF3AF189A2CCE00308CBB /* BxNavigationController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 346DF3A8189A24F200308CBB /* BxNavigationController.h */; };
 		3472D06817DF2DBA0089FF7A /* BxLoadedImageViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3472D06717DF2DBA0089FF7A /* BxLoadedImageViewItem.m */; };
 		3472D06917DF2DDE0089FF7A /* BxLoadedImageViewItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3472D06617DF2DBA0089FF7A /* BxLoadedImageViewItem.h */; };
 		3472D07317DF46870089FF7A /* BxStandartRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3472D07217DF46870089FF7A /* BxStandartRateView.m */; };
@@ -80,7 +78,6 @@
 		8D447A9AEF6D13FA23EE2B34 /* BxIconWorkspaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D447F16A1B3C797F98C4405 /* BxIconWorkspaceView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8D447AAEA9D4D2CDCDDF6278 /* BxIconWorkspacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4472864524223D5A354DF9 /* BxIconWorkspacePageView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8D447AE971CFC890DC14C670 /* BxIconWorkspaceItemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44706A132C9CDDE31CBCCA /* BxIconWorkspaceItemControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
-		CF185153197C0C05001C0CD0 /* BxNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CF185152197C0C05001C0CD0 /* BxNavigationBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CF1CD4C71B886DC7000E27C7 /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1CD4C61B886DC7000E27C7 /* BxTextView.m */; };
 		CF1CD4C81B886E1C000E27C7 /* BxTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF1CD4C51B886DC7000E27C7 /* BxTextView.h */; };
 		CF9E3A26180496C500748842 /* BxPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9E3A20180496C500748842 /* BxPageControl.m */; };
@@ -107,7 +104,13 @@
 		CFA197AF180059D400C13C9E /* BxHighlightedTagLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA197AE180059D400C13C9E /* BxHighlightedTagLabel.m */; };
 		CFA19810180065BB00C13C9E /* BxHighlightedTagLabel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFA197AD180059D400C13C9E /* BxHighlightedTagLabel.h */; };
 		CFBB827D18F1245F00B8A5A5 /* BxAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBB827C18F1245F00B8A5A5 /* BxAppearance.m */; };
-		F91416451DFADF7C004A3491 /* BxNavigationBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF185151197C0C05001C0CD0 /* BxNavigationBar.h */; };
+		F938AF961E04748100E2C760 /* BxNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F938AF931E04748100E2C760 /* BxNavigationBar.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F938AF971E04748100E2C760 /* BxNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F938AF951E04748100E2C760 /* BxNavigationController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F938AF9E1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = F938AF9D1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		F938AF9F1E047DB800E2C760 /* BxNavigationBarEffectProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF991E04750400E2C760 /* BxNavigationBarEffectProtocol.h */; };
+		F938AFA01E047DBA00E2C760 /* BxNavigationBarShakeXEffect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF9C1E04771B00E2C760 /* BxNavigationBarShakeXEffect.h */; };
+		F938AFA11E047DBD00E2C760 /* BxNavigationBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF921E04748100E2C760 /* BxNavigationBar.h */; };
+		F938AFA21E047DBF00E2C760 /* BxNavigationController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF941E04748100E2C760 /* BxNavigationController.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,12 +181,14 @@
 				343728DB19D99CFE00FE0BEE /* BxIconWorkspaceItemControl.h in CopyFiles */,
 				CFA197A81800532800C13C9E /* BxHighlightedLabel.h in CopyFiles */,
 				345AF17919D1A37B00931F44 /* NSIndexPath+BxTreeListScrollView.h in CopyFiles */,
-				346DF3AF189A2CCE00308CBB /* BxNavigationController.h in CopyFiles */,
 				CFA197A91800532B00C13C9E /* BxHighlightedRect.h in CopyFiles */,
+				F938AFA01E047DBA00E2C760 /* BxNavigationBarShakeXEffect.h in CopyFiles */,
+				F938AFA11E047DBD00E2C760 /* BxNavigationBar.h in CopyFiles */,
+				F938AFA21E047DBF00E2C760 /* BxNavigationController.h in CopyFiles */,
+				F938AF9F1E047DB800E2C760 /* BxNavigationBarEffectProtocol.h in CopyFiles */,
 				34269AEC184340C4002E6BB1 /* UIViewController+BxVcl.h in CopyFiles */,
 				34432FFD18054AFC0081EEC4 /* BxLoadedImageListViewController.h in CopyFiles */,
 				CFA197AA1800532D00C13C9E /* BxHighlightedTextInfo.h in CopyFiles */,
-				F91416451DFADF7C004A3491 /* BxNavigationBar.h in CopyFiles */,
 				CF9E3A28180496DB00748842 /* BxPageControl.h in CopyFiles */,
 				3472D06917DF2DDE0089FF7A /* BxLoadedImageViewItem.h in CopyFiles */,
 				34497816180D75290070D7D2 /* BxLoadedImagePageView.h in CopyFiles */,
@@ -222,8 +227,6 @@
 		34432FF8180543390081EEC4 /* BxLoadedImageListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageListViewController.m; sourceTree = "<group>"; };
 		34497818180D7DCB0070D7D2 /* BxSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxSplashViewController.h; sourceTree = "<group>"; };
 		34497819180D7DCB0070D7D2 /* BxSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxSplashViewController.m; sourceTree = "<group>"; };
-		346DF3A8189A24F200308CBB /* BxNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationController.h; sourceTree = "<group>"; };
-		346DF3A9189A24F200308CBB /* BxNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		3472D06617DF2DBA0089FF7A /* BxLoadedImageViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItem.h; sourceTree = "<group>"; };
 		3472D06717DF2DBA0089FF7A /* BxLoadedImageViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItem.m; sourceTree = "<group>"; };
 		3472D07117DF46870089FF7A /* BxStandartRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxStandartRateView.h; sourceTree = "<group>"; };
@@ -273,8 +276,6 @@
 		8D447B8D3023915D7409867C /* NSIndexPath+BxTreeListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+BxTreeListScrollView.h"; sourceTree = "<group>"; };
 		8D447F16A1B3C797F98C4405 /* BxIconWorkspaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxIconWorkspaceView.m; sourceTree = "<group>"; };
 		8D447F6987ADE839EF4D3B45 /* BxIconWorkspaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxIconWorkspaceView.h; sourceTree = "<group>"; };
-		CF185151197C0C05001C0CD0 /* BxNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBar.h; sourceTree = "<group>"; };
-		CF185152197C0C05001C0CD0 /* BxNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationBar.m; sourceTree = "<group>"; };
 		CF1CD4C51B886DC7000E27C7 /* BxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxTextView.h; sourceTree = "<group>"; };
 		CF1CD4C61B886DC7000E27C7 /* BxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxTextView.m; sourceTree = "<group>"; };
 		CF9E3A1F180496C500748842 /* BxPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxPageControl.h; sourceTree = "<group>"; };
@@ -302,6 +303,13 @@
 		CFBB827B18F1245F00B8A5A5 /* BxAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxAppearance.h; sourceTree = "<group>"; };
 		CFBB827C18F1245F00B8A5A5 /* BxAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxAppearance.m; sourceTree = "<group>"; };
 		CFCF482319165D3B003E84B0 /* iBXCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBXCommon.xcodeproj; path = ../iBXCommon/iBXCommon.xcodeproj; sourceTree = "<group>"; };
+		F938AF921E04748100E2C760 /* BxNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBar.h; sourceTree = "<group>"; };
+		F938AF931E04748100E2C760 /* BxNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationBar.m; sourceTree = "<group>"; };
+		F938AF941E04748100E2C760 /* BxNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationController.h; sourceTree = "<group>"; };
+		F938AF951E04748100E2C760 /* BxNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationController.m; sourceTree = "<group>"; };
+		F938AF991E04750400E2C760 /* BxNavigationBarEffectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBarEffectProtocol.h; sourceTree = "<group>"; };
+		F938AF9C1E04771B00E2C760 /* BxNavigationBarShakeXEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBarShakeXEffect.h; sourceTree = "<group>"; };
+		F938AF9D1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationBarShakeXEffect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -515,6 +523,7 @@
 				34FD884D17CF5CF500E112AF /* Base */,
 				34FD885617CF5CF500E112AF /* Dialog */,
 				34432FF5180542810081EEC4 /* Media */,
+				F938AF8F1E04746800E2C760 /* Navigation */,
 				34FD885D17CF5CF500E112AF /* OldInput */,
 				34FD886217CF5CF500E112AF /* Service */,
 			);
@@ -532,10 +541,6 @@
 				34FD885517CF5CF500E112AF /* BxKeyboardController.m */,
 				34269AE918433EF2002E6BB1 /* UIViewController+BxVcl.h */,
 				34269AEA18433EF2002E6BB1 /* UIViewController+BxVcl.m */,
-				346DF3A8189A24F200308CBB /* BxNavigationController.h */,
-				346DF3A9189A24F200308CBB /* BxNavigationController.m */,
-				CF185151197C0C05001C0CD0 /* BxNavigationBar.h */,
-				CF185152197C0C05001C0CD0 /* BxNavigationBar.m */,
 				CFBB827B18F1245F00B8A5A5 /* BxAppearance.h */,
 				CFBB827C18F1245F00B8A5A5 /* BxAppearance.m */,
 			);
@@ -686,6 +691,28 @@
 				CFCF482B19165D3B003E84B0 /* iBXCommonTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		F938AF8F1E04746800E2C760 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F938AF981E0474D200E2C760 /* BarEffects */,
+				F938AF921E04748100E2C760 /* BxNavigationBar.h */,
+				F938AF931E04748100E2C760 /* BxNavigationBar.m */,
+				F938AF941E04748100E2C760 /* BxNavigationController.h */,
+				F938AF951E04748100E2C760 /* BxNavigationController.m */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F938AF981E0474D200E2C760 /* BarEffects */ = {
+			isa = PBXGroup;
+			children = (
+				F938AF991E04750400E2C760 /* BxNavigationBarEffectProtocol.h */,
+				F938AF9C1E04771B00E2C760 /* BxNavigationBarShakeXEffect.h */,
+				F938AF9D1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m */,
+			);
+			path = BarEffects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -846,9 +873,9 @@
 				34269AEB18433EF2002E6BB1 /* UIViewController+BxVcl.m in Sources */,
 				8D44715C3075FB63B4556BE3 /* BxTreeListScrollView.m in Sources */,
 				34FD888417CF62E700E112AF /* BxDialogController.m in Sources */,
-				CF185153197C0C05001C0CD0 /* BxNavigationBar.m in Sources */,
-				346DF3AA189A24F200308CBB /* BxNavigationController.m in Sources */,
+				F938AF961E04748100E2C760 /* BxNavigationBar.m in Sources */,
 				34FD888617CF62F300E112AF /* BxServiceController.m in Sources */,
+				F938AF971E04748100E2C760 /* BxNavigationController.m in Sources */,
 				3449781A180D7DCB0070D7D2 /* BxSplashViewController.m in Sources */,
 				34FD888917CF665600E112AF /* BxOldInputTableCell.m in Sources */,
 				34FD888817CF665400E112AF /* BxOldInputTableController.m in Sources */,
@@ -861,6 +888,7 @@
 				CFA197AF180059D400C13C9E /* BxHighlightedTagLabel.m in Sources */,
 				CFA197A61800531800C13C9E /* BxHighlightedTextInfo.m in Sources */,
 				CFA197A31800531100C13C9E /* BxHighlightedArea.m in Sources */,
+				F938AF9E1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m in Sources */,
 				3472D06817DF2DBA0089FF7A /* BxLoadedImageViewItem.m in Sources */,
 				3472D07317DF46870089FF7A /* BxStandartRateView.m in Sources */,
 				CFBB827D18F1245F00B8A5A5 /* BxAppearance.m in Sources */,

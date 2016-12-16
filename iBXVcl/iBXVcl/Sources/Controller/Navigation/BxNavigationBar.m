@@ -15,27 +15,6 @@
 #import "BxNavigationController.h"
 #import "BxCommon.h"
 
-@implementation  BxNavigationBarMotionEffect
-
-- (instancetype) initWithView: (UIView *) view
-{
-    self = [self init];
-    if (self) {
-        self.view = view;
-    }
-    return self;
-}
-
-@end
-
-@interface UIView (ShakeAnimation)
-
-- (void)shakeXWithOffset: (CGFloat) offset
-             breakFactor: (CGFloat) breakFactor
-                duration: (CGFloat) duration
-               maxShakes: (NSInteger) maxShakes;
-
-@end
 
 @interface BxNavigationController (private)
 
@@ -362,12 +341,9 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 
 - (void) finishingMotionWithPower: (CGFloat) power
 {
-    if (_scrollState == BxNavigationBarScrollStateUp) {
-        return;
-    }
-    if (_scrollMotionEffects != nil && _scrollMotionEffects.count > 0) {
-        for (BxNavigationBarMotionEffect * effect in _scrollMotionEffects) {
-            [effect.view shakeXWithOffset: fabs(power) breakFactor:0.65 duration:0.75 maxShakes: fabs(power)];
+    if (_scrollEffects != nil && _scrollEffects.count > 0) {
+        for (id<BxNavigationBarEffectProtocol> effect in _scrollEffects) {
+            [effect finishingMotionWithNavigationBar: self shift: power];
         }
     }
 }
@@ -381,36 +357,6 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 - (BxNavigationBar*) bxNavigationBar
 {
     return (BxNavigationBar*)self.navigationBar;
-}
-
-@end
-
-@implementation UIView (ShakeAnimation)
-
-- (void)shakeXWithOffset: (CGFloat) offset
-             breakFactor: (CGFloat) breakFactor
-                duration: (CGFloat) duration
-               maxShakes: (NSInteger) maxShakes
-{
-    static NSString * animationName = @"position";
-    
-    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath: animationName];
-    [animation setDuration: duration];
-    
-    NSMutableArray *keys = [NSMutableArray arrayWithCapacity: 128];
-    NSInteger shakeStep = maxShakes;
-    while(offset > 0.01) {
-        [keys addObject: [NSValue valueWithCGPoint: CGPointMake(self.center.x - offset, self.center.y)]];
-        offset *= breakFactor;
-        [keys addObject: [NSValue valueWithCGPoint: CGPointMake(self.center.x + offset, self.center.y)]];
-        offset *= breakFactor;
-        shakeStep--;
-        if(shakeStep <= 0) {
-            break;
-        }
-    }
-    animation.values = keys;
-    [self.layer addAnimation: animation forKey: animationName];
 }
 
 @end
