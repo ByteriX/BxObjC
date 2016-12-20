@@ -27,7 +27,10 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
 //! This need define in viewWillApear, for scrolling naviationBar
 //! from pop or push navigation this property will get nil
 @property (strong, nonatomic) UIScrollView *scrollView;
+//! Effects from user scrolling behaviors
 @property(copy, nonatomic) NSArray<BxNavigationBarEffectProtocol> * scrollEffects;
+//! If scroll is small all effects ignored. Default is NO.
+@property(nonatomic) BOOL scrollLimitation;
 
 @property (assign, nonatomic, readonly) BxNavigationBarScrollState scrollState;
 

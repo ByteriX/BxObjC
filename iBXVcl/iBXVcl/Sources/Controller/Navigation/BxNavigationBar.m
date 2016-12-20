@@ -55,6 +55,7 @@ static CGFloat minimalAlpha = 0.00001f;
         self.backgroundClassName = @"_UINavigationBarBackground";
     }
     
+    _scrollLimitation = NO;
     _scrollState = BxNavigationBarScrollStateNone;
     _lastScrollOffset = 0;
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
@@ -207,14 +208,16 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         return;
     }
     
-    BOOL isSmallScrolling = self.scrollView.contentSize.height < self.scrollView.frame.size.height + 2 * self.bounds.size.height;
-    BOOL isScrollingX = fabs(touch.x - _lastTouch.x) > fabs(touch.y - _lastTouch.y);
-    
-    if (self.scrollState == BxNavigationBarScrollStateNone && (isSmallScrolling || isScrollingX))
-    {
-        _startTouchY = touch.y;
-        _lastTouch = touch;
-        return;
+    if (_scrollLimitation) {
+        BOOL isSmallScrolling = self.scrollView.contentSize.height < self.scrollView.frame.size.height + 2 * self.bounds.size.height;
+        BOOL isScrollingX = fabs(touch.x - _lastTouch.x) > fabs(touch.y - _lastTouch.y);
+        
+        if (self.scrollState == BxNavigationBarScrollStateNone && (isSmallScrolling || isScrollingX))
+        {
+            _startTouchY = touch.y;
+            _lastTouch = touch;
+            return;
+        }
     }
     
     CGFloat power =  touch.y - _lastTouch.y;

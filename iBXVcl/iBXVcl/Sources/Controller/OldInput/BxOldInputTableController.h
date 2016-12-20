@@ -116,6 +116,7 @@ extern const NSString * const FNInputTableRowKeyboardType;
 
 
 // отступы задают
+- (CGFloat) tableHeightShift;
 - (CGFloat) heightShift;
 - (CGFloat) textShift;
 
