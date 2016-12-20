@@ -144,11 +144,11 @@
         isValue = YES;
     }
     
-    NSNumber * isEnabled = [element objectForKey:FNInputTableRowIsEnabled];
+    BOOL isEnabled = [self isEnabled];
     if (![[_rawData objectForKey: FNInputTableRowIsAction] boolValue]) {
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
-    if (isEnabled && ![isEnabled boolValue]){
+    if (!isEnabled){
         self.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     

@@ -438,6 +438,7 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 								   [NSMutableDictionary dictionaryWithObjectsAndKeys: @"Город", FNInputTableRowHint,
                                     @"Samara", FNInputTableRowPlaceholder,
                                     @"Самара", FNInputTableRowValue,
+                                    @NO, FNInputTableRowIsEnabled,
                                     @"city",  FNInputTableRowFieldName, nil],
 								   [NSMutableDictionary dictionaryWithObjectsAndKeys: @"Район", FNInputTableRowHint, 
                                     @"area", FNInputTableRowFieldName, nil],
@@ -450,7 +451,8 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
                                    [NSMutableDictionary dictionaryWithObjectsAndKeys: @"Дата рождения", FNInputTableRowHint,
                                     @"birthday", FNInputTableRowFieldName, @YES, FNInputTableRowIsDatePicker, nil],
                                    [NSMutableDictionary dictionaryWithObjectsAndKeys: 
-                                    @"Переход", FNInputTableRowHint, 
+                                    @"Переход", FNInputTableRowHint,
+                                    @NO, FNInputTableRowIsEnabled,
                                     @"Переход на страницу", FNInputTableRowValue,
                                     @"transport", FNInputTableRowFieldName, 
                                     [NSNumber numberWithBool: YES], FNInputTableRowIsAction,
@@ -1254,6 +1256,11 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
 {
     NSNumber * isSwitch = [row objectForKey: FNInputTableRowIsSwitch];
     return isSwitch == nil || (![isSwitch boolValue]);
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self getEnabledFromRow: [self getRowDataFrom: indexPath]];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
