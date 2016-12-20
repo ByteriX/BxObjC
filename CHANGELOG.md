@@ -6,6 +6,12 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.16 (20.12.2016)
+##### Improvment
+* VCL: add scrollLimitation property to BxNavigationBar
+* VCL: BxOldInputTableController: firstly initialize value of variantPicker (the same way as dataPicker)
+* VCL: BxOldInputTableController: disabled cell is not selected & transparent
+
 ## 1.1.15 (17.12.2016)
 ##### Improvment
 * VCL: Refactoring scrollEffects in BxNavigationBar
