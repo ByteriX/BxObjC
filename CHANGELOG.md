@@ -6,6 +6,10 @@ ByteriX, 2013-2016. All right reserved.
 
 # Versions
 
+## 1.1.17 (20.12.2016)
+##### Bug fixes
+* VCL: BxNavigationBar fix problems with scrollLimitation
+
 ## 1.1.16 (20.12.2016)
 ##### Improvment
 * VCL: add scrollLimitation property to BxNavigationBar

@@ -125,19 +125,6 @@ static CGFloat minimalAlpha = 0.00001f;
     [super layoutSubviews];
     
     [self setBackgroundWithShift: 0];
-    
-//    if (self.scrollView) {
-//        CGFloat scrollOffset = _scrollView.contentOffset.y + _scrollView.contentInset.top;
-//        if  (scrollOffset < 0) {
-//            NSLog(@"scrollOffset = %@", scrollOffset);
-//            [self shiftBackgroundWithShift: -scrollOffset];
-//        } else {
-//            [self shiftBackgroundWithShift: 0];
-//        }
-//        
-//    } else {
-//        [self shiftBackgroundWithShift: 0];
-//    }
 }
 
 // For scroll methods
@@ -208,10 +195,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         return;
     }
     
-    if (_scrollLimitation) {
-        BOOL isSmallScrolling = self.scrollView.contentSize.height < self.scrollView.frame.size.height + 2 * self.bounds.size.height;
-        BOOL isScrollingX = fabs(touch.x - _lastTouch.x) > fabs(touch.y - _lastTouch.y);
-        
+    BOOL isSmallScrolling = self.scrollView.contentSize.height < self.scrollView.frame.size.height;
+    BOOL isScrollingX = fabs(touch.x - _lastTouch.x) > fabs(touch.y - _lastTouch.y);
+    
+    if (_scrollLimitation || isScrollingX) {
         if (self.scrollState == BxNavigationBarScrollStateNone && (isSmallScrolling || isScrollingX))
         {
             _startTouchY = touch.y;
@@ -246,14 +233,14 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     bool isScrolling = (self.scrollState == BxNavigationBarScrollStateUp ||
                         self.scrollState == BxNavigationBarScrollStateDown);
     bool isStopingPan = (gesture.state == UIGestureRecognizerStateEnded ||
-                            gesture.state == UIGestureRecognizerStateCancelled);
+                         gesture.state == UIGestureRecognizerStateCancelled);
     
     // это тоже надо поправить, тут лучше бывает уходить в напрвлении "к кому сейчас ближе"
     if (isScrolling && isStopingPan) {
         if (self.scrollState == BxNavigationBarScrollStateDown && y < minY) {
             _scrollState = BxNavigationBarScrollStateUp;
         }
-        if (self.scrollState == BxNavigationBarScrollStateUp && y > maxY) {
+        if (self.scrollState == BxNavigationBarScrollStateUp && y > maxY || isSmallScrolling) {
             _scrollState = BxNavigationBarScrollStateDown;
         }
         
