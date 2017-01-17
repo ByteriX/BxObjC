@@ -2,9 +2,13 @@
 
 Library iByteriX
 
-ByteriX, 2013-2016. All right reserved.
+ByteriX, 2013-2017. All right reserved.
 
 # Versions
+
+## 1.1.18 (17.01.2017)
+##### Bug fixes
+* VCL: BxNavigationBar fix problem with canceling gusture when the scroll didn't change
 
 ## 1.1.17 (20.12.2016)
 ##### Bug fixes

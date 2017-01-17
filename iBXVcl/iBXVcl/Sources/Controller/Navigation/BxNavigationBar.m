@@ -25,6 +25,7 @@
 
 @interface BxNavigationBar () <UIGestureRecognizerDelegate>
 {
+    CGFloat _startContentY;
     CGFloat _startTouchY;
     CGFloat _startY;
     CGPoint _lastTouch;
@@ -185,13 +186,15 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     }
     
     CGPoint touch = [gesture translationInView: _scrollView.superview];
+    BOOL isScrollingY = fabs(_startContentY - self.scrollView.contentOffset.y) > 0.1;
     
-    if (gesture.state == UIGestureRecognizerStateBegan)
+    if (gesture.state == UIGestureRecognizerStateBegan || !isScrollingY)
     {
         _startTouchY = touch.y;
         _startY = self.frame.origin.y;
         _scrollState = BxNavigationBarScrollStateNone;
         _lastTouch = touch;
+        _startContentY = self.scrollView.contentOffset.y;
         return;
     }
     
