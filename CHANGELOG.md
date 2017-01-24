@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.19 (24.01.2017)
+##### Bug fixes
+* VCL: BxNavigationBar fix problem with changing scroll from an external approch
+
 ## 1.1.18 (17.01.2017)
 ##### Bug fixes
 * VCL: BxNavigationBar fix problem with canceling gusture when the scroll didn't change

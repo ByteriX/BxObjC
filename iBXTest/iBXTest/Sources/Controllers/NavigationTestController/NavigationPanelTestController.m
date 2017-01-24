@@ -69,14 +69,14 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+     CGFloat topY = self.topExtendedEdges;
+    [self.tableView setContentOffset: CGPointMake(0, -topY) animated: NO];
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear: animated];
     self.navigationController.bxNavigationBar.scrollView = self.tableView;
-    CGFloat topY = self.topExtendedEdges;
-    [self.tableView setContentOffset: CGPointMake(0, -topY) animated: NO];
 }
 
 @end

@@ -131,7 +131,9 @@ static CGFloat minimalAlpha = 0.00001f;
 // For scroll methods
 - (void) setScrollView:(UIScrollView*)scrollView
 {
-    [self resetScrollStateWithAnimation: NO];
+    [self resetScrollStateWithAnimation: YES];
+    
+    [_scrollView removeObserver: self forKeyPath:@"contentOffset"];
     
     _scrollView = scrollView;
     
@@ -141,6 +143,10 @@ static CGFloat minimalAlpha = 0.00001f;
     
     if (scrollView) {
         [scrollView addGestureRecognizer: self.panGesture];
+        [scrollView addObserver:self
+                     forKeyPath:@"contentOffset"
+                        options:NSKeyValueObservingOptionNew
+                        context:nil];
     }
 }
 
@@ -154,7 +160,7 @@ static CGFloat minimalAlpha = 0.00001f;
 
 - (void) statusBarDidChange
 {
-    [self resetScrollStateWithAnimation: NO];
+    [self resetScrollStateWithAnimation: YES];
 }
 
 - (void) applicationDidBecomeActive
@@ -177,6 +183,25 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         result -= minimalResult;
     }
     return result;
+}
+
+-(void) observeValueForKeyPath: (NSString *)keyPath
+                      ofObject: (id) object
+                        change: (NSDictionary *) change
+                       context: (void *) context
+{
+    if ([keyPath isEqualToString:@"contentOffset"]) {
+        BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
+        if (isNotReseted) {
+            bool isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
+                                 _panGesture.state == UIGestureRecognizerStateEnded ||
+                                 _panGesture.state == UIGestureRecognizerStateCancelled);
+            BOOL isSmallContentOffset = self.scrollView.contentOffset.y < 0;
+            if (isStopingPan && isSmallContentOffset) {
+                [self resetScrollStateWithAnimation: YES];
+            }
+        }
+    }
 }
 
 - (void) gesturePan: (UIPanGestureRecognizer*) gesture
@@ -243,7 +268,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         if (self.scrollState == BxNavigationBarScrollStateDown && y < minY) {
             _scrollState = BxNavigationBarScrollStateUp;
         }
-        if (self.scrollState == BxNavigationBarScrollStateUp && y > maxY || isSmallScrolling) {
+        if ((self.scrollState == BxNavigationBarScrollStateUp && y > maxY) || isSmallScrolling) {
             _scrollState = BxNavigationBarScrollStateDown;
         }
         
