@@ -10,6 +10,8 @@ ByteriX, 2013-2017. All right reserved.
 ##### Bug fixes
 * Common: change id to instanxetype for UIColor
 * update all settings
+* remove wantsFullScreenLayout from BxWebDocViewController
+* transport MBProgressHUD to pods
 
 ## 1.1.19 (24.01.2017)
 ##### Bug fixes

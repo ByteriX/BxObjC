@@ -55,7 +55,6 @@
 {
 	[super viewDidLoad];
 	[self.class defaultFileCash];
-	self.wantsFullScreenLayout = YES;
 	
 	_isLoad = NO;
 	CGRect rect = self.view.frame;

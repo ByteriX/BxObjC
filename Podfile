@@ -17,7 +17,15 @@ target 'iBXData' do
 
 end
 
+target 'iBXVcl' do
+    
+    project 'iBXVcl/iBXVcl.xcodeproj'
+    
+    use_frameworks!
 
+    pod 'MBProgressHUD'
+    
+end
 
 target 'iBXTest' do
 
@@ -26,7 +34,7 @@ target 'iBXTest' do
     use_frameworks!
 
     pod 'XMLDictionary', '1.4'
-
+    pod 'MBProgressHUD'
 
 
 end
@@ -39,6 +47,6 @@ target 'iBXTestTests' do
     use_frameworks!
 
     pod 'XMLDictionary', '1.4'
-
+    pod 'MBProgressHUD'
 
 end

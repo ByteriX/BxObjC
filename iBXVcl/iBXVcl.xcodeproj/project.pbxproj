@@ -42,7 +42,6 @@
 		34FD882E17CF582B00E112AF /* iBXVclTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD882D17CF582B00E112AF /* iBXVclTests.m */; };
 		34FD884917CF59E000E112AF /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884317CF59E000E112AF /* ECSlidingViewController.m */; };
 		34FD884A17CF59E000E112AF /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884517CF59E000E112AF /* UIImage+ImageWithUIView.m */; };
-		34FD884B17CF59E000E112AF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884817CF59E000E112AF /* MBProgressHUD.m */; };
 		34FD886517CF5CF500E112AF /* BxBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884F17CF5CF500E112AF /* BxBaseViewController.m */; };
 		34FD886817CF5CF500E112AF /* BxKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD885517CF5CF500E112AF /* BxKeyboardController.m */; };
 		34FD886917CF5CF500E112AF /* BxDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD885817CF5CF500E112AF /* BxDialogController.m */; };
@@ -59,11 +58,9 @@
 		34FD887617CF5F8700E112AF /* BxOldInputTableCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD885E17CF5CF500E112AF /* BxOldInputTableCell.h */; };
 		34FD887717CF5F8A00E112AF /* BxOldInputTableController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD886017CF5CF500E112AF /* BxOldInputTableController.h */; };
 		34FD887817CF5F8C00E112AF /* BxWebDocViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD886317CF5CF500E112AF /* BxWebDocViewController.h */; };
-		34FD887917CF5F9000E112AF /* MBProgressHUD.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD884717CF59E000E112AF /* MBProgressHUD.h */; };
 		34FD887A17CF5F9300E112AF /* ECSlidingViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD884217CF59E000E112AF /* ECSlidingViewController.h */; };
 		34FD887B17CF5FAA00E112AF /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884317CF59E000E112AF /* ECSlidingViewController.m */; };
 		34FD887C17CF5FAC00E112AF /* UIImage+ImageWithUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884517CF59E000E112AF /* UIImage+ImageWithUIView.m */; };
-		34FD887D17CF5FAE00E112AF /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884817CF59E000E112AF /* MBProgressHUD.m */; };
 		34FD887E17CF5FB300E112AF /* BxBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD884F17CF5CF500E112AF /* BxBaseViewController.m */; };
 		34FD887F17CF5FB900E112AF /* BxKeyboardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD885517CF5CF500E112AF /* BxKeyboardController.m */; };
 		34FD888417CF62E700E112AF /* BxDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FD885817CF5CF500E112AF /* BxDialogController.m */; };
@@ -78,6 +75,7 @@
 		8D447A9AEF6D13FA23EE2B34 /* BxIconWorkspaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D447F16A1B3C797F98C4405 /* BxIconWorkspaceView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8D447AAEA9D4D2CDCDDF6278 /* BxIconWorkspacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4472864524223D5A354DF9 /* BxIconWorkspacePageView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8D447AE971CFC890DC14C670 /* BxIconWorkspaceItemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44706A132C9CDDE31CBCCA /* BxIconWorkspaceItemControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C150B6679EAAE997FEC4DFFA /* Pods_iBXVcl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6FF331289FCDB1F6AC3EB8 /* Pods_iBXVcl.framework */; };
 		CF1CD4C71B886DC7000E27C7 /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1CD4C61B886DC7000E27C7 /* BxTextView.m */; };
 		CF1CD4C81B886E1C000E27C7 /* BxTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF1CD4C51B886DC7000E27C7 /* BxTextView.h */; };
 		CF9E3A26180496C500748842 /* BxPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9E3A20180496C500748842 /* BxPageControl.m */; };
@@ -203,7 +201,6 @@
 				34FD887517CF5F8400E112AF /* BxServiceController.h in CopyFiles */,
 				3472D07417DF468B0089FF7A /* BxStandartRateView.h in CopyFiles */,
 				34432FFE18054B020081EEC4 /* BxPageView.h in CopyFiles */,
-				34FD887917CF5F9000E112AF /* MBProgressHUD.h in CopyFiles */,
 				CFA19810180065BB00C13C9E /* BxHighlightedTagLabel.h in CopyFiles */,
 				34FD887A17CF5F9300E112AF /* ECSlidingViewController.h in CopyFiles */,
 				34FD887617CF5F8700E112AF /* BxOldInputTableCell.h in CopyFiles */,
@@ -245,8 +242,6 @@
 		34FD884317CF59E000E112AF /* ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSlidingViewController.m; sourceTree = "<group>"; };
 		34FD884417CF59E000E112AF /* UIImage+ImageWithUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageWithUIView.h"; sourceTree = "<group>"; };
 		34FD884517CF59E000E112AF /* UIImage+ImageWithUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageWithUIView.m"; sourceTree = "<group>"; };
-		34FD884717CF59E000E112AF /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		34FD884817CF59E000E112AF /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		34FD884E17CF5CF500E112AF /* BxBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxBaseViewController.h; sourceTree = "<group>"; };
 		34FD884F17CF5CF500E112AF /* BxBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxBaseViewController.m; sourceTree = "<group>"; };
 		34FD885417CF5CF500E112AF /* BxKeyboardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxKeyboardController.h; sourceTree = "<group>"; };
@@ -263,6 +258,8 @@
 		34FD886117CF5CF500E112AF /* BxOldInputTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxOldInputTableController.m; sourceTree = "<group>"; };
 		34FD886317CF5CF500E112AF /* BxWebDocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxWebDocViewController.h; sourceTree = "<group>"; };
 		34FD886417CF5CF500E112AF /* BxWebDocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxWebDocViewController.m; sourceTree = "<group>"; };
+		86164D34B95CFDA1440BEBBE /* Pods-iBXVcl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBXVcl.release.xcconfig"; path = "../Pods/Target Support Files/Pods-iBXVcl/Pods-iBXVcl.release.xcconfig"; sourceTree = "<group>"; };
+		8B6FF331289FCDB1F6AC3EB8 /* Pods_iBXVcl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iBXVcl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D44706A132C9CDDE31CBCCA /* BxIconWorkspaceItemControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxIconWorkspaceItemControl.m; sourceTree = "<group>"; };
 		8D4472864524223D5A354DF9 /* BxIconWorkspacePageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxIconWorkspacePageView.m; sourceTree = "<group>"; };
 		8D44751BE31F0C3B82C74D9D /* NSIndexPath+BxTreeListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+BxTreeListScrollView.m"; sourceTree = "<group>"; };
@@ -303,6 +300,7 @@
 		CFBB827B18F1245F00B8A5A5 /* BxAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxAppearance.h; sourceTree = "<group>"; };
 		CFBB827C18F1245F00B8A5A5 /* BxAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxAppearance.m; sourceTree = "<group>"; };
 		CFCF482319165D3B003E84B0 /* iBXCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = iBXCommon.xcodeproj; path = ../iBXCommon/iBXCommon.xcodeproj; sourceTree = "<group>"; };
+		DE69D2516305F89E8CA844C6 /* Pods-iBXVcl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iBXVcl.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-iBXVcl/Pods-iBXVcl.debug.xcconfig"; sourceTree = "<group>"; };
 		F938AF921E04748100E2C760 /* BxNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBar.h; sourceTree = "<group>"; };
 		F938AF931E04748100E2C760 /* BxNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationBar.m; sourceTree = "<group>"; };
 		F938AF941E04748100E2C760 /* BxNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationController.h; sourceTree = "<group>"; };
@@ -319,6 +317,7 @@
 			files = (
 				CFA197AC1800551400C13C9E /* UIKit.framework in Frameworks */,
 				34FD881017CF582A00E112AF /* Foundation.framework in Frameworks */,
+				C150B6679EAAE997FEC4DFFA /* Pods_iBXVcl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +409,7 @@
 				34FD882617CF582B00E112AF /* iBXVclTests */,
 				34FD880E17CF582A00E112AF /* Frameworks */,
 				34FD880D17CF582A00E112AF /* Products */,
+				EB3226C19D3A6B6869161D8A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -428,6 +428,7 @@
 				CFA197AB1800551400C13C9E /* UIKit.framework */,
 				34FD880F17CF582A00E112AF /* Foundation.framework */,
 				34FD881E17CF582B00E112AF /* SenTestingKit.framework */,
+				8B6FF331289FCDB1F6AC3EB8 /* Pods_iBXVcl.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -474,7 +475,6 @@
 			isa = PBXGroup;
 			children = (
 				34FD884117CF59E000E112AF /* ECSlidingViewController */,
-				34FD884617CF59E000E112AF /* MBProgressHUD */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -506,15 +506,6 @@
 				34FD884517CF59E000E112AF /* UIImage+ImageWithUIView.m */,
 			);
 			path = ECSlidingViewController;
-			sourceTree = "<group>";
-		};
-		34FD884617CF59E000E112AF /* MBProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				34FD884717CF59E000E112AF /* MBProgressHUD.h */,
-				34FD884817CF59E000E112AF /* MBProgressHUD.m */,
-			);
-			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		34FD884C17CF5A1100E112AF /* Controller */ = {
@@ -693,6 +684,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		EB3226C19D3A6B6869161D8A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DE69D2516305F89E8CA844C6 /* Pods-iBXVcl.debug.xcconfig */,
+				86164D34B95CFDA1440BEBBE /* Pods-iBXVcl.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F938AF8F1E04746800E2C760 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,9 +722,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 34FD883117CF582B00E112AF /* Build configuration list for PBXNativeTarget "iBXVcl" */;
 			buildPhases = (
+				6331F5A3B9EA7B3E4BA33361 /* [CP] Check Pods Manifest.lock */,
 				34FD880817CF582A00E112AF /* Sources */,
 				34FD880917CF582A00E112AF /* Frameworks */,
 				34FD880A17CF582A00E112AF /* CopyFiles */,
+				A2F51E1ADC0C291E592F5BBA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -853,6 +855,36 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		6331F5A3B9EA7B3E4BA33361 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2F51E1ADC0C291E592F5BBA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iBXVcl/Pods-iBXVcl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -866,7 +898,6 @@
 				CF9E3A381804A3C300748842 /* BxLoadedImagePageView.m in Sources */,
 				34FD887E17CF5FB300E112AF /* BxBaseViewController.m in Sources */,
 				34FD887F17CF5FB900E112AF /* BxKeyboardController.m in Sources */,
-				34FD887D17CF5FAE00E112AF /* MBProgressHUD.m in Sources */,
 				343728F719D9B6AE00FE0BEE /* BxPageControl.m in Sources */,
 				CF9E3A3518049C4600748842 /* BxPageView.m in Sources */,
 				CF9E3A3218049C1300748842 /* BxPageScrollView.m in Sources */,
@@ -910,7 +941,6 @@
 				CFA197A21800526800C13C9E /* BxHighlightedTextInfo.m in Sources */,
 				34FD884A17CF59E000E112AF /* UIImage+ImageWithUIView.m in Sources */,
 				CF9E3A26180496C500748842 /* BxPageControl.m in Sources */,
-				34FD884B17CF59E000E112AF /* MBProgressHUD.m in Sources */,
 				34FD886517CF5CF500E112AF /* BxBaseViewController.m in Sources */,
 				34FD886817CF5CF500E112AF /* BxKeyboardController.m in Sources */,
 				34FD886917CF5CF500E112AF /* BxDialogController.m in Sources */,
@@ -1031,6 +1061,7 @@
 		};
 		34FD883217CF582B00E112AF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE69D2516305F89E8CA844C6 /* Pods-iBXVcl.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/iBXVcl.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1051,6 +1082,7 @@
 		};
 		34FD883317CF582B00E112AF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86164D34B95CFDA1440BEBBE /* Pods-iBXVcl.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/iBXVcl.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

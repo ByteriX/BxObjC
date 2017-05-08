@@ -13,7 +13,7 @@
 
 #import <Foundation/Foundation.h>
 #import "BxBaseViewController.h"
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 #import "BxData.h"
 
 @interface BxWebDocViewController : BxBaseViewController <UIWebViewDelegate> {

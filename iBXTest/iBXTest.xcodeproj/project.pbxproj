@@ -96,6 +96,7 @@
 		CF185158197C4F33001C0CD0 /* NavigationPanelTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF185157197C4F33001C0CD0 /* NavigationPanelTestController.m */; };
 		CFB3193F182C133500D8A65E /* BxLoadedImageViewItemTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */; };
 		CFB31942182C158A00D8A65E /* BxLoadedImageViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */; };
+		F97295CC1EC05219001CF39D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97295CB1EC05219001CF39D /* MBProgressHUD.framework */; };
 		F99342841DDC54260016BB5E /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99342831DDC54260016BB5E /* XMLDictionary.framework */; };
 		F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9B12FA51CAFAFD20007457C /* BxCommonLocalizable.strings */; };
 /* End PBXBuildFile section */
@@ -350,6 +351,7 @@
 		CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemTableController.m; sourceTree = "<group>"; };
 		CFB31940182C158A00D8A65E /* BxLoadedImageViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemCell.h; sourceTree = "<group>"; };
 		CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemCell.m; sourceTree = "<group>"; };
+		F97295CB1EC05219001CF39D /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/BxObjC-fycatgcqimtetefdwmtwnvngzvrx/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		F99342831DDC54260016BB5E /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../Library/Developer/Xcode/DerivedData/BxObjC-fycatgcqimtetefdwmtwnvngzvrx/Build/Products/Debug-iphonesimulator/XMLDictionary/XMLDictionary.framework"; sourceTree = "<group>"; };
 		F9B12FA61CAFAFD20007457C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
 		F9B12FA71CAFAFD20007457C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F97295CC1EC05219001CF39D /* MBProgressHUD.framework in Frameworks */,
 				F99342841DDC54260016BB5E /* XMLDictionary.framework in Frameworks */,
 				347337AB18461B16001A0476 /* libiBXDB.a in Frameworks */,
 				340F1110182A3464007F1A3E /* libiBXMap.a in Frameworks */,
@@ -467,6 +470,7 @@
 		3453FB01178BFC9B0051C096 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F97295CB1EC05219001CF39D /* MBProgressHUD.framework */,
 				F99342831DDC54260016BB5E /* XMLDictionary.framework */,
 				340F110A182A3464007F1A3E /* libiBXCommon.a */,
 				340F110B182A3464007F1A3E /* libiBXData.a */,

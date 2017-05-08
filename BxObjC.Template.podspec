@@ -130,6 +130,7 @@ end
 s.subspec 'Vcl' do |vs|
     vs.dependency 'BxObjC/Common'
     vs.dependency 'BxObjC/Data'
+    vs.dependency 'MBProgressHUD'
 
     vs.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
     vs.resources = "**/iBXVcl/**/*.{png,xib}"

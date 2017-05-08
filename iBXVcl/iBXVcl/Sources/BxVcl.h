@@ -14,7 +14,6 @@
 #import "BxCommon.h"
 #import "BxData.h"
 
-#import "MBProgressHUD.h"
 #import "ECSlidingViewController.h"
 
 #import "BxBaseViewController.h"
