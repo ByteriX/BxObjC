@@ -6,9 +6,14 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.20.1 (08.05.2017)
+##### Improvment
+* Common: instancetype to nonnull instancetype
+* in Swift code expression let color = UIColor.color(withHex:0x000000)! has changed to let color = UIColor(hex:0x000000)
+
 ## 1.1.20 (08.05.2017)
-##### Bug fixes
-* Common: change id to instanxetype for UIColor
+##### Improvment
+* Common: change id to instancetype for UIColor
 * update all settings
 * remove wantsFullScreenLayout from BxWebDocViewController
 * transport MBProgressHUD to pods

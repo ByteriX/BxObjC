@@ -15,9 +15,9 @@
 
 @interface UIColor (BxUtils)
 
-+ (instancetype) colorWithHex: (UInt32) rgbValue alpha: (float) alpha;
-+ (instancetype) colorWithHex: (UInt32) rgbValue;
-+ (instancetype) colorFromHexString: (NSString*) hexString  alpha: (float) alpha;
-+ (instancetype) colorFromHexString: (NSString*) hexString;
++ (nonnull instancetype) colorWithHex: (UInt32) rgbValue alpha: (float) alpha;
++ (nonnull instancetype) colorWithHex: (UInt32) rgbValue;
++ (nonnull instancetype) colorFromHexString: (NSString*) hexString  alpha: (float) alpha;
++ (nonnull instancetype) colorFromHexString: (NSString*) hexString;
 
 @end
