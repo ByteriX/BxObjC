@@ -49,9 +49,6 @@ typedef enum  {
 //! Текстовое значение токина для Push Notification
 + (NSString*) deviceTokenFromData: (NSData*) webDeviceToken;
 
-//! симулирует возникновение предупреждения о нехватки памяти
-+ (void) performFakeMemoryWarning;
-
 //! Для Retina = 2.0, в остальных случаях = 1.0
 + (float) scale;
 

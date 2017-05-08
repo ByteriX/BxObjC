@@ -106,6 +106,7 @@
 	UIView * parentView = [self getViewFromParent: parent];
 	rect = parentView.frame;
 	rect.origin.x = rect.origin.y = 0.0f;
+    
     if ( UIInterfaceOrientationIsLandscape(parent.interfaceOrientation) && rect.size.width < rect.size.height ) 
     {
         CGFloat temp = rect.size.width;
@@ -185,12 +186,6 @@
 - (BOOL) isPresented
 {
 	return self.view.superview && self.view.alpha > 0.5f;
-}
-
-- (void) dealloc
-{
-    [self viewDidUnload];
-    [super dealloc];
 }
 
 @end

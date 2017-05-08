@@ -6,6 +6,11 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.20 (08.05.2017)
+##### Bug fixes
+* Common: change id to instanxetype for UIColor
+* update all settings
+
 ## 1.1.19 (24.01.2017)
 ##### Bug fixes
 * VCL: BxNavigationBar fix problem with changing scroll from an external approch

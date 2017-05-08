@@ -68,7 +68,10 @@
         [_application registerUserNotificationSettings: noteSettings];
         [_application registerForRemoteNotifications];
     } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
         [_application registerForRemoteNotificationTypes: (UIRemoteNotificationType)types];
+#pragma clang diagnostic pop
     }
 }
 

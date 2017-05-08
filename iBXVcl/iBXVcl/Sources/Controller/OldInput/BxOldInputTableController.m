@@ -281,7 +281,6 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
     NSArray * segmentedItems = [NSArray arrayWithObjects: BxCommonLocalString(@"InputTableBack", @"Back"), BxCommonLocalString(@"InputTableNext", @"Next"), nil];
     UISegmentedControl * segmentedControl = [[UISegmentedControl alloc] initWithItems: segmentedItems];
     segmentedControl.frame = CGRectMake(0.0f, 0.0f, 140.0f, 30.0f);
-    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     segmentedControl.momentary = YES;
     [segmentedControl addTarget: self action: @selector(changePosition:) forControlEvents: UIControlEventValueChanged];
     

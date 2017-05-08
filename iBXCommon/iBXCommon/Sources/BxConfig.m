@@ -20,40 +20,6 @@
 #include <unistd.h>
 #include <sys/sysctl.h>
 
-//! Проверка на трассировку программы в момент вызова этой функции
-static bool isTraced(void)
-// Returns true if the current process is being debugged (either
-// running under the debugger or has a debugger attached post facto).
-{
-    int                 junk;
-    int                 mib[4];
-    struct kinfo_proc   info;
-    size_t              size;
-	
-    // Initialize the flags so that, if sysctl fails for some bizarre
-    // reason, we get a predictable result.
-	
-    info.kp_proc.p_flag = 0;
-	
-    // Initialize mib, which tells sysctl the info we want, in this case
-    // we're looking for information about a specific process ID.
-	
-    mib[0] = CTL_KERN;
-    mib[1] = KERN_PROC;
-    mib[2] = KERN_PROC_PID;
-    mib[3] = getpid();
-	
-    // Call sysctl.
-	
-    size = sizeof(info);
-    junk = sysctl(mib, sizeof(mib) / sizeof(*mib), &info, &size, NULL, 0);
-    assert(junk == 0);
-	
-    // We're being debugged if the P_TRACED flag is set.
-	
-    return ( (info.kp_proc.p_flag & P_TRACED) != 0 );
-}
-
 @implementation BxConfig
 
 + (BxConfig*) defaultConfig
@@ -121,6 +87,40 @@ static bool isTraced(void)
 	return self;
 }
 
+//! Проверка на трассировку программы в момент вызова этой функции
++ (BOOL) isTraced
+// Returns true if the current process is being debugged (either
+// running under the debugger or has a debugger attached post facto).
+{
+    int                 junk;
+    int                 mib[4];
+    struct kinfo_proc   info;
+    size_t              size;
+    
+    // Initialize the flags so that, if sysctl fails for some bizarre
+    // reason, we get a predictable result.
+    
+    info.kp_proc.p_flag = 0;
+    
+    // Initialize mib, which tells sysctl the info we want, in this case
+    // we're looking for information about a specific process ID.
+    
+    mib[0] = CTL_KERN;
+    mib[1] = KERN_PROC;
+    mib[2] = KERN_PROC_PID;
+    mib[3] = getpid();
+    
+    // Call sysctl.
+    
+    size = sizeof(info);
+    junk = sysctl(mib, sizeof(mib) / sizeof(*mib), &info, &size, NULL, 0);
+    assert(junk == 0);
+    
+    // We're being debugged if the P_TRACED flag is set.
+    
+    return ( (info.kp_proc.p_flag & P_TRACED) != 0 );
+}
+
 + (BOOL) isDebuging
 {
 	//return isTraced();
@@ -136,19 +136,6 @@ static bool isTraced(void)
     NSString *deviceToken = [[webDeviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
     deviceToken = [deviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
     return deviceToken;
-}
-
-+ (void) performFakeMemoryWarning {
-#ifdef DEBUG
-    SEL memoryWarningSel = @selector(_performMemoryWarning);
-    if ([[UIApplication sharedApplication] respondsToSelector:memoryWarningSel]) {
-        [[UIApplication sharedApplication] performSelector:memoryWarningSel];
-    }else {
-        NSLog(@"Error: UIApplication no loger responds to -_performMemoryWarning");
-    }
-#else
-    NSLog(@"Warning: performFakeMemoryWarning called on a non debug");
-#endif
 }
 
 + (float) scale

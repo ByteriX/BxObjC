@@ -15,7 +15,7 @@
 
 @implementation UIColor (BxUtils)
 
-+ (id) colorWithHex: (UInt32) rgbValue alpha: (float) alpha
++ (instancetype) colorWithHex: (UInt32) rgbValue alpha: (float) alpha
 {
     return [UIColor colorWithRed: ((float)((rgbValue & 0xFF0000) >> 16))/255.0f
                            green: ((float)((rgbValue & 0xFF00) >> 8))/255.0f
@@ -23,12 +23,12 @@
                            alpha: alpha];
 }
 
-+ (id) colorWithHex: (UInt32) rgbValue
++ (instancetype) colorWithHex: (UInt32) rgbValue
 {
     return [self colorWithHex: rgbValue alpha: 1.0f];
 }
 
-+ (id) colorFromHexString: (NSString*) hexString alpha: (float) alpha
++ (instancetype) colorFromHexString: (NSString*) hexString alpha: (float) alpha
 {
     unsigned rgbValue = 0;
     NSScanner *scanner = [NSScanner scannerWithString: hexString];
@@ -40,7 +40,7 @@
                            alpha: alpha];
 }
 
-+ (id) colorFromHexString: (NSString*) hexString
++ (instancetype) colorFromHexString: (NSString*) hexString
 {
     return [self colorFromHexString: hexString alpha: 1.0f];
 }
