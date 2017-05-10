@@ -14,6 +14,7 @@
 #import <Foundation/Foundation.h>
 #import "BxHighlightedLabel.h"
 
+NS_CLASS_DEPRECATED_IOS(2_0, 6_0, "BxHighlightedTagLabel is deprecated. Use NSAttributedString from UILabel")
 @interface BxHighlightedTagLabel : BxHighlightedLabel {
     
 }

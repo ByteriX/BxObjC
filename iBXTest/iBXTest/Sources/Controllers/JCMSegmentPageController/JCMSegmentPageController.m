@@ -126,7 +126,6 @@ static const float TAB_BAR_HEIGHT = 44.0f;
     segmentedControl = [[[UISegmentedControl alloc] initWithFrame:segmentedControlRect] autorelease];
     segmentedControl.backgroundColor = [UIColor clearColor];
     segmentedControl.momentary = NO;
-    segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
     [segmentedControl addTarget:self action:@selector(tabButtonPressed:) forControlEvents:UIControlEventValueChanged];
     if (tintColor) {
         [segmentedControl setTintColor:tintColor];

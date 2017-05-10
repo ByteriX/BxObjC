@@ -28,7 +28,7 @@
     return [self colorWithHex: rgbValue alpha: 1.0f];
 }
 
-+ (nonnull instancetype) colorFromHexString: (NSString*) hexString alpha: (float) alpha
++ (nonnull instancetype) colorFromHexString: (nonnull NSString*) hexString alpha: (float) alpha
 {
     unsigned rgbValue = 0;
     NSScanner *scanner = [NSScanner scannerWithString: hexString];
@@ -40,7 +40,7 @@
                            alpha: alpha];
 }
 
-+ (nonnull instancetype) colorFromHexString: (NSString*) hexString
++ (nonnull instancetype) colorFromHexString: (nonnull NSString*) hexString
 {
     return [self colorFromHexString: hexString alpha: 1.0f];
 }

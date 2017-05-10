@@ -12,6 +12,7 @@
  */
 
 #import "BxTextView.h"
+#import "BxCommon.h"
 
 @interface BxTextView ()
 
@@ -76,7 +77,17 @@
     
     if (_shouldDrawPlaceholder) {
         [_placeholderColor set];
-        [_placeholder drawInRect:CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f) withFont:self.font];
+        CGRect rect = CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f);
+        if IS_OS_7_OR_LATER {
+            [_placeholder drawInRect: rect
+                      withAttributes: [NSDictionary dictionaryWithObject:self.font forKey: NSFontAttributeName]];
+        } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            [_placeholder drawInRect: rect withFont:self.font];
+#pragma clang diagnostic pop
+        }
+        
     }
 }
 

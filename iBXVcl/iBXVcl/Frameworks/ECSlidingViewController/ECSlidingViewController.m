@@ -676,18 +676,12 @@ const NSTimeInterval animationDuration = 0.25f;
     }
 }
 
-- (void) viewDidUnload
+- (void) dealloc
 {
     self.resetTapGesture = nil;
     self.panGesture = nil;
     self.topViewSnapshot = nil;
     self.topViewSnapshotPanGesture = nil;
-    [super viewDidUnload];
-}
-
-- (void) dealloc
-{
-    [self viewDidUnload];
     self.underLeftViewController = nil;
     self.underRightViewController = nil;
     self.topViewController = nil;

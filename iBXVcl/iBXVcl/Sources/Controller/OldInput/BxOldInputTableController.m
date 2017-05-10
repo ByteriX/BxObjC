@@ -84,6 +84,16 @@ const NSString * const FNInputTableRowKeyboardType = @"keyboardType";
     return [self appearance];
 }
 
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait whenContainedIn:(nullable Class <UIAppearanceContainer>)ContainerClass, ... NS_REQUIRES_NIL_TERMINATION
+{
+    return [self appearance];
+}
+
++ (instancetype)appearanceForTraitCollection:(UITraitCollection *)trait
+{
+    return [self appearance];
+}
+
 - (void) initObject
 {
     self.dateFormatter = [[[NSDateFormatter alloc] init] autorelease];

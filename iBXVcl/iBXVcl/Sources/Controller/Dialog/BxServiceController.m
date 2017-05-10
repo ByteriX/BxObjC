@@ -107,7 +107,7 @@
 	rect = parentView.frame;
 	rect.origin.x = rect.origin.y = 0.0f;
     
-    if ( UIInterfaceOrientationIsLandscape(parent.interfaceOrientation) && rect.size.width < rect.size.height ) 
+    if ( parent.view.frame.size.width > parent.view.frame.size.height && rect.size.width < rect.size.height )
     {
         CGFloat temp = rect.size.width;
         rect.size.width = rect.size.height;

@@ -37,6 +37,7 @@ extern const NSString * const FNInputTableRowMaxChecksCount; // по умолч�
 extern const NSString * const FNInputTableRowIcon;
 extern const NSString * const FNInputTableRowKeyboardType;
 
+NS_CLASS_DEPRECATED_IOS(2_0, 7_0, "BxOldInputTableController is deprecated. Use BxInputController")
 @interface BxOldInputTableController : BxKeyboardController <UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate,  UIAppearance> {
 @protected
 	UIImageView * _imageView;

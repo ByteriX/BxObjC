@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import "BxHighlightedArea.h"
 
+NS_CLASS_DEPRECATED_IOS(2_0, 6_0, "BxHighlightedLabel is deprecated. Use NSAttributedString from UILabel")
 @interface BxHighlightedLabel : UIView {
 @protected
 	CGFloat _height;

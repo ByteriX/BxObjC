@@ -15,6 +15,7 @@
 
 @class BxOldInputTableController;
 
+NS_CLASS_DEPRECATED_IOS(2_0, 7_0, "BxOldInputTableController is deprecated. Use BxInputController")
 @interface BxOldInputTableCell : UITableViewCell {
 @protected
 	BOOL _isComment;
