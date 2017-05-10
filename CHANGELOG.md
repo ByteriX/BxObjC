@@ -9,7 +9,7 @@ ByteriX, 2013-2017. All right reserved.
 ## 1.1.21 (10.05.2017)
 ##### Improvment
 * Common: fix nonnull in Color constructors
-* fix all warning dependency with iOS 7/8 deprication
+* fix all warning dependency with iOS 7/8 deprecation
 * fix all projects warning
 
 ## 1.1.20.1 (08.05.2017)
