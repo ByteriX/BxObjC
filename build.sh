@@ -2,7 +2,7 @@
 
 
 APP_CONFIG_PATH="./build.config"
-TEMPLATE_SPEC_PATH="BxObjC.Template.podspec"
+TEMPLATE_SPEC_PATH="BxObjC.templatespec"
 WORK_SPEC_PATH="BxObjC.podspec"
 VAR_NAME="VERSION_NUMBER"
 
