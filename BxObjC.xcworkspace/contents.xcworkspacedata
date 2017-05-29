@@ -11,7 +11,7 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:BxObjC.Template.podspec">
+      location = "group:BxObjC.templatespec">
    </FileRef>
    <FileRef
       location = "group:iBXCommon/iBXCommon.xcodeproj">
