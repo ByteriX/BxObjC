@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.22 (31.05.2017)
+##### Bug fixes
+* fix navigation panel & backgroung animation from transiton
+
 ## 1.1.21 (10.05.2017)
 ##### Improvment
 * Common: fix nonnull in Color constructors

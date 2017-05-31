@@ -97,7 +97,7 @@
     }
     BOOL isBack = self.topViewController == self.removedViewController;
     if ( isBack ) {
-        [self hidePanelAnimated: YES];
+        [self resetPanelAnimated: YES];
         [self checkPanelController:self.removedViewController animated: YES];
     } else {
         [self navigationWillPopToActiveController: self.removedViewController];
@@ -189,7 +189,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    //[self hidePanelAnimated: YES];
+    [self resetPanelAnimated: YES];
     [super pushViewController: viewController animated: animated];
     [self checkPanelController:viewController animated:animated];
 }
@@ -314,10 +314,17 @@
     _backgroundView = nil;
 }
 
-- (void) hidePanelAnimated: (BOOL) animated
+- (void) resetPanelAnimated: (BOOL) animated
 {
     self.bxNavigationBar.scrollView = nil;
     self.bxNavigationBar.scrollEffects = nil;
+    //[self hideBackgroundPanelAnimated: animated showNativeBackgroundView: YES];
+    //[self hideToolPanelAnimated: animated];
+}
+
+- (void) hidePanelAnimated: (BOOL) animated
+{
+    [self resetPanelAnimated: animated];
     [self hideBackgroundPanelAnimated: animated showNativeBackgroundView: YES];
     [self hideToolPanelAnimated: animated];
 }
@@ -332,7 +339,7 @@
             [thisController navigationWillPopController: self];
         }
     }
-    //[self hidePanelAnimated: animated];
+    [self resetPanelAnimated: animated];
     self.removedViewController = self.topViewController;
     id removeControllers = [super popToViewController: toController animated: animated];
     [self checkPanelController:self.topViewController animated:animated];
@@ -360,7 +367,7 @@
     {
         [self navigationWillPopToActiveController: self.visibleViewController];
     }
-    //[self hidePanelAnimated: animated];
+    [self resetPanelAnimated: animated];
     self.removedViewController = self.topViewController;
     id removeController = [super popViewControllerAnimated: animated];
     [self checkPanelController:self.visibleViewController animated:animated];
