@@ -189,7 +189,7 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self hidePanelAnimated: YES];
+    //[self hidePanelAnimated: YES];
     [super pushViewController: viewController animated: animated];
     [self checkPanelController:viewController animated:animated];
 }
@@ -250,7 +250,7 @@
         UIView * backgroundBar = [viewController navigationBackgroundWithController: self];
         if (backgroundBar){
             if (_backgroundView && backgroundBar != _backgroundView){ // так как панелька может обновиться, старую можно случайно потерять случайно и не удалить при выходе с экрана.
-                [self hideBackgroundPanelAnimated: animated];
+                [self hideBackgroundPanelAnimated: animated showNativeBackgroundView: NO];
             }
             _backgroundView = backgroundBar;
             [self setFrameForBackgroundView];
@@ -268,7 +268,7 @@
         }
     }
     if (hidePanel) {
-        [self hideBackgroundPanelAnimated: animated];
+        [self hideBackgroundPanelAnimated: animated showNativeBackgroundView: YES];
     }
 }
 
@@ -298,15 +298,18 @@
     _toolPanel = nil;
 }
 
-- (void) hideBackgroundPanelAnimated: (BOOL) animated
+- (void) hideBackgroundPanelAnimated: (BOOL) animated showNativeBackgroundView: (BOOL) showNativeBackgroundView
 {
     [self hidePanel: _backgroundView animated: animated];
-    if (animated) {
-        [UIView beginAnimations: nil context: nil];
-    }
-    self.bxNavigationBar.backgroundView.alpha = 1;
-    if (animated) {
-        [UIView commitAnimations];
+    if (showNativeBackgroundView) {
+        if (animated) {
+            [UIView beginAnimations: nil context: nil];
+        }
+        self.bxNavigationBar.backgroundView.alpha = 1;
+        if (animated) {
+            [UIView commitAnimations];
+        }
+        
     }
     _backgroundView = nil;
 }
@@ -315,7 +318,7 @@
 {
     self.bxNavigationBar.scrollView = nil;
     self.bxNavigationBar.scrollEffects = nil;
-    [self hideBackgroundPanelAnimated: animated];
+    [self hideBackgroundPanelAnimated: animated showNativeBackgroundView: YES];
     [self hideToolPanelAnimated: animated];
 }
 
@@ -329,7 +332,7 @@
             [thisController navigationWillPopController: self];
         }
     }
-    [self hidePanelAnimated: animated];
+    //[self hidePanelAnimated: animated];
     self.removedViewController = self.topViewController;
     id removeControllers = [super popToViewController: toController animated: animated];
     [self checkPanelController:self.topViewController animated:animated];
@@ -357,7 +360,7 @@
     {
         [self navigationWillPopToActiveController: self.visibleViewController];
     }
-    [self hidePanelAnimated: animated];
+    //[self hidePanelAnimated: animated];
     self.removedViewController = self.topViewController;
     id removeController = [super popViewControllerAnimated: animated];
     [self checkPanelController:self.visibleViewController animated:animated];
