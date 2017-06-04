@@ -6,6 +6,11 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.23 (04.06.2017)
+##### Bug fixes
+* fix navigation panel & backgroung which is changing isNavigationBarHidden
+* added cases with a changing isNavigationBarHidden to the example
+
 ## 1.1.22 (31.05.2017)
 ##### Bug fixes
 * fix navigation panel & backgroung animation from transiton

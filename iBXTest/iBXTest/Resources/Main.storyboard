@@ -632,221 +632,6 @@
             </objects>
             <point key="canvasLocation" x="1212" y="3434"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="heX-Ej-WaI">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="lRh-Av-JHL" customClass="NavigationTopViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="C3d-DB-hfF"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QOA-89-qSj">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="C7H-vh-8N8" kind="relationship" relationship="rootViewController" id="s6q-8e-Q43"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2H9-0r-zep" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="278" y="4151"/>
-        </scene>
-        <!--Первый-->
-        <scene sceneID="1kU-6d-oft">
-            <objects>
-                <viewController id="C7H-vh-8N8" customClass="NavigationFirstTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Z3b-mq-EHH"/>
-                        <viewControllerLayoutGuide type="bottom" id="vJA-VU-hWK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tpn-dr-4gH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Первый" id="5YM-ky-PLr">
-                        <barButtonItem key="rightBarButtonItem" title="основной &gt;" id="tdQ-WM-gyW">
-                            <connections>
-                                <segue destination="4O9-BY-dqA" kind="push" id="Z3K-TL-tvS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qGq-Zd-Niy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="665" y="4143"/>
-        </scene>
-        <!--Основной-->
-        <scene sceneID="A14-DQ-IYc">
-            <objects>
-                <viewController id="4O9-BY-dqA" customClass="NavigationCommonTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="iA9-5F-QKe"/>
-                        <viewControllerLayoutGuide type="bottom" id="AQa-iC-lyu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Gf0-ay-BZl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f75-XP-yKU">
-                                <rect key="frame" x="136" y="65" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Основной" id="HY5-8N-nkB">
-                        <barButtonItem key="rightBarButtonItem" title="Далее" id="mQ4-KO-9cx">
-                            <connections>
-                                <segue destination="oeh-RC-pLi" kind="push" id="lrH-qQ-SCY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZkA-OW-avU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1082" y="4143"/>
-        </scene>
-        <!--TestNavigation-->
-        <scene sceneID="Fkj-MJ-bGS">
-            <objects>
-                <viewController title="TestNavigation" id="oeh-RC-pLi" customClass="NavigationTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8dp-Gw-pGF"/>
-                        <viewControllerLayoutGuide type="bottom" id="gMP-AS-7WO"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="COM-PI-BiR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbB-Je-VHO">
-                                <rect key="frame" x="20" y="128" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Тригер, не позволяющий выйти">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" red="1" green="0.31409598770997915" blue="0.23450263346201028" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btTrigerExitClick:" destination="oeh-RC-pLi" eventType="touchUpInside" id="R5y-gB-TTw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jz5-kG-mus">
-                                <rect key="frame" x="20" y="182" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Контролер с панелью">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" red="1" green="0.31409598770000002" blue="0.2345026335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Efj-Xd-Ai7" kind="push" id="Jme-XI-X64"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iA3-YD-5uS">
-                                <rect key="frame" x="20" y="229" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Назад">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" red="1" green="0.31409598770000002" blue="0.2345026335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btExitClick:" destination="oeh-RC-pLi" eventType="touchUpInside" id="ENv-SI-26K"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWw-7S-EA1">
-                                <rect key="frame" x="20" y="269" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Назад в корень">
-                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" red="1" green="0.31409598770000002" blue="0.2345026335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="btExitToRootClick:" destination="oeh-RC-pLi" eventType="touchUpInside" id="lWQ-IE-72Q"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Тригер" id="1mM-zE-3mD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eqj-oz-5AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1550" y="4143"/>
-        </scene>
-        <!--Просто экран-->
-        <scene sceneID="rbm-4R-C86">
-            <objects>
-                <viewController id="IIU-B5-ldw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="td1-bf-Rje"/>
-                        <viewControllerLayoutGuide type="bottom" id="92g-G5-Q6N"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="t8S-DW-fDn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Просто экран" id="dly-7u-XWe"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jkM-UN-T84" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2403" y="4143"/>
-        </scene>
-        <!--С панелью-->
-        <scene sceneID="97A-qX-Edz">
-            <objects>
-                <tableViewController id="Efj-Xd-Ai7" customClass="NavigationPanelTestController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="bUH-KN-ZjR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="jTU-ck-17e" style="IBUITableViewCellStyleDefault" id="HzU-8d-13k">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HzU-8d-13k" id="dod-Og-FRr">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jTU-ck-17e">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="IIU-B5-ldw" kind="push" id="Ltd-zH-Pid"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Efj-Xd-Ai7" id="3OB-Ie-A06"/>
-                            <outlet property="delegate" destination="Efj-Xd-Ai7" id="X1S-eh-Bs1"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="С панелью" id="g1o-rG-qV7">
-                        <barButtonItem key="rightBarButtonItem" image="testicon3.png" id="1wq-nm-TdO">
-                            <connections>
-                                <segue destination="C7H-vh-8N8" kind="push" id="ylN-aR-1EK"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="roP-2h-Axp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1962" y="4143"/>
-        </scene>
         <!--Test Bx Old Input Table Controller-->
         <scene sceneID="wkY-9f-vGz">
             <objects>
@@ -885,7 +670,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="F8h-1Z-E26">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -910,7 +695,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="v80-0l-5NX">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -935,7 +720,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bEd-WF-NZE">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -964,7 +749,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GfW-i4-yBC">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -989,7 +774,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RaS-62-VdZ">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1014,7 +799,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ynA-mD-x7P">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1043,7 +828,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6dG-Qo-0sd">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1068,7 +853,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0ZM-Ay-Urj">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1093,7 +878,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qdS-Cn-rYj">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1122,7 +907,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kRo-kZ-TLJ">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1147,7 +932,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dnO-nH-WiN">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1172,7 +957,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Текст, который читается наура" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="miM-6k-28x">
-                                                    <rect key="frame" x="16" y="15" width="246.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="15" width="246.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1600,24 +1385,6 @@
             </objects>
             <point key="canvasLocation" x="1501" y="5634"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="OWB-b8-kxT">
-            <objects>
-                <tabBarController storyboardIdentifier="NavigationTestController" definesPresentationContext="YES" id="Ual-F3-3eX" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="6HD-GK-tnL">
-                        <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="lRh-Av-JHL" kind="relationship" relationship="viewControllers" id="PMX-vu-ZOV"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xUM-hB-Dyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-162" y="4150"/>
-        </scene>
         <!--Navigation Top View Controller-->
         <scene sceneID="c2N-CT-dAm">
             <objects>
@@ -1776,16 +1543,18 @@
             </objects>
             <point key="canvasLocation" x="1705" y="-140"/>
         </scene>
+        <!--NavigationTestController-->
+        <scene sceneID="GtH-Vr-w5m">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="NavigationTestController" storyboardName="NavigationController" referencedIdentifier="NavigationTestController" id="rmC-A8-kLV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HIH-CK-lNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="4150"/>
+        </scene>
     </scenes>
-    <resources>
-        <image name="testicon3.png" width="32" height="32"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="ylN-aR-1EK"/>
-    </inferredMetricsTieBreakers>
 </document>

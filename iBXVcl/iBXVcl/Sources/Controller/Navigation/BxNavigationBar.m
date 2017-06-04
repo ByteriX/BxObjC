@@ -154,7 +154,11 @@ static CGFloat minimalAlpha = 0.00001f;
 {
     _scrollState = BxNavigationBarScrollStateNone;
     CGRect frame = self.frame;
-    frame.origin.y = [self scrollTopOffset];
+    if (self.navController.isNavigationBarHidden) {
+        frame.origin.y -= frame.size.height;
+    } else {
+        frame.origin.y = [self scrollTopOffset];
+    }
     [self setFrame: frame alpha: 1.0f scrollOffset: 0.0f animated: animated];
 }
 
@@ -191,6 +195,9 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
                        context: (void *) context
 {
     if ([keyPath isEqualToString:@"contentOffset"]) {
+        if (self.navController.isNavigationBarHidden) {
+            return;
+        }
         BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
         if (isNotReseted) {
             bool isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
@@ -206,7 +213,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 
 - (void) gesturePan: (UIPanGestureRecognizer*) gesture
 {
-    if (_scrollView == nil || gesture.view != _scrollView) {
+    if (_scrollView == nil || gesture.view != _scrollView || self.navController.isNavigationBarHidden) {
         return;
     }
     

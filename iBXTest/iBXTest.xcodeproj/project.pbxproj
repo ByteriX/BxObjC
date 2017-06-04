@@ -96,6 +96,8 @@
 		CF185158197C4F33001C0CD0 /* NavigationPanelTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF185157197C4F33001C0CD0 /* NavigationPanelTestController.m */; };
 		CFB3193F182C133500D8A65E /* BxLoadedImageViewItemTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */; };
 		CFB31942182C158A00D8A65E /* BxLoadedImageViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */; };
+		F92410761EE43C3D00B8AEC1 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */; };
+		F924107E1EE43ED200B8AEC1 /* NavigationBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F924107D1EE43ED200B8AEC1 /* NavigationBackgroundController.m */; };
 		F97295CC1EC05219001CF39D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97295CB1EC05219001CF39D /* MBProgressHUD.framework */; };
 		F99342841DDC54260016BB5E /* XMLDictionary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99342831DDC54260016BB5E /* XMLDictionary.framework */; };
 		F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9B12FA51CAFAFD20007457C /* BxCommonLocalizable.strings */; };
@@ -351,6 +353,9 @@
 		CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemTableController.m; sourceTree = "<group>"; };
 		CFB31940182C158A00D8A65E /* BxLoadedImageViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemCell.h; sourceTree = "<group>"; };
 		CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemCell.m; sourceTree = "<group>"; };
+		F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
+		F924107C1EE43ED200B8AEC1 /* NavigationBackgroundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBackgroundController.h; sourceTree = "<group>"; };
+		F924107D1EE43ED200B8AEC1 /* NavigationBackgroundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBackgroundController.m; sourceTree = "<group>"; };
 		F97295CB1EC05219001CF39D /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = "../../../Library/Developer/Xcode/DerivedData/BxObjC-fycatgcqimtetefdwmtwnvngzvrx/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework"; sourceTree = "<group>"; };
 		F99342831DDC54260016BB5E /* XMLDictionary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XMLDictionary.framework; path = "../../../Library/Developer/Xcode/DerivedData/BxObjC-fycatgcqimtetefdwmtwnvngzvrx/Build/Products/Debug-iphonesimulator/XMLDictionary/XMLDictionary.framework"; sourceTree = "<group>"; };
 		F9B12FA61CAFAFD20007457C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
@@ -587,6 +592,8 @@
 				34336A73197CE87D00B6EB62 /* NavigationFirstTestController.m */,
 				344A59691A2DAA000014E119 /* NavigationCommonTestController.h */,
 				344A596A1A2DAA000014E119 /* NavigationCommonTestController.m */,
+				F924107C1EE43ED200B8AEC1 /* NavigationBackgroundController.h */,
+				F924107D1EE43ED200B8AEC1 /* NavigationBackgroundController.m */,
 			);
 			path = NavigationTestController;
 			sourceTree = "<group>";
@@ -701,6 +708,7 @@
 				34B58BDD1A3833DA00581DAE /* BxBaseViewController~ipad.xib */,
 				34B9743F184DDE0900622F7D /* images */,
 				34A24982182A20790049A1B1 /* Main.storyboard */,
+				F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1037,6 +1045,7 @@
 				34B97445184DDE0900622F7D /* testicon2.png in Resources */,
 				3453FB19178BFC9B0051C096 /* Default-568h@2x.png in Resources */,
 				F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */,
+				F92410761EE43C3D00B8AEC1 /* NavigationController.storyboard in Resources */,
 				8D447CA95D99B20943C79176 /* Default-667h@2x.png in Resources */,
 				8D447D874346ADBA44461D2D /* common_rotatordot_rotator_off.png in Resources */,
 				8D4479C70556F93903B2805D /* common_rotatordot_rotator_on.png in Resources */,
@@ -1193,6 +1202,7 @@
 				340F111E182A361B007F1A3E /* TestTableController1.m in Sources */,
 				CF185158197C4F33001C0CD0 /* NavigationPanelTestController.m in Sources */,
 				34A24979182A1FFC0049A1B1 /* JCMSegmentPageController.m in Sources */,
+				F924107E1EE43ED200B8AEC1 /* NavigationBackgroundController.m in Sources */,
 				8D4472A99BCC2EA36C4D06C3 /* IconWorkspaceViewController.m in Sources */,
 				8D447C94ACB09FA96200BD42 /* IconWorkspaceViewSettingsController.m in Sources */,
 				8D447EB789283F8F74E88771 /* IconWorkspaceViewPagingTabController.m in Sources */,

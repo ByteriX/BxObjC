@@ -22,13 +22,14 @@
     if (IS_OS_7_OR_LATER) {
         if (!self.extendedLayoutIncludesOpaqueBars) {
             if ((self.edgesForExtendedLayout | UIRectEdgeTop) == self.edgesForExtendedLayout && self.navigationController.navigationBar) {
-                CGFloat shift = 20.0f;
+                CGRect frame = [UIApplication sharedApplication].statusBarFrame;
+                CGFloat shift = MIN(CGRectGetMaxX(frame), CGRectGetMaxY(frame));
                 if (!self.navigationController.navigationBarHidden) {
                     shift += self.navigationController.navigationBar.frame.size.height;
-                }
-                if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
-                    BxNavigationController * navController = (BxNavigationController*)self.navigationController;
-                    shift += navController.toolPanel.frame.size.height;
+                    if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
+                        BxNavigationController * navController = (BxNavigationController*)self.navigationController;
+                        shift += navController.toolPanel.frame.size.height;
+                    }
                 }
                 return shift;
             }
