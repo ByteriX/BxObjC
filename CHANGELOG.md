@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.24 (11.06.2017)
+##### Improvment
+* Fix warnings about import of "BxUtils.h" and "BxUIUtils.h"
+
 ## 1.1.23 (04.06.2017)
 ##### Bug fixes
 * fix navigation panel & backgroung which is changing isNavigationBarHidden

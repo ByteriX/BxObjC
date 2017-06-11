@@ -13,8 +13,8 @@
 
 #import "BxConfig.h"
 #import "BxFileSystem.h"
-#import "BXUtils.h"
-#import "BXUIUtils.h"
+#import "BxUtils.h"
+#import "BxUIUtils.h"
 #import "BxException.h"
 
 #import "NSString+BxUtils.h"
