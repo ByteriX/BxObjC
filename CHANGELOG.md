@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.25 (21.07.2017)
+##### Bug fix
+* fixed mistake in the word isNormalShowingDisabledCell
+
 ## 1.1.24 (11.06.2017)
 ##### Improvment
 * Fix warnings about import of "BxUtils.h" and "BxUIUtils.h"
