@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.27 (02.08.2017)
+##### Bug fix
+* fixed BxTextView update placeholderColor
+
 ## 1.1.26 (01.08.2017)
 ##### Bug fix
 * fixed BxTextView placeholder

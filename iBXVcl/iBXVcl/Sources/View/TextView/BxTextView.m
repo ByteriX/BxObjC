@@ -40,6 +40,16 @@
     }
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    [_placeholderColor autorelease];
+    if (color) {
+        _placeholderColor = [color retain];
+    } else {
+        _placeholderColor = nil;
+    }
+    [self setNeedsDisplay];
+}
+
 
 #pragma mark - NSObject
 
