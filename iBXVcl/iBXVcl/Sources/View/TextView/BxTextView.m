@@ -76,14 +76,26 @@
     [super drawRect:rect];
     
     if (_shouldDrawPlaceholder) {
-        [_placeholderColor set];
+        UIColor * placeholderColor = _placeholderColor;
+        if (placeholderColor == nil) {
+            if (self.textColor) {
+                placeholderColor = [self.textColor colorWithAlphaComponent: 0.25];
+            } else {
+                placeholderColor = [UIColor lightGrayColor];
+            }
+        }
+        
         CGRect rect = CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f);
         if IS_OS_7_OR_LATER {
             [_placeholder drawInRect: rect
-                      withAttributes: [NSDictionary dictionaryWithObject:self.font forKey: NSFontAttributeName]];
+                      withAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                       self.font, NSFontAttributeName,
+                                       placeholderColor, NSForegroundColorAttributeName, nil]
+             ];
         } else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
+            [placeholderColor set];
             [_placeholder drawInRect: rect withFont:self.font];
 #pragma clang diagnostic pop
         }
@@ -105,7 +117,7 @@
 
 - (void)updateShouldDrawPlaceholder {
     BOOL prev = _shouldDrawPlaceholder;
-    _shouldDrawPlaceholder = self.placeholder && self.placeholderColor && self.text.length == 0;
+    _shouldDrawPlaceholder = self.placeholder && self.text.length == 0;
     
     if (prev != _shouldDrawPlaceholder) {
         [self setNeedsDisplay];
