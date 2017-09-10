@@ -6,7 +6,7 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
-## 1.1.28 (10.09.2017)
+## 1.1.30 (10.09.2017)
 ##### Improvment
 * seporated Controls from Vcl: Rate, TextView
 
