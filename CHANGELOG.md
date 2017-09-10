@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.28 (10.09.2017)
+##### Improvment
+* seporated Controls from Vcl: Rate, TextView
+
 ## 1.1.27 (02.08.2017)
 ##### Bug fix
 * fixed BxTextView update placeholderColor

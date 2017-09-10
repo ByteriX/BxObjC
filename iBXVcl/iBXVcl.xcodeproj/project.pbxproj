@@ -31,8 +31,6 @@
 		345AF17919D1A37B00931F44 /* NSIndexPath+BxTreeListScrollView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D447B8D3023915D7409867C /* NSIndexPath+BxTreeListScrollView.h */; };
 		3472D06817DF2DBA0089FF7A /* BxLoadedImageViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3472D06717DF2DBA0089FF7A /* BxLoadedImageViewItem.m */; };
 		3472D06917DF2DDE0089FF7A /* BxLoadedImageViewItem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3472D06617DF2DBA0089FF7A /* BxLoadedImageViewItem.h */; };
-		3472D07317DF46870089FF7A /* BxStandartRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3472D07217DF46870089FF7A /* BxStandartRateView.m */; };
-		3472D07417DF468B0089FF7A /* BxStandartRateView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3472D07117DF46870089FF7A /* BxStandartRateView.h */; };
 		34A6239317D5E5D8006BD3AD /* BxVcl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 34FD883D17CF595C00E112AF /* BxVcl.h */; };
 		34FD881017CF582A00E112AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FD880F17CF582A00E112AF /* Foundation.framework */; };
 		34FD881F17CF582B00E112AF /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FD881E17CF582B00E112AF /* SenTestingKit.framework */; };
@@ -76,8 +74,6 @@
 		8D447AAEA9D4D2CDCDDF6278 /* BxIconWorkspacePageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4472864524223D5A354DF9 /* BxIconWorkspacePageView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		8D447AE971CFC890DC14C670 /* BxIconWorkspaceItemControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D44706A132C9CDDE31CBCCA /* BxIconWorkspaceItemControl.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C150B6679EAAE997FEC4DFFA /* Pods_iBXVcl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6FF331289FCDB1F6AC3EB8 /* Pods_iBXVcl.framework */; };
-		CF1CD4C71B886DC7000E27C7 /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1CD4C61B886DC7000E27C7 /* BxTextView.m */; };
-		CF1CD4C81B886E1C000E27C7 /* BxTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF1CD4C51B886DC7000E27C7 /* BxTextView.h */; };
 		CF9E3A26180496C500748842 /* BxPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9E3A20180496C500748842 /* BxPageControl.m */; };
 		CF9E3A27180496C500748842 /* BxViewItemsList.m in Sources */ = {isa = PBXBuildFile; fileRef = CF9E3A25180496C500748842 /* BxViewItemsList.m */; };
 		CF9E3A28180496DB00748842 /* BxPageControl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CF9E3A1F180496C500748842 /* BxPageControl.h */; };
@@ -109,6 +105,12 @@
 		F938AFA01E047DBA00E2C760 /* BxNavigationBarShakeXEffect.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF9C1E04771B00E2C760 /* BxNavigationBarShakeXEffect.h */; };
 		F938AFA11E047DBD00E2C760 /* BxNavigationBar.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF921E04748100E2C760 /* BxNavigationBar.h */; };
 		F938AFA21E047DBF00E2C760 /* BxNavigationController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F938AF941E04748100E2C760 /* BxNavigationController.h */; };
+		F9B84CFC1F6579350091E49A /* BxStandartRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CF81F6579350091E49A /* BxStandartRateView.m */; };
+		F9B84CFD1F6579350091E49A /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CFB1F6579350091E49A /* BxTextView.m */; };
+		F9B84CFE1F657BAD0091E49A /* BxTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9B84CFA1F6579350091E49A /* BxTextView.h */; };
+		F9B84CFF1F657BAF0091E49A /* BxStandartRateView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9B84CF71F6579350091E49A /* BxStandartRateView.h */; };
+		F9B84D001F657BB50091E49A /* BxStandartRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CF81F6579350091E49A /* BxStandartRateView.m */; };
+		F9B84D011F657BB90091E49A /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CFB1F6579350091E49A /* BxTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,7 +172,8 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				CF1CD4C81B886E1C000E27C7 /* BxTextView.h in CopyFiles */,
+				F9B84CFF1F657BAF0091E49A /* BxStandartRateView.h in CopyFiles */,
+				F9B84CFE1F657BAD0091E49A /* BxTextView.h in CopyFiles */,
 				CFA197A71800532500C13C9E /* BxHighlightedArea.h in CopyFiles */,
 				343728D719D99CFA00FE0BEE /* BxIconWorkspaceView.h in CopyFiles */,
 				345AF17719D1A37100931F44 /* BxTreeListItem.h in CopyFiles */,
@@ -199,7 +202,6 @@
 				345AF17819D1A37400931F44 /* BxTreeListScrollView.h in CopyFiles */,
 				34FD887417CF5F8100E112AF /* BxPhotoViewServiceController.h in CopyFiles */,
 				34FD887517CF5F8400E112AF /* BxServiceController.h in CopyFiles */,
-				3472D07417DF468B0089FF7A /* BxStandartRateView.h in CopyFiles */,
 				34432FFE18054B020081EEC4 /* BxPageView.h in CopyFiles */,
 				CFA19810180065BB00C13C9E /* BxHighlightedTagLabel.h in CopyFiles */,
 				34FD887A17CF5F9300E112AF /* ECSlidingViewController.h in CopyFiles */,
@@ -226,8 +228,6 @@
 		34497819180D7DCB0070D7D2 /* BxSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxSplashViewController.m; sourceTree = "<group>"; };
 		3472D06617DF2DBA0089FF7A /* BxLoadedImageViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItem.h; sourceTree = "<group>"; };
 		3472D06717DF2DBA0089FF7A /* BxLoadedImageViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItem.m; sourceTree = "<group>"; };
-		3472D07117DF46870089FF7A /* BxStandartRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxStandartRateView.h; sourceTree = "<group>"; };
-		3472D07217DF46870089FF7A /* BxStandartRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxStandartRateView.m; sourceTree = "<group>"; };
 		34FD880C17CF582A00E112AF /* libiBXVcl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libiBXVcl.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		34FD880F17CF582A00E112AF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		34FD881317CF582A00E112AF /* iBXVcl-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBXVcl-Prefix.pch"; sourceTree = "<group>"; };
@@ -273,8 +273,6 @@
 		8D447B8D3023915D7409867C /* NSIndexPath+BxTreeListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+BxTreeListScrollView.h"; sourceTree = "<group>"; };
 		8D447F16A1B3C797F98C4405 /* BxIconWorkspaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxIconWorkspaceView.m; sourceTree = "<group>"; };
 		8D447F6987ADE839EF4D3B45 /* BxIconWorkspaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxIconWorkspaceView.h; sourceTree = "<group>"; };
-		CF1CD4C51B886DC7000E27C7 /* BxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxTextView.h; sourceTree = "<group>"; };
-		CF1CD4C61B886DC7000E27C7 /* BxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxTextView.m; sourceTree = "<group>"; };
 		CF9E3A1F180496C500748842 /* BxPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxPageControl.h; sourceTree = "<group>"; };
 		CF9E3A20180496C500748842 /* BxPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxPageControl.m; sourceTree = "<group>"; };
 		CF9E3A23180496C500748842 /* BxViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxViewItem.h; sourceTree = "<group>"; };
@@ -308,6 +306,10 @@
 		F938AF991E04750400E2C760 /* BxNavigationBarEffectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBarEffectProtocol.h; sourceTree = "<group>"; };
 		F938AF9C1E04771B00E2C760 /* BxNavigationBarShakeXEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxNavigationBarShakeXEffect.h; sourceTree = "<group>"; };
 		F938AF9D1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxNavigationBarShakeXEffect.m; sourceTree = "<group>"; };
+		F9B84CF71F6579350091E49A /* BxStandartRateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxStandartRateView.h; sourceTree = "<group>"; };
+		F9B84CF81F6579350091E49A /* BxStandartRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxStandartRateView.m; sourceTree = "<group>"; };
+		F9B84CFA1F6579350091E49A /* BxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxTextView.h; sourceTree = "<group>"; };
+		F9B84CFB1F6579350091E49A /* BxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,10 +339,8 @@
 		3422BFC217DA0A0C00F112A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CF1CD4C21B886DA6000E27C7 /* TextView */,
 				3472D06517DF2D670089FF7A /* Image */,
 				CFA197961800526800C13C9E /* Label */,
-				3472D07017DF466B0089FF7A /* Rate */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,15 +391,6 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		3472D07017DF466B0089FF7A /* Rate */ = {
-			isa = PBXGroup;
-			children = (
-				3472D07117DF46870089FF7A /* BxStandartRateView.h */,
-				3472D07217DF46870089FF7A /* BxStandartRateView.m */,
-			);
-			path = Rate;
-			sourceTree = "<group>";
-		};
 		34FD880317CF582A00E112AF = {
 			isa = PBXGroup;
 			children = (
@@ -436,6 +427,7 @@
 		34FD881117CF582A00E112AF /* iBXVcl */ = {
 			isa = PBXGroup;
 			children = (
+				F9B84CF51F6579350091E49A /* Control */,
 				34FD883A17CF591900E112AF /* Frameworks */,
 				34FD883B17CF591900E112AF /* Resources */,
 				34FD883C17CF591900E112AF /* Sources */,
@@ -598,15 +590,6 @@
 			path = TreeList;
 			sourceTree = "<group>";
 		};
-		CF1CD4C21B886DA6000E27C7 /* TextView */ = {
-			isa = PBXGroup;
-			children = (
-				CF1CD4C51B886DC7000E27C7 /* BxTextView.h */,
-				CF1CD4C61B886DC7000E27C7 /* BxTextView.m */,
-			);
-			path = TextView;
-			sourceTree = "<group>";
-		};
 		CF9E3A1D180496C500748842 /* Page */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,6 +696,33 @@
 				F938AF9D1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m */,
 			);
 			path = BarEffects;
+			sourceTree = "<group>";
+		};
+		F9B84CF51F6579350091E49A /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				F9B84CF61F6579350091E49A /* Rate */,
+				F9B84CF91F6579350091E49A /* TextView */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		F9B84CF61F6579350091E49A /* Rate */ = {
+			isa = PBXGroup;
+			children = (
+				F9B84CF71F6579350091E49A /* BxStandartRateView.h */,
+				F9B84CF81F6579350091E49A /* BxStandartRateView.m */,
+			);
+			path = Rate;
+			sourceTree = "<group>";
+		};
+		F9B84CF91F6579350091E49A /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				F9B84CFA1F6579350091E49A /* BxTextView.h */,
+				F9B84CFB1F6579350091E49A /* BxTextView.m */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -892,11 +902,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF1CD4C71B886DC7000E27C7 /* BxTextView.m in Sources */,
 				34FD887B17CF5FAA00E112AF /* ECSlidingViewController.m in Sources */,
 				34FD887C17CF5FAC00E112AF /* UIImage+ImageWithUIView.m in Sources */,
 				CF9E3A381804A3C300748842 /* BxLoadedImagePageView.m in Sources */,
+				F9B84D001F657BB50091E49A /* BxStandartRateView.m in Sources */,
 				34FD887E17CF5FB300E112AF /* BxBaseViewController.m in Sources */,
+				F9B84D011F657BB90091E49A /* BxTextView.m in Sources */,
 				34FD887F17CF5FB900E112AF /* BxKeyboardController.m in Sources */,
 				343728F719D9B6AE00FE0BEE /* BxPageControl.m in Sources */,
 				CF9E3A3518049C4600748842 /* BxPageView.m in Sources */,
@@ -921,7 +932,6 @@
 				CFA197A31800531100C13C9E /* BxHighlightedArea.m in Sources */,
 				F938AF9E1E04771B00E2C760 /* BxNavigationBarShakeXEffect.m in Sources */,
 				3472D06817DF2DBA0089FF7A /* BxLoadedImageViewItem.m in Sources */,
-				3472D07317DF46870089FF7A /* BxStandartRateView.m in Sources */,
 				CFBB827D18F1245F00B8A5A5 /* BxAppearance.m in Sources */,
 				8D447A203F7EFCA2A44211E5 /* NSIndexPath+BxTreeListScrollView.m in Sources */,
 				8D4477FE45B6C9B13F98C944 /* ItemsListPanGestureRecognizer.m in Sources */,
@@ -935,6 +945,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9B84CFD1F6579350091E49A /* BxTextView.m in Sources */,
 				34FD882E17CF582B00E112AF /* iBXVclTests.m in Sources */,
 				CF9E3A27180496C500748842 /* BxViewItemsList.m in Sources */,
 				34FD884917CF59E000E112AF /* ECSlidingViewController.m in Sources */,
@@ -944,6 +955,7 @@
 				34FD886517CF5CF500E112AF /* BxBaseViewController.m in Sources */,
 				34FD886817CF5CF500E112AF /* BxKeyboardController.m in Sources */,
 				34FD886917CF5CF500E112AF /* BxDialogController.m in Sources */,
+				F9B84CFC1F6579350091E49A /* BxStandartRateView.m in Sources */,
 				CFA1979F1800526800C13C9E /* BxHighlightedArea.m in Sources */,
 				CFA197A01800526800C13C9E /* BxHighlightedLabel.m in Sources */,
 				34FD886A17CF5CF500E112AF /* BxPhotoViewServiceController.m in Sources */,
