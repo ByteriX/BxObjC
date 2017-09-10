@@ -47,6 +47,8 @@
 #import "BxIconWorkspaceView.h"
 
 #import "UIViewController+BxVcl.h"
+
+#import "UIViewController+Navigation.h"
 #import "BxNavigationController.h"
 #import "BxNavigationBar.h"
 #import "BxNavigationBarEffectProtocol.h"

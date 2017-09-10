@@ -6,6 +6,10 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.32 (11.09.2017)
+##### Improvment
+* seporated Controls from Vcl: Navigation
+
 ## 1.1.31 (10.09.2017)
 ##### Improvment
 * seporated Controls from Vcl: ShakeAnimation

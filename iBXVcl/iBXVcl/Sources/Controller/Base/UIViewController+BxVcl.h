@@ -1,28 +1,16 @@
-/**
- *	@file UIViewController+BxVcl.h
- *	@namespace iBXVcl
- *
- *	@details UIViewController категория для перехода на дизайн iOS 7
- *	@date 25.11.2013
- *	@author Sergey Balalaev
- *
- *	@version last in https://github.com/ByteriX/BxObjC
- *	@copyright The MIT License (MIT) https://opensource.org/licenses/MIT
- *	 Copyright (c) 2016 ByteriX. See http://byterix.com
- */
+//
+//  UIViewController+BxVcl.h
+//  iBXVcl
+//
+//  Created by Sergey Balalaev on 10/09/2017.
+//  Copyright © 2017 Byterix. All rights reserved.
+//
 
-#import <UIKit/UIKit.h>
+#ifndef UIViewController_BxVcl_h
 
-@interface UIViewController (BxVcl)
+#import "UIViewController+Navigation.h"
 
-//! Для любой версии iOS вернет края области, которая показывается на экране без наложенных на них панелей
-- (CGRect) extendedEdgesBounds;
+#define UIViewController_BxVcl_h
 
-//! Для любой версии iOS вернет края области, которая показывается на экране без наложенных на них панелей
-- (CGFloat) topExtendedEdges;
-- (CGFloat) bottomExtendedEdges;
 
-//! возвращает показанный на экране контроллер
-+ (UIViewController *) topMostController;
-
-@end
+#endif /* UIViewController_BxVcl_h */
