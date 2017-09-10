@@ -12,7 +12,6 @@
  */
 
 #import "BxTextView.h"
-#import "BxCommon.h"
 
 @interface BxTextView ()
 
@@ -30,7 +29,6 @@
     [super setText:string];
     [self updateShouldDrawPlaceholder];
 }
-
 
 - (void)setPlaceholder:(NSString *)string {
     if (![string isEqual:_placeholder]) {
@@ -96,7 +94,7 @@
         }
         
         CGRect rect = CGRectMake(8.0f, 8.0f, self.frame.size.width - 16.0f, self.frame.size.height - 16.0f);
-        if IS_OS_7_OR_LATER {
+        if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
             [_placeholder drawInRect: rect
                       withAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                        self.font, NSFontAttributeName,
