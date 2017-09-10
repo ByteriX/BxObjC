@@ -133,12 +133,14 @@ s.subspec 'Control' do |control|
     rate.frameworks = ["Foundation", "UIKit"]
     rate.public_header_files = "**/iBXVcl/Control/Rate/*.h"
     rate.source_files  = "**/iBXVcl/Control/Rate/*.{h,m,c}"
+    rate.requires_arc = []
   end
 
   control.subspec 'TextView' do |textView|
     textView.frameworks = ["Foundation", "UIKit"]
     textView.public_header_files = "**/iBXVcl/Control/TextView/*.h"
     textView.source_files  = "**/iBXVcl/Control/TextView/*.{h,m,c}"
+    textView.requires_arc = []
   end
 
 end
