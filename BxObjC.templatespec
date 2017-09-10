@@ -151,7 +151,7 @@ s.subspec 'Control' do |control|
 
   control.subspec 'Navigation' do |navigation|
     navigation.dependency 'BxObjC/Common'
-    navigation.dependency 'BxObjC/ShakeAnimation'
+    navigation.dependency 'BxObjC/Control/ShakeAnimation'
     navigation.frameworks = ["Foundation", "UIKit"]
     navigation.public_header_files = "**/iBXVcl/Control/Navigation/**/*.h"
     navigation.source_files  = "**/iBXVcl/Control/Navigation/**/*.{h,m,c}"
