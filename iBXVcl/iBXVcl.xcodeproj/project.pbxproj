@@ -111,6 +111,8 @@
 		F9B84CFF1F657BAF0091E49A /* BxStandartRateView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9B84CF71F6579350091E49A /* BxStandartRateView.h */; };
 		F9B84D001F657BB50091E49A /* BxStandartRateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CF81F6579350091E49A /* BxStandartRateView.m */; };
 		F9B84D011F657BB90091E49A /* BxTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84CFB1F6579350091E49A /* BxTextView.m */; };
+		F9B84D281F65AF200091E49A /* UIView+ShakeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B84D271F65AF200091E49A /* UIView+ShakeAnimation.m */; };
+		F9B84D291F65AF7E0091E49A /* UIView+ShakeAnimation.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F9B84D261F65AF200091E49A /* UIView+ShakeAnimation.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +175,7 @@
 			dstSubfolderSpec = 16;
 			files = (
 				F9B84CFF1F657BAF0091E49A /* BxStandartRateView.h in CopyFiles */,
+				F9B84D291F65AF7E0091E49A /* UIView+ShakeAnimation.h in CopyFiles */,
 				F9B84CFE1F657BAD0091E49A /* BxTextView.h in CopyFiles */,
 				CFA197A71800532500C13C9E /* BxHighlightedArea.h in CopyFiles */,
 				343728D719D99CFA00FE0BEE /* BxIconWorkspaceView.h in CopyFiles */,
@@ -310,6 +313,8 @@
 		F9B84CF81F6579350091E49A /* BxStandartRateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxStandartRateView.m; sourceTree = "<group>"; };
 		F9B84CFA1F6579350091E49A /* BxTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxTextView.h; sourceTree = "<group>"; };
 		F9B84CFB1F6579350091E49A /* BxTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxTextView.m; sourceTree = "<group>"; };
+		F9B84D261F65AF200091E49A /* UIView+ShakeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ShakeAnimation.h"; sourceTree = "<group>"; };
+		F9B84D271F65AF200091E49A /* UIView+ShakeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ShakeAnimation.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,6 +706,7 @@
 		F9B84CF51F6579350091E49A /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				F9B84D231F65AEE60091E49A /* ShakeAnimation */,
 				F9B84CF61F6579350091E49A /* Rate */,
 				F9B84CF91F6579350091E49A /* TextView */,
 			);
@@ -723,6 +729,15 @@
 				F9B84CFB1F6579350091E49A /* BxTextView.m */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		F9B84D231F65AEE60091E49A /* ShakeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				F9B84D261F65AF200091E49A /* UIView+ShakeAnimation.h */,
+				F9B84D271F65AF200091E49A /* UIView+ShakeAnimation.m */,
+			);
+			path = ShakeAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -903,6 +918,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34FD887B17CF5FAA00E112AF /* ECSlidingViewController.m in Sources */,
+				F9B84D281F65AF200091E49A /* UIView+ShakeAnimation.m in Sources */,
 				34FD887C17CF5FAC00E112AF /* UIImage+ImageWithUIView.m in Sources */,
 				CF9E3A381804A3C300748842 /* BxLoadedImagePageView.m in Sources */,
 				F9B84D001F657BB50091E49A /* BxStandartRateView.m in Sources */,

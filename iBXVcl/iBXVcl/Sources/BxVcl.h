@@ -33,15 +33,13 @@
 #import "BxTreeListScrollView.h"
 #import "BxViewItemsList.h"
 #import "BxLoadedImageViewItem.h"
-#import "BxStandartRateView.h"
+
 
 #import "BxHighlightedArea.h"
 #import "BxHighlightedLabel.h"
 #import "BxHighlightedRect.h"
 #import "BxHighlightedTextInfo.h"
 #import "BxHighlightedTagLabel.h"
-
-#import "BxTextView.h"
 
 #import "BxPageView.h"
 #import "BxPageScrollView.h"
@@ -53,6 +51,10 @@
 #import "BxNavigationBar.h"
 #import "BxNavigationBarEffectProtocol.h"
 #import "BxNavigationBarShakeXEffect.h"
+
+#import "BxStandartRateView.h"
+#import "BxTextView.h"
+#import "UIView+ShakeAnimation.h"
 
 
 #ifndef iBXData_BxData_h

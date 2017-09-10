@@ -19,12 +19,3 @@
 - (instancetype) initWithView: (UIView *) view;
 
 @end
-
-@interface UIView (ShakeAnimation)
-
-- (void)shakeXWithOffset: (CGFloat) offset
-             breakFactor: (CGFloat) breakFactor
-                duration: (CGFloat) duration
-               maxShakes: (NSInteger) maxShakes;
-
-@end
