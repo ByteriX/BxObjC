@@ -28,7 +28,7 @@
     if (self) {
         self.menuItems = [self.class getMenuItems];
         self.loadedControllers = [NSMutableDictionary dictionary];
-        self.selectedIndexPath = [NSIndexPath indexPathForRow: 1 inSection: 0];
+        self.selectedIndexPath = [NSIndexPath indexPathForRow: 0 inSection: 2];
     }
     return self;
 }

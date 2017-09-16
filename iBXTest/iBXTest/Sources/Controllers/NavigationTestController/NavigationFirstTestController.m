@@ -47,7 +47,7 @@
 
 - (void) dealloc
 {
-    NSLog(@"dealloc NavigationFirstTestController");
+    //NSLog(@"dealloc NavigationFirstTestController");
 }
 
 @end
