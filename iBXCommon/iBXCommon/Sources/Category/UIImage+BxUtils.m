@@ -211,4 +211,55 @@
     return image;
 }
 
+- (UIImage *)imageWithColor: (UIColor*) color mode: (CGBlendMode) mode{
+    
+    // begin a new image context, to draw our colored image onto
+    UIGraphicsBeginImageContext(self.size);
+    
+    // get a reference to that context we created
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // set the fill color
+    [color setFill];
+    
+    // translate/flip the graphics context (for transforming from CG* coords to UI* coords
+    CGContextTranslateCTM(context, 0, self.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    // set the blend mode to color burn, and the original image
+    CGContextSetBlendMode(context, mode);
+    CGRect rect = CGRectMake(0, 0, self.size.width, self.size.height);
+    CGContextDrawImage(context, rect, self.CGImage);
+    
+    // set a mask that matches the shape of the image, then draw (color burn) a colored rectangle
+    //context?.clip(to: rect, mask: self.cgImage!)
+    CGContextAddRect(context, rect);
+    CGContextDrawPath(context, kCGPathFill);
+    
+    // generate a new UIImage from the graphics context we drew onto
+    UIImage* coloredImg = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    //return the color-burned image
+    return coloredImg;
+}
+
++ (UIImage*) imageWithColor: (UIColor*) color {
+    CGRect rect = CGRectMake(0.0, 0.0, 44.0, 28.0);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage * image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return [image resizableImageWithCapInsets: UIEdgeInsetsMake(1,1,1,1)];
+}
+
+
+
+
+
 @end

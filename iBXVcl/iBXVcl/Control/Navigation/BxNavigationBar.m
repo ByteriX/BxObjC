@@ -105,7 +105,7 @@ static CGFloat minimalAlpha = 0.00001f;
         if (navigationController) {
             shift += navigationController.toolPanel.frame.size.height;
         }
-        [UIView animateWithDuration: 0.3 animations:^{
+        [UIView animateWithDuration: bxNavigationDurationTime animations:^{
             view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height + 20 + shift);
         }];
     } else {
@@ -306,6 +306,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 {
     if (animated) {
         [UIView beginAnimations: nil context: nil];
+        [UIView setAnimationDuration: bxNavigationDurationTime];
     }
     CGFloat offsetY = CGRectGetMinY(frame) - CGRectGetMinY(self.frame);
     for (UIView* view in self.subviews) {

@@ -225,7 +225,7 @@
     if ([viewController respondsToSelector: @selector(navigationToolPanelWithController:)]){
         UIView * toolBar = [viewController navigationToolPanelWithController: self];
         if (toolBar){
-            if (_toolPanel && toolBar != _toolPanel){ // так как панелька может обновиться, старую можно случайно потерять случайно и не удалить при выходе с экрана.
+            if (_toolPanel && toolBar != _toolPanel){ // так как панелька может обновиться, старую можно потерять случайно и не удалить при выходе с экрана.
                 [self hideToolPanelAnimated: animated];
             }
             _toolPanel = toolBar;
@@ -234,6 +234,7 @@
             [self.view addSubview: _toolPanel];
             if (animated) {
                 [UIView beginAnimations: nil context: nil];
+                [UIView setAnimationDuration: bxNavigationDurationTime];
             }
             _toolPanel.alpha = 1;
             if (animated) {
@@ -258,8 +259,12 @@
             [self.view insertSubview:_backgroundView belowSubview: self.navigationBar];
             if (animated) {
                 [UIView beginAnimations: nil context: nil];
+                [UIView setAnimationDuration: bxNavigationDurationTime];
             }
             self.backgroundView.alpha = 1;
+            if IS_OS_11_OR_LATER {
+                [self.bxNavigationBar setBackgroundImage: [UIImage imageWithColor: UIColor.clearColor] forBarMetrics: UIBarMetricsDefault];
+            }
             self.bxNavigationBar.backgroundView.alpha = 0;
             if (animated) {
                 [UIView commitAnimations];
@@ -277,7 +282,7 @@
     self.scrollOffset = 0;
     __weak UIView * popedToolPanel = panel;
     if (animated){
-        [UIView animateWithDuration: 0.25
+        [UIView animateWithDuration: bxNavigationDurationTime
                          animations: ^{
             popedToolPanel.alpha = 0;
         }
@@ -304,6 +309,10 @@
     if (showNativeBackgroundView) {
         if (animated) {
             [UIView beginAnimations: nil context: nil];
+            [UIView setAnimationDuration: bxNavigationDurationTime];
+        }
+        if IS_OS_11_OR_LATER {
+            [self.bxNavigationBar setBackgroundImage: nil forBarMetrics: UIBarMetricsDefault];
         }
         self.bxNavigationBar.backgroundView.alpha = 1;
         if (animated) {

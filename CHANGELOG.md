@@ -6,6 +6,14 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.1.33 (17.09.2017)
+##### Improvment
+* supporting iOS 11
+* added UIImage extensions for creating painted images
+* fixed background image for Navigation on iOS 11
+* better animation for Vcl: Navigation
+* refactoring BxNavigationBar
+
 ## 1.1.32 (11.09.2017)
 ##### Improvment
 * seporated Controls from Vcl: Navigation

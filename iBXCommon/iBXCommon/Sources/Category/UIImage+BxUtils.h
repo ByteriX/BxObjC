@@ -59,4 +59,8 @@
 
 - (UIImage *)blurWithRadius: (CGFloat) radius;
 
+- (UIImage *)imageWithColor: (UIColor*) color mode: (CGBlendMode) mode;
+
++ (UIImage*) imageWithColor: (UIColor*) color;
+
 @end

@@ -16,6 +16,8 @@
 
 @class BxNavigationController;
 
+static CGFloat bxNavigationDurationTime = 0.5;
+
 typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
     BxNavigationBarScrollStateNone,
     BxNavigationBarScrollStateDown,

@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:BxObjC.templatespec">
+   </FileRef>
+   <FileRef
+      location = "group:CHANGELOG.md">
+   </FileRef>
+   <FileRef
       location = "group:iBXTest/iBXTest.xcodeproj">
    </FileRef>
    <FileRef
