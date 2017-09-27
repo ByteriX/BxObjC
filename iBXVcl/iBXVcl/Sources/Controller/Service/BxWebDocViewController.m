@@ -65,6 +65,11 @@
 	_content.scalesPageToFit = NO;
 	_content.clipsToBounds = YES;
 	_content.autoresizesSubviews= YES;
+    
+    if IS_OS_11_OR_LATER {
+        _content.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
+    
 	//! Почему-то опцию определения телефона можно отключить только здесь:
 	_content.dataDetectorTypes = UIDataDetectorTypeLink;
 	_content.autoresizingMask =
