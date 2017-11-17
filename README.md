@@ -1,6 +1,6 @@
 # BxObjC
 
-This framework will help iOS developers for simplify development
+This framework will help iOS developers for simplify development iOS Application
 
 # Subframeworks:
 
@@ -8,7 +8,7 @@ This framework will help iOS developers for simplify development
 
 * Data - components for data processing: serializations, dataSets, cashers, network, other...
 
-* DB - components for sqlite simplify development
+* DB - components for object oriented access to sqlite
 
 * Map - cartography components: geomaping
 
@@ -17,19 +17,31 @@ This framework will help iOS developers for simplify development
 
 # CocoaPods
 
-<code>
+You can use all features of this framework as
+
+<code><pre>
   pod 'BxObjC'
-</code>
+</pre></code>
 
-or 
+or use subframeworks as
 
-<code>
+<code><pre>
   pod 'BxObjC/Common'
   pod 'BxObjC/Data'
   pod 'BxObjC/DB'
   pod 'BxObjC/Map'
   pod 'BxObjC/Vcl'
-</code>
+</pre></code>
+
+Vcl subframework has subsubmodules that can also be used as seporated module.
+That's it:
+
+<code><pre>
+  pod 'BxObjC/Control/Rate'
+  pod 'BxObjC/Control/TextView'
+  pod 'BxObjC/Control/ShakeAnimation'
+  pod 'BxObjC/Control/Navigation'
+</pre></code>
 
 # License
 
