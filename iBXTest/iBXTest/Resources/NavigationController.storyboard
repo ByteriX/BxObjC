@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <deployment version="2304" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +25,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUM-hB-Dyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="4150"/>
+            <point key="canvasLocation" x="-259.19999999999999" y="3733.1334332833585"/>
         </scene>
         <!--Item-->
         <scene sceneID="1db-jT-VA8">
@@ -33,7 +33,6 @@
                 <navigationController storyboardIdentifier="UINavigationController-lRh-Av-JHL" definesPresentationContext="YES" id="9GR-xP-yuO" customClass="NavigationTopViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iKf-Cj-Foi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kja-ko-UBb">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -42,15 +41,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYp-wc-Zdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="611" y="4159"/>
+            <point key="canvasLocation" x="977.60000000000002" y="3741.2293853073465"/>
         </scene>
         <!--Первый-->
         <scene sceneID="KPe-zz-s88">
             <objects>
                 <viewController id="eHc-LZ-eN4" customClass="NavigationFirstTestController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8gQ-6h-LKH"/>
-                        <viewControllerLayoutGuide type="bottom" id="gGS-3c-dNR"/>
+                        <viewControllerLayoutGuide type="top" id="xfO-1e-aiw"/>
+                        <viewControllerLayoutGuide type="bottom" id="tAb-w1-MFl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ch4-LW-01M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -60,22 +59,22 @@
                     <navigationItem key="navigationItem" title="Первый" id="QXK-wg-E51">
                         <barButtonItem key="rightBarButtonItem" title="основной &gt;" id="lNK-ef-VB9">
                             <connections>
-                                <segue destination="1P3-mT-qQ8" kind="push" id="QvL-4X-TOZ"/>
+                                <segue destination="1P3-mT-qQ8" kind="show" id="QvL-4X-TOZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fU-ku-zCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="4159"/>
+            <point key="canvasLocation" x="1694.4000000000001" y="3741.2293853073465"/>
         </scene>
         <!--Основной-->
         <scene sceneID="U8c-ba-pnJ">
             <objects>
                 <viewController id="1P3-mT-qQ8" customClass="NavigationCommonTestController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rJi-wY-CRF"/>
-                        <viewControllerLayoutGuide type="bottom" id="UD7-k9-6G7"/>
+                        <viewControllerLayoutGuide type="top" id="hAf-DM-YaO"/>
+                        <viewControllerLayoutGuide type="bottom" id="viS-2h-zPe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gw5-p1-1jj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -94,22 +93,22 @@
                     <navigationItem key="navigationItem" title="Основной" id="1S1-mC-gKP">
                         <barButtonItem key="rightBarButtonItem" title="Далее" id="hVd-fg-Ygs">
                             <connections>
-                                <segue destination="HjY-D9-nBs" kind="push" id="1OS-PR-ExQ"/>
+                                <segue destination="HjY-D9-nBs" kind="show" id="1OS-PR-ExQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7C-xa-ohm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1476" y="4159"/>
+            <point key="canvasLocation" x="2361.5999999999999" y="3741.2293853073465"/>
         </scene>
         <!--TestNavigation-->
         <scene sceneID="qoH-we-Lcj">
             <objects>
                 <viewController title="TestNavigation" id="HjY-D9-nBs" customClass="NavigationTestController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CoZ-0d-njb"/>
-                        <viewControllerLayoutGuide type="bottom" id="7U0-dR-lkI"/>
+                        <viewControllerLayoutGuide type="top" id="u3c-W2-a6R"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ce-j9-yKy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pwk-la-WGh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -138,7 +137,7 @@
                                     <color key="titleColor" red="1" green="0.31409598770000002" blue="0.2345026335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6Gk-Fj-Bzt" kind="push" id="CYv-5W-CKJ"/>
+                                    <segue destination="6Gk-Fj-Bzt" kind="show" id="CYv-5W-CKJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv0-vs-9BE">
@@ -174,15 +173,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y4y-gX-mWl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1944" y="4159"/>
+            <point key="canvasLocation" x="3110.4000000000001" y="3741.2293853073465"/>
         </scene>
         <!--Просто экран-->
         <scene sceneID="vNy-Lx-NGg">
             <objects>
                 <viewController id="3he-wr-blx" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="a6f-S7-GLF"/>
-                        <viewControllerLayoutGuide type="bottom" id="yyy-C4-XoJ"/>
+                        <viewControllerLayoutGuide type="top" id="jem-br-s7m"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fv7-oF-rIK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uAl-Qp-cdY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -193,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcr-cz-eR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2797" y="4159"/>
+            <point key="canvasLocation" x="4475.1999999999998" y="3741.2293853073465"/>
         </scene>
         <!--С панелью-->
         <scene sceneID="VrX-2y-tLz">
@@ -208,11 +207,11 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cnI-jF-wHU" id="en0-zk-rkh">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rpf-dq-6lo">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,7 +220,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="3he-wr-blx" kind="push" id="TBh-pw-DuQ"/>
+                                    <segue destination="3he-wr-blx" kind="show" id="TBh-pw-DuQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -233,22 +232,22 @@
                     <navigationItem key="navigationItem" title="С панелью" id="5Pp-47-3wY">
                         <barButtonItem key="rightBarButtonItem" image="testicon3.png" id="431-2b-Qh5">
                             <connections>
-                                <segue destination="yIv-XY-8Xz" kind="push" id="bso-n6-Esg"/>
+                                <segue destination="yIv-XY-8Xz" kind="show" id="bso-n6-Esg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv5-SU-a7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="4159"/>
+            <point key="canvasLocation" x="3769.6000000000004" y="3741.2293853073465"/>
         </scene>
         <!--Экран с панелью-->
         <scene sceneID="zv3-MM-UCt">
             <objects>
                 <viewController id="yIv-XY-8Xz" customClass="NavigationBackgroundController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vwg-Mz-XDs"/>
-                        <viewControllerLayoutGuide type="bottom" id="CWf-05-Q73"/>
+                        <viewControllerLayoutGuide type="top" id="DRd-Zj-iha"/>
+                        <viewControllerLayoutGuide type="bottom" id="vWh-8J-NfS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P4f-Cc-gsg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -304,15 +303,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k8t-C7-7w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="5040"/>
+            <point key="canvasLocation" x="3769.6000000000004" y="4533.7331334332839"/>
         </scene>
     </scenes>
     <resources>
         <image name="testicon3.png" width="32" height="32"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
-    </simulatedMetricsContainer>
 </document>

@@ -6,6 +6,12 @@ ByteriX, 2013-2017. All right reserved.
 
 # Versions
 
+## 1.2.0 (17.11.2017)
+##### Bug fixes
+* changed working with extendedEdgesBounds for iOS 11
+* supporting iPhone X
+* fixed navigationBar for safeAreaInsets
+
 ## 1.1.34 (27.09.2017)
 ##### Bug fixes
 * fix BxWebDocViewController for iOS 11

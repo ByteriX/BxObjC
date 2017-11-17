@@ -106,7 +106,7 @@ static CGFloat minimalAlpha = 0.00001f;
             shift += navigationController.toolPanel.frame.size.height;
         }
         [UIView animateWithDuration: bxNavigationDurationTime animations:^{
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height + 20 + shift);
+            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height - view.frame.origin.y + shift);
         }];
     } else {
         if (navigationController) {
@@ -182,9 +182,18 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 {
     CGRect frame = [UIApplication sharedApplication].statusBarFrame;
     CGFloat result = MIN(CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    static CGFloat minimalResult = 20.0f;
-    if (result > minimalResult) {
-        result -= minimalResult;
+    if (@available(iOS 11.0, *)) {
+        if (self.navController.isViewLoaded) {
+            UIView * view = self.navController.view;
+            if (view.insetsLayoutMarginsFromSafeArea && view.safeAreaInsets.top > 0.0) {
+                result = self.navController.view.safeAreaInsets.top;
+            }
+        }
+    } else {
+        static CGFloat minimalResult = 20.0f;
+        if (result > minimalResult) {
+            result -= minimalResult;
+        }
     }
     return result;
 }

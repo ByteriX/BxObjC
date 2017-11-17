@@ -94,6 +94,7 @@
 		C6C381DAE2C662F8DFEEDBED /* Pods_iBXTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90B1915C4EFD7CA57B8B0F6C /* Pods_iBXTestTests.framework */; };
 		CF139D8D18F144EB009DE1BF /* common_background1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF139D8C18F144EB009DE1BF /* common_background1@2x.jpg */; };
 		CF185158197C4F33001C0CD0 /* NavigationPanelTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF185157197C4F33001C0CD0 /* NavigationPanelTestController.m */; };
+		CF48FE301FBDA2600073249C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF48FE2F1FBDA2600073249C /* LaunchScreen.storyboard */; };
 		CFB3193F182C133500D8A65E /* BxLoadedImageViewItemTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */; };
 		CFB31942182C158A00D8A65E /* BxLoadedImageViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */; };
 		F92410761EE43C3D00B8AEC1 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */; };
@@ -349,6 +350,7 @@
 		CF139D8C18F144EB009DE1BF /* common_background1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "common_background1@2x.jpg"; sourceTree = "<group>"; };
 		CF185156197C4F33001C0CD0 /* NavigationPanelTestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationPanelTestController.h; sourceTree = "<group>"; };
 		CF185157197C4F33001C0CD0 /* NavigationPanelTestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationPanelTestController.m; sourceTree = "<group>"; };
+		CF48FE2F1FBDA2600073249C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CFB3193D182C133500D8A65E /* BxLoadedImageViewItemTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemTableController.h; sourceTree = "<group>"; };
 		CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemTableController.m; sourceTree = "<group>"; };
 		CFB31940182C158A00D8A65E /* BxLoadedImageViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemCell.h; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 				34B9743F184DDE0900622F7D /* images */,
 				34A24982182A20790049A1B1 /* Main.storyboard */,
 				F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */,
+				CF48FE2F1FBDA2600073249C /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -913,6 +916,11 @@
 				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = ByteriX;
+				TargetAttributes = {
+					3453FAFE178BFC9B0051C096 = {
+						DevelopmentTeam = NVEUY947QB;
+					};
+				};
 			};
 			buildConfigurationList = 3453FAFA178BFC9B0051C096 /* Build configuration list for PBXProject "iBXTest" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1043,6 +1051,7 @@
 				34B97444184DDE0900622F7D /* testicon1.png in Resources */,
 				CF139D8D18F144EB009DE1BF /* common_background1@2x.jpg in Resources */,
 				34B97445184DDE0900622F7D /* testicon2.png in Resources */,
+				CF48FE301FBDA2600073249C /* LaunchScreen.storyboard in Resources */,
 				3453FB19178BFC9B0051C096 /* Default-568h@2x.png in Resources */,
 				F9B12FA81CAFAFD20007457C /* BxCommonLocalizable.strings in Resources */,
 				F92410761EE43C3D00B8AEC1 /* NavigationController.storyboard in Resources */,
@@ -1078,9 +1087,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/../Pods/Target Support Files/Pods-iBXTest/Pods-iBXTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1134,13 +1148,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iBXTestTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7C10EBD98825A2D1450FC6D9 /* [CP] Copy Pods Resources */ = {
@@ -1164,13 +1181,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iBXTest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1339,11 +1359,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/include\"/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1375,11 +1394,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(BUILT_PRODUCTS_DIR)/include\"/**";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1389,6 +1407,7 @@
 			baseConfigurationReference = 0F5EAB5065A398C6A0623EF6 /* Pods-iBXTest.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "";
+				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1433,6 +1452,7 @@
 			baseConfigurationReference = A423C17BE347114C51BE5CED /* Pods-iBXTest.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "";
+				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (

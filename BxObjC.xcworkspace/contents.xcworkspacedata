@@ -5,13 +5,13 @@
       location = "group:LICENSE">
    </FileRef>
    <FileRef
-      location = "group:/Users/balalaev-work/Projects/BxObjC/CHANGELOG.md">
-   </FileRef>
-   <FileRef
       location = "group:README.md">
    </FileRef>
    <FileRef
       location = "group:BxObjC.templatespec">
+   </FileRef>
+   <FileRef
+      location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
       location = "group:iBXCommon/iBXCommon.xcodeproj">

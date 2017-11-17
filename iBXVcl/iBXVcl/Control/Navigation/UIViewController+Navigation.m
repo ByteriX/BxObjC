@@ -19,7 +19,16 @@
 
 - (CGFloat) topExtendedEdges
 {
-    if (IS_OS_7_OR_LATER) {
+    if (IS_OS_11_OR_LATER) {
+        //
+    } else if (IS_OS_9_OR_LATER) {
+        CGFloat shift = self.topLayoutGuide.length;
+        BxNavigationController * navController = self.navController;
+        if (navController && !self.navigationController.navigationBarHidden) {
+            shift += navController.toolPanel.frame.size.height;
+        }
+        return shift;
+    } else if (IS_OS_7_OR_LATER) {
         if (!self.extendedLayoutIncludesOpaqueBars) {
             if ((self.edgesForExtendedLayout | UIRectEdgeTop) == self.edgesForExtendedLayout && self.navigationController.navigationBar) {
                 CGRect frame = [UIApplication sharedApplication].statusBarFrame;
@@ -35,8 +44,8 @@
             }
         }
     }
-    if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
-        BxNavigationController * navController = (BxNavigationController*)self.navigationController;
+    BxNavigationController * navController = self.navController;
+    if (navController && !self.navigationController.navigationBarHidden) {
         return navController.toolPanel.frame.size.height;
     }
     return 0.0f;
@@ -44,7 +53,9 @@
 
 - (CGFloat) bottomExtendedEdges
 {
-    if (IS_OS_7_OR_LATER) {
+    if (IS_OS_9_OR_LATER) {
+        return self.bottomLayoutGuide.length;
+    } else if (IS_OS_7_OR_LATER) {
         if (!self.extendedLayoutIncludesOpaqueBars) {
             if ((self.edgesForExtendedLayout | UIRectEdgeBottom) == self.edgesForExtendedLayout && self.tabBarController) {
                 CGFloat shift = self.tabBarController.tabBar.frame.size.height;
