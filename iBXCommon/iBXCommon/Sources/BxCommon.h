@@ -75,15 +75,31 @@
 #define IS_667 ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 667)
 #define IS_736 ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height == 736)
 #define IS_568_GREATER ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && [UIScreen mainScreen].bounds.size.height >= 568)
+
 #define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0f)
 #define IS_RETINA_X2 ([[UIScreen mainScreen] scale] == 2.0f)
 #define IS_RETINA_X3 ([[UIScreen mainScreen] scale] == 3.0f)
+
+#define IS_OS_SDK_5_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 50000
+#define IS_OS_SDK_6_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 60000
+#define IS_OS_SDK_7_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+#define IS_OS_SDK_8_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+#define IS_OS_SDK_9_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+#define IS_OS_SDK_10_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
+#define IS_OS_SDK_11_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
+
 #define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 #define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
 #define IS_OS_7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
 #define IS_OS_8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IS_OS_9_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 #define IS_OS_10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
-#define IS_OS_11_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#if IS_OS_SDK_11_ALLOWED
+    #define IS_OS_11_OR_LATER    (@available(iOS 11.0, *))
+#else
+    #define IS_OS_11_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#endif
+
+
 
 #endif
