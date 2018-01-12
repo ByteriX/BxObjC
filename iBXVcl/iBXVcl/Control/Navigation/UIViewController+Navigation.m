@@ -19,9 +19,7 @@
 
 - (CGFloat) topExtendedEdges
 {
-    if (IS_OS_11_OR_LATER) {
-        //
-    } else if (IS_OS_9_OR_LATER) {
+    if (IS_OS_9_OR_LATER) {
         CGFloat shift = self.topLayoutGuide.length;
         BxNavigationController * navController = self.navController;
         if (navController && !self.navigationController.navigationBarHidden) {

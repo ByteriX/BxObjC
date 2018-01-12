@@ -29,7 +29,7 @@
 - (UITableViewCell*) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier: @"cell"];
-    cell.textLabel.text = @"Text maximum";
+    cell.textLabel.text = [NSString stringWithFormat: @"Text maximum %d", (int)indexPath.row];
     return cell;
 }
 
@@ -59,10 +59,10 @@
     [super viewWillLayoutSubviews];
     
     CGFloat topY = self.topExtendedEdges;
-    CGFloat h = self.tableView.contentInset.bottom;
+    CGFloat bottomY = self.bottomExtendedEdges;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(topY, 0, h, 0);
-    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(topY, 0, h, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(topY, 0, bottomY, 0);
+    self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(topY, 0, bottomY, 0);
     
 }
 

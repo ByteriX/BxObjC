@@ -2,9 +2,14 @@
 
 Library iByteriX
 
-ByteriX, 2013-2017. All right reserved.
+ByteriX, 2013-2018. All right reserved.
 
 # Versions
+
+## 1.2.1 (12.01.2018)
+* added correct checking of iOS/SDK supporting
+* backward supporting iOS 10 SDK
+* fixed issues with extendedEdgesBounds for iOS 11
 
 ## 1.2.0 (17.11.2017)
 ##### Bug fixes
