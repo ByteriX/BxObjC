@@ -182,14 +182,18 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 {
     CGRect frame = [UIApplication sharedApplication].statusBarFrame;
     CGFloat result = MIN(CGRectGetMaxX(frame), CGRectGetMaxY(frame));
-    if (@available(iOS 11.0, *)) {
+#if IS_OS_SDK_11_ALLOWED
+    if IS_OS_11_OR_LATER {
         if (self.navController.isViewLoaded) {
             UIView * view = self.navController.view;
             if (view.insetsLayoutMarginsFromSafeArea && view.safeAreaInsets.top > 0.0) {
                 result = self.navController.view.safeAreaInsets.top;
             }
         }
-    } else {
+    }
+    else
+#endif
+    {
         static CGFloat minimalResult = 20.0f;
         if (result > minimalResult) {
             result -= minimalResult;

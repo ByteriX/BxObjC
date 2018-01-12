@@ -66,11 +66,11 @@
 	_content.clipsToBounds = YES;
 	_content.autoresizesSubviews= YES;
     
+#if IS_OS_SDK_11_ALLOWED
     if IS_OS_11_OR_LATER {
-        if (@available(iOS 11.0, *)) {
-            _content.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
+        _content.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
+#endif
     
 	//! Почему-то опцию определения телефона можно отключить только здесь:
 	_content.dataDetectorTypes = UIDataDetectorTypeLink;
