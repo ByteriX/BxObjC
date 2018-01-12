@@ -11,6 +11,9 @@
       location = "group:BxObjC.templatespec">
    </FileRef>
    <FileRef
+      location = "group:build.sh">
+   </FileRef>
+   <FileRef
       location = "group:CHANGELOG.md">
    </FileRef>
    <FileRef
