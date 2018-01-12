@@ -6,7 +6,7 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
-## 1.2.1 (12.01.2018)
+## 1.3.0 (12.01.2018)
 * added correct checking of iOS/SDK supporting
 * backward supporting iOS 10 SDK
 * fixed issues with extendedEdgesBounds for iOS 11
