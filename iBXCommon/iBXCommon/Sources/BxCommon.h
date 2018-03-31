@@ -96,8 +96,10 @@
 #define IS_OS_10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #if IS_OS_SDK_11_ALLOWED
     #define IS_OS_11_OR_LATER    (@available(iOS 11.0, *))
+    #define IS_OS_11_3_OR_LATER  (@available(iOS 11.3, *))
 #else
     #define IS_OS_11_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+    #define IS_OS_11_3_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.3)
 #endif
 
 

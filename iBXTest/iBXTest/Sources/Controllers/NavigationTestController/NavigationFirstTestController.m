@@ -25,6 +25,7 @@
         [_control insertSegmentWithTitle: @"Первый" atIndex:0 animated: NO];
         [_control insertSegmentWithTitle: @"Сразу" atIndex:0 animated: NO];
         _control.selectedSegmentIndex = 1;
+        _control.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
         UIView * result = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 40)];
         [result addSubview: _control];
         self.toolView = result;

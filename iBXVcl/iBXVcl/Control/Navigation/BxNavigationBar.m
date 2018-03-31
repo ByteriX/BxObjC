@@ -278,6 +278,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     CGFloat y = _startY + touch.y - _startTouchY;
     CGFloat scrollOffset = _scrollView.contentOffset.y + _scrollView.contentInset.top;
     
+    // This case posible because presented saveAncher. And that affected to scroll position calculation.
+    if IS_OS_11_OR_LATER {
+        scrollOffset += CGRectGetMaxY(frame);
+    }
+    
     bool isScrolling = (self.scrollState == BxNavigationBarScrollStateUp ||
                         self.scrollState == BxNavigationBarScrollStateDown);
     bool isStopingPan = (gesture.state == UIGestureRecognizerStateEnded ||
