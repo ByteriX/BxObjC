@@ -17,31 +17,34 @@
 
 @implementation UIViewController (Navigation)
 
+- (CGFloat) bxNavigationPanelShiftY
+{
+    BxNavigationController * navController = self.navController;
+    if (navController && !self.navigationController.navigationBarHidden) {
+        return navController.toolPanel.frame.size.height;
+    }
+    return 0.0f;
+}
+
 - (CGFloat) topExtendedEdges
 {
-    if (IS_OS_9_OR_LATER) {
-        CGFloat shift = self.topLayoutGuide.length;
-        BxNavigationController * navController = self.navController;
-        if (navController && !self.navigationController.navigationBarHidden) {
-            shift += navController.toolPanel.frame.size.height;
-        }
-        return shift;
+    if IS_OS_11_OR_LATER {
+        return [self bxNavigationPanelShiftY];
+    } else if (IS_OS_9_OR_LATER) {
+        return self.topLayoutGuide.length + [self bxNavigationPanelShiftY];
     } else if (IS_OS_7_OR_LATER) {
         if (!self.extendedLayoutIncludesOpaqueBars) {
             if ((self.edgesForExtendedLayout | UIRectEdgeTop) == self.edgesForExtendedLayout && self.navigationController.navigationBar) {
                 CGRect frame = [UIApplication sharedApplication].statusBarFrame;
                 CGFloat shift = MIN(CGRectGetMaxX(frame), CGRectGetMaxY(frame));
                 if (!self.navigationController.navigationBarHidden) {
-                    shift += self.navigationController.navigationBar.frame.size.height;
-                    if ([self.navigationController isKindOfClass: BxNavigationController.class]) {
-                        BxNavigationController * navController = (BxNavigationController*)self.navigationController;
-                        shift += navController.toolPanel.frame.size.height;
-                    }
+                    shift += self.navigationController.navigationBar.frame.size.height + [self bxNavigationPanelShiftY];
                 }
                 return shift;
             }
         }
     }
+    // This is for iOS6
     BxNavigationController * navController = self.navController;
     if (navController && !self.navigationController.navigationBarHidden) {
         return navController.toolPanel.frame.size.height;
@@ -51,7 +54,9 @@
 
 - (CGFloat) bottomExtendedEdges
 {
-    if (IS_OS_9_OR_LATER) {
+    if IS_OS_11_OR_LATER {
+        return 0.0f;
+    } if (IS_OS_9_OR_LATER) {
         return self.bottomLayoutGuide.length;
     } else if (IS_OS_7_OR_LATER) {
         if (!self.extendedLayoutIncludesOpaqueBars) {
