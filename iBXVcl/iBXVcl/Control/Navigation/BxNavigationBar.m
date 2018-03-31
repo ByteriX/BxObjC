@@ -95,7 +95,7 @@ static CGFloat minimalAlpha = 0.00001f;
     return nil;
 }
 
-- (void) setBackgroundWithShift: (CGFloat) shift
+- (void) setBackgroundWithShift: (CGFloat) shift animated: (BOOL) animated
 {
     UIView * view = [self backgroundView];
     
@@ -105,9 +105,14 @@ static CGFloat minimalAlpha = 0.00001f;
         if (navigationController) {
             shift += navigationController.toolPanel.frame.size.height;
         }
-        [UIView animateWithDuration: bxNavigationDurationTime animations:^{
-            view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height - view.frame.origin.y + shift);
-        }];
+        if (animated) {
+            [UIView beginAnimations: nil context: nil];
+            [UIView setAnimationDuration: bxNavigationDurationTime];
+        }
+        view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, view.frame.size.width, self.frame.size.height - view.frame.origin.y + shift);
+        if (animated) {
+            [UIView commitAnimations];
+        }
     } else {
         if (navigationController) {
             shift += navigationController.toolPanel.frame.size.height;
@@ -125,7 +130,7 @@ static CGFloat minimalAlpha = 0.00001f;
 {
     [super layoutSubviews];
     
-    [self setBackgroundWithShift: 0];
+    [self setBackgroundWithShift: 0 animated: YES];
 }
 
 // For scroll methods
