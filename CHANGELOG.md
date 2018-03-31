@@ -6,6 +6,12 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.3.1 (31.03.2018)
+* new build script
+* fixed bug with extendedEdgesBounds: remove depricated in iOS 11 function: topLayoutGuide & bottomExtendedEdges
+* fixed bug for scrolling BxNavigationBar that reproduced with iOS 11.3
+* fixed background of NavigationBar for iOS 11
+
 ## 1.3.0 (12.01.2018)
 * added correct checking of iOS/SDK supporting
 * backward supporting iOS 10 SDK
