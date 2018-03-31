@@ -215,6 +215,34 @@
     _backgroundView.frame = CGRectMake(0, 0, self.navigationBar.frame.size.width, height);
 }
 
+- (void) setNativeBackgroundShowing: (BOOL) isShowing
+{
+    if IS_OS_11_OR_LATER {
+        // Because in iOS 11 background panel we can not rewrite isHidden (Framework always rewrite the our value)
+        for (UIView *view in self.bxNavigationBar.backgroundView.subviews)
+        {
+            view.hidden = (isShowing == NO);
+        }
+    } else {
+        self.bxNavigationBar.backgroundView.hidden = (isShowing == NO);
+    }
+    
+    // It is very terrible solution
+//    if (isShowing) {
+//        if IS_OS_11_OR_LATER {
+//            [self.bxNavigationBar setBackgroundImage: nil forBarMetrics: UIBarMetricsDefault];
+//        }
+//        [self.bxNavigationBar setValue: @(NO) forKeyPath:@"hidesShadow"];
+//        self.bxNavigationBar.backgroundView.alpha = 1;
+//    } else {
+//        if IS_OS_11_OR_LATER {
+//            [self.bxNavigationBar setBackgroundImage: [UIImage imageWithColor: UIColor.clearColor] forBarMetrics: UIBarMetricsDefault];
+//        }
+//        [self.bxNavigationBar setValue: @(YES) forKeyPath:@"hidesShadow"];
+//        self.bxNavigationBar.backgroundView.alpha = 0;
+//    }
+}
+
 - (void)checkPanelController:(UIViewController *)viewController animated: (BOOL) animated
 {
     if (!viewController) {
@@ -262,10 +290,7 @@
                 [UIView setAnimationDuration: bxNavigationDurationTime];
             }
             self.backgroundView.alpha = 1;
-            if IS_OS_11_OR_LATER {
-                [self.bxNavigationBar setBackgroundImage: [UIImage imageWithColor: UIColor.clearColor] forBarMetrics: UIBarMetricsDefault];
-            }
-            self.bxNavigationBar.backgroundView.alpha = 0;
+            [self setNativeBackgroundShowing: NO];
             if (animated) {
                 [UIView commitAnimations];
             }
@@ -311,10 +336,7 @@
             [UIView beginAnimations: nil context: nil];
             [UIView setAnimationDuration: bxNavigationDurationTime];
         }
-        if IS_OS_11_OR_LATER {
-            [self.bxNavigationBar setBackgroundImage: nil forBarMetrics: UIBarMetricsDefault];
-        }
-        self.bxNavigationBar.backgroundView.alpha = 1;
+        [self setNativeBackgroundShowing: YES];
         if (animated) {
             [UIView commitAnimations];
         }
