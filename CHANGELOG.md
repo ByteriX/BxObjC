@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.3.3 (28.04.2018)
+* fixed bug with updating toolPanel frame of navigationBar
+
 ## 1.3.2 (28.04.2018)
 * new extension of UIViewController: navigationToolPanelHeightWithController for fixed size of navigationBar panel.
 

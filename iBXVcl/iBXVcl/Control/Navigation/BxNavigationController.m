@@ -212,7 +212,7 @@
     if (_toolPanel) {
         y += self.scrollOffset;
     }
-    _toolPanel.frame = CGRectMake(0, y, self.navigationBar.frame.size.width, self.currentToolPanelHeight);
+    _toolPanel.frame = CGRectMake(0, y, self.navigationBar.frame.size.width, _toolPanel.frame.size.height);
 }
 
 - (void) setFrameForBackgroundView
