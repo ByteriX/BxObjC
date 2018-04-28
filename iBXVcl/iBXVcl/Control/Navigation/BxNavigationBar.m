@@ -103,7 +103,7 @@ static CGFloat minimalAlpha = 0.00001f;
     
     if (IS_OS_7_OR_LATER) {
         if (navigationController) {
-            shift += navigationController.toolPanel.frame.size.height;
+            shift += navigationController.currentToolPanelHeight;
         }
         if (animated) {
             [UIView beginAnimations: nil context: nil];
@@ -115,7 +115,7 @@ static CGFloat minimalAlpha = 0.00001f;
         }
     } else {
         if (navigationController) {
-            shift += navigationController.toolPanel.frame.size.height;
+            shift += navigationController.currentToolPanelHeight;
             if (!_toolPanel) {
                 self.toolPanel = [[UIToolbar alloc] initWithFrame: CGRectZero];
                 [self addSubview: _toolPanel];
@@ -275,7 +275,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     }
     BxNavigationController * navigationController = self.navController;
     if (navigationController.toolPanel) {
-        minY -= navigationController.toolPanel.frame.size.height;
+        minY -= navigationController.currentToolPanelHeight;
     }
 
     CGFloat alpha = 1.0f;
@@ -362,7 +362,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         CGFloat scrollTopOffset = [self scrollTopOffset];
         CGFloat height = frame.size.height + scrollTopOffset;
         if (navigationController.toolPanel) {
-            height =  height + navigationController.toolPanel.frame.size.height;
+            height =  height + navigationController.currentToolPanelHeight;
         }
         if ([self isParalaxPosible] && scrollOffset < 0) {
             height =  height - scrollOffset;

@@ -21,7 +21,7 @@
 {
     BxNavigationController * navController = self.navController;
     if (navController && !self.navigationController.navigationBarHidden) {
-        return navController.toolPanel.frame.size.height;
+        return navController.currentToolPanelHeight;
     }
     return 0.0f;
 }
@@ -47,7 +47,7 @@
     // This is for iOS6
     BxNavigationController * navController = self.navController;
     if (navController && !self.navigationController.navigationBarHidden) {
-        return navController.toolPanel.frame.size.height;
+        return navController.currentToolPanelHeight;
     }
     return 0.0f;
 }

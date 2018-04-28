@@ -31,6 +31,9 @@
 
 //! Если определен как не nil, то эта понель по высоте будет показана ниже navigationBar. Высота панельки влияет на extendedEdgesBounds, учитывайте этот факт. Оптимальней будет, если вы это представление закешируете в своем контролере. Метод может вызываться до создания представления контролера.
 - (UIView*) navigationToolPanelWithController: (BxNavigationController*) navigationController;
+//! You can use for changing height of navigation Bar. Default is height of this panel. Doesn't use if navigationToolPanelWithController is nil
+- (CGFloat) navigationToolPanelHeightWithController: (BxNavigationController*) navigationController;
+    
 - (UIView*) navigationBackgroundWithController: (BxNavigationController*) navigationController;
 
 @end
@@ -49,5 +52,7 @@
 
 //! Прячет верхнюю панель
 - (void) hidePanelAnimated: (BOOL) animated;
+    
+- (CGFloat) currentToolPanelHeight;
 
 @end

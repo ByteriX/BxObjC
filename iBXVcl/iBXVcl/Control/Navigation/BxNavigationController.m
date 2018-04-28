@@ -43,6 +43,16 @@
 {
     return nil;
 }
+    
+- (CGFloat) navigationToolPanelHeightWithController: (BxNavigationController*) navigationController
+{
+    UIView * toolPanel = [self navigationToolPanelWithController: navigationController];
+    if (toolPanel == nil) {
+        return 0.0f;
+    } else {
+        return toolPanel.frame.size.height;
+    }
+}
 
 - (BxNavigationController*) navController
 {
@@ -65,6 +75,7 @@
 
 @property (nonatomic, weak) UIViewController * removedViewController;
 @property (nonatomic) CGFloat scrollOffset;
+@property (nonatomic) CGFloat toolPanelHeight;
 
 @end
 
@@ -73,6 +84,7 @@
 - (void) viewDidLoad
 {
     [super viewDidLoad];
+    _toolPanelHeight = 0.0f;
     self.scrollOffset = 0;
     if (IS_OS_7_OR_LATER) {
         [self.interactivePopGestureRecognizer addTarget: self action: @selector(handleNavigationPop:)];
@@ -200,14 +212,14 @@
     if (_toolPanel) {
         y += self.scrollOffset;
     }
-    _toolPanel.frame = CGRectMake(0, y, self.navigationBar.frame.size.width, _toolPanel.frame.size.height);
+    _toolPanel.frame = CGRectMake(0, y, self.navigationBar.frame.size.width, self.currentToolPanelHeight);
 }
 
 - (void) setFrameForBackgroundView
 {
     CGFloat height = CGRectGetMaxY(self.navigationBar.frame);
     if (_toolPanel) {
-        height += _toolPanel.frame.size.height;
+        height += self.currentToolPanelHeight;
     }
     if (_backgroundView) {
         height += self.scrollOffset;
@@ -257,6 +269,7 @@
                 [self hideToolPanelAnimated: animated];
             }
             _toolPanel = toolBar;
+            _toolPanelHeight = [viewController navigationToolPanelHeightWithController: self];
             [self setFrameForToolPanel];
             _toolPanel.alpha = 0;
             [self.view addSubview: _toolPanel];
@@ -270,6 +283,8 @@
             }
             hidePanel = NO;
         }
+    } else {
+        _toolPanelHeight = 0.0f;
     }
     if (hidePanel) {
         [self hideToolPanelAnimated: animated];
@@ -326,6 +341,7 @@
 {
     [self hidePanel: _toolPanel animated: animated];
     _toolPanel = nil;
+    _toolPanelHeight = 0.0f;
 }
 
 - (void) hideBackgroundPanelAnimated: (BOOL) animated showNativeBackgroundView: (BOOL) showNativeBackgroundView
@@ -403,6 +419,12 @@
     id removeController = [super popViewControllerAnimated: animated];
     [self checkPanelController:self.visibleViewController animated:animated];
     return removeController;
+}
+    
+- (CGFloat) currentToolPanelHeight
+{
+    //return _toolPanel.frame.size.height; is oldest solution
+    return _toolPanelHeight;
 }
 
 - (void) dealloc

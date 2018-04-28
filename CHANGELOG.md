@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.3.2 (28.04.2018)
+* new extension of UIViewController: navigationToolPanelHeightWithController for fixed size of navigationBar panel.
+
 ## 1.3.1 (31.03.2018)
 * new build script
 * fixed bug with extendedEdgesBounds: remove depricated in iOS 11 function: topLayoutGuide & bottomExtendedEdges
