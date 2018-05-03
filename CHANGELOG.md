@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.0 (04.05.2018)
+* removed ECSlidingViewController from sources
+
 ## 1.3.3 (28.04.2018)
 * fixed bug with updating toolPanel frame of navigationBar
 

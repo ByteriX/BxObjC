@@ -14,8 +14,6 @@
 #import "BxCommon.h"
 #import "BxData.h"
 
-#import "ECSlidingViewController.h"
-
 #import "BxBaseViewController.h"
 #import "BxKeyboardController.h"
 

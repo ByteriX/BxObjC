@@ -867,7 +867,6 @@
 				3453FAFC178BFC9B0051C096 /* Frameworks */,
 				3453FAFD178BFC9B0051C096 /* Resources */,
 				1CC71C30F76CB1E6FBE4C3E3 /* [CP] Embed Pods Frameworks */,
-				2E0594D551AD7F6C52EFDEFC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -892,7 +891,6 @@
 				3453FB1B178BFC9B0051C096 /* Frameworks */,
 				3453FB1C178BFC9B0051C096 /* Resources */,
 				3453FB1D178BFC9B0051C096 /* ShellScript */,
-				7C10EBD98825A2D1450FC6D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1090,30 +1088,17 @@
 				"${SRCROOT}/../Pods/Target Support Files/Pods-iBXTest/Pods-iBXTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/XMLDictionary/XMLDictionary.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/ECSlidingViewController/ECSlidingViewController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XMLDictionary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ECSlidingViewController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iBXTest/Pods-iBXTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2E0594D551AD7F6C52EFDEFC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iBXTest/Pods-iBXTest-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3453FB1D178BFC9B0051C096 /* ShellScript */ = {
@@ -1158,21 +1143,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7C10EBD98825A2D1450FC6D9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-iBXTestTests/Pods-iBXTestTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE81774EAE9786336EE8AD90 /* [CP] Check Pods Manifest.lock */ = {
@@ -1343,13 +1313,20 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"$(inherited)",
+					"SQLITE_CORE=1",
+					"SQLITE_UNICODE_ENABLE=1",
+					"SQLITE_ENABLE_FTS4=1",
+					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1385,8 +1362,18 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"SQLITE_CORE=1",
+					"SQLITE_UNICODE_ENABLE=1",
+					"SQLITE_ENABLE_FTS4=1",
+					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
+				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1410,14 +1397,6 @@
 				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-					"SQLITE_CORE=1",
-					"SQLITE_UNICODE_ENABLE=1",
-					"SQLITE_ENABLE_FTS4=1",
-					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
-				);
 				GENERATE_MASTER_OBJECT_FILE = NO;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILT_PRODUCTS_DIR)/include\"/**",
@@ -1435,10 +1414,6 @@
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
 				ORDER_FILE = "";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
 				PRELINK_LIBS = "$(BUILT_PRODUCTS_DIR)/libiBXVcl.a $(BUILT_PRODUCTS_DIR)/libiBXMap.a $(BUILT_PRODUCTS_DIR)/libiBXData.a $(BUILT_PRODUCTS_DIR)/libiBXCommon.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1455,12 +1430,6 @@
 				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"SQLITE_CORE=1",
-					"SQLITE_UNICODE_ENABLE=1",
-					"SQLITE_ENABLE_FTS4=1",
-					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
-				);
 				GENERATE_MASTER_OBJECT_FILE = NO;
 				HEADER_SEARCH_PATHS = (
 					"\"$(BUILT_PRODUCTS_DIR)/include\"/**",
@@ -1477,10 +1446,6 @@
 				);
 				MACH_O_TYPE = mh_execute;
 				ORDER_FILE = "";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
 				PRELINK_LIBS = "$(BUILT_PRODUCTS_DIR)/libiBXVcl.a $(BUILT_PRODUCTS_DIR)/libiBXMap.a $(BUILT_PRODUCTS_DIR)/libiBXData.a $(BUILT_PRODUCTS_DIR)/libiBXCommon.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1494,27 +1459,14 @@
 			baseConfigurationReference = 65424105FE6BD3F51CC7D2CE /* Pods-iBXTestTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iBXTest.app/iBXTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-					"SQLITE_CORE=1",
-					"SQLITE_UNICODE_ENABLE=1",
-					"SQLITE_ENABLE_FTS4=1",
-					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
-				);
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
 				INFOPLIST_FILE = "iBXTestTests/iBXTestTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/iByteriX-aljedwusrgcrrogjewksrmphndbk/Build/Products/Debug-iphoneos\"",
 				);
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -1527,25 +1479,14 @@
 			baseConfigurationReference = 787B837B2F8A0AB53CC0A1DC /* Pods-iBXTestTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iBXTest.app/iBXTest";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iBXTest/iBXTest-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"SQLITE_CORE=1",
-					"SQLITE_UNICODE_ENABLE=1",
-					"SQLITE_ENABLE_FTS4=1",
-					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
-				);
 				HEADER_SEARCH_PATHS = "$(BUILT_PRODUCTS_DIR)/include/**";
 				INFOPLIST_FILE = "iBXTestTests/iBXTestTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/iByteriX-aljedwusrgcrrogjewksrmphndbk/Build/Products/Debug-iphoneos\"",
 				);
-				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";

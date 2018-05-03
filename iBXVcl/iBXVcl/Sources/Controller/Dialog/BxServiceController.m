@@ -15,7 +15,6 @@
 #import "BxUIUtils.h"
 #import "BxCommon.h"
 #import "UIImage+BxUtils.h"
-#import "UIImage+ImageWithUIView.h"
 
 @implementation BxServiceController
 

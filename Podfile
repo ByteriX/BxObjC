@@ -35,7 +35,7 @@ target 'iBXTest' do
 
     pod 'XMLDictionary', '1.4'
     pod 'MBProgressHUD'
-
+    pod 'ECSlidingViewController'
 
 end
 
@@ -48,5 +48,6 @@ target 'iBXTestTests' do
 
     pod 'XMLDictionary', '1.4'
     pod 'MBProgressHUD'
+    pod 'ECSlidingViewController'
 
 end

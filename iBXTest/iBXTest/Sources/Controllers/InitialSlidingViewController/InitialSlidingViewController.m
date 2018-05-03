@@ -22,7 +22,6 @@ static CGFloat AnchorRevealAmount = 260.0f;
     [super viewDidLoad];
     self.shouldAllowUserInteractionsWhenAnchored = NO;
     self.shouldAllowPanningPastAnchor = YES;
-    self.topResizing = BxTopResizingNone;
     self.shouldAddPanGestureRecognizerToTopViewSnapshot = YES;
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         [self setNeedsStatusBarAppearanceUpdate];
