@@ -52,21 +52,6 @@
     [_contentView release];
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation 
-										 duration:(NSTimeInterval)duration
-{
-	/*float keyHeight;
-	if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-		toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-	{
-		keyHeight = 162;
-	}else {
-		keyHeight = 216;
-	}
-	_contentView.frame = CGRectMake(0.0f, 0.0f, self.view.frame.size.width,
-								   self.view.frame.size.height - keyHeight);*/
-}
-
 - (void)registerForKeyboardNotifications
 {
     [[NSNotificationCenter defaultCenter] addObserver:self

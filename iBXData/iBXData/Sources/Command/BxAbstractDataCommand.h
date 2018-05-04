@@ -15,7 +15,7 @@
 
 typedef void (^BxDataCommandSuccessHandler)(id command);
 typedef void (^BxDataCommandErrorHandler)(NSError * error);
-typedef void (^BxDataCommandCancelHandler)();
+typedef void (^BxDataCommandCancelHandler)(void);
 
 extern NSString *const FNDataCommandName;
 

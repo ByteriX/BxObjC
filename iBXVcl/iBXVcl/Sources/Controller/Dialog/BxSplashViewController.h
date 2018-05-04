@@ -13,7 +13,7 @@
 
 #import "BxVcl.h"
 
-typedef void (^BxSplashAction)();
+typedef void (^BxSplashAction)(void);
 
 //! отображение сплеша
 @interface BxSplashViewController : BxDialogController

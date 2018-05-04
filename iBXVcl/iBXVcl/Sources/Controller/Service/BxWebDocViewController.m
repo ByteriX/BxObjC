@@ -147,7 +147,18 @@
 - (void) showProgressOnMain
 {
     [self view];
-    [_HUD show: YES];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+#pragma clang diagnostic ignored "-Wobjc-method-access"
+    if ([_HUD respondsToSelector: @selector(showAnimated:)]) {
+        [_HUD showAnimated: YES];
+#pragma clang diagnostic pop
+#pragma clang diagnostic push
+    } else {
+#pragma clang diagnostic ignored "-Wdeprecated"
+        [_HUD show: YES];
+    }
+#pragma clang diagnostic pop
 }
 
 - (void) showProgress
@@ -159,7 +170,18 @@
 
 - (void) hideProgressOnMain
 {
-    [_HUD hide: YES];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
+#pragma clang diagnostic ignored "-Wobjc-method-access"
+    if ([_HUD respondsToSelector: @selector(hideAnimated:)]) {
+        [_HUD hideAnimated: YES];
+#pragma clang diagnostic pop
+#pragma clang diagnostic push
+    } else {
+#pragma clang diagnostic ignored "-Wdeprecated"
+        [_HUD hide: YES];
+    }
+#pragma clang diagnostic pop
 }
 
 - (void) hideProgress

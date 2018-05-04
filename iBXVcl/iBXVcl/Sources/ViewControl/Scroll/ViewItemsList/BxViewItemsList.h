@@ -42,7 +42,7 @@
 
 @end
 
-typedef UIView<BxViewItem>* (^BxViewItemCreateHandler)();
+typedef UIView<BxViewItem>* (^BxViewItemCreateHandler)(void);
 
 typedef NS_ENUM(NSInteger, BxViewItemsListOrientation) {
     BxViewItemsListHorizontalOrientation,
