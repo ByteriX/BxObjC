@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.1 (02.11.2018)
+* fixed BxNavigationBar update
+
 ## 1.4.0 (04.05.2018)
 * removed ECSlidingViewController from sources
 * fixed warnings

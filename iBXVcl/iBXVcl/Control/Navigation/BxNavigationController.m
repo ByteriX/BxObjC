@@ -315,6 +315,7 @@
     if (hidePanel) {
         [self hideBackgroundPanelAnimated: animated showNativeBackgroundView: YES];
     }
+    [self.bxNavigationBar setNeedsLayout];
 }
 
 - (void) hidePanel: (UIView*) panel animated: (BOOL) animated
