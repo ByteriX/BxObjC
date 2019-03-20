@@ -206,6 +206,11 @@
     [self checkPanelController:viewController animated:animated];
 }
 
+- (void)showViewController:(UIViewController *)vc sender:(nullable id)sender
+{
+    [super showViewController: vc sender: sender];
+}
+
 - (void) setFrameForToolPanel
 {
     CGFloat y = CGRectGetMaxY(self.navigationBar.frame);

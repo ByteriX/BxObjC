@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.2 (20.03.2019)
+* fixed getting BxNavigationBar. When BxNavigationBar created from initWithRootController.
+
 ## 1.4.1 (02.11.2018)
 * fixed BxNavigationBar update
 

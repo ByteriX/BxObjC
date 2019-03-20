@@ -403,9 +403,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
 
 @dynamic bxNavigationBar;
 
-- (BxNavigationBar*) bxNavigationBar
-{
-    return (BxNavigationBar*)self.navigationBar;
+- (BxNavigationBar*) bxNavigationBar {
+    if ([self.navigationBar isKindOfClass: BxNavigationBar.class]) {
+        return (BxNavigationBar*)self.navigationBar;
+    }
+    return nil;
 }
 
 @end
