@@ -56,6 +56,9 @@ static CGFloat minimalAlpha = 0.00001f;
         self.backgroundClassName = @"_UINavigationBarBackground";
     }
     
+    _toolFadeFactor = M_PI;
+    _nativeFadeFactor = 20;
+    
     _scrollLimitation = NO;
     _scrollState = BxNavigationBarScrollStateNone;
     _lastScrollOffset = 0;
@@ -164,7 +167,7 @@ static CGFloat minimalAlpha = 0.00001f;
     } else {
         frame.origin.y = [self scrollTopOffset];
     }
-    [self setFrame: frame alpha: 1.0f scrollOffset: 0.0f animated: animated];
+    [self setFrame: frame alphaNative: 1.0f alphaTool: 1.0f scrollOffset: 0.0f animated: animated];
 }
 
 - (void) statusBarDidChange
@@ -309,13 +312,21 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
             frame.origin.y = minY;
             alpha = minimalAlpha;
         }
-        [self setFrame: frame alpha: alpha scrollOffset: 0.0f animated: YES];
+        [self setFrame: frame alphaNative: alpha alphaTool: alpha scrollOffset: 0.0f animated: YES];
         _scrollState = BxNavigationBarScrollStateNone;
     }
     else {
         frame.origin.y = MIN(maxY, MAX(y, minY));
-        alpha = MAX(minimalAlpha, (frame.origin.y - minY) / (maxY - minY));
-        [self setFrame: frame alpha: alpha scrollOffset: scrollOffset animated: NO];
+        //alpha = (frame.origin.y - minY) / (maxY - minY);
+        //alpha = MAX(minimalAlpha, alpha);
+        CGFloat alphaExp = (maxY - frame.origin.y) / (maxY - minY);
+        CGFloat alphaNative = exp(- alphaExp * alphaExp * _nativeFadeFactor);
+        CGFloat alphaTool = exp(- alphaExp * alphaExp * _toolFadeFactor);
+        [self setFrame: frame
+           alphaNative: MAX(minimalAlpha, alphaNative)
+             alphaTool: MAX(minimalAlpha, alphaTool)
+          scrollOffset: scrollOffset
+              animated: NO];
         _lastPower = power;
     }
 }
@@ -325,24 +336,29 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     return self.navController.backgroundView != nil;
 }
 
-- (void) setFrame: (CGRect) frame alpha: (CGFloat) alpha scrollOffset: (CGFloat) scrollOffset animated: (BOOL) animated
+- (void) setFrame: (CGRect) frame
+        alphaNative: (CGFloat) alphaNative
+        alphaTool: (CGFloat) alphaTool
+     scrollOffset: (CGFloat) scrollOffset
+         animated: (BOOL) animated
 {
     if (animated) {
         [UIView beginAnimations: nil context: nil];
         [UIView setAnimationDuration: bxNavigationDurationTime];
     }
     CGFloat offsetY = CGRectGetMinY(frame) - CGRectGetMinY(self.frame);
+    
     for (UIView* view in self.subviews) {
         bool isBackgroundView = [self backgroundView] == view;
         bool isViewHidden = view.hidden || view.alpha == 0.0f;
         if (!isBackgroundView && !isViewHidden) {
-            view.alpha = alpha;
+            view.alpha = alphaNative;
         }
     }
     self.frame = frame;
     BxNavigationController * navigationController = self.navController;
     if (navigationController.toolPanel) {
-        navigationController.toolPanel.alpha = alpha;
+        navigationController.toolPanel.alpha = alphaTool;
         CGRect toolPanelFrame = navigationController.toolPanel.frame;
         CGFloat y = CGRectGetMaxY(frame);
         if ([self isParalaxPosible] && scrollOffset < 0) {

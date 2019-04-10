@@ -26,6 +26,7 @@
     [TestBxOldInputTableController appearance].valueTextColor = [UIColor redColor];
     [TestBxOldInputTableController appearance].titleTextColor = [UIColor redColor];
     [TestBxOldInputTableController appearance].placeholderColor = [UIColor grayColor];
+    //[BxNavigationBar appearance].toolFadeFactor = 40;
 
     [self.window makeKeyAndVisible];
 

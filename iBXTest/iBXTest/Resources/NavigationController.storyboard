@@ -33,6 +33,7 @@
                 <navigationController storyboardIdentifier="UINavigationController-lRh-Av-JHL" definesPresentationContext="YES" id="9GR-xP-yuO" customClass="NavigationTopViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iKf-Cj-Foi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="kja-ko-UBb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -164,6 +165,7 @@
             <objects>
                 <navigationController id="yrz-qL-3fd" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FgA-u8-iVs">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -335,6 +337,34 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yoJ-9E-ILD">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                    <prototypes>
+                        <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Paq-xb-Zi2" style="IBUITableViewCellStyleDefault" id="kGy-j8-Zk4">
+                            <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kGy-j8-Zk4" id="b3v-q8-UFl">
+                                <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Paq-xb-Zi2">
+                                        <rect key="frame" x="16" y="0.0" width="324" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </tableViewCellContentView>
+                        </tableViewCell>
+                    </prototypes>
+                    <connections>
+                        <outlet property="dataSource" destination="6Gk-Fj-Bzt" id="gPT-xG-eyg"/>
+                        <outlet property="delegate" destination="6Gk-Fj-Bzt" id="zgk-dZ-76i"/>
+                    </connections>
+                </tableView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lv5-SU-a7q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3769.6000000000004" y="3741.2293853073465"/>

@@ -38,6 +38,11 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
 
 @property(strong, nonatomic, readonly) BxNavigationController *navController;
 
+//! Default Pi
+@property(nonatomic) CGFloat toolFadeFactor UI_APPEARANCE_SELECTOR;
+//! Default 20
+@property(nonatomic) CGFloat nativeFadeFactor UI_APPEARANCE_SELECTOR;
+
 
 
 - (UIView*) backgroundView;

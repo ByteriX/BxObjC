@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.3 (11.04.2019)
+* added toolFadeFactor and  nativeFadeFactor to BxNavigationBar
+
 ## 1.4.2 (20.03.2019)
 * fixed getting BxNavigationBar. When BxNavigationBar created from initWithRootController.
 
