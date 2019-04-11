@@ -167,6 +167,7 @@ static CGFloat minimalAlpha = 0.00001f;
     } else {
         frame.origin.y = [self scrollTopOffset];
     }
+    //NSLog(@"resetScrollStateWithAnimation");
     [self setFrame: frame alphaNative: 1.0f alphaTool: 1.0f scrollOffset: 0.0f animated: animated];
 }
 
@@ -219,16 +220,22 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         if (self.navController.isNavigationBarHidden) {
             return;
         }
-        BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
-        if (isNotReseted) {
-            bool isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
-                                 _panGesture.state == UIGestureRecognizerStateEnded ||
-                                 _panGesture.state == UIGestureRecognizerStateCancelled);
-            BOOL isSmallContentOffset = self.scrollView.contentOffset.y < 0;
-            if (isStopingPan && isSmallContentOffset) {
-                [self resetScrollStateWithAnimation: YES];
-            }
-        }
+        // это был пофикшен баг с передергиванием панельки при скроле
+        // через какое то время адаптации это уберем
+        // В целом без этого костыля панелька возвращается при недостаточно длинном скроле
+        
+//        BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
+//        if (isNotReseted) {
+//            BOOL isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
+//                                 _panGesture.state == UIGestureRecognizerStateEnded ||
+//                                 _panGesture.state == UIGestureRecognizerStateCancelled);
+//            BOOL isSmallContentOffset = self.scrollView.contentOffset.y < 0;
+//            if (isStopingPan && isSmallContentOffset) {
+//                // В этом смысла никакого нет, тем более что тут баг есть, панелька туда сюда проворачивалась
+//                NSLog(@"observeValueForKeyPath -> resetScrollStateWithAnimation state: %ld", (long)_panGesture.state);
+//                [self resetScrollStateWithAnimation: YES];
+//            }
+//        }
     }
 }
 
@@ -298,6 +305,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     
     // это тоже надо поправить, тут лучше бывает уходить в напрвлении "к кому сейчас ближе"
     if (isScrolling && isStopingPan) {
+        //NSLog(@"isScrolling && isStopingPan _scrollState = %ld", _scrollState);
         if (self.scrollState == BxNavigationBarScrollStateDown && y < minY) {
             _scrollState = BxNavigationBarScrollStateUp;
         }

@@ -21,7 +21,7 @@
     if (_isSizing) {
         return 25;
     } else {
-        return 13; // 12
+        return 9; // 12
     }
 }
 
@@ -90,6 +90,13 @@
 {
     [super viewWillAppear: animated];
     self.navigationController.bxNavigationBar.scrollView = self.tableView;
+    self.navigationController.bxNavigationBar.scrollLimitation = NO;
+}
+
+- (void) viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear: animated];
+    self.navigationController.bxNavigationBar.scrollLimitation = YES;
 }
 
 @end
