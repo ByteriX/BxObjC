@@ -6,6 +6,11 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.4 (12.04.2019)
+* fixed issue with scroll on Navigation Bar
+* edition example for a testing NavigationBar
+* edition NavigationBar.scrollLimitation is TRUE by default and added to appearance
+
 ## 1.4.3 (11.04.2019)
 * added toolFadeFactor and  nativeFadeFactor to BxNavigationBar
 
