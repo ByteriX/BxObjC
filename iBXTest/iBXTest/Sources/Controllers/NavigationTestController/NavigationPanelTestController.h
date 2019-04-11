@@ -10,4 +10,6 @@
 
 @interface NavigationPanelTestController : UITableViewController
 
+@property (nonatomic) BOOL isSizing;
+
 @end

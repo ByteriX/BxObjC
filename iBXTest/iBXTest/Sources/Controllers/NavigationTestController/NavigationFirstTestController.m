@@ -8,6 +8,7 @@
 
 #import "NavigationFirstTestController.h"
 #import "BxVcl.h"
+#import "NavigationPanelTestController.h"
 
 @interface NavigationFirstTestController ()
 
@@ -44,6 +45,13 @@
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     imageView.clipsToBounds = YES;
     return imageView;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString: @"withoutSizing"]) {
+        NavigationPanelTestController * controller = segue.destinationViewController;
+        controller.isSizing = NO;
+    }
 }
 
 - (void) dealloc

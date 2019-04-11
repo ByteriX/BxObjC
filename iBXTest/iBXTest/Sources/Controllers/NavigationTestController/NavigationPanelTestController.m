@@ -18,7 +18,11 @@
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 25;
+    if (_isSizing) {
+        return 25;
+    } else {
+        return 13; // 12
+    }
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -48,10 +52,14 @@
 
 - (UIView*) navigationBackgroundWithController: (BxNavigationController*) navigationController
 {
-    UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"common_background1.jpg"]];
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-    imageView.clipsToBounds = YES;
-    return imageView;
+    if (_isSizing) {
+        UIImageView * imageView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"common_background1.jpg"]];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        imageView.clipsToBounds = YES;
+        return imageView;
+    } else {
+        return nil;
+    }
 }
 
 - (void) viewWillLayoutSubviews
@@ -64,6 +72,11 @@
     self.tableView.contentInset = UIEdgeInsetsMake(topY, 0, bottomY, 0);
     self.tableView.scrollIndicatorInsets = UIEdgeInsetsMake(topY, 0, bottomY, 0);
     
+}
+
+- (void) awakeFromNib {
+    [super awakeFromNib];
+    _isSizing = YES;
 }
 
 - (void) viewDidLoad
