@@ -58,8 +58,8 @@ static CGFloat minimalAlpha = 0.00001f;
     
     _toolFadeFactor = M_PI;
     _nativeFadeFactor = 20;
+    _scrollLimitation = YES;
     
-    _scrollLimitation = NO;
     _scrollState = BxNavigationBarScrollStateNone;
     _lastScrollOffset = 0;
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self

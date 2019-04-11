@@ -31,17 +31,19 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
 @property (strong, nonatomic) UIScrollView *scrollView;
 //! Effects from user scrolling behaviors
 @property(copy, nonatomic) NSArray<BxNavigationBarEffectProtocol> * scrollEffects;
-//! If scroll is small all effects ignored. Default is NO.
-@property(nonatomic) BOOL scrollLimitation;
+//! If scroll is small all effects ignored. Default is YES.
+@property(nonatomic) BOOL scrollLimitation UI_APPEARANCE_SELECTOR;
 
 @property (assign, nonatomic, readonly) BxNavigationBarScrollState scrollState;
 
 @property(strong, nonatomic, readonly) BxNavigationController *navController;
 
-//! Default Pi
+//! Default Pi = 3,14
 @property(nonatomic) CGFloat toolFadeFactor UI_APPEARANCE_SELECTOR;
 //! Default 20
 @property(nonatomic) CGFloat nativeFadeFactor UI_APPEARANCE_SELECTOR;
+
+//@property(nonatomic) BOOL isScrollLockedWhenSmall UI_APPEARANCE_SELECTOR;
 
 
 
