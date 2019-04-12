@@ -353,8 +353,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     CGFloat offsetY = CGRectGetMinY(frame) - CGRectGetMinY(self.frame);
     
     for (UIView* view in self.subviews) {
-        bool isBackgroundView = [self backgroundView] == view;
-        bool isViewHidden = view.hidden || view.alpha == 0.0f;
+        BOOL isBackgroundView = [self backgroundView] == view;
+        BOOL isViewHidden = view.hidden || view.alpha == 0.0f;
         if (!isBackgroundView && !isViewHidden) {
             view.alpha = alphaNative;
         }

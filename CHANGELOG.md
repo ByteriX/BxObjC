@@ -6,6 +6,9 @@ ByteriX, 2013-2018. All right reserved.
 
 # Versions
 
+## 1.4.5 (12.04.2019)
+* fixed issue with scroll on Navigation Bar
+
 ## 1.4.4 (12.04.2019)
 * fixed issue with scroll on Navigation Bar
 * edition example for a testing NavigationBar
