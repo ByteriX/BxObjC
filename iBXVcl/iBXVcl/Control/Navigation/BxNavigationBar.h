@@ -24,6 +24,12 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
     BxNavigationBarScrollStateUp
 };
 
+typedef NS_ENUM(NSInteger, BxNavigationBarState) {
+    BxNavigationBarStateShown,
+    BxNavigationBarStateFloat,
+    BxNavigationBarStateHidden
+};
+
 @interface BxNavigationBar : UINavigationBar
 
 //! This need define in viewWillApear, for scrolling naviationBar
@@ -35,6 +41,7 @@ typedef NS_ENUM(NSInteger, BxNavigationBarScrollState) {
 @property(nonatomic) BOOL scrollLimitation UI_APPEARANCE_SELECTOR;
 
 @property (assign, nonatomic, readonly) BxNavigationBarScrollState scrollState;
+    @property (assign, nonatomic, readonly) BxNavigationBarState state;
 
 @property(strong, nonatomic, readonly) BxNavigationController *navController;
 

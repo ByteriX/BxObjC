@@ -8,6 +8,7 @@
 
 #import "NavigationPanelTestController.h"
 #import "BxVcl.h"
+#import "iBXTest-Swift.h"
 
 @implementation NavigationPanelTestController
 
@@ -21,7 +22,7 @@
     if (_isSizing) {
         return 25;
     } else {
-        return 9; // 12
+        return 13; // 12
     }
 }
 

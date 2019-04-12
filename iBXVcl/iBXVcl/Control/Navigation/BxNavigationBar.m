@@ -60,6 +60,7 @@ static CGFloat minimalAlpha = 0.00001f;
     _nativeFadeFactor = 20;
     _scrollLimitation = YES;
     
+    _state = BxNavigationBarStateShown;
     _scrollState = BxNavigationBarScrollStateNone;
     _lastScrollOffset = 0;
     self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self
@@ -168,7 +169,7 @@ static CGFloat minimalAlpha = 0.00001f;
         frame.origin.y = [self scrollTopOffset];
     }
     //NSLog(@"resetScrollStateWithAnimation");
-    [self setFrame: frame alphaNative: 1.0f alphaTool: 1.0f scrollOffset: 0.0f animated: animated];
+    [self setFrame: frame alphaNative: 1.0f alphaTool: 1.0f scrollOffset: 0.0f animated: animated state: BxNavigationBarStateShown];
 }
 
 - (void) statusBarDidChange
@@ -220,22 +221,21 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         if (self.navController.isNavigationBarHidden) {
             return;
         }
-        // это был пофикшен баг с передергиванием панельки при скроле
-        // через какое то время адаптации это уберем
-        // В целом без этого костыля панелька возвращается при недостаточно длинном скроле
+        // эта шткука нужна, чтобы отлавливать событие нажатия на statusBar, только для этого
         
-//        BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
-//        if (isNotReseted) {
-//            BOOL isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
-//                                 _panGesture.state == UIGestureRecognizerStateEnded ||
-//                                 _panGesture.state == UIGestureRecognizerStateCancelled);
-//            BOOL isSmallContentOffset = self.scrollView.contentOffset.y < 0;
-//            if (isStopingPan && isSmallContentOffset) {
-//                // В этом смысла никакого нет, тем более что тут баг есть, панелька туда сюда проворачивалась
-//                NSLog(@"observeValueForKeyPath -> resetScrollStateWithAnimation state: %ld", (long)_panGesture.state);
-//                [self resetScrollStateWithAnimation: YES];
-//            }
-//        }
+        //BOOL isNotReseted = fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
+        BOOL isNotReseted = (_state == BxNavigationBarStateHidden) && fabs(self.frame.origin.y - [self scrollTopOffset]) > minimalAlpha;
+        if (isNotReseted) {
+            BOOL isStopingPan = (_panGesture.state == UIGestureRecognizerStatePossible ||
+                                 _panGesture.state == UIGestureRecognizerStateEnded ||
+                                 _panGesture.state == UIGestureRecognizerStateCancelled);
+            BOOL isOnTop = self.scrollView.contentOffset.y < 0;
+            if (isStopingPan && isOnTop) {
+                // В этом смысла никакого нет, тем более что тут баг есть, панелька туда сюда проворачивалась
+                //NSLog(@"observeValueForKeyPath -> resetScrollStateWithAnimation\nstate: %ld\nscrollView.contentOffset.y: %f", (long)_panGesture.state, self.scrollView.contentOffset.y);
+                [self resetScrollStateWithAnimation: YES];
+            }
+        }
     }
 }
 
@@ -320,7 +320,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
             frame.origin.y = minY;
             alpha = minimalAlpha;
         }
-        [self setFrame: frame alphaNative: alpha alphaTool: alpha scrollOffset: 0.0f animated: YES];
+        [self setFrame: frame alphaNative: alpha alphaTool: alpha scrollOffset: 0.0f animated: YES state: BxNavigationBarStateHidden];
         _scrollState = BxNavigationBarScrollStateNone;
     }
     else {
@@ -334,7 +334,8 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
            alphaNative: MAX(minimalAlpha, alphaNative)
              alphaTool: MAX(minimalAlpha, alphaTool)
           scrollOffset: scrollOffset
-              animated: NO];
+              animated: NO
+                 state: BxNavigationBarStateFloat];
         _lastPower = power;
     }
 }
@@ -348,12 +349,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         alphaNative: (CGFloat) alphaNative
         alphaTool: (CGFloat) alphaTool
      scrollOffset: (CGFloat) scrollOffset
-         animated: (BOOL) animated
 {
-    if (animated) {
-        [UIView beginAnimations: nil context: nil];
-        [UIView setAnimationDuration: bxNavigationDurationTime];
-    }
     CGFloat offsetY = CGRectGetMinY(frame) - CGRectGetMinY(self.frame);
     
     for (UIView* view in self.subviews) {
@@ -375,7 +371,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
         } else {
             navigationController.scrollOffset = 0;
         }
-        if (animated && fabs(toolPanelFrame.origin.y - y) > 10) {
+        if (fabs(toolPanelFrame.origin.y - y) > 10) {
             _lastPower = toolPanelFrame.origin.y - y;
         }
         toolPanelFrame.origin.y = y;
@@ -401,11 +397,40 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     if (self.scrollView) {
         self.scrollView.contentOffset = CGPointMake(self.scrollView.contentOffset.x, self.scrollView.contentOffset.y - offsetY);
     }
-    if (animated) {
-        [UIView commitAnimations];
-        [self finishingMotion];
+}
+    
+- (void) setFrame: (CGRect) frame
+      alphaNative: (CGFloat) alphaNative
+        alphaTool: (CGFloat) alphaTool
+     scrollOffset: (CGFloat) scrollOffset
+         animated: (BOOL) animated
+            state: (BxNavigationBarState) state
+{
+    if (animated){
+        __weak BxNavigationBar * this = self;
+        [UIView animateWithDuration:bxNavigationDurationTime animations:^{
+            [this setFrame: frame
+               alphaNative: alphaNative
+                 alphaTool: alphaTool
+              scrollOffset: scrollOffset];
+        } completion:^(BOOL finished) {
+            [this finishingMotion];
+            [this setState: state];
+        }];
+    } else {
+        [self setFrame: frame
+           alphaNative: alphaNative
+             alphaTool: alphaTool
+          scrollOffset: scrollOffset];
+        [self setState: state];
     }
 }
+    
+- (void) setState: (BxNavigationBarState) state
+{
+    _state = state;
+}
+
 
 - (void) finishingMotion
 {

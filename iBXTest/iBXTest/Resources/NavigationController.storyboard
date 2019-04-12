@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -48,10 +49,6 @@
         <scene sceneID="KPe-zz-s88">
             <objects>
                 <viewController id="eHc-LZ-eN4" customClass="NavigationFirstTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xfO-1e-aiw"/>
-                        <viewControllerLayoutGuide type="bottom" id="tAb-w1-MFl"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ch4-LW-01M">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -82,8 +79,22 @@
                                     <segue destination="6Gk-Fj-Bzt" kind="show" id="Z6s-W7-Hxp"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whr-bi-Oly">
+                                <rect key="frame" x="40" y="265" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Таблица с панелькой">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="selected">
+                                    <color key="titleColor" red="1" green="0.31409598770000002" blue="0.2345026335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Aev-LD-G9R" kind="show" id="FzT-Cr-WlR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="EtV-YE-1oF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Первый" id="QXK-wg-E51">
                         <barButtonItem key="rightBarButtonItem" title="основной &gt;" id="lNK-ef-VB9">
@@ -101,10 +112,6 @@
         <scene sceneID="U8c-ba-pnJ">
             <objects>
                 <viewController id="1P3-mT-qQ8" customClass="NavigationCommonTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hAf-DM-YaO"/>
-                        <viewControllerLayoutGuide type="bottom" id="viS-2h-zPe"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gw5-p1-1jj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -118,6 +125,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="We3-0m-c6Y"/>
                     </view>
                     <navigationItem key="navigationItem" title="Основной" id="1S1-mC-gKP">
                         <barButtonItem key="rightBarButtonItem" title="Далее" id="hVd-fg-Ygs">
@@ -135,10 +143,6 @@
         <scene sceneID="hcY-Pa-8dQ">
             <objects>
                 <viewController id="AHr-Fd-q3s" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sOZ-GI-HGK"/>
-                        <viewControllerLayoutGuide type="bottom" id="54C-cj-ZHw"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xhw-6a-WLT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +156,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NCC-9n-VlR"/>
                     </view>
                     <navigationItem key="navigationItem" title="details" id="3pR-Xq-2jU"/>
                 </viewController>
@@ -221,10 +226,6 @@
         <scene sceneID="qoH-we-Lcj">
             <objects>
                 <viewController title="TestNavigation" id="HjY-D9-nBs" customClass="NavigationTestController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u3c-W2-a6R"/>
-                        <viewControllerLayoutGuide type="bottom" id="2Ce-j9-yKy"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pwk-la-WGh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -296,6 +297,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="OmK-kT-RBt"/>
                     </view>
                     <navigationItem key="navigationItem" title="Тригер" id="jqS-rH-Fjs"/>
                 </viewController>
@@ -307,20 +309,90 @@
         <scene sceneID="vNy-Lx-NGg">
             <objects>
                 <viewController id="3he-wr-blx" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jem-br-s7m"/>
-                        <viewControllerLayoutGuide type="bottom" id="Fv7-oF-rIK"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uAl-Qp-cdY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="mMH-2M-f5Z"/>
                     </view>
                     <navigationItem key="navigationItem" title="Просто экран" id="8ym-0b-etu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tcr-cz-eR4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4475.1999999999998" y="3741.2293853073465"/>
+        </scene>
+        <!--Таблица с панелькой-->
+        <scene sceneID="txq-ub-EkT">
+            <objects>
+                <viewController id="Aev-LD-G9R" customClass="NavigationFreeTableController" customModule="iBXTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gzx-zM-vCX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KDS-C6-rW0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Zlv-Hj-BOR" style="IBUITableViewCellStyleDefault" id="zQv-mx-rpK">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zQv-mx-rpK" id="qgI-9x-4c2">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zlv-Hj-BOR">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Aev-LD-G9R" id="fcE-Ym-G3a"/>
+                                    <outlet property="delegate" destination="Aev-LD-G9R" id="5Yf-hT-sA4"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KDS-C6-rW0" firstAttribute="top" secondItem="xiT-sH-uyP" secondAttribute="top" constant="-64" id="LsH-Nh-dha"/>
+                            <constraint firstItem="xiT-sH-uyP" firstAttribute="bottom" secondItem="KDS-C6-rW0" secondAttribute="bottom" id="T3g-tJ-i8T"/>
+                            <constraint firstItem="KDS-C6-rW0" firstAttribute="leading" secondItem="xiT-sH-uyP" secondAttribute="leading" id="TJF-6i-bCH"/>
+                            <constraint firstItem="xiT-sH-uyP" firstAttribute="trailing" secondItem="KDS-C6-rW0" secondAttribute="trailing" id="aKr-SR-g8I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xiT-sH-uyP"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Таблица с панелькой" id="CzY-LQ-vvC"/>
+                    <connections>
+                        <outlet property="panelView" destination="fd4-jo-E1O" id="3vF-AG-srw"/>
+                        <outlet property="tableView" destination="KDS-C6-rW0" id="rVp-W4-qkw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dqq-n4-PEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="fd4-jo-E1O">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkZ-cN-azZ">
+                            <rect key="frame" x="163.5" y="19.5" width="48" height="21.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="YkZ-cN-azZ" firstAttribute="centerY" secondItem="fd4-jo-E1O" secondAttribute="centerY" id="a3s-og-xrp"/>
+                        <constraint firstItem="YkZ-cN-azZ" firstAttribute="centerX" secondItem="fd4-jo-E1O" secondAttribute="centerX" id="vC7-y9-LsX"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="PfK-kz-M53"/>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="2892" y="3330.5847076461773"/>
         </scene>
         <!--С панелью-->
         <scene sceneID="VrX-2y-tLz">
@@ -369,6 +441,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                    <viewLayoutGuide key="safeArea" id="Slu-SP-Uv3"/>
                     <prototypes>
                         <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Paq-xb-Zi2" style="IBUITableViewCellStyleDefault" id="kGy-j8-Zk4">
                             <rect key="frame" x="0.0" y="22" width="375" height="44"/>
@@ -401,10 +474,6 @@
         <scene sceneID="zv3-MM-UCt">
             <objects>
                 <viewController id="yIv-XY-8Xz" customClass="NavigationBackgroundController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DRd-Zj-iha"/>
-                        <viewControllerLayoutGuide type="bottom" id="vWh-8J-NfS"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P4f-Cc-gsg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -450,6 +519,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="5ju-do-6I5"/>
                     </view>
                     <navigationItem key="navigationItem" title="Экран с панелью" id="WoU-nO-ibg"/>
                     <connections>

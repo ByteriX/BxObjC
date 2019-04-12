@@ -97,6 +97,8 @@
 		CF48FE301FBDA2600073249C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF48FE2F1FBDA2600073249C /* LaunchScreen.storyboard */; };
 		CFB3193F182C133500D8A65E /* BxLoadedImageViewItemTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */; };
 		CFB31942182C158A00D8A65E /* BxLoadedImageViewItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */; };
+		E3E7704F22607DFB003ECF08 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E7704E22607DFB003ECF08 /* UIViewController.swift */; };
+		E3E77056226088E5003ECF08 /* NavigationFreeTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E77055226088E5003ECF08 /* NavigationFreeTableController.swift */; };
 		F92410761EE43C3D00B8AEC1 /* NavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */; };
 		F924107E1EE43ED200B8AEC1 /* NavigationBackgroundController.m in Sources */ = {isa = PBXBuildFile; fileRef = F924107D1EE43ED200B8AEC1 /* NavigationBackgroundController.m */; };
 		F97295CC1EC05219001CF39D /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97295CB1EC05219001CF39D /* MBProgressHUD.framework */; };
@@ -355,6 +357,9 @@
 		CFB3193E182C133500D8A65E /* BxLoadedImageViewItemTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemTableController.m; sourceTree = "<group>"; };
 		CFB31940182C158A00D8A65E /* BxLoadedImageViewItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxLoadedImageViewItemCell.h; sourceTree = "<group>"; };
 		CFB31941182C158A00D8A65E /* BxLoadedImageViewItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxLoadedImageViewItemCell.m; sourceTree = "<group>"; };
+		E3E7704D22607DFA003ECF08 /* iBXTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iBXTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		E3E7704E22607DFB003ECF08 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		E3E77055226088E5003ECF08 /* NavigationFreeTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFreeTableController.swift; sourceTree = "<group>"; };
 		F92410751EE43C3D00B8AEC1 /* NavigationController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NavigationController.storyboard; sourceTree = "<group>"; };
 		F924107C1EE43ED200B8AEC1 /* NavigationBackgroundController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBackgroundController.h; sourceTree = "<group>"; };
 		F924107D1EE43ED200B8AEC1 /* NavigationBackgroundController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBackgroundController.m; sourceTree = "<group>"; };
@@ -586,6 +591,7 @@
 		346DF3B6189A300300308CBB /* NavigationTestController */ = {
 			isa = PBXGroup;
 			children = (
+				E3E77055226088E5003ECF08 /* NavigationFreeTableController.swift */,
 				346DF3B7189A301200308CBB /* NavigationTestController.h */,
 				346DF3B8189A301200308CBB /* NavigationTestController.m */,
 				CF185156197C4F33001C0CD0 /* NavigationPanelTestController.h */,
@@ -645,6 +651,7 @@
 		34A2496D182A1FFC0049A1B1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E3E7704E22607DFB003ECF08 /* UIViewController.swift */,
 				34AAC1D818ACA1830031C425 /* ItemsListController */,
 				34B9742F184DDB5E00622F7D /* BxOldInputTableController */,
 				34E85EA71920D95F003031A2 /* BxWebDocViewController */,
@@ -660,6 +667,7 @@
 				8D447E35602AD412F746AC83 /* IconWorkspaceView */,
 				8D4471A92985BB50FE88A1E8 /* BxServiceController */,
 				8D447ADE3F5ED34025D1C3F5 /* TestFunctionController */,
+				E3E7704D22607DFA003ECF08 /* iBXTest-Bridging-Header.h */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -917,6 +925,7 @@
 				TargetAttributes = {
 					3453FAFE178BFC9B0051C096 = {
 						DevelopmentTeam = NVEUY947QB;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -925,6 +934,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ru,
 			);
@@ -1170,6 +1180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E7704F22607DFB003ECF08 /* UIViewController.swift in Sources */,
 				34307EFB1855EE9D00FA4B08 /* SmallBxOldInputTableController.m in Sources */,
 				346DF3B9189A301200308CBB /* NavigationTestController.m in Sources */,
 				34AAC1E018ACA19C0031C425 /* ItemsListPagingTabController.m in Sources */,
@@ -1197,6 +1208,7 @@
 				8D447C94ACB09FA96200BD42 /* IconWorkspaceViewSettingsController.m in Sources */,
 				8D447EB789283F8F74E88771 /* IconWorkspaceViewPagingTabController.m in Sources */,
 				8D44796805E457605407649F /* BxServiceTestController.m in Sources */,
+				E3E77056226088E5003ECF08 /* NavigationFreeTableController.swift in Sources */,
 				8D447A73BE33401AC4150EF6 /* TestFunctionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1416,6 +1428,7 @@
 			baseConfigurationReference = 0F5EAB5065A398C6A0623EF6 /* Pods-iBXTest.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1430,6 +1443,7 @@
 					"\"${SRCROOT}\"/**",
 				);
 				INFOPLIST_FILE = "iBXTest/iBXTest-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/**",
@@ -1440,6 +1454,9 @@
 				PRELINK_LIBS = "$(BUILT_PRODUCTS_DIR)/libiBXVcl.a $(BUILT_PRODUCTS_DIR)/libiBXMap.a $(BUILT_PRODUCTS_DIR)/libiBXData.a $(BUILT_PRODUCTS_DIR)/libiBXCommon.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iBXTest/Sources/Controllers/iBXTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64";
 				WRAPPER_EXTENSION = app;
@@ -1451,6 +1468,7 @@
 			baseConfigurationReference = A423C17BE347114C51BE5CED /* Pods-iBXTest.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				DEVELOPMENT_TEAM = NVEUY947QB;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1465,6 +1483,7 @@
 					"\"${SRCROOT}\"/**",
 				);
 				INFOPLIST_FILE = "iBXTest/iBXTest-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(BUILT_PRODUCTS_DIR)/**",
@@ -1474,6 +1493,8 @@
 				PRELINK_LIBS = "$(BUILT_PRODUCTS_DIR)/libiBXVcl.a $(BUILT_PRODUCTS_DIR)/libiBXMap.a $(BUILT_PRODUCTS_DIR)/libiBXData.a $(BUILT_PRODUCTS_DIR)/libiBXCommon.a";
 				PRODUCT_BUNDLE_IDENTIFIER = "ByteriX.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iBXTest/Sources/Controllers/iBXTest-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s i386 arm64 x86_64";
 				WRAPPER_EXTENSION = app;
