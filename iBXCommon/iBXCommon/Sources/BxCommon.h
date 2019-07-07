@@ -87,6 +87,8 @@
 #define IS_OS_SDK_9_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
 #define IS_OS_SDK_10_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 100000
 #define IS_OS_SDK_11_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
+#define IS_OS_SDK_12_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 120000
+#define IS_OS_SDK_13_ALLOWED __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
 
 #define IS_OS_5_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 #define IS_OS_6_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0)
@@ -101,7 +103,16 @@
     #define IS_OS_11_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
     #define IS_OS_11_3_OR_LATER  ([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.3)
 #endif
-
+#if IS_OS_SDK_11_ALLOWED
+    #define IS_OS_12_OR_LATER    (@available(iOS 12.0, *))
+#else
+    #define IS_OS_12_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0)
+#endif
+#if IS_OS_SDK_11_ALLOWED
+    #define IS_OS_13_OR_LATER    (@available(iOS 13.0, *))
+#else
+    #define IS_OS_13_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.0)
+#endif
 
 
 #endif

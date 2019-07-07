@@ -52,6 +52,7 @@
 		CFA3EFD417D1332A0068C10F /* UIColor+BxUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFA3EFD117D131030068C10F /* UIColor+BxUtils.h */; };
 		CFFDA68A1C0B04DA00FFF4DC /* BxPushNotificationMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = CFFDA6891C0B04DA00FFF4DC /* BxPushNotificationMessageQueue.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CFFDA68B1C0B054300FFF4DC /* BxPushNotificationMessageQueue.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CFFDA6881C0B04DA00FFF4DC /* BxPushNotificationMessageQueue.h */; };
+		E3BCD78622D1F2510059F073 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = E3BCD78522D1F2510059F073 /* UIViewController+Alert.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,8 @@
 		CFA3EFD217D131030068C10F /* UIColor+BxUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BxUtils.m"; sourceTree = "<group>"; };
 		CFFDA6881C0B04DA00FFF4DC /* BxPushNotificationMessageQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxPushNotificationMessageQueue.h; sourceTree = "<group>"; };
 		CFFDA6891C0B04DA00FFF4DC /* BxPushNotificationMessageQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxPushNotificationMessageQueue.m; sourceTree = "<group>"; };
+		E3BCD78422D1F2510059F073 /* UIViewController+Alert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		E3BCD78522D1F2510059F073 /* UIViewController+Alert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				3453FA1B1785ACBA0051C096 /* BxActionSheet.h */,
 				3453FA1C1785ACBA0051C096 /* BxActionSheet.m */,
 				3421C6311850A6B100CBA692 /* BxGeometry.h */,
+				E3BCD78422D1F2510059F073 /* UIViewController+Alert.h */,
+				E3BCD78522D1F2510059F073 /* UIViewController+Alert.m */,
 			);
 			path = VCL;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				ru,
 			);
@@ -434,6 +440,7 @@
 				3453FA1D1785ACBA0051C096 /* BxActionSheet.m in Sources */,
 				3453FA7E1786ABC70051C096 /* NSString+BxUtils.m in Sources */,
 				3453FA351785C1BB0051C096 /* UIImage+BxUtils.m in Sources */,
+				E3BCD78622D1F2510059F073 /* UIViewController+Alert.m in Sources */,
 				3453FAD7178AC4FA0051C096 /* NSData+BxUtils.m in Sources */,
 				3453FADA178AC5E80051C096 /* UIDevice+BxUtils.m in Sources */,
 				3453FB8D178C63700051C096 /* NSDate+BxUtils.m in Sources */,

@@ -2,9 +2,13 @@
 
 Library iByteriX
 
-ByteriX, 2013-2018. All right reserved.
+ByteriX, 2013-2019. All right reserved.
 
 # Versions
+
+## 1.5.0 (07.07.2019)
+* added supporting for iOS 12, iOS 13
+* changed UIAlertView to UIAlertController if need
 
 ## 1.4.5 (12.04.2019)
 * fixed issue with scroll on Navigation Bar

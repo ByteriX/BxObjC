@@ -13,6 +13,7 @@
 
 #import "BxAlertView.h"
 #import "BxCommon.h"
+#import "UIViewController+Alert.h"
 
 @interface BxAlertView ()
 
@@ -28,15 +29,32 @@
               okButtonTitle: (NSString *) okButtonTitle
                     handler: (BxAlertHandler) handler
 {
-    BxAlertView * alert = [[[self alloc] initWithTitle: title message: message delegate: nil cancelButtonTitle:cancelButtonTitle otherButtonTitles: okButtonTitle, nil] autorelease];
-    alert.delegate = alert;
-    alert.handler = handler;
-    if ([NSThread isMainThread]) {
-        [alert show];
+    if IS_OS_9_OR_LATER {
+        if ([NSThread isMainThread]) {
+            [UIViewController alertWithTitle: title
+                                     message: message
+                           cancelButtonTitle: cancelButtonTitle
+                               okButtonTitle: okButtonTitle
+                                     handler: handler];
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [UIViewController alertWithTitle: title
+                                         message: message
+                               cancelButtonTitle: cancelButtonTitle
+                                   okButtonTitle: okButtonTitle
+                                         handler: handler];
+            });
+        }
     } else {
-        [alert performSelectorOnMainThread: @selector(show) withObject: nil waitUntilDone: YES];
+        BxAlertView * alert = [[[self alloc] initWithTitle: title message: message delegate: nil cancelButtonTitle:cancelButtonTitle otherButtonTitles: okButtonTitle, nil] autorelease];
+        alert.delegate = alert;
+        alert.handler = handler;
+        if ([NSThread isMainThread]) {
+            [alert show];
+        } else {
+            [alert performSelectorOnMainThread: @selector(show) withObject: nil waitUntilDone: YES];
+        }
     }
-    
 }
 
 + (void) showError: (NSString *) message

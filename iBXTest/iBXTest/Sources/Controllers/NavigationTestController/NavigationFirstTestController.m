@@ -30,6 +30,8 @@
         UIView * result = [[UIView alloc] initWithFrame: CGRectMake(0, 0, 320, 40)];
         [result addSubview: _control];
         self.toolView = result;
+        
+        [BxAlertView showAlertWithTitle: @"Предупреждение" message: @"Сообщение" cancelButtonTitle: @"Хор." okButtonTitle: nil handler: nil];
     }
     return self;
 }
