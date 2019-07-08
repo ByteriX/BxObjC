@@ -92,7 +92,7 @@
         }
     }]];
     if (okButtonTitle) {
-        [alert addAction: [UIAlertAction actionWithTitle: cancelButtonTitle style: UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alert addAction: [UIAlertAction actionWithTitle: okButtonTitle style: UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             if (handler) {
                 handler(YES);
             }

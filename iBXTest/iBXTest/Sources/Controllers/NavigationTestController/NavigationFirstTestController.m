@@ -31,7 +31,7 @@
         [result addSubview: _control];
         self.toolView = result;
         
-        [BxAlertView showAlertWithTitle: @"Предупреждение" message: @"Сообщение" cancelButtonTitle: @"Хор." okButtonTitle: nil handler: nil];
+        //[BxAlertView showAlertWithTitle: @"Предупреждение" message: @"Сообщение" cancelButtonTitle: @"Хор." okButtonTitle: @"Отл." handler: nil];
     }
     return self;
 }

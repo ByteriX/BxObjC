@@ -6,6 +6,9 @@ ByteriX, 2013-2019. All right reserved.
 
 # Versions
 
+## 1.5.1 (08.07.2019)
+* fixed issue for UIAlertController with showing OK button
+
 ## 1.5.0 (07.07.2019)
 * added supporting for iOS 12, iOS 13
 * changed UIAlertView to UIAlertController if need
