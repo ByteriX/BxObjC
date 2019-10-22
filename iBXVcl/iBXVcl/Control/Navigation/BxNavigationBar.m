@@ -20,6 +20,8 @@
 
 @property (nonatomic) CGFloat scrollOffset;
 
+- (void) didUpdateBarFrame;
+
 @end
 
 
@@ -135,6 +137,8 @@ static CGFloat minimalAlpha = 0.00001f;
     [super layoutSubviews];
     
     [self setBackgroundWithShift: 0 animated: YES];
+    
+    [self.navController didUpdateBarFrame];
 }
 
 // For scroll methods

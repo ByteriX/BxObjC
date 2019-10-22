@@ -6,6 +6,9 @@ ByteriX, 2013-2019. All right reserved.
 
 # Versions
 
+## 1.5.3 (23.10.2019)
+* fixed updating toolBar from BxNavigationController
+
 ## 1.5.2 (22.10.2019)
 * fixed issue with position of the BxNavigationBar
 

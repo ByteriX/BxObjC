@@ -120,8 +120,7 @@
 - (void) viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
-    [self setFrameForToolPanel];
-    [self setFrameForBackgroundView];
+    [self didUpdateBarFrame];
 }
 
 - (BOOL)navigationBar:(UINavigationBar *)navigationBar shouldPopItem:(UINavigationItem *)item
@@ -230,6 +229,12 @@
         height += self.scrollOffset;
     }
     _backgroundView.frame = CGRectMake(0, 0, self.navigationBar.frame.size.width, height);
+}
+
+- (void) didUpdateBarFrame
+{
+    [self setFrameForToolPanel];
+    [self setFrameForBackgroundView];
 }
 
 - (void) setNativeBackgroundShowing: (BOOL) isShowing
