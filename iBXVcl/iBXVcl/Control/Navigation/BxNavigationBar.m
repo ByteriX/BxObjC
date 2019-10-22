@@ -196,7 +196,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer: (UIGestureRecognizer*) other
     if IS_OS_11_OR_LATER {
         if (self.navController.isViewLoaded) {
             UIView * view = self.navController.view;
-            if (view.insetsLayoutMarginsFromSafeArea && view.safeAreaInsets.top > 0.0) {
+            if (view.insetsLayoutMarginsFromSafeArea) {
                 result = self.navController.view.safeAreaInsets.top;
             }
         }

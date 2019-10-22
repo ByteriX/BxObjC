@@ -6,6 +6,9 @@ ByteriX, 2013-2019. All right reserved.
 
 # Versions
 
+## 1.5.2 (22.10.2019)
+* fixed issue with position of the BxNavigationBar
+
 ## 1.5.1 (08.07.2019)
 * fixed issue for UIAlertController with showing OK button
 
