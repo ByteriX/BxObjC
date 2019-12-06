@@ -67,7 +67,7 @@ static CGFloat AnchorRevealAmount = 260.0f;
 }*/
 
 -(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDarkContent;
 }
 
 @end
