@@ -20,11 +20,10 @@ static int networkActivityCount = 0;
 
 + (void) hideNetworkActivity
 {
-	[NSThread sleepForTimeInterval: 0.5];
 	@synchronized (self){
 		if (networkActivityCount <= 0) {
             networkActivityCount = 0;
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		}
 	}
 }
@@ -34,10 +33,18 @@ static int networkActivityCount = 0;
 	@synchronized (self){
 		if (isNetworkActivity) {
 			networkActivityCount++;
-			[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            if ([NSThread isMainThread]) {
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+            } else {
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                });
+            }
 		} else {
 			networkActivityCount--;
-			[NSThread detachNewThreadSelector: @selector(hideNetworkActivity) toTarget: self withObject: nil];
+            dispatch_after(0.5, dispatch_get_main_queue(), ^{
+                [BxDownloadUtils hideNetworkActivity];
+            });
 		}
 	}
 }
