@@ -6,6 +6,11 @@ ByteriX, 2013-2019. All right reserved.
 
 # Versions
 
+
+## 1.5.4 (06.12.2019)
+* fixed issue with background update of networkingIndicator
+* changed Example to dark content of statusBar
+
 ## 1.5.3 (23.10.2019)
 * fixed updating toolBar from BxNavigationController
 
