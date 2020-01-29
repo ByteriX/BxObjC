@@ -13,6 +13,7 @@
 
 #import "BxDownloadUtils.h"
 #import <UIKit/UIKit.h>
+#import "BxCommon.h"
 
 @implementation BxDownloadUtils
 
@@ -20,33 +21,41 @@ static int networkActivityCount = 0;
 
 + (void) hideNetworkActivity
 {
-	@synchronized (self){
-		if (networkActivityCount <= 0) {
-            networkActivityCount = 0;
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-		}
-	}
+    if IS_OS_13_OR_LATER {
+        // networkActivityIndicatorVisible is deprecated
+    } else {
+        @synchronized (self){
+            if (networkActivityCount <= 0) {
+                networkActivityCount = 0;
+                [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+            }
+        }
+    }
 }
 
 + (void) setNetworkActivity: (BOOL) isNetworkActivity
 {
-	@synchronized (self){
-		if (isNetworkActivity) {
-			networkActivityCount++;
-            if ([NSThread isMainThread]) {
-                [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-            } else {
-                dispatch_sync(dispatch_get_main_queue(), ^{
+    if IS_OS_13_OR_LATER {
+        // networkActivityIndicatorVisible is deprecated
+    } else {
+        @synchronized (self){
+            if (isNetworkActivity) {
+                networkActivityCount++;
+                if ([NSThread isMainThread]) {
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                } else {
+                    dispatch_sync(dispatch_get_main_queue(), ^{
+                        [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+                    });
+                }
+            } else {
+                networkActivityCount--;
+                dispatch_after(0.5, dispatch_get_main_queue(), ^{
+                    [BxDownloadUtils hideNetworkActivity];
                 });
             }
-		} else {
-			networkActivityCount--;
-            dispatch_after(0.5, dispatch_get_main_queue(), ^{
-                [BxDownloadUtils hideNetworkActivity];
-            });
-		}
-	}
+        }
+    }
 }
 
 + (NSURLRequest*) getRequestFrom: (NSString*) url

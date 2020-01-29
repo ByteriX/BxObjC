@@ -6,9 +6,11 @@ ByteriX, 2013-2019. All right reserved.
 
 # Versions
 
+## 1.5.5 (29.01.2020)
+* networkActivityIndicatorVisible removed from iOS 13
 
 ## 1.5.4 (06.12.2019)
-* fixed issue with background update of networkingIndicator
+* fixed issue with background update of networkActivityIndicatorVisible
 * changed Example to dark content of statusBar
 
 ## 1.5.3 (23.10.2019)
