@@ -2,7 +2,7 @@
 
 Library iByteriX
 
-ByteriX, 2013-2019. All right reserved.
+ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
