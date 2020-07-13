@@ -161,8 +161,8 @@ s.subspec 'Control' do |control|
     navigation.dependency 'BxObjC/Common'
     navigation.dependency 'BxObjC/Data'
     navigation.frameworks = ["Foundation", "UIKit"]
-    navigation.public_header_files = "**/iBXVcl/Sources/View/**/*.h, **/iBXVcl/Sources/ViewControl/**/*.h"
-    navigation.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}, **/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
+    navigation.public_header_files = "**/iBXVcl/Sources/View/**/*.h", "**/iBXVcl/Sources/ViewControl/**/*.h"
+    navigation.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}", "**/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
   end
 
 end
