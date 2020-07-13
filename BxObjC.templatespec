@@ -157,13 +157,16 @@ s.subspec 'Control' do |control|
     navigation.source_files  = "**/iBXVcl/Control/Navigation/**/*.{h,m,c}"
   end
   
-  #control.subspec 'View' do |view|
-  #  navigation.dependency 'BxObjC/Common'
-  #  navigation.dependency 'BxObjC/Data'
-  #  navigation.frameworks = ["Foundation", "UIKit"]
-  #  navigation.public_header_files = "**/iBXVcl/Sources/View/**/*.h", "**/iBXVcl/Sources/ViewControl/**/*.h"
-  #  navigation.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}", "**/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
-  #end
+  control.subspec 'View' do |view|
+    view.dependency 'BxObjC/Common'
+    view.dependency 'BxObjC/Data'
+    view.frameworks = ["Foundation", "UIKit"]
+    view.public_header_files = "**/iBXVcl/Sources/View/**/*.h", "**/iBXVcl/Sources/ViewControl/**/*.h"
+    view.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}", "**/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
+    view.requires_arc = [
+      "**/BxIconWorkspace**.m"
+    ]
+  end
 
 end
 
