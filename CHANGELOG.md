@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.6.0 (13.07.2020)
+* Changed UIWebView to WKWebView
+
 ## 1.5.5 (29.01.2020)
 * networkActivityIndicatorVisible removed from iOS 13
 

@@ -14,6 +14,20 @@
 #import "BxWebDocViewController.h"
 #import "BxCommon.h"
 
+#if IS_OS_SDK_8_ALLOWED
+
+@interface BxWebDocViewController (WKNavigationDelegate) <WKNavigationDelegate>
+{}
+@end
+
+#else
+
+@interface BxWebDocViewController (UIWebViewDelegate) <UIWebViewDelegate>
+{}
+@end
+
+#endif
+
 @implementation BxWebDocViewController
 
 + (NSString*) extention
@@ -40,15 +54,31 @@
 	return YES;
 }*/
 
+#if IS_OS_SDK_8_ALLOWED
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
+{
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
+    [self didLayoutContent];
+}
+
+#else
+
 - (void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation 
 									 duration:(NSTimeInterval)duration
 {
 	[super willAnimateRotationToInterfaceOrientation: toInterfaceOrientation duration: duration];
-	if (_isReload) {
-		[_content reload];
-	} else {
-		//
-	}
+    [self didLayoutContent];
+}
+
+#endif
+
+- (void) didLayoutContent {
+    if (_isReload) {
+        [_content reload];
+    } else {
+        //
+    }
 }
 
 - (void) viewDidLoad
@@ -57,12 +87,31 @@
 	[self.class defaultFileCash];
 	
 	_isLoad = NO;
-	CGRect rect = self.view.frame;
-	rect.origin.x = rect.origin.y = 0.0f;
-	_content = [[UIWebView alloc] initWithFrame: rect];
-	_content.delegate = self;
+    
+    
+    
+#if IS_OS_SDK_8_ALLOWED
+    
+    // it is need to scale to Fit
+    NSString *jScript = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+
+    WKUserScript *wkUScript = [[WKUserScript alloc] initWithSource:jScript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+    [wkUController addUserScript:wkUScript];
+
+    WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+    wkWebConfig.userContentController = wkUController;
+
+    _content = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:wkWebConfig];
+    _content.navigationDelegate = self;
+#else
+    _content = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    _content.delegate = self;
+    _content.scalesPageToFit = isFit;
+    //! Почему-то опцию определения телефона можно отключить только здесь:
+    _content.dataDetectorTypes = UIDataDetectorTypeLink;
+#endif
 	
-	_content.scalesPageToFit = NO;
 	_content.clipsToBounds = YES;
 	_content.autoresizesSubviews= YES;
     
@@ -72,8 +121,7 @@
     }
 #endif
     
-	//! Почему-то опцию определения телефона можно отключить только здесь:
-	_content.dataDetectorTypes = UIDataDetectorTypeLink;
+	
 	_content.autoresizingMask =
 	UIViewAutoresizingFlexibleLeftMargin | 
 	UIViewAutoresizingFlexibleWidth |
@@ -114,17 +162,14 @@
 - (void) setUrl: (NSString*) url isFit: (BOOL) isFit
 {
 	_isReload = YES;
+#if IS_OS_SDK_8_ALLOWED
+#else
 	_content.scalesPageToFit = isFit;
+#endif
 	[_url release];
 	_url = [url retain];
-	//NSURL * urlLoc = [NSURL URLWithString: url];
-	//if (![urlLoc isFileURL]) {
-		[self showProgress];
-	//}
+    [self showProgress];
 	[self setPath: url];
-	/*[NSThread detachNewThreadSelector: @selector(downloadWith:) 
-							 toTarget: self 
-						   withObject: url];*/
 }
 
 - (void) setUrl: (NSString*) url
@@ -220,37 +265,28 @@
 	}
 }
 
-- (void) webViewDidStartLoad:(UIWebView *)webView
+- (void) didStartLoad
 {
-	//
+    //
 }
 
-- (void) webViewDidFinishLoad:(UIWebView *)webView
+- (void) didFinishLoad
 {
-	_isLoad = YES;
-	[self hideProgress];
+    _isLoad = YES;
+    [self hideProgress];
 }
 
-- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+- (void) failLoadWithError: (NSError*) error
 {
-	if (error.code != -999){
-		[BxAlertView showError: [error localizedDescription]];
-	}
-	[self hideProgress];
+    if (error.code != -999){
+        [BxAlertView showError: [error localizedDescription]];
+    }
+    [self hideProgress];
 }
 
 - (void) waitForLoading
 {
 	[NSException raise: @"NotImplementException" format:@"...!!!Q"];
-}
-
-- (void) viewDidUnload
-{
-	[_url autorelease];
-	_url = nil;
-    _HUD = nil;
-    _content = nil;
-	[super viewDidUnload];
 }
 
 - (void) dealloc
@@ -263,3 +299,47 @@
 }
 
 @end
+
+#if IS_OS_SDK_8_ALLOWED
+
+@implementation BxWebDocViewController (WKNavigationDelegate)
+
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation
+{
+    [self didStartLoad];
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation
+{
+    [self didFinishLoad];
+}
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    [self failLoadWithError: error];
+}
+
+@end
+
+#else
+
+@implementation BxWebDocViewController (UIWebViewDelegate)
+
+- (void) webViewDidStartLoad:(UIWebView *)webView
+{
+    [self didStartLoad];
+}
+
+- (void) webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self didFinishLoad];
+}
+
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [self failLoadWithError: error];
+}
+
+@end
+
+#endif

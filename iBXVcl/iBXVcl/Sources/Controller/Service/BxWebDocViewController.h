@@ -15,11 +15,18 @@
 #import "BxBaseViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "BxData.h"
+#if IS_OS_SDK_8_ALLOWED
+    #import <WebKit/WebKit.h>
+#endif
 
-@interface BxWebDocViewController : BxBaseViewController <UIWebViewDelegate> {
+@interface BxWebDocViewController : BxBaseViewController {
     
 @protected
-	UIWebView * _content;
+#if IS_OS_SDK_8_ALLOWED
+	WKWebView * _content;
+#else
+    UIWebView * _content;
+#endif
 	MBProgressHUD * _HUD;
 	BOOL _isLoad;
 	NSString * _url;
