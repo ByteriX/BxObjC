@@ -17,7 +17,8 @@ typedef void(^BxAlertHandler)(BOOL isOK);
 
 @interface BxAlertView : UIAlertView
 
-//! Стандартное диалоговое окно через блоки
+///! Стандартное диалоговое окно через блоки
+///! Поскольку UIAlertView стал depricated, вы можете использовать одноименный метод расширения UIViewController
 + (void) showAlertWithTitle: (NSString *) title
                     message: (NSString *) message
           cancelButtonTitle: (NSString *) cancelButtonTitle

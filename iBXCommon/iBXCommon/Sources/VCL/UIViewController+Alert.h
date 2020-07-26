@@ -16,13 +16,32 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_CLASS_AVAILABLE_IOS(8_0) @interface UIAlertController (Alert)
+
++ (UIAlertController *) alertWithTitle: (NSString* _Nonnull) title
+                               message: (NSString* _Nonnull) message
+                     cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
+                         okButtonTitle: (NSString * __nullable) okButtonTitle
+                               handler: (BxAlertHandler __nullable) handler;
+
+- (void)show;
+- (void)show:(BOOL)animated;
+
+@end
+
 NS_CLASS_AVAILABLE_IOS(8_0) @interface UIViewController (Alert)
 
-+ (void) alertWithTitle: (NSString* _Nonnull) title
-                message: (NSString* _Nonnull) message
-      cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
-          okButtonTitle: (NSString * __nullable) okButtonTitle
-                handler: (BxAlertHandler __nullable) handler API_AVAILABLE(ios(8.0), watchos(2.0));
++ (void) showAlertWithTitle: (NSString* _Nonnull) title
+                    message: (NSString* _Nonnull) message
+          cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
+              okButtonTitle: (NSString * __nullable) okButtonTitle
+                    handler: (BxAlertHandler __nullable) handler API_AVAILABLE(ios(8.0), watchos(2.0));
+
+- (void) showAlertWithTitle: (NSString* _Nonnull) title
+                    message: (NSString* _Nonnull) message
+          cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
+              okButtonTitle: (NSString * __nullable) okButtonTitle
+                    handler: (BxAlertHandler __nullable) handler API_AVAILABLE(ios(8.0), watchos(2.0));
 
 @end
 

@@ -31,18 +31,18 @@
 {
     if IS_OS_9_OR_LATER {
         if ([NSThread isMainThread]) {
-            [UIViewController alertWithTitle: title
-                                     message: message
-                           cancelButtonTitle: cancelButtonTitle
-                               okButtonTitle: okButtonTitle
-                                     handler: handler];
-        } else {
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [UIViewController alertWithTitle: title
+            [UIViewController showAlertWithTitle: title
                                          message: message
                                cancelButtonTitle: cancelButtonTitle
                                    okButtonTitle: okButtonTitle
                                          handler: handler];
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [UIViewController showAlertWithTitle: title
+                                             message: message
+                                   cancelButtonTitle: cancelButtonTitle
+                                       okButtonTitle: okButtonTitle
+                                             handler: handler];
             });
         }
     } else {
