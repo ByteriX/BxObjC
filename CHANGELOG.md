@@ -6,6 +6,11 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.6.1 (26.07.2020)
+* fixed logic of UIAlertViewController
+* extension of UIAlertViewController
+* refactoring of UIViewController Alert category
+
 ## 1.6.0 (13.07.2020)
 * Changed UIWebView to WKWebView
 * Extracted 'Control/View' module
