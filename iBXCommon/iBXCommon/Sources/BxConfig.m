@@ -22,14 +22,14 @@
 
 @implementation BxConfig
 
-+ (BxConfig*) defaultConfig
++ (BxConfig*) shared
 {
-    static BxConfig * _default = nil;
+    static BxConfig * _shared = nil;
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        _default = [[self allocWithZone: NULL] init];
+        _shared = [[self allocWithZone: NULL] init];
     });
-    return _default;
+    return _shared;
 }
 
 + (NSString*) getApplicationPathFromKey: (int) key

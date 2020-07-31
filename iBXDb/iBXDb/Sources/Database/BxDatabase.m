@@ -49,7 +49,7 @@
     if ([_fileName isAbsolutePath]){
         return _fileName;
     }
-    return [[[BxConfig defaultConfig] documentPath] stringByAppendingPathComponent: _fileName];
+    return [[[BxConfig shared] documentPath] stringByAppendingPathComponent: _fileName];
 }
 
 - (void) setIncludeFromBackup: (BOOL) value

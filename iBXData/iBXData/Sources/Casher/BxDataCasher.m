@@ -29,7 +29,7 @@
 
 - (NSString *) getDefaultPathForCash
 {
-    return [[BxConfig defaultConfig] cashPath];
+    return [[BxConfig shared] cashPath];
 }
 
 - (id) initWithFileName: (NSString*) cashedFileName
