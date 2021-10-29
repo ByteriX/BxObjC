@@ -13,6 +13,8 @@
 
 #import <UIKit/UIKit.h>
 
+#if IS_OS_SDK_9_ALLOWED
+
 typedef void(^BxActionSheetHandler)(NSInteger buttonIndex);
 
 @interface BxActionSheet : UIActionSheet <UIActionSheetDelegate>
@@ -25,3 +27,5 @@ typedef void(^BxActionSheetHandler)(NSInteger buttonIndex);
                           handler: (BxActionSheetHandler) handler;
 
 @end
+
+#endif

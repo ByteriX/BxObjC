@@ -13,6 +13,8 @@
 
 #import "BxActionSheet.h"
 
+#if IS_OS_SDK_9_ALLOWED
+
 @interface BxActionSheet ()
 
 @property (nonatomic, copy) BxActionSheetHandler handler;
@@ -61,3 +63,5 @@
 }
 
 @end
+
+#endif
