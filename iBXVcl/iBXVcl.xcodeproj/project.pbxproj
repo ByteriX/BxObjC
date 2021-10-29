@@ -428,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				F9B84CF51F6579350091E49A /* Control */,
-				34FD883B17CF591900E112AF /* Resources */,
 				34FD883C17CF591900E112AF /* Sources */,
 				34FD881217CF582A00E112AF /* Supporting Files */,
 			);
@@ -460,13 +459,6 @@
 				34FD882917CF582B00E112AF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		34FD883B17CF591900E112AF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		34FD883C17CF591900E112AF /* Sources */ = {
@@ -773,6 +765,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 34FD880317CF582A00E112AF;
