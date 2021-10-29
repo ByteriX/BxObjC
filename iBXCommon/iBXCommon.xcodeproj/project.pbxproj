@@ -20,7 +20,6 @@
 		3453FA101785A0400051C096 /* BxUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA0F1785A0400051C096 /* BxUtils.m */; };
 		3453FA171785A7250051C096 /* BxException.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA161785A7240051C096 /* BxException.m */; };
 		3453FA1A1785A99D0051C096 /* BxAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA191785A99D0051C096 /* BxAlertView.m */; };
-		3453FA1D1785ACBA0051C096 /* BxActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA1C1785ACBA0051C096 /* BxActionSheet.m */; };
 		3453FA351785C1BB0051C096 /* UIImage+BxUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA341785C1BB0051C096 /* UIImage+BxUtils.m */; };
 		3453FA751786AB860051C096 /* BxCommon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA05178597BC0051C096 /* BxCommon.h */; };
 		3453FA761786AB880051C096 /* BxFileSystem.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA061785984E0051C096 /* BxFileSystem.h */; };
@@ -30,7 +29,6 @@
 		3453FA7A1786AB950051C096 /* NSString+BxUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA301785BC5F0051C096 /* NSString+BxUtils.h */; };
 		3453FA7B1786AB970051C096 /* UIImage+BxUtils.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA331785C1BA0051C096 /* UIImage+BxUtils.h */; };
 		3453FA7C1786AB9A0051C096 /* BxAlertView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA181785A99D0051C096 /* BxAlertView.h */; };
-		3453FA7D1786AB9C0051C096 /* BxActionSheet.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3453FA1B1785ACBA0051C096 /* BxActionSheet.h */; };
 		3453FA7E1786ABC70051C096 /* NSString+BxUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA311785BC5F0051C096 /* NSString+BxUtils.m */; };
 		3453FA7F1786ABD10051C096 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA271785BC3B0051C096 /* GTMNSString+HTML.m */; };
 		3453FA801786ABD20051C096 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 3453FA291785BC3B0051C096 /* NSString+HTML.m */; };
@@ -85,7 +83,6 @@
 				342317B21A64189500A7D80E /* NSURL+BxUtils.h in CopyFiles */,
 				3453FA791786AB920051C096 /* BxException.h in CopyFiles */,
 				3453FA7C1786AB9A0051C096 /* BxAlertView.h in CopyFiles */,
-				3453FA7D1786AB9C0051C096 /* BxActionSheet.h in CopyFiles */,
 				CFFDA68B1C0B054300FFF4DC /* BxPushNotificationMessageQueue.h in CopyFiles */,
 				3406ED7318054C1600FDF221 /* NSArray+BxUtils.h in CopyFiles */,
 				3453FA7B1786AB970051C096 /* UIImage+BxUtils.h in CopyFiles */,
@@ -118,8 +115,6 @@
 		3453FA161785A7240051C096 /* BxException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxException.m; sourceTree = "<group>"; };
 		3453FA181785A99D0051C096 /* BxAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxAlertView.h; sourceTree = "<group>"; };
 		3453FA191785A99D0051C096 /* BxAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxAlertView.m; sourceTree = "<group>"; };
-		3453FA1B1785ACBA0051C096 /* BxActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BxActionSheet.h; sourceTree = "<group>"; };
-		3453FA1C1785ACBA0051C096 /* BxActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BxActionSheet.m; sourceTree = "<group>"; };
 		3453FA201785B00D0051C096 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
 		3453FA221785B0310051C096 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/BxCommonLocalizable.strings; sourceTree = "<group>"; };
 		3453FA261785BC3B0051C096 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
@@ -253,8 +248,6 @@
 			children = (
 				3453FA181785A99D0051C096 /* BxAlertView.h */,
 				3453FA191785A99D0051C096 /* BxAlertView.m */,
-				3453FA1B1785ACBA0051C096 /* BxActionSheet.h */,
-				3453FA1C1785ACBA0051C096 /* BxActionSheet.m */,
 				3421C6311850A6B100CBA692 /* BxGeometry.h */,
 				E3BCD78422D1F2510059F073 /* UIViewController+Alert.h */,
 				E3BCD78522D1F2510059F073 /* UIViewController+Alert.m */,
@@ -437,7 +430,6 @@
 				34497815180D70380070D7D2 /* UIImage+BxUtils+Prefix.m in Sources */,
 				3453FA171785A7250051C096 /* BxException.m in Sources */,
 				3453FA1A1785A99D0051C096 /* BxAlertView.m in Sources */,
-				3453FA1D1785ACBA0051C096 /* BxActionSheet.m in Sources */,
 				3453FA7E1786ABC70051C096 /* NSString+BxUtils.m in Sources */,
 				3453FA351785C1BB0051C096 /* UIImage+BxUtils.m in Sources */,
 				E3BCD78622D1F2510059F073 /* UIViewController+Alert.m in Sources */,
