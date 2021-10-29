@@ -6,9 +6,6 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
-## 1.8.0 (29.10.2021)
-* clean warnings: changed BxAlertView and removed BxActionSheet
-
 ## 1.7.0 (31.07.2020)
 * renamed [BxConfig defaultConfig] to [BxConfig shared]
 

@@ -29,7 +29,7 @@
               okButtonTitle: (NSString *) okButtonTitle
                     handler: (BxAlertHandler) handler
 {
-#if IS_OS_SDK_9_ALLOWED
+    if IS_OS_9_OR_LATER {
         if ([NSThread isMainThread]) {
             [UIViewController showAlertWithTitle: title
                                          message: message
@@ -45,7 +45,7 @@
                                              handler: handler];
             });
         }
-#else
+    } else {
         BxAlertView * alert = [[[self alloc] initWithTitle: title message: message delegate: nil cancelButtonTitle:cancelButtonTitle otherButtonTitles: okButtonTitle, nil] autorelease];
         alert.delegate = alert;
         alert.handler = handler;
@@ -54,7 +54,7 @@
         } else {
             [alert performSelectorOnMainThread: @selector(show) withObject: nil waitUntilDone: YES];
         }
-#endif
+    }
 }
 
 + (void) showError: (NSString *) message

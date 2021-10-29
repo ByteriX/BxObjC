@@ -15,13 +15,7 @@
 
 typedef void(^BxAlertHandler)(BOOL isOK);
 
-@interface BxAlertView :
-#if IS_OS_SDK_9_ALLOWED
-        NSObject
-#else
-        UIAlertView
-#endif
-
+@interface BxAlertView : UIAlertView
 
 ///! Стандартное диалоговое окно через блоки
 ///! Поскольку UIAlertView стал depricated, вы можете использовать одноименный метод расширения UIViewController
