@@ -12,6 +12,7 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "BxCommon.h"
 
 typedef void(^BxAlertHandler)(BOOL isOK);
 

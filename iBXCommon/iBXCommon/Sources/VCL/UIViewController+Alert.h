@@ -13,6 +13,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BxAlertView.h"
+#import "BxActionSheet.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -42,6 +43,17 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface UIViewController (Alert)
           cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
               okButtonTitle: (NSString * __nullable) okButtonTitle
                     handler: (BxAlertHandler __nullable) handler API_AVAILABLE(ios(8.0), watchos(2.0));
+
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
+                          handler: (BxActionSheetHandler) handler;
+
+- (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                          handler: (BxActionSheetHandler) handler;
 
 @end
 

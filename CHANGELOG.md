@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.9.1 (30.10.2021)
+* recovery BxActionSheet without deprication messages
+
 ## 1.9.0 (29.10.2021)
 * clean warnings: changed BxAlertView and removed BxActionSheet
 

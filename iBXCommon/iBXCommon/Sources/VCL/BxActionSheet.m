@@ -15,6 +15,26 @@
 
 #if IS_OS_SDK_9_ALLOWED
 
+#import "UIViewController+Alert.h"
+
+@implementation BxActionSheet
+
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
+                          handler: (BxActionSheetHandler) handler
+
+{
+    [UIViewController showActionSheetWithTitle: title
+                             cancelButtonTitle: cancelButtonTitle
+                             otherButtonTitles: otherButtonTitles
+                                viewController: viewController
+                                       handler: handler];
+}
+
+#else
+
 @interface BxActionSheet ()
 
 @property (nonatomic, copy) BxActionSheetHandler handler;
@@ -62,6 +82,10 @@
     [super dealloc];
 }
 
+#endif
+
 @end
 
-#endif
+
+
+

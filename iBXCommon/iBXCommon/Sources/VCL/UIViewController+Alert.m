@@ -39,6 +39,30 @@
     return alert;
 }
 
++ (UIAlertController *) actionSheetWithTitle: (NSString* _Nonnull) title
+      cancelButtonTitle: (NSString * _Nonnull) cancelButtonTitle
+      otherButtonTitles: (NSArray<NSString *> * __nullable) otherButtonTitles
+                handler: (BxActionSheetHandler __nullable) handler
+{
+    NSInteger otherButtonsCount = otherButtonTitles.count;
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle: title message: nil preferredStyle: UIAlertControllerStyleActionSheet];
+    [alert addAction: [UIAlertAction actionWithTitle: cancelButtonTitle style: UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        if (handler) {
+            handler(otherButtonsCount);
+        }
+    }]];
+    if (otherButtonTitles.count > 0) {
+        for (int index = 0; index < otherButtonsCount; index++) {
+            [alert addAction: [UIAlertAction actionWithTitle: [otherButtonTitles objectAtIndex: index] style: UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                if (handler) {
+                    handler(index);
+                }
+            }]];
+        }
+    }
+    return alert;
+}
+
 - (void)show {
     [self show:YES];
 }
@@ -72,6 +96,27 @@
     [self presentViewController: alert animated: YES completion: nil];
 }
 
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
+                          handler: (BxActionSheetHandler) handler
 
+{
+    UIAlertController * alert = [UIAlertController actionSheetWithTitle: title cancelButtonTitle: cancelButtonTitle otherButtonTitles: otherButtonTitles handler: handler];
+    [viewController presentViewController: alert animated: YES completion: nil];
+}
+
+- (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                          handler: (BxActionSheetHandler) handler
+{
+    [UIViewController showActionSheetWithTitle: title
+                             cancelButtonTitle: cancelButtonTitle
+                             otherButtonTitles: otherButtonTitles
+                                viewController: self
+                                       handler: handler];
+}
 
 @end

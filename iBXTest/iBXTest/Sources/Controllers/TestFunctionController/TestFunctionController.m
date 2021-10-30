@@ -6,6 +6,7 @@
 #import "TestFunctionController.h"
 #import "BxData.h"
 #import "BxAlertView.h"
+#import "BxCommon.h"
 
 
 @implementation TestFunctionController
@@ -55,7 +56,17 @@
          [BxAlertView showAlertWithTitle: @"Message" message: [NSString stringWithFormat:@"%@", ((BxServiceDataCommand*)command).rawResult] cancelButtonTitle: @"OK" okButtonTitle: nil handler:nil];
      }
                    errorHandler: ^(NSError * error){
-                       [BxAlertView showAlertWithTitle: @"Error" message: error.localizedDescription cancelButtonTitle: @"OK" okButtonTitle: nil handler:nil];
+                       //[BxAlertView showAlertWithTitle: @"Error" message: error.localizedDescription cancelButtonTitle: @"OK" okButtonTitle: nil handler:nil];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSArray * strings = @[@"1", @"2", @"3"];
+            [BxActionSheet showActionSheetWithTitle: @"Ошибка" cancelButtonTitle: @"Отмена" otherButtonTitles:strings viewController: self handler:^(NSInteger buttonIndex) {
+                NSString * title =  @"Error";
+                if (buttonIndex < [strings count]) {
+                    title = [strings objectAtIndex:buttonIndex];
+                }
+                [BxAlertView showAlertWithTitle: title message: error.localizedDescription cancelButtonTitle: @"OK" okButtonTitle: nil handler:nil];
+            }];
+        });
                    }
                   cancelHandler: nil];
 }

@@ -12,10 +12,22 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "BxCommon.h"
+
+typedef void(^BxActionSheetHandler)(NSInteger buttonIndex);
 
 #if IS_OS_SDK_9_ALLOWED
 
-typedef void(^BxActionSheetHandler)(NSInteger buttonIndex);
+@interface BxActionSheet : NSObject
+
+//! стандартный ActionSheet через блоки
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
+                          handler: (BxActionSheetHandler) handler;
+
+#else
 
 @interface BxActionSheet : UIActionSheet <UIActionSheetDelegate>
 
@@ -26,6 +38,6 @@ typedef void(^BxActionSheetHandler)(NSInteger buttonIndex);
                              view: (UIView*) view
                           handler: (BxActionSheetHandler) handler;
 
-@end
-
 #endif
+
+@end
