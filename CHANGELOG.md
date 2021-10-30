@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.9.3 (30.10.2021)
+* fixed showActionSheetWithTitle for iPad version
+
 ## 1.9.2 (30.10.2021)
 * remaked BxCommon.h with dependencies
 

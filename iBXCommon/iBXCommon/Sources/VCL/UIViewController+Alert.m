@@ -103,8 +103,11 @@
                           handler: (BxActionSheetHandler) handler
 
 {
-    UIAlertController * alert = [UIAlertController actionSheetWithTitle: title cancelButtonTitle: cancelButtonTitle otherButtonTitles: otherButtonTitles handler: handler];
-    [viewController presentViewController: alert animated: YES completion: nil];
+    UIAlertController * alertController = [UIAlertController actionSheetWithTitle: title cancelButtonTitle: cancelButtonTitle otherButtonTitles: otherButtonTitles handler: handler];
+    [[alertController popoverPresentationController] setSourceView:viewController.view];
+    [[alertController popoverPresentationController] setSourceRect: CGRectMake(viewController.view.bounds.size.width / 2, viewController.view.bounds.size.height - 1, 1, 1)];
+    [[alertController popoverPresentationController] setPermittedArrowDirections:UIPopoverArrowDirectionDown];
+    [viewController presentViewController: alertController animated: YES completion: nil];
 }
 
 - (void) showActionSheetWithTitle: (NSString *) title
