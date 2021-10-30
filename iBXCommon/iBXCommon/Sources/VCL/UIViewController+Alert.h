@@ -44,15 +44,30 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface UIViewController (Alert)
               okButtonTitle: (NSString * __nullable) okButtonTitle
                     handler: (BxAlertHandler __nullable) handler API_AVAILABLE(ios(8.0), watchos(2.0));
 
-+ (void) showActionSheetWithTitle: (NSString *) title
+
+- (void) showActionSheetWithTitle: (NSString *) title
                 cancelButtonTitle: (NSString *) cancelButtonTitle
                 otherButtonTitles: (NSArray *) otherButtonTitles
-                   viewController: (UIViewController*) viewController
+                       sourceView: (UIView *) sourceView
+                       sourceRect: (CGRect) sourceRect
+                        direction: (UIPopoverArrowDirection) direction
                           handler: (BxActionSheetHandler) handler;
 
 - (void) showActionSheetWithTitle: (NSString *) title
                 cancelButtonTitle: (NSString *) cancelButtonTitle
                 otherButtonTitles: (NSArray *) otherButtonTitles
+                       sourceView: (UIView *) sourceView
+                          handler: (BxActionSheetHandler) handler;
+
+- (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                          handler: (BxActionSheetHandler) handler;
+
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
                           handler: (BxActionSheetHandler) handler;
 
 @end

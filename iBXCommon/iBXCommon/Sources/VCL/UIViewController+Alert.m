@@ -96,30 +96,63 @@
     [self presentViewController: alert animated: YES completion: nil];
 }
 
-+ (void) showActionSheetWithTitle: (NSString *) title
+- (void) showActionSheetWithTitle: (NSString *) title
                 cancelButtonTitle: (NSString *) cancelButtonTitle
                 otherButtonTitles: (NSArray *) otherButtonTitles
-                   viewController: (UIViewController*) viewController
+                       sourceView: (UIView *) sourceView
+                       sourceRect: (CGRect) sourceRect
+                        direction: (UIPopoverArrowDirection) direction
                           handler: (BxActionSheetHandler) handler
 
 {
     UIAlertController * alertController = [UIAlertController actionSheetWithTitle: title cancelButtonTitle: cancelButtonTitle otherButtonTitles: otherButtonTitles handler: handler];
-    [[alertController popoverPresentationController] setSourceView:viewController.view];
-    [[alertController popoverPresentationController] setSourceRect: CGRectMake(viewController.view.bounds.size.width / 2, viewController.view.bounds.size.height - 1, 1, 1)];
-    [[alertController popoverPresentationController] setPermittedArrowDirections:UIPopoverArrowDirectionDown];
-    [viewController presentViewController: alertController animated: YES completion: nil];
+    [[alertController popoverPresentationController] setSourceView: sourceView];
+    [[alertController popoverPresentationController] setSourceRect: sourceRect];
+    [[alertController popoverPresentationController] setPermittedArrowDirections: direction];
+    [self presentViewController: alertController animated: YES completion: nil];
+}
+
+- (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                       sourceView: (UIView *) sourceView
+                          handler: (BxActionSheetHandler) handler
+
+{
+    [self showActionSheetWithTitle: title
+                 cancelButtonTitle: cancelButtonTitle
+                 otherButtonTitles: otherButtonTitles
+                        sourceView: sourceView
+                        sourceRect: sourceView.bounds
+                         direction: UIPopoverArrowDirectionAny
+                           handler: handler];
 }
 
 - (void) showActionSheetWithTitle: (NSString *) title
                 cancelButtonTitle: (NSString *) cancelButtonTitle
                 otherButtonTitles: (NSArray *) otherButtonTitles
                           handler: (BxActionSheetHandler) handler
+
 {
-    [UIViewController showActionSheetWithTitle: title
-                             cancelButtonTitle: cancelButtonTitle
-                             otherButtonTitles: otherButtonTitles
-                                viewController: self
-                                       handler: handler];
+    [self showActionSheetWithTitle: title
+                 cancelButtonTitle: cancelButtonTitle
+                 otherButtonTitles: otherButtonTitles
+                        sourceView: self.view
+                        sourceRect: CGRectMake(self.view.bounds.size.width / 2, self.view.bounds.size.height - 1, 1, 1)
+                         direction: UIPopoverArrowDirectionDown
+                           handler: handler];
+}
+
++ (void) showActionSheetWithTitle: (NSString *) title
+                cancelButtonTitle: (NSString *) cancelButtonTitle
+                otherButtonTitles: (NSArray *) otherButtonTitles
+                   viewController: (UIViewController*) viewController
+                          handler: (BxActionSheetHandler) handler
+{
+    [viewController showActionSheetWithTitle: title
+                           cancelButtonTitle: cancelButtonTitle
+                           otherButtonTitles: otherButtonTitles
+                                     handler: handler];
 }
 
 @end

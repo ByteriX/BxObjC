@@ -8,6 +8,7 @@ ByteriX, 2013-2020. All right reserved.
 
 ## 1.9.3 (30.10.2021)
 * fixed showActionSheetWithTitle for iPad version
+* added many optional showActionSheet function to UIViewController extensions
 
 ## 1.9.2 (30.10.2021)
 * remaked BxCommon.h with dependencies
