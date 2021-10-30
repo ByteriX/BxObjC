@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.9.2 (30.10.2021)
+* remaked BxCommon.h with dependencies
+
 ## 1.9.1 (30.10.2021)
 * recovery BxActionSheet without deprication messages
 

@@ -11,28 +11,6 @@
  *	 Copyright (c) 2016 ByteriX. See http://byterix.com
  */
 
-#import "BxConfig.h"
-#import "BxFileSystem.h"
-#import "BxUtils.h"
-#import "BxUIUtils.h"
-#import "BxException.h"
-
-#import "NSString+BxUtils.h"
-#import "UIImage+BxUtils.h"
-#import "NSData+BxUtils.h"
-#import "UIDevice+BxUtils.h"
-#import "UIColor+BxUtils.h"
-#import "NSDictionary+BxUtils.h"
-#import "NSArray+BxUtils.h"
-#import "NSURL+BxUtils.h"
-
-#import "BxAlertView.h"
-#import "BxActionSheet.h"
-
-#import "BxGeometry.h"
-
-#import "BxPushNotificationMessageQueue.h"
-
 #ifndef iBXCommon_BxCommon_h
 #define iBXCommon_BxCommon_h
 
@@ -116,3 +94,25 @@
 
 
 #endif
+
+#import "BxConfig.h"
+#import "BxFileSystem.h"
+#import "BxUtils.h"
+#import "BxUIUtils.h"
+#import "BxException.h"
+
+#import "NSString+BxUtils.h"
+#import "UIImage+BxUtils.h"
+#import "NSData+BxUtils.h"
+#import "UIDevice+BxUtils.h"
+#import "UIColor+BxUtils.h"
+#import "NSDictionary+BxUtils.h"
+#import "NSArray+BxUtils.h"
+#import "NSURL+BxUtils.h"
+
+#import "BxAlertView.h"
+#import "BxActionSheet.h"
+
+#import "BxGeometry.h"
+
+#import "BxPushNotificationMessageQueue.h"
