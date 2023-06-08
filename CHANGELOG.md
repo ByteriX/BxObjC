@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.10 (08.06.2023)
+* minimal target to iOS 11
+
 ## 1.9.3 (30.10.2021)
 * fixed showActionSheetWithTitle for iPad version
 * added many optional showActionSheet function to UIViewController extensions
