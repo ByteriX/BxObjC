@@ -91,8 +91,12 @@ s.subspec 'Common' do |cs|
 end
 
 s.subspec 'Data' do |ds|
+    ds.ios.deployment_target = '11.0'
+    ds.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '11.0' }
+    
     ds.dependency 'BxObjC/Common'
     ds.dependency 'XMLDictionary', '1.4'
+
 
     ds.frameworks = ["Foundation", "UIKit"]
     ds.public_header_files = "**/iBXData/Frameworks/**/*.h", "**/iBXData/Sources/**/*.h"
@@ -171,6 +175,8 @@ s.subspec 'Control' do |control|
 end
 
 s.subspec 'Vcl' do |vs|
+        vs.ios.deployment_target = '11.0'
+        vs.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '11.0' }
     vs.dependency 'BxObjC/Common'
     vs.dependency 'BxObjC/Data'
     vs.dependency 'MBProgressHUD'
@@ -190,21 +196,5 @@ s.subspec 'Vcl' do |vs|
 end
 
 
-  # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  #
-  #  Link your library with frameworks, or libraries. Libraries do not include
-  #  the lib prefix of their name.
-  #
-
-  # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
-
-  # s.library   = "iconv"
-  # s.libraries = "iconv", "xml2"
-
-
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-
-#s.dependency "XMLDictionary"
 
 end
