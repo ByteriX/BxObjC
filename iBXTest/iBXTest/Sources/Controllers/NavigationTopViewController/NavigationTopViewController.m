@@ -7,7 +7,7 @@
 //
 
 #import "NavigationTopViewController.h"
-#import "ECSlidingViewController.h"
+#import <ECSlidingViewController/ECSlidingViewController.h>
 #import "IconWorkspaceViewPagingTabController.h"
 #import "IconWorkspaceViewController.h"
 #import <QuartzCore/QuartzCore.h>

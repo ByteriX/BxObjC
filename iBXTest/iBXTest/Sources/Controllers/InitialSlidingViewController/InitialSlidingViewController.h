@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ECSlidingViewController.h"
+#import <ECSlidingViewController/ECSlidingViewController.h>
 
 @interface InitialSlidingViewController : ECSlidingViewController
 
