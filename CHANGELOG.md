@@ -8,6 +8,7 @@ ByteriX, 2013-2020. All right reserved.
 
 ## 1.10 (08.06.2023)
 * minimal target to iOS 11
+* cut VCL and Data modules
 
 ## 1.9.3 (30.10.2021)
 * fixed showActionSheetWithTitle for iPad version

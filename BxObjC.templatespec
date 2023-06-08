@@ -90,21 +90,19 @@ s.subspec 'Common' do |cs|
     cs.requires_arc = ["**/BxPushNotificationMessageQueue.m"]
 end
 
-s.subspec 'Data' do |ds|
-    ds.ios.deployment_target = '11.0'
-    ds.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '11.0' }
-    
-    ds.dependency 'BxObjC/Common'
-    ds.dependency 'XMLDictionary', '1.4'
-
-
-    ds.frameworks = ["Foundation", "UIKit"]
-    ds.public_header_files = "**/iBXData/Frameworks/**/*.h", "**/iBXData/Sources/**/*.h"
-
-    ds.source_files  = "**/iBXData/Frameworks/**/*.{h,m,c}", "**/iBXData/Sources/**/*.{h,m,c}"
-    ds.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
-    ds.requires_arc = []
-end
+# deprecated
+#s.subspec 'Data' do |ds|
+#    ds.dependency 'BxObjC/Common'
+#    ds.dependency 'XMLDictionary', '1.4'
+#
+#
+#    ds.frameworks = ["Foundation", "UIKit"]
+#    ds.public_header_files = "**/iBXData/Frameworks/**/*.h", "**/iBXData/Sources/**/*.h"
+#
+#    ds.source_files  = "**/iBXData/Frameworks/**/*.{h,m,c}", "**/iBXData/Sources/**/*.{h,m,c}"
+#    ds.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+#    ds.requires_arc = []
+#end
 
 s.subspec 'DB' do |dbs|
     dbs.dependency 'BxObjC/Common'
@@ -119,17 +117,18 @@ s.subspec 'DB' do |dbs|
     dbs.requires_arc = []
 end
 
-s.subspec 'Map' do |ms|
-    ms.dependency 'BxObjC/Common'
-    ms.dependency 'BxObjC/Data'
-
-    ms.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
-    ms.public_header_files = "**/iBXMap/Frameworks/**/*.h", "**/iBXMap/Sources/**/*.h"
-
-    ms.source_files  = "**/iBXMap/Frameworks/**/*.{h,m,c}", "**/iBXMap/Sources/**/*.{h,m,c}"
-    ms.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
-    ms.requires_arc = []
-end
+# deprecated
+#s.subspec 'Map' do |ms|
+#    ms.dependency 'BxObjC/Common'
+#    ms.dependency 'BxObjC/Data'
+#
+#    ms.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+#    ms.public_header_files = "**/iBXMap/Frameworks/**/*.h", "**/iBXMap/Sources/**/*.h"
+#
+#    ms.source_files  = "**/iBXMap/Frameworks/**/*.{h,m,c}", "**/iBXMap/Sources/**/*.{h,m,c}"
+#    ms.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+#    ms.requires_arc = []
+#end
 
 s.subspec 'Control' do |control|
 
@@ -160,40 +159,42 @@ s.subspec 'Control' do |control|
     navigation.public_header_files = "**/iBXVcl/Control/Navigation/**/*.h"
     navigation.source_files  = "**/iBXVcl/Control/Navigation/**/*.{h,m,c}"
   end
-  
-  control.subspec 'View' do |view|
-    view.dependency 'BxObjC/Common'
-    view.dependency 'BxObjC/Data'
-    view.frameworks = ["Foundation", "UIKit"]
-    view.public_header_files = "**/iBXVcl/Sources/View/**/*.h", "**/iBXVcl/Sources/ViewControl/**/*.h"
-    view.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}", "**/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
-    view.requires_arc = [
-      "**/BxIconWorkspace**.m"
-    ]
-  end
+
+  # deprecated
+  #control.subspec 'View' do |view|
+  #  view.dependency 'BxObjC/Common'
+  #  view.dependency 'BxObjC/Data'
+  #  view.frameworks = ["Foundation", "UIKit"]
+  #  view.public_header_files = "**/iBXVcl/Sources/View/**/*.h", "**/iBXVcl/Sources/ViewControl/**/*.h"
+  #  view.source_files  = "**/iBXVcl/Sources/View/**/*.{h,m,c}", "**/iBXVcl/Sources/ViewControl/**/*.{h,m,c}"
+  #  view.requires_arc = [
+  #    "**/BxIconWorkspace**.m"
+  #  ]
+  #end
 
 end
 
-s.subspec 'Vcl' do |vs|
-        vs.ios.deployment_target = '11.0'
-        vs.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '11.0' }
-    vs.dependency 'BxObjC/Common'
-    vs.dependency 'BxObjC/Data'
-    vs.dependency 'MBProgressHUD'
-    vs.dependency 'BxObjC/Control'
-
-    vs.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
-    vs.resources = "**/iBXVcl/**/*.{png,xib}"
-    vs.public_header_files = "**/iBXVcl/Frameworks/**/*.h", "**/iBXVcl/Sources/**/*.h"
-
-    vs.source_files  = "**/iBXVcl/Frameworks/**/*.{h,m,c}", "**/iBXVcl/Sources/**/*.{h,m,c}"
-    vs.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
-
-    vs.requires_arc = [
-        "**/BxIconWorkspace**.m",
-        "**/Navigation/**/*.*"
-    ]
-end
+# deprecated
+#s.subspec 'Vcl' do |vs|
+#        vs.ios.deployment_target = '11.0'
+#        vs.pod_target_xcconfig = { 'IPHONEOS_DEPLOYMENT_TARGET' => '11.0' }
+#    vs.dependency 'BxObjC/Common'
+#    vs.dependency 'BxObjC/Data'
+#    vs.dependency 'MBProgressHUD'
+#    vs.dependency 'BxObjC/Control'
+#
+#    vs.frameworks = ["Foundation", "UIKit", "MapKit", "CoreLocation"]
+#    vs.resources = "**/iBXVcl/**/*.{png,xib}"
+#    vs.public_header_files = "**/iBXVcl/Frameworks/**/*.h", "**/iBXVcl/Sources/**/*.h"
+#
+#    vs.source_files  = "**/iBXVcl/Frameworks/**/*.{h,m,c}", "**/iBXVcl/Sources/**/*.{h,m,c}"
+#    vs.exclude_files = "**/**Tests/**/*.*", "**/**Test/**/*.*"
+#
+#    vs.requires_arc = [
+#        "**/BxIconWorkspace**.m",
+#        "**/Navigation/**/*.*"
+#    ]
+#end
 
 
 
