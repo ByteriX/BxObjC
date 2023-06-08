@@ -363,6 +363,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 3424B8371845FC6A00776178;
@@ -603,6 +604,7 @@
 					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
 				);
 				HEADER_SEARCH_PATHS = "${SRCROOT}/../**";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
@@ -624,6 +626,7 @@
 					"SQLITE_ENABLE_FTS4_PARENTHESIS=1",
 				);
 				HEADER_SEARCH_PATHS = "${SRCROOT}/../**";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";

@@ -9,7 +9,7 @@ DEPENDENCIES:
   - XMLDictionary (= 1.4)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - ECSlidingViewController
     - MBProgressHUD
     - XMLDictionary
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
-PODFILE CHECKSUM: 35bb037be2451756ae0de1f490aa985da413cf67
+PODFILE CHECKSUM: c8321e3fc03b840616779df42dac039c431b087f
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.12.1
