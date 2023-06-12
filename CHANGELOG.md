@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.10.1 (12.06.2023)
+* supporting SPM
+
 ## 1.10 (08.06.2023)
 * minimal target to iOS 11
 * cut VCL and Data modules
