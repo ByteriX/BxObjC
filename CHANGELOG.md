@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.10.2 (13.06.2023)
+* SPM sublibraries
+
 ## 1.10.1 (12.06.2023)
 * supporting SPM
 

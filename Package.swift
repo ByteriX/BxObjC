@@ -21,8 +21,26 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "BxObjC",
-            targets: ["BxObjC/Common", "BxObjC/DB", "BxObjC/Control/Rate", "BxObjC/Control/TextView", "BxObjC/Control/ShakeAnimation", "BxObjC/Control/Navigation"]),
+            name: "BxObjC/Common",
+            targets: ["BxObjC/Common"]),
+        .library(
+            name: "BxObjC/DB",
+            targets: ["BxObjC/DB"]),
+        .library(
+            name: "BxObjC/Control/Rate",
+            targets: ["BxObjC/Control/Rate"]),
+        .library(
+            name: "BxObjC/Control/TextView",
+            targets: ["BxObjC/Control/TextView"]),
+        .library(
+            name: "BxObjC/Control/ShakeAnimation",
+            targets: ["BxObjC/Control/ShakeAnimation"]),
+        .library(
+            name: "BxObjC/Control/Navigation",
+            targets: ["BxObjC/Control/Navigation"]),
+//        .library(
+//            name: "BxObjC",
+//            targets: ["BxObjC/Common", "BxObjC/DB", "BxObjC/Control/Rate", "BxObjC/Control/TextView", "BxObjC/Control/ShakeAnimation", "BxObjC/Control/Navigation"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
