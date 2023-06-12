@@ -6,6 +6,9 @@ ByteriX, 2013-2020. All right reserved.
 
 # Versions
 
+## 1.10.4 (13.06.2023)
+* SPM: try to fix mARC from TextView
+
 ## 1.10.3 (13.06.2023)
 * SPM: fixed mARC from TextView
 

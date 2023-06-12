@@ -72,7 +72,7 @@ let package = Package(
             name: "BxObjC/Control/TextView",
             dependencies: [],
             path: "iBXVcl/iBXVcl/Control/TextView",
-            cxxSettings: [
+            cSettings: [
                 .unsafeFlags(["-fno-objc-arc"]) // ADDING THE FLAG
             ]),
         .target(
