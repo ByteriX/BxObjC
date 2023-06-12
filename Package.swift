@@ -71,7 +71,10 @@ let package = Package(
         .target(
             name: "BxObjC/Control/TextView",
             dependencies: [],
-            path: "iBXVcl/iBXVcl/Control/TextView"),
+            path: "iBXVcl/iBXVcl/Control/TextView",
+            cxxSettings: [
+                .unsafeFlags(["-fno-objc-arc"]) // ADDING THE FLAG
+            ]),
         .target(
             name: "BxObjC/Control/ShakeAnimation",
             dependencies: [],
