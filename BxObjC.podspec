@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BxObjC"
-  s.version      = "1.10.1"
+  s.version      = "1.10.2"
   s.summary      = "Objective-C library for all"
   s.description  = "This framework will help iOS developers simplify development"
   s.homepage     = "https://github.com/ByteriX/BxObjC"
