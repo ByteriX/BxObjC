@@ -38,9 +38,17 @@ let package = Package(
         .library(
             name: "BxObjC/Control/Navigation",
             targets: ["BxObjC/Control/Navigation"]),
-//        .library(
-//            name: "BxObjC",
-//            targets: ["BxObjC/Common", "BxObjC/DB", "BxObjC/Control/Rate", "BxObjC/Control/TextView", "BxObjC/Control/ShakeAnimation", "BxObjC/Control/Navigation"]),
+        .library(
+            name: "BxObjC",
+            targets: [
+                "BxObjC/Common",
+                //"BxObjC/DB",
+                "BxObjC/Control/Rate",
+                "BxObjC/Control/TextView",
+                "BxObjC/Control/ShakeAnimation",
+                "BxObjC/Control/Navigation"
+            ]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
