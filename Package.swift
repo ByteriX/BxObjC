@@ -23,9 +23,9 @@ let package = Package(
         .library(
             name: "BxObjC/Common",
             targets: ["BxObjC/Common"]),
-        .library(
-            name: "BxObjC/DB",
-            targets: ["BxObjC/DB"]),
+//        .library(
+//            name: "BxObjC/DB",
+//            targets: ["BxObjC/DB"]),
         .library(
             name: "BxObjC/Control/Rate",
             targets: ["BxObjC/Control/Rate"]),
@@ -50,30 +50,62 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "BxObjC/Common",
-            dependencies: [],
-            path: "iBXCommon/iBXCommon"),
-        .target(
-            name: "BxObjC/DB",
-            dependencies: ["BxObjC/Common"],
-            path: "iBXDB/iBXDB",
-            swiftSettings: [
-                .define("SQLITE_CORE", .when(platforms: [.iOS])),
-                .define("SQLITE_UNICODE_ENABLE", .when(platforms: [.iOS])),
-                .define("SQLITE_ENABLE_FTS4", .when(platforms: [.iOS])),
-                .define("SQLITE_ENABLE_FTS4_PARENTHESIS", .when(platforms: [.iOS]))
+            name: "BxObjC/Common/Frameworks/HTMLParse",
+            path: "iBXCommon/iBXCommon/Frameworks/HTMLParse",
+            cSettings: [
+                .unsafeFlags(["-w"]), // no more any warnings
+                .unsafeFlags(["-fno-objc-arc"])
             ]
         ),
         .target(
+            name: "BxObjC/Common/Frameworks/StackBlur",
+            path: "iBXCommon/iBXCommon/Frameworks/StackBlur",
+            cSettings: [
+                .unsafeFlags(["-w"]), // no more any warnings
+                .unsafeFlags(["-fno-objc-arc"])
+            ]
+        ),
+        .target(
+            name: "BxObjC/Common",
+            dependencies: [
+                "BxObjC/Common/Frameworks/HTMLParse",
+                "BxObjC/Common/Frameworks/StackBlur"
+            ],
+            path: "iBXCommon/iBXCommon/Sources",
+            cSettings: [
+                .unsafeFlags(["-w"]), // no more any warnings
+                .unsafeFlags(["-fno-objc-arc"]),
+                .unsafeFlags(["-fobjc-weak"])
+            ]
+        ),
+//        .target(
+//            name: "BxObjC/DB",
+//            dependencies: ["BxObjC/Common"],
+//            path: "iBXDB/iBXDB",
+//            swiftSettings: [
+//                .define("SQLITE_CORE", .when(platforms: [.iOS])),
+//                .define("SQLITE_UNICODE_ENABLE", .when(platforms: [.iOS])),
+//                .define("SQLITE_ENABLE_FTS4", .when(platforms: [.iOS])),
+//                .define("SQLITE_ENABLE_FTS4_PARENTHESIS", .when(platforms: [.iOS]))
+//            ]
+//        ),
+        .target(
             name: "BxObjC/Control/Rate",
             dependencies: [],
-            path: "iBXVcl/iBXVcl/Control/Rate"),
+            path: "iBXVcl/iBXVcl/Control/Rate",
+            cSettings: [
+                .unsafeFlags(["-w"]), // no more any warnings
+                .unsafeFlags(["-fno-objc-arc"]),
+                .unsafeFlags(["-fobjc-weak"])
+            ]
+        ),
         .target(
             name: "BxObjC/Control/TextView",
             dependencies: [],
             path: "iBXVcl/iBXVcl/Control/TextView",
             cSettings: [
-                .unsafeFlags(["-fno-objc-arc"]) // ADDING THE FLAG
+                .unsafeFlags(["-w"]), // no more any warnings
+                .unsafeFlags(["-fno-objc-arc"])
             ]),
         .target(
             name: "BxObjC/Control/ShakeAnimation",
@@ -82,7 +114,8 @@ let package = Package(
         .target(
             name: "BxObjC/Control/Navigation",
             dependencies: ["BxObjC/Common", "BxObjC/Control/ShakeAnimation"],
-            path: "iBXVcl/iBXVcl/Control/Navigation"),
+            path: "iBXVcl/iBXVcl/Control/Navigation"
+        ),
     ],
     swiftLanguageVersions: [.v5]
 )

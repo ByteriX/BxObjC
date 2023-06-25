@@ -1,0 +1,1 @@
+BarEffects/BxNavigationBarEffectProtocol.h
