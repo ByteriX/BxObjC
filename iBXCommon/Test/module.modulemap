@@ -1,4 +1,6 @@
 
-module BxObjC {
-    header "BxException.h"
+framework module BxObjC {
+    umbrella header "BxObjC.h"
+    export *
+    module * { export * }
 }
