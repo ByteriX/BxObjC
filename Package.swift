@@ -19,36 +19,35 @@ let package = Package(
     defaultLocalization: "ru",
     platforms: [.iOS(.v11)],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "BxObjC_Common",
             targets: ["BxObjC_Common"]),
 //        .library(
 //            name: "BxObjC/DB",
 //            targets: ["BxObjC/DB"]),
-        .library(
-            name: "BxObjC_Control_Rate",
-            targets: ["BxObjC_Control_Rate"]),
-        .library(
-            name: "BxObjC_Control_TextView",
-            targets: ["BxObjC_Control_TextView"]),
-        .library(
-            name: "BxObjC_Control_ShakeAnimation",
-            targets: ["BxObjC_Control_ShakeAnimation"]),
-        .library(
-            name: "BxObjC_Control_Navigation",
-            targets: ["BxObjC_Control_Navigation"]),
 //        .library(
-//            name: "BxObjC",
-//            targets: [
-//                "BxObjC_Common",
-//                //"BxObjC/DB",
-//                "BxObjC_Control_Rate",
-//                "BxObjC_Control_TextView",
-//                "BxObjC_Control_ShakeAnimation",
-//                "BxObjC_Control_Navigation"
-//            ]
-//        ),
+//            name: "BxObjC_Control_Rate",
+//            targets: ["BxObjC_Control_Rate"]),
+//        .library(
+//            name: "BxObjC_Control_TextView",
+//            targets: ["BxObjC_Control_TextView"]),
+//        .library(
+//            name: "BxObjC_Control_ShakeAnimation",
+//            targets: ["BxObjC_Control_ShakeAnimation"]),
+//        .library(
+//            name: "BxObjC_Control_Navigation",
+//            targets: ["BxObjC_Control_Navigation"]),
+        .library(
+            name: "BxObjC",
+            targets: [
+                "BxObjC_Common",
+                //"BxObjC/DB",
+                "BxObjC_Control_Rate",
+                "BxObjC_Control_TextView",
+                "BxObjC_Control_ShakeAnimation",
+                "BxObjC_Control_Navigation"
+            ]
+        ),
 //        .library(
 //            name: "BxObjC",
 //            targets: [
