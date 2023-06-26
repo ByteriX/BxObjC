@@ -13,3 +13,4 @@
 
 #import <Foundation/Foundation.h>
 #import "BxCommon.h"
+#import "BxTextView.h"
