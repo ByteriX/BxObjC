@@ -166,6 +166,7 @@ let package = Package(
 //            dependencies: ["BxObjC_Common", "BxObjC_Control_ShakeAnimation"],
 //            path: "iBXVcl/iBXVcl/Control/Navigation"
 //        ),
-    ],
-    swiftLanguageVersions: [.v5]
+    ]
+//    ,
+//    swiftLanguageVersions: [.v5]
 )
