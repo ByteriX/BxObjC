@@ -1,6 +1,0 @@
-
-framework module BxObjC {
-    umbrella header "BxObjC.h"
-    export *
-    module * { export * }
-}

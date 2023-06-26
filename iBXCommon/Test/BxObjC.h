@@ -11,4 +11,5 @@
  *	 Copyright (c) 2016 ByteriX. See http://byterix.com
  */
 
+#import <Foundation/Foundation.h>
 #import "BxException.h"

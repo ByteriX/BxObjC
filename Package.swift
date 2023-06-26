@@ -82,12 +82,13 @@ let package = Package(
         .target(
             name: "BxObjC",
             dependencies: [],
-            path: "iBXCommon",
-            sources: ["Test"],
-            publicHeadersPath: "Test",
-            cSettings: [
-                .headerSearchPath("Test")
-            ]
+            path: "iBXCommon/Test",
+            //sources: [""],
+            publicHeadersPath: ""
+//            ,
+//            cSettings: [
+//                .headerSearchPath("Test")
+//            ]
         ),
 //        .target(
 //            name: "BxObjC-Common-Frameworks-HTMLParse",
