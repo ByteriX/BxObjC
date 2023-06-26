@@ -12,4 +12,4 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "BxException.h"
+#import "BxCommon.h"
