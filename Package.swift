@@ -84,7 +84,7 @@ let package = Package(
             dependencies: [],
             path: "iBXCommon/Test",
             //sources: [""],
-            publicHeadersPath: "include"
+            publicHeadersPath: ""
 //            ,
 //            cSettings: [
 //                .headerSearchPath("Test")
