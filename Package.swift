@@ -63,7 +63,7 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "BxObjC_Common_Frameworks_HTMLParse",
+            name: "BxObjC-Common-Frameworks-HTMLParse",
             path: "iBXCommon/iBXCommon/Frameworks/HTMLParse",
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
@@ -71,7 +71,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BxObjC_Common_Frameworks_StackBlur",
+            name: "BxObjC-Common-Frameworks-StackBlur",
             path: "iBXCommon/iBXCommon/Frameworks/StackBlur",
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
@@ -81,8 +81,8 @@ let package = Package(
         .target(
             name: "BxObjC",
             dependencies: [
-                "BxObjC_Common_Frameworks_HTMLParse",
-                "BxObjC_Common_Frameworks_StackBlur"
+                "BxObjC-Common-Frameworks-HTMLParse",
+                "BxObjC-Common-Frameworks-StackBlur"
             ],
             path: "iBXCommon/iBXCommon/Sources",
             cSettings: [
