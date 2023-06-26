@@ -54,18 +54,18 @@ let package = Package(
                 "BxObjC"
             ]
         ),
-        .library(
-            name: "BxObjC-Common-Frameworks-HTMLParse",
-            targets: [
-                "BxObjC-Common-Frameworks-HTMLParse"
-            ]
-        ),
-        .library(
-            name: "BxObjC-Common-Frameworks-StackBlur",
-            targets: [
-                "BxObjC-Common-Frameworks-StackBlur"
-            ]
-        ),
+//        .library(
+//            name: "BxObjC-Common-Frameworks-HTMLParse",
+//            targets: [
+//                "BxObjC-Common-Frameworks-HTMLParse"
+//            ]
+//        ),
+//        .library(
+//            name: "BxObjC-Common-Frameworks-StackBlur",
+//            targets: [
+//                "BxObjC-Common-Frameworks-StackBlur"
+//            ]
+//        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -75,34 +75,38 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "BxObjC-Common-Frameworks-HTMLParse",
-            path: "iBXCommon/iBXCommon/Frameworks/HTMLParse",
-            cSettings: [
-                .unsafeFlags(["-w"]), // no more any warnings
-                .unsafeFlags(["-fno-objc-arc"])
-            ]
-        ),
-        .target(
-            name: "BxObjC-Common-Frameworks-StackBlur",
-            path: "iBXCommon/iBXCommon/Frameworks/StackBlur",
-            cSettings: [
-                .unsafeFlags(["-w"]), // no more any warnings
-                .unsafeFlags(["-fno-objc-arc"])
-            ]
-        ),
-        .target(
             name: "BxObjC",
-            dependencies: [
-                "BxObjC-Common-Frameworks-HTMLParse",
-                "BxObjC-Common-Frameworks-StackBlur"
-            ],
-            path: "iBXCommon/iBXCommon/Sources",
-            cSettings: [
-                .unsafeFlags(["-w"]), // no more any warnings
-                .unsafeFlags(["-fno-objc-arc"]),
-                .unsafeFlags(["-fobjc-weak"])
-            ]
+            path: "iBXCommon/iBXCommon/Test"
         ),
+//        .target(
+//            name: "BxObjC-Common-Frameworks-HTMLParse",
+//            path: "iBXCommon/iBXCommon/Frameworks/HTMLParse",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"])
+//            ]
+//        ),
+//        .target(
+//            name: "BxObjC-Common-Frameworks-StackBlur",
+//            path: "iBXCommon/iBXCommon/Frameworks/StackBlur",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"])
+//            ]
+//        ),
+//        .target(
+//            name: "BxObjC",
+//            dependencies: [
+//                "BxObjC-Common-Frameworks-HTMLParse",
+//                "BxObjC-Common-Frameworks-StackBlur"
+//            ],
+//            path: "iBXCommon/iBXCommon/Sources",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"]),
+//                .unsafeFlags(["-fobjc-weak"])
+//            ]
+//        ),
 //        .target(
 //            name: "BxObjC_Common",
 //            dependencies: [
