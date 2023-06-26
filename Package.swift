@@ -82,7 +82,8 @@ let package = Package(
         .target(
             name: "BxObjC",
             dependencies: [],
-            path: "iBXCommon/Test",
+            path: "iBXCommon/Test"
+            //,
             //sources: [""],
 //            publicHeadersPath: ""
 //            ,
