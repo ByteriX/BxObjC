@@ -27,28 +27,28 @@ let package = Package(
 //            name: "BxObjC/DB",
 //            targets: ["BxObjC/DB"]),
         .library(
-            name: "BxObjC/Control/Rate",
-            targets: ["BxObjC/Control/Rate"]),
+            name: "BxObjC_Control_Rate",
+            targets: ["BxObjC_Control_Rate"]),
         .library(
-            name: "BxObjC/Control/TextView",
-            targets: ["BxObjC/Control/TextView"]),
+            name: "BxObjC_Control_TextView",
+            targets: ["BxObjC_Control_TextView"]),
         .library(
-            name: "BxObjC/Control/ShakeAnimation",
-            targets: ["BxObjC/Control/ShakeAnimation"]),
+            name: "BxObjC_Control_ShakeAnimation",
+            targets: ["BxObjC_Control_ShakeAnimation"]),
         .library(
-            name: "BxObjC/Control/Navigation",
-            targets: ["BxObjC/Control/Navigation"]),
-        .library(
-            name: "BxObjC",
-            targets: [
-                "BxObjC_Common",
-                //"BxObjC/DB",
-                "BxObjC/Control/Rate",
-                "BxObjC/Control/TextView",
-                "BxObjC/Control/ShakeAnimation",
-                "BxObjC/Control/Navigation"
-            ]
-        ),
+            name: "BxObjC_Control_Navigation",
+            targets: ["BxObjC_Control_Navigation"]),
+//        .library(
+//            name: "BxObjC",
+//            targets: [
+//                "BxObjC_Common",
+//                //"BxObjC/DB",
+//                "BxObjC_Control_Rate",
+//                "BxObjC_Control_TextView",
+//                "BxObjC_Control_ShakeAnimation",
+//                "BxObjC_Control_Navigation"
+//            ]
+//        ),
 //        .library(
 //            name: "BxObjC",
 //            targets: [
@@ -64,7 +64,7 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "BxObjC/Common/Frameworks/HTMLParse",
+            name: "BxObjC_Common_Frameworks_HTMLParse",
             path: "iBXCommon/iBXCommon/Frameworks/HTMLParse",
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
@@ -72,7 +72,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BxObjC/Common/Frameworks/StackBlur",
+            name: "BxObjC_Common_Frameworks_StackBlur",
             path: "iBXCommon/iBXCommon/Frameworks/StackBlur",
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
@@ -82,8 +82,8 @@ let package = Package(
         .target(
             name: "BxObjC_Common",
             dependencies: [
-                "BxObjC/Common/Frameworks/HTMLParse",
-                "BxObjC/Common/Frameworks/StackBlur"
+                "BxObjC_Common_Frameworks_HTMLParse",
+                "BxObjC_Common_Frameworks_StackBlur"
             ],
             path: "iBXCommon/iBXCommon/Sources",
             cSettings: [
@@ -104,7 +104,7 @@ let package = Package(
 //            ]
 //        ),
         .target(
-            name: "BxObjC/Control/Rate",
+            name: "BxObjC_Control_Rate",
             dependencies: [],
             path: "iBXVcl/iBXVcl/Control/Rate",
             cSettings: [
@@ -114,7 +114,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BxObjC/Control/TextView",
+            name: "BxObjC_Control_TextView",
             dependencies: [],
             path: "iBXVcl/iBXVcl/Control/TextView",
             cSettings: [
@@ -122,12 +122,12 @@ let package = Package(
                 .unsafeFlags(["-fno-objc-arc"])
             ]),
         .target(
-            name: "BxObjC/Control/ShakeAnimation",
+            name: "BxObjC_Control_ShakeAnimation",
             dependencies: [],
             path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
         .target(
-            name: "BxObjC/Control/Navigation",
-            dependencies: ["BxObjC_Common", "BxObjC/Control/ShakeAnimation"],
+            name: "BxObjC_Control_Navigation",
+            dependencies: ["BxObjC_Common", "BxObjC_Control_ShakeAnimation"],
             path: "iBXVcl/iBXVcl/Control/Navigation"
         ),
     ],
