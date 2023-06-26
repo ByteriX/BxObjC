@@ -1,4 +1,4 @@
-// swift-tools-version: 5.4
+// swift-tools-version: 5.0
 /**
  *	@file Package.swift
  *	@namespace BxObjC
