@@ -17,7 +17,10 @@ import PackageDescription
 let package = Package(
     name: "BxObjC",
     defaultLocalization: "ru",
-    platforms: [.iOS(.v11)],
+    platforms: [.macOS(.v10_11),
+                .iOS(.v9),
+                .tvOS(.v9),
+                .watchOS(.v2)],
     products: [
 //        .library(
 //            name: "BxObjC_Common",
@@ -76,7 +79,12 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "BxObjC",
-            path: "iBXCommon/iBXCommon/Test"
+            dependencies: [],
+            path: "iBXCommon/iBXCommon",
+            sources: ["Test"],
+            cSettings: [
+                .headerSearchPath("Test")
+            ]
         ),
 //        .target(
 //            name: "BxObjC-Common-Frameworks-HTMLParse",
