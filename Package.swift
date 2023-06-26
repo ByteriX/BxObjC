@@ -21,8 +21,8 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "BxObjC/Common",
-            targets: ["BxObjC/Common"]),
+            name: "BxObjC_Common",
+            targets: ["BxObjC_Common"]),
 //        .library(
 //            name: "BxObjC/DB",
 //            targets: ["BxObjC/DB"]),
@@ -41,7 +41,7 @@ let package = Package(
         .library(
             name: "BxObjC",
             targets: [
-                "BxObjC/Common",
+                "BxObjC_Common",
                 //"BxObjC/DB",
                 "BxObjC/Control/Rate",
                 "BxObjC/Control/TextView",
@@ -49,6 +49,12 @@ let package = Package(
                 "BxObjC/Control/Navigation"
             ]
         ),
+//        .library(
+//            name: "BxObjC",
+//            targets: [
+//                "BxObjC"
+//            ]
+//        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -74,7 +80,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BxObjC/Common",
+            name: "BxObjC_Common",
             dependencies: [
                 "BxObjC/Common/Frameworks/HTMLParse",
                 "BxObjC/Common/Frameworks/StackBlur"
@@ -121,7 +127,7 @@ let package = Package(
             path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
         .target(
             name: "BxObjC/Control/Navigation",
-            dependencies: ["BxObjC/Common", "BxObjC/Control/ShakeAnimation"],
+            dependencies: ["BxObjC_Common", "BxObjC/Control/ShakeAnimation"],
             path: "iBXVcl/iBXVcl/Control/Navigation"
         ),
     ],
