@@ -19,9 +19,9 @@ let package = Package(
     defaultLocalization: "ru",
     platforms: [.iOS(.v11)],
     products: [
-        .library(
-            name: "BxObjC_Common",
-            targets: ["BxObjC_Common"]),
+//        .library(
+//            name: "BxObjC_Common",
+//            targets: ["BxObjC_Common"]),
 //        .library(
 //            name: "BxObjC/DB",
 //            targets: ["BxObjC/DB"]),
@@ -37,23 +37,23 @@ let package = Package(
 //        .library(
 //            name: "BxObjC_Control_Navigation",
 //            targets: ["BxObjC_Control_Navigation"]),
-        .library(
-            name: "BxObjC",
-            targets: [
-                "BxObjC_Common",
-                //"BxObjC/DB",
-                "BxObjC_Control_Rate",
-                "BxObjC_Control_TextView",
-                "BxObjC_Control_ShakeAnimation",
-                "BxObjC_Control_Navigation"
-            ]
-        ),
 //        .library(
 //            name: "BxObjC",
 //            targets: [
-//                "BxObjC"
+//                "BxObjC_Common",
+//                //"BxObjC/DB",
+//                "BxObjC_Control_Rate",
+//                "BxObjC_Control_TextView",
+//                "BxObjC_Control_ShakeAnimation",
+//                "BxObjC_Control_Navigation"
 //            ]
 //        ),
+        .library(
+            name: "BxObjC",
+            targets: [
+                "BxObjC"
+            ]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -79,7 +79,7 @@ let package = Package(
             ]
         ),
         .target(
-            name: "BxObjC_Common",
+            name: "BxObjC",
             dependencies: [
                 "BxObjC_Common_Frameworks_HTMLParse",
                 "BxObjC_Common_Frameworks_StackBlur"
@@ -92,6 +92,19 @@ let package = Package(
             ]
         ),
 //        .target(
+//            name: "BxObjC_Common",
+//            dependencies: [
+//                "BxObjC_Common_Frameworks_HTMLParse",
+//                "BxObjC_Common_Frameworks_StackBlur"
+//            ],
+//            path: "iBXCommon/iBXCommon/Sources",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"]),
+//                .unsafeFlags(["-fobjc-weak"])
+//            ]
+//        ),
+//        .target(
 //            name: "BxObjC/DB",
 //            dependencies: ["BxObjC/Common"],
 //            path: "iBXDB/iBXDB",
@@ -102,33 +115,33 @@ let package = Package(
 //                .define("SQLITE_ENABLE_FTS4_PARENTHESIS", .when(platforms: [.iOS]))
 //            ]
 //        ),
-        .target(
-            name: "BxObjC_Control_Rate",
-            dependencies: [],
-            path: "iBXVcl/iBXVcl/Control/Rate",
-            cSettings: [
-                .unsafeFlags(["-w"]), // no more any warnings
-                .unsafeFlags(["-fno-objc-arc"]),
-                .unsafeFlags(["-fobjc-weak"])
-            ]
-        ),
-        .target(
-            name: "BxObjC_Control_TextView",
-            dependencies: [],
-            path: "iBXVcl/iBXVcl/Control/TextView",
-            cSettings: [
-                .unsafeFlags(["-w"]), // no more any warnings
-                .unsafeFlags(["-fno-objc-arc"])
-            ]),
-        .target(
-            name: "BxObjC_Control_ShakeAnimation",
-            dependencies: [],
-            path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
-        .target(
-            name: "BxObjC_Control_Navigation",
-            dependencies: ["BxObjC_Common", "BxObjC_Control_ShakeAnimation"],
-            path: "iBXVcl/iBXVcl/Control/Navigation"
-        ),
+//        .target(
+//            name: "BxObjC_Control_Rate",
+//            dependencies: [],
+//            path: "iBXVcl/iBXVcl/Control/Rate",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"]),
+//                .unsafeFlags(["-fobjc-weak"])
+//            ]
+//        ),
+//        .target(
+//            name: "BxObjC_Control_TextView",
+//            dependencies: [],
+//            path: "iBXVcl/iBXVcl/Control/TextView",
+//            cSettings: [
+//                .unsafeFlags(["-w"]), // no more any warnings
+//                .unsafeFlags(["-fno-objc-arc"])
+//            ]),
+//        .target(
+//            name: "BxObjC_Control_ShakeAnimation",
+//            dependencies: [],
+//            path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
+//        .target(
+//            name: "BxObjC_Control_Navigation",
+//            dependencies: ["BxObjC_Common", "BxObjC_Control_ShakeAnimation"],
+//            path: "iBXVcl/iBXVcl/Control/Navigation"
+//        ),
     ],
     swiftLanguageVersions: [.v5]
 )
