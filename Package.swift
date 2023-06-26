@@ -54,6 +54,18 @@ let package = Package(
                 "BxObjC"
             ]
         ),
+        .library(
+            name: "BxObjC-Common-Frameworks-HTMLParse",
+            targets: [
+                "BxObjC-Common-Frameworks-HTMLParse"
+            ]
+        ),
+        .library(
+            name: "BxObjC-Common-Frameworks-StackBlur",
+            targets: [
+                "BxObjC-Common-Frameworks-StackBlur"
+            ]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
