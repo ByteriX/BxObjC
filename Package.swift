@@ -24,9 +24,9 @@ let package = Package(
                 .tvOS(.v11),
                 .watchOS(.v2)],
     products: [
-//        .library(
-//            name: "BxObjC-Common",
-//            targets: ["BxObjC-Common"]),
+        .library(
+            name: "BxCommon",
+            targets: ["BxCommon"]),
 //        .library(
 //            name: "BxObjC/DB",
 //            targets: ["BxObjC/DB"]),
@@ -45,8 +45,8 @@ let package = Package(
         .library(
             name: "BxObjC",
             targets: [
-//                "BxObjC-Common",
-//                //"BxObjC/DB",
+//                "BxCommon",
+////                //"BxObjC/DB",
 //                "BxObjC-Control-Rate",
 //                "BxObjC-Control-TextView",
 //                "BxObjC-Control-ShakeAnimation",
@@ -104,33 +104,9 @@ let package = Package(
                 .unsafeFlags(["-fno-objc-arc"])
             ]
         ),
+
         .target(
-            name: "BxObjC",
-            dependencies: [
-                "BxObjC-Common",
-                //"BxObjC/DB",
-                "BxObjC-Control-Rate",
-                "BxObjC-Control-TextView",
-                "BxObjC-Control-ShakeAnimation",
-                "BxObjC-Control-Navigation",
-            ],
-            path: "BxObjC",
-            publicHeadersPath: "",
-            cSettings: [
-                .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
-                .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
-                .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
-                .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
-                .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
-                .headerSearchPath("iBXCommon/iBXCommon/Sources"),
-                .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
-                .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
-                .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
-                .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
-            ]
-        ),
-        .target(
-            name: "BxObjC-Common",
+            name: "BxCommon",
             dependencies: [
                 "BxObjC-Common-Frameworks-HTMLParse",
                 "BxObjC-Common-Frameworks-StackBlur"
@@ -178,9 +154,36 @@ let package = Package(
             path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
         .target(
             name: "BxObjC-Control-Navigation",
-            dependencies: ["BxObjC-Common", "BxObjC-Control-ShakeAnimation"],
+            dependencies: ["BxCommon", "BxObjC-Control-ShakeAnimation"],
             path: "iBXVcl/iBXVcl/Control/Navigation"
         ),
+
+            .target(
+                name: "BxObjC",
+                dependencies: [
+                    "BxCommon"
+//                    "BxObjC-Common",
+//                    //"BxObjC/DB",
+//                    "BxObjC-Control-Rate",
+//                    "BxObjC-Control-TextView",
+//                    "BxObjC-Control-ShakeAnimation",
+//                    "BxObjC-Control-Navigation",
+                ],
+                path: "BxObjC",
+                publicHeadersPath: "",
+                cSettings: [
+                    .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
+                    .headerSearchPath("iBXCommon/iBXCommon/Sources"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
+                ]
+            ),
     ]
 //    ,
 //    swiftLanguageVersions: [.v5]

@@ -12,7 +12,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "BxCommon.h"
+#import <BxCommon/BxCommon.h>
 #import "BxStandartRateView.h"
 #import "BxTextView.h"
 #import "UIView+ShakeAnimation.h"
