@@ -170,7 +170,8 @@ let package = Package(
 //                    "BxObjC-Control-Navigation",
                 ],
                 path: "BxObjC",
-                publicHeadersPath: "",
+                sources: ["sources"],
+                publicHeadersPath: "sources",
                 cSettings: [
                     .headerSearchPath("include"),
                     .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
