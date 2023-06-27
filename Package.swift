@@ -172,6 +172,7 @@ let package = Package(
                 path: "BxObjC",
                 publicHeadersPath: "",
                 cSettings: [
+                    .headerSearchPath("include"),
                     .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
                     .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
                     .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
