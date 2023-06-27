@@ -171,7 +171,7 @@ let package = Package(
                 ],
                 path: "BxObjC",
                 sources: ["sources"],
-                publicHeadersPath: "sources",
+                publicHeadersPath: "include",
                 cSettings: [
                     .headerSearchPath("include"),
                     .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
