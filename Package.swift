@@ -171,20 +171,21 @@ let package = Package(
                 ],
                 path: "BxObjC",
                 sources: ["sources"],
-                publicHeadersPath: "include",
-                cSettings: [
-                    .headerSearchPath("include"),
-                    .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
-                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
-                    .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
-                    .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
-                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
-                    .headerSearchPath("iBXCommon/iBXCommon/Sources"),
-                    .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
-                    .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
-                    .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
-                    .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
-                ]
+                publicHeadersPath: "include"
+                //,
+//                cSettings: [
+//                    .headerSearchPath("include"),
+//                    .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
+//                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
+//                    .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
+//                    .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
+//                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
+//                    .headerSearchPath("iBXCommon/iBXCommon/Sources"),
+//                    .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
+//                    .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
+//                    .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
+//                    .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
+//                ]
             ),
     ]
 //    ,
