@@ -45,7 +45,7 @@ let package = Package(
         .library(
             name: "BxObjC",
             targets: [
-                "BxCommon",
+//                "BxCommon",
 ////                //"BxObjC/DB",
 //                "BxObjC-Control-Rate",
 //                "BxObjC-Control-TextView",
