@@ -117,7 +117,8 @@ let package = Package(
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
                 .unsafeFlags(["-fno-objc-arc"]),
-                .unsafeFlags(["-fobjc-weak"])
+                .unsafeFlags(["-fobjc-weak"]),
+                .headerSearchPath("Sources"),
             ]
         ),
 //        .target(
