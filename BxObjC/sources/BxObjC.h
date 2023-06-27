@@ -18,3 +18,4 @@
 
 #import "BxNavigationBar.h"
 #import "BxNavigationController.h"
+#import "UIViewController+Navigation.h"
