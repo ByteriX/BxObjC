@@ -11,12 +11,10 @@
  *	 Copyright (c) 2016 ByteriX. See http://byterix.com
  */
 
-//#import <Foundation/Foundation.h>
-//#import <BxCommon/BxCommon.h>
 #import "BxCommon.h"
-//#import "BxStandartRateView.h"
-//#import "BxTextView.h"
-//#import "UIView+ShakeAnimation.h"
-//
-//#import "BxNavigationBar.h"
-//#import "BxNavigationController.h"
+#import "BxStandartRateView.h"
+#import "BxTextView.h"
+#import "UIView+ShakeAnimation.h"
+
+#import "BxNavigationBar.h"
+#import "BxNavigationController.h"

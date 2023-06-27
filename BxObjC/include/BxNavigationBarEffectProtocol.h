@@ -1,0 +1,1 @@
+../../iBXVcl/iBXVcl/Control/Navigation/BxNavigationBarEffectProtocol.h

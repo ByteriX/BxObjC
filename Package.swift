@@ -45,12 +45,12 @@ let package = Package(
         .library(
             name: "BxObjC",
             targets: [
-//                "BxCommon",
-////                //"BxObjC/DB",
-//                "BxObjC-Control-Rate",
-//                "BxObjC-Control-TextView",
-//                "BxObjC-Control-ShakeAnimation",
-//                "BxObjC-Control-Navigation",
+                "BxCommon",
+                //"BxObjC/DB",
+                "BxObjC-Control-Rate",
+                "BxObjC-Control-TextView",
+                "BxObjC-Control-ShakeAnimation",
+                "BxObjC-Control-Navigation",
                 "BxObjC"
             ]
         ),
@@ -161,13 +161,12 @@ let package = Package(
             .target(
                 name: "BxObjC",
                 dependencies: [
-                    "BxCommon"
-//                    "BxObjC-Common",
+                    "BxCommon",
 //                    //"BxObjC/DB",
-//                    "BxObjC-Control-Rate",
-//                    "BxObjC-Control-TextView",
-//                    "BxObjC-Control-ShakeAnimation",
-//                    "BxObjC-Control-Navigation",
+                    "BxObjC-Control-Rate",
+                    "BxObjC-Control-TextView",
+                    "BxObjC-Control-ShakeAnimation",
+                    "BxObjC-Control-Navigation",
                 ],
                 path: "BxObjC",
                 sources: ["sources"],
