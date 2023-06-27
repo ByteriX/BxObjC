@@ -169,10 +169,20 @@ let package = Package(
 //                    "BxObjC-Control-ShakeAnimation",
 //                    "BxObjC-Control-Navigation",
                 ],
-                path: "BxObjC"
-                //,
-//                sources: [""],
-//                publicHeadersPath: ""
+                path: "BxObjC",
+                publicHeadersPath: "",
+                cSettings: [
+                    .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                    .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
+                    .headerSearchPath("iBXCommon/iBXCommon/Sources"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                    .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
+                ]
             ),
     ]
 //    ,
