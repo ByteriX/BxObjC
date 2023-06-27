@@ -114,6 +114,11 @@ let package = Package(
                 .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
                 .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
                 .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
+                .headerSearchPath("iBXCommon/iBXCommon/Sources"),
+                .headerSearchPath("iBXVcl/iBXVcl/Control/Rate"),
+                .headerSearchPath("iBXVcl/iBXVcl/Control/TextView"),
+                .headerSearchPath("iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                .headerSearchPath("iBXVcl/iBXVcl/Control/Navigation"),
             ]
         ),
         .target(
