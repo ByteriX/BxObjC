@@ -1,9 +1,9 @@
 /**
- *	@file BxException.h
- *	@namespace iBXCommon
+ *	@file BxObjC.h
+ *	@namespace BxObjC
  *
- *	@details Исключения
- *	@date 29.08.2013
+ *	@details Объединение фреймворков для SPM
+ *	@date 27.06.2023
  *	@author Sergey Balalaev
  *
  *	@version last in https://github.com/ByteriX/BxObjC
@@ -13,4 +13,9 @@
 
 #import <Foundation/Foundation.h>
 #import "BxCommon.h"
+#import "BxStandartRateView.h"
 #import "BxTextView.h"
+#import "UIView+ShakeAnimation.h"
+
+#import "BxNavigationBar.h"
+#import "BxNavigationController.h"

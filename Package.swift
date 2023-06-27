@@ -20,8 +20,8 @@ let package = Package(
     name: "BxObjC",
     //defaultLocalization: "ru",
     platforms: [.macOS(.v10_11),
-                .iOS(.v9),
-                .tvOS(.v9),
+                .iOS(.v11),
+                .tvOS(.v11),
                 .watchOS(.v2)],
     products: [
 //        .library(
@@ -45,13 +45,13 @@ let package = Package(
         .library(
             name: "BxObjC",
             targets: [
-                "BxObjC",
-//                "BxObjC-Common",
+                "BxObjC-Common",
                 //"BxObjC/DB",
                 "BxObjC-Control-Rate",
                 "BxObjC-Control-TextView",
                 "BxObjC-Control-ShakeAnimation",
-                "BxObjC-Control-Navigation"
+                "BxObjC-Control-Navigation",
+                "BxObjC"
             ]
         ),
 //        .library(
@@ -106,31 +106,30 @@ let package = Package(
         ),
         .target(
             name: "BxObjC",
+            path: "BxObjC",
+            publicHeadersPath: "",
+            cSettings: [
+                .headerSearchPath("../iBXCommon/iBXCommon/Sources"),
+                .headerSearchPath("../iBXVcl/iBXVcl/Control/Rate"),
+                .headerSearchPath("../iBXVcl/iBXVcl/Control/TextView"),
+                .headerSearchPath("../iBXVcl/iBXVcl/Control/ShakeAnimation"),
+                .headerSearchPath("../iBXVcl/iBXVcl/Control/Navigation"),
+            ]
+        ),
+        .target(
+            name: "BxObjC-Common",
             dependencies: [
                 "BxObjC-Common-Frameworks-HTMLParse",
                 "BxObjC-Common-Frameworks-StackBlur"
             ],
-            path: "iBXCommon/iBXCommon/Sources",
-            publicHeadersPath: "",
+            path: "iBXCommon/iBXCommon",
+            sources: ["Sources"],
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
                 .unsafeFlags(["-fno-objc-arc"]),
                 .unsafeFlags(["-fobjc-weak"])
             ]
         ),
-//        .target(
-//            name: "BxObjC-Common",
-//            dependencies: [
-//                "BxObjC-Common-Frameworks-HTMLParse",
-//                "BxObjC-Common-Frameworks-StackBlur"
-//            ],
-//            path: "iBXCommon/iBXCommon/Sources",
-//            cSettings: [
-//                .unsafeFlags(["-w"]), // no more any warnings
-//                .unsafeFlags(["-fno-objc-arc"]),
-//                .unsafeFlags(["-fobjc-weak"])
-//            ]
-//        ),
 //        .target(
 //            name: "BxObjC/DB",
 //            dependencies: ["BxObjC/Common"],
@@ -166,7 +165,7 @@ let package = Package(
             path: "iBXVcl/iBXVcl/Control/ShakeAnimation"),
         .target(
             name: "BxObjC-Control-Navigation",
-            dependencies: ["BxObjC", "BxObjC-Control-ShakeAnimation"],
+            dependencies: ["BxObjC-Common", "BxObjC-Control-ShakeAnimation"],
             path: "iBXVcl/iBXVcl/Control/Navigation"
         ),
     ]
