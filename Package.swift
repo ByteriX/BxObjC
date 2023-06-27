@@ -113,6 +113,7 @@ let package = Package(
             ],
             path: "iBXCommon/iBXCommon",
             sources: ["Sources"],
+            publicHeadersPath: "Sources",
             cSettings: [
                 .unsafeFlags(["-w"]), // no more any warnings
                 .unsafeFlags(["-fno-objc-arc"]),
